@@ -1,39 +1,36 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { geolocation } from "./components/geolocation";
-import NavigationBar from "./NavigationBar";
-import Aboutleft from "./pages/About/AboutLeft";
-import AboutRight from "./pages/About/AboutRight";
-import MainLeft from "./pages/main/MainLeft";
-import MainRight from "./pages/main/MainRight";
+import { getLocation } from "./components/geolocation";
+import Home from "./pages/home/Home";
+import Geolocation from "./pages/Geolocation";
+import NotFound from "./pages/Notfound";
 
 function App() {
-  geolocation();
+  const fetchData = async () => {
+    try {
+      const position = await getLocation();
+      console.log(position);
+    } catch (error) {}
+  };
+  fetchData();
+
+  // const HomeContent = () => {
+  //   return (
+  //     <div>
+  //       <Home />
+  //     </div>
+  //   );
+  // };
 
   return (
-    <div className="background">
-      <div className="outerBlue">
-        <div className="whiteSolid">
-          <div className="outerbox">
-            <div className="wrapper">
-              <div className="wrapper__left">
-                <Routes>
-                  <Route path="/main" element={<MainLeft />} />
-                  <Route path="/about" element={<Aboutleft />} />
-                </Routes>
-              </div>
-
-              <div className="wrapper__right">
-                <Routes>
-                  <Route path="/main" element={<MainRight />} />
-                  <Route path="/about" element={<AboutRight />} />
-                </Routes>
-              </div>
-              <NavigationBar />
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path=":page" element={<Home />} />
+        </Route>
+        <Route path="/geolocation" element={<Geolocation />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
