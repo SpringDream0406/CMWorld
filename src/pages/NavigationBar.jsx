@@ -1,32 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { navigationTags } from "../components/navigationTagName";
 
 const NavigationBar = () => {
-  return (
-    <div className="navigation">
-      <NavLink to="/main" className="navigation__item" activeClassName="">
-        홈
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        프로필
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        프로젝트
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        사진첩
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        방명록
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        쥬크박스
-      </NavLink>
-      <NavLink to="/about" className="navigation__item" activeClassName="">
-        설정
-      </NavLink>
-    </div>
-  );
+  const tagsInstance = new navigationTags();
+  const { tags } = tagsInstance;
+
+  const navigationBars = Object.entries(tags).map(([tagName, tagContent]) => (
+    <NavLink
+      key={tagName}
+      to={`/${tagName}`}
+      className={({ isActive }) => (isActive ? " active" : "navigation__item")}
+    >
+      {tagContent.name}
+    </NavLink>
+  ));
+
+  return <div className="navigation">{navigationBars}</div>;
 };
 
 export default NavigationBar;

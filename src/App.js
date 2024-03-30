@@ -3,7 +3,7 @@ import "./App.css";
 import { getLocation } from "./components/geolocation";
 import Home from "./pages/home/Home";
 import Geolocation from "./pages/Geolocation";
-import NotFound from "./pages/Notfound";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const fetchData = async () => {
@@ -14,19 +14,11 @@ function App() {
   };
   fetchData();
 
-  // const HomeContent = () => {
-  //   return (
-  //     <div>
-  //       <Home />
-  //     </div>
-  //   );
-  // };
-
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path=":page" element={<Home />} />
+          <Route path=":navigationTagName" element={<Home />} />
         </Route>
         <Route path="/geolocation" element={<Geolocation />} />
         <Route path="*" element={<NotFound />} />
