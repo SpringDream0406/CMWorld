@@ -5,10 +5,11 @@
 .background {
   width: 100vw;
   height: 100vh;
-  padding: 20px 300px 50px 20px;
-  /* background-image: url("../public/images/blackground.png"); */
+  padding: 30px 30px 50px 20px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
 }
 
 .outerBlue {
@@ -47,7 +48,7 @@
 .wrapper__left {
   width: 20%;
   height: 100%;
-  /* background-color: lightgray; */
+  background-color: lightgray;
 }
 
 .wrapper__right {
@@ -56,26 +57,59 @@
   /* background-color: lightblue; */
 }
 
+/* 네이게이션바 */
 .navigation {
   width: 72px;
-  height: 350px;
+  height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  right: 270px;
+  right: 306px;
   top: 100px;
 }
 
 .navigation__item {
-  width: 70px;
+  width: 60px;
   height: 45px;
   background-color: #298eb5;
   border: 1px solid black;
   color: white;
   border-radius: 0px 10px 10px 0px;
+  border-left: none;
   font-size: 15px;
   text-align: center;
   line-height: 40px;
   text-decoration: none;
+}
+
+.active {
+  color: black;
+  background-color: white;
+}
+
+/* 사이드 */
+.side {
+  width: 20%;
+  background-color: pink;
+  padding: 10px 10px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.music {
+  height: 45%;
+  background-color: red;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.weather {
+  height: 45%;
+  background-color: darkslategrey;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
 }

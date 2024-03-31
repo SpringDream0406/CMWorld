@@ -1,34 +1,42 @@
-const accessTogeo = (position) => {
+export const getLocation = async () => {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => resolve(getLatLot(position)),
+      (error) => reject(error)
+    );
+  });
+};
+
+const getLatLot = (position) => {
   const positionObj = {
     latitude: position.coords.latitude,
     longitude: position.coords.longitude,
   };
+
+  const isCheckdLocation = checkLocation(positionObj);
+  if (isCheckdLocation === false) {
+    console.error("사용자 위치가 한국이 아닙니다.");
+    return { code: 10 };
+  }
   return positionObj;
 };
 
-let insertMessage = "";
-
-const controlErr = (err) => {
-  switch (err.code) {
-    case 1:
-      console.error("사용자가 위치 정보 접근을 거부했습니다.");
-      break;
-    case 2:
-      console.error("사용자의 위치 정보를 확인할 수 없습니다.");
-      break;
-    case 3:
-      console.error("위치 정보 확인이 시간 초과되었습니다.");
-      break;
-    default:
-      console.error("알 수 없는 오류가 발생했습니다.");
+const checkLocation = ({ latitude, longitude }) => {
+  if (
+    // 극동: 경상북도 울릉군의 독도 동단 동경 131° 52′20" → 131.87222222
+    // 극서: 평안북도 용천군 신도면 마안도 서단 동경 124° 11′45" → 124.19583333
+    // 극남: 제주도 남제주군 대정읍 마라도 남단 북위 33° 06′40" → 33.11111111
+    // 극북: 함경북도 온성군 남양면 북단 북위 43° 00′35" → 43.00972222
+    !(latitude >= 33.11111111 && latitude <= 43.00972222) ||
+    !(longitude >= 124.19583333 && longitude <= 131.87222222)
+  ) {
+    return false;
   }
 };
 
-export const getLocation = async () => {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => resolve(accessTogeo(position)),
-      (error) => reject(controlErr(error))
-    );
-  });
+const geolocation = () => {
+  navigator.geolocation.getCurrentPosition(
+    (성공) => 성공,
+    (실패) => 실패
+  );
 };

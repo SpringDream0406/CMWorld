@@ -5,12 +5,13 @@ import { navigationTags } from "../components/navigationTagName";
 const NavigationBar = () => {
   const tagsInstance = new navigationTags();
   const { tags } = tagsInstance;
-
   const navigationBars = Object.entries(tags).map(([tagName, tagContent]) => (
     <NavLink
       key={tagName}
       to={`/${tagName}`}
-      className={({ isActive }) => (isActive ? " active" : "navigation__item")}
+      className={({ isActive }) =>
+        "navigation__item" + (isActive ? " active" : "")
+      }
     >
       {tagContent.name}
     </NavLink>

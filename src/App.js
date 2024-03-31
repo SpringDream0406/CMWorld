@@ -1,19 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { getLocation } from "./components/geolocation";
 import Home from "./pages/home/Home";
-import Geolocation from "./pages/Geolocation";
+import Geolocation from "./pages/geolocation/Geolocation";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const fetchData = async () => {
-    try {
-      const position = await getLocation();
-      console.log(position);
-    } catch (error) {}
-  };
-  fetchData();
-
   return (
     <div>
       <Routes>
