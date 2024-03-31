@@ -12,6 +12,9 @@ import { useState, useEffect } from "react";
 const Home = () => {
   const navigate = useNavigate();
   const [nowWeather, setNowWeather] = useState(null);
+  const [backgroundImage, setBackgroundImage] = useState(
+    "/images/backgrounds/background.jpg"
+  );
   const { navigationTagName } = useParams();
   const navigation = new navigationTags();
   const selectedPage = navigation.getNavigationTagName(navigationTagName);
@@ -27,9 +30,15 @@ const Home = () => {
         }
         const weatherData = await getWeather(geoLocation);
         setNowWeather(weatherData);
-      } catch (error) {
-        console.log(error);
-        navigate("/geolocation", { state: { code: error.code } });
+        const weather = weatherData.data.weather[0].main;
+        const imageURL = `/images/backgrounds/${weather}.gif`;
+
+        setBackgroundImage(imageURL);
+      } catch (err) {
+        console.log(err);
+        if (err.code) {
+          navigate("/geolocation", { state: { code: err.code } });
+        }
       }
     };
     fetchDate();
@@ -40,7 +49,10 @@ const Home = () => {
   }
 
   return (
-    <div className="background">
+    <div
+      className="background"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="outerBlue">
         <div className="whiteSolid">
           <div className="outerbox">

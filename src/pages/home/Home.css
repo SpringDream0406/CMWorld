@@ -91,7 +91,7 @@
 /* 사이드 */
 .side {
   width: 20%;
-  background-color: pink;
+  /* background-color: pink; */
   padding: 10px 10px 10px 30px;
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@
 
 .music {
   height: 45%;
-  background-color: red;
+  /* background-color: red; */
   border: 1px solid;
   border-radius: 15px;
   padding: 10px;
@@ -108,7 +108,7 @@
 
 .weather {
   height: 45%;
-  background-color: darkslategrey;
+  /* background-color: darkslategrey; */
   border: 1px solid;
   border-radius: 15px;
   padding: 10px;
