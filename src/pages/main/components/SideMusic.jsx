@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import YouTube from "react-youtube";
+import { isEmptyObject } from "../../../utils/isEmptyObject";
 
 const SideMusic = () => {
   // 플레이리스트와 현재 재생 중인 노래의 인덱스를 상태로 관리합니다.
@@ -53,27 +54,19 @@ const SideMusic = () => {
   let title;
   let artist;
   let time;
-  if (playlist.length > 0) {
+  if (!isEmptyObject(playlist)) {
     title = playlist[currentVideoIndex].title;
     artist = playlist[currentVideoIndex].artist;
     time = playlist[currentVideoIndex].time;
   }
-
-  const musicInfo =
-    playlist.length > 0 ? `${title} - ${artist} - ${time}` : "곡정보";
-  const showPlayList = (playlist) => {
-    return playlist.map((data) => {
-      if (data) {
-        return <div>{data.title}</div>;
-      }
-      return null;
-    });
-  };
+  const musicInfo = !isEmptyObject(playlist)
+    ? `${title} - ${artist} - ${time}`
+    : "곡정보";
 
   return (
     <div>
       {/* 현재 재생 중인 동영상을 플레이어로 렌더링합니다. */}
-      {playlist.length > 0 && playlist[currentVideoIndex] && (
+      {playlist && playlist[currentVideoIndex]?.videoId && (
         <YouTube
           videoId={playlist[currentVideoIndex].videoId} // 현재 재생 중인 비디오의 ID를 전달합니다.
           opts={opts} // 플레이어 설정을 전달합니다.
@@ -91,7 +84,6 @@ const SideMusic = () => {
           : "재생"}
       </button>
       <button onClick={playNextVideo}>다음 노래</button>
-      <div>{showPlayList(playlist)}</div>
     </div>
   );
 };

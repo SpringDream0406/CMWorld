@@ -7,6 +7,7 @@ import SideWeather from "./components/SideWeather";
 import NavigationBar from "./components/NavigationBar";
 import SideClock from "./components/SideClock";
 import { useSelector } from "react-redux";
+import { isEmptyObject } from "../../utils/isEmptyObject";
 
 const Main = () => {
   const [backgroundImage, setBackgroundImage] = useState(
@@ -14,7 +15,7 @@ const Main = () => {
   );
   const nowWeather = useSelector((state) => state.nowWeather);
   useEffect(() => {
-    if (nowWeather) {
+    if (!isEmptyObject(nowWeather)) {
       const weather = nowWeather.weather[0].main;
       const imageURL = `/images/backgrounds/${weather}.gif`;
       setBackgroundImage(imageURL);
@@ -40,7 +41,9 @@ const Main = () => {
         <div className="music">
           <SideMusic />
         </div>
-        <div className="weather">{/* <SideWeather /> */}</div>
+        <div className="weather">
+          <SideWeather />
+        </div>
         <div className="time">
           <SideClock />
         </div>

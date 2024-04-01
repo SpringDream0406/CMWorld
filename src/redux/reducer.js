@@ -1,14 +1,28 @@
 import { musicData } from "../pages/Jukbox/musicData";
 
 let initialState = {
-  nowWeather: null,
+  nowWeather: {},
   musicData: musicData,
   selectedPlaylist: "음악 전체 보기",
-  checkedMusics: [],
+  checkedMusics: {},
 };
 
+// 로컬저장 가져와서 요런식으로 넣으면 될듯?
+// if (local있냐?) {
+//   initialState.checkedMusics = [
+//     {
+//       videoId: "CpJo0MnQIpg",
+//       artist: "크리스포터 X 청하",
+//       title: "When I Get Old",
+//       time: "4:41",
+//       playlists: ["CM추천"],
+//     },
+//   ];
+// }
+
 const reducer = (state = initialState, action) => {
-  // console.log(action);
+  console.log("state", state);
+  console.log("action", action);
   switch (action.type) {
     case "NOWWEATHER":
       return { ...state, nowWeather: action.payload };

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getLocation } from "../../../services/geolocation";
 import { getWeather } from "../../../services/openWeather";
+import { isEmptyObject } from "../../../utils/isEmptyObject";
 
 const SideWeather = () => {
   const navigate = useNavigate();
@@ -33,9 +34,12 @@ const SideWeather = () => {
     fetchDate();
   }, [dispatch, navigate]);
 
-  if (!nowWeather) {
+  if (isEmptyObject(nowWeather)) {
     return <div>로딩중</div>;
   }
+  // if (nowWeather.length <= 0) {
+  //   return <div>로딩중</div>;
+  // }
 
   // console.log(weatherData.data);
   const { name, weather, main, wind } = nowWeather;
