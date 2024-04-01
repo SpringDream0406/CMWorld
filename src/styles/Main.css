@@ -51,10 +51,26 @@
   background-color: lightgray;
 }
 
+.main__left {
+  height: 790px;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 5px;
+}
+
 .wrapper__right {
   width: 80%;
   height: 100%;
   /* background-color: lightblue; */
+}
+
+.main__right {
+  height: 790px;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 5px;
 }
 
 /* 네이게이션바 */
@@ -107,9 +123,25 @@
 }
 
 .weather {
-  height: 45%;
+  height: 35%;
   /* background-color: darkslategrey; */
   border: 1px solid;
   border-radius: 15px;
   padding: 10px;
+}
+
+.time {
+  height: 10%;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* geo */
+.geolocation span {
+  font-size: 30px;
+}
+
+.linkto {
+  background-color: lightpink;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Geolocation.css";
+import "../styles/Main.css";
 import { Link, useLocation } from "react-router-dom";
 
 const Geolocation = () => {
@@ -35,8 +35,8 @@ const Geolocation = () => {
       <h1>안녕하세요. SP World의 관리자 춘몽 입니다.</h1>
       <h2>
         현재 SP World는 사용자의 위치정보를 이용하여 날씨정보를 가져와 배경으로
-        사용하며, 한국이 아닌지역의 접근을 제한하는 보안적인 목적으로 사용하고
-        있습니다.
+        사용하며, <br />
+        한국이 아닌지역의 접근을 제한하는 보안적인 목적으로 사용하고 있습니다.
       </h2>
       <span> 현재 사용자 분께서는 </span>
       <span style={{ color: "green" }}>{message1}</span>
@@ -46,7 +46,7 @@ const Geolocation = () => {
       <span>{message2}</span>
       <br />
       <br />
-      <Link className="linkto" to="/main">
+      <Link className="linkto" to="/">
         재시도 하기
       </Link>
     </div>

@@ -21,9 +21,10 @@ const SideMusic = () => {
     height: "200px", // 플레이어의 높이
     width: "300px", // 플레이어의 너비
     playerVars: {
-      autoplay: 1, // 자동 재생 설정 (1: 자동 재생)
-      volume: 0, // 음소거로 설정
+      autoplay: 0, // 자동 재생 설정 (1: 자동 재생)
       controls: 1,
+      volume: 1,
+      mute: 0,
     },
   };
 

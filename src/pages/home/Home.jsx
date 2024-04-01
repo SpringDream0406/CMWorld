@@ -1,82 +1,27 @@
-import { navigationTags } from "../../components/navigationTagName";
-import { useNavigate, useParams } from "react-router-dom";
-import { getLocation } from "../../components/geolocation";
-import "./Home.css";
-import NavigationBar from "../NavigationBar";
-import NotFound from "../NotFound";
-import { getWeather } from "../../components/openWeather";
-import SideWeather from "../SideWeather";
-import SideMusic from "../SideMusic";
-import { useState, useEffect } from "react";
+import React from "react";
+import "../../styles/Home.css";
+import Profile from "./components/Profile";
+import Introduce from "./components/Introduce";
+import SelectSite from "./components/SelectSite";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [nowWeather, setNowWeather] = useState(null);
-  const [backgroundImage, setBackgroundImage] = useState(
-    "/images/backgrounds/background.jpg"
-  );
-  const { navigationTagName } = useParams();
-  const navigation = new navigationTags();
-  const selectedPage = navigation.getNavigationTagName(navigationTagName);
-
-  useEffect(() => {
-    const fetchDate = async () => {
-      try {
-        const geoLocation = await getLocation();
-        if (geoLocation.code) {
-          navigate("/geolocation", {
-            state: { code: geoLocation.code },
-          });
-        }
-        const weatherData = await getWeather(geoLocation);
-        setNowWeather(weatherData);
-        const weather = weatherData.data.weather[0].main;
-        const imageURL = `/images/backgrounds/${weather}.gif`;
-
-        setBackgroundImage(imageURL);
-      } catch (err) {
-        console.log(err);
-        if (err.code) {
-          navigate("/geolocation", { state: { code: err.code } });
-        }
-      }
-    };
-    fetchDate();
-  }, []);
-
-  if (!selectedPage) {
-    return <NotFound />;
-  }
-
   return (
-    <div
-      className="background"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="outerBlue">
-        <div className="whiteSolid">
-          <div className="outerbox">
-            <div className="wrapper">
-              <div className="wrapper__left">
-                <selectedPage.left />
-              </div>
-              <div className="wrapper__right">
-                <selectedPage.right />
-              </div>
-              <NavigationBar />
-            </div>
+    <>
+      <div className="wrapper__left">
+        <div className="main__left">
+          <div className="wrapper__left__header">
+            <Profile />
+          </div>
+          <div className="wrapper__left__body">
+            <Introduce />
+            <SelectSite />
           </div>
         </div>
       </div>
-      <div className="side">
-        <div className="music">
-          <SideMusic />
-        </div>
-        <div className="weather">
-          <SideWeather weatherData={nowWeather} />
-        </div>
+      <div className="wrapper__right">
+        <div className="main__right">MainRight</div>;
       </div>
-    </div>
+    </>
   );
 };
 

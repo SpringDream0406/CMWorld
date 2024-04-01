@@ -1,19 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { navigationTags } from "../components/navigationTagName";
+
+const tags = {
+  "": "홈",
+  profile: "프로필",
+  project: "프로젝트",
+  jukbox: "쥬크박스",
+  playground: "놀이터",
+  photo: "사진첩",
+  guestbook: "방명록",
+  setting: "설정",
+};
 
 const NavigationBar = () => {
-  const tagsInstance = new navigationTags();
-  const { tags } = tagsInstance;
-  const navigationBars = Object.entries(tags).map(([tagName, tagContent]) => (
+  const navigationBars = Object.entries(tags).map(([key, value]) => (
     <NavLink
-      key={tagName}
-      to={`/${tagName}`}
+      key={key}
+      to={`/${key}`}
       className={({ isActive }) =>
         "navigation__item" + (isActive ? " active" : "")
       }
     >
-      {tagContent.name}
+      {value}
     </NavLink>
   ));
 

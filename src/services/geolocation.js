@@ -15,7 +15,7 @@ const getLatLot = (position) => {
 
   const isCheckdLocation = checkLocation(positionObj);
   if (isCheckdLocation === false) {
-    console.error("사용자 위치가 한국이 아닙니다.");
+    // console.error("사용자 위치가 한국이 아닙니다.");
     return { code: 10 };
   }
   return positionObj;
@@ -32,11 +32,4 @@ const checkLocation = ({ latitude, longitude }) => {
   ) {
     return false;
   }
-};
-
-const geolocation = () => {
-  navigator.geolocation.getCurrentPosition(
-    (성공) => 성공,
-    (실패) => 실패
-  );
 };
