@@ -4,7 +4,7 @@ import Main from "./pages/main/Main";
 import Home from "./pages/home/Home";
 import Profile from "./pages/Profile";
 import Project from "./pages/project/Project";
-import Jukbox from "./pages/Jukbox";
+import Jukbox from "./pages/Jukbox/Jukbox";
 import Playground from "./pages/Playground";
 import Photo from "./pages/Photo";
 import Guestbook from "./pages/Guestbook";
@@ -19,12 +19,11 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Main />}>
-          {/* =================== 일단 기본 페이지로 설정 =================== */}
           <Route index element={<Home />} />
           <Route path="profile" element={<Profile />} />
           <Route path="project" element={<Project />}>
-            <Route path="teamproject" element={<TeamProject />} />
-            <Route path="personalproject" element={<PersonalProject />} />
+            <Route index element={<TeamProject />} />
+            <Route path="personal" element={<PersonalProject />} />
           </Route>
           <Route path="jukbox" element={<Jukbox />} />
           <Route path="playground" element={<Playground />} />

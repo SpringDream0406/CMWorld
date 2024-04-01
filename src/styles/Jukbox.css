@@ -1,0 +1,32 @@
+.jukboxLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.jukboxRight {
+  height: 100%;
+  background-color: pink;
+  padding: 10px;
+}
+
+.music__table {
+  /* background-color: red; */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.music-row-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.control {
+  background-color: yellow;
+  height: 10%;
+}
+
+.pageNation {
+  background-color: green;
+  height: 10%;
+}

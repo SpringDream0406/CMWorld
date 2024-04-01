@@ -1,23 +1,22 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import JukboxLeft from "./components/JukboxLeft";
+import JukboxRight from "./components/JukboxRight";
 
-const Project = () => {
+const Jukbox = () => {
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <Link to="/project">team</Link>
-          <br />
-          <Link to="/project/personal">person</Link>
+          <JukboxLeft />
         </div>
       </div>
       <div className="wrapper__right">
         <div className="main__right">
-          <Outlet />
+          <JukboxRight />
         </div>
       </div>
     </>
   );
 };
 
-export default Project;
+export default Jukbox;

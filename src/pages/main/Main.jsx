@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 const Main = () => {
   const [backgroundImage, setBackgroundImage] = useState(
-    "/images/backgrounds/background.jpg"
+    "/images/backgrounds/clear.gif"
   );
   const nowWeather = useSelector((state) => state.nowWeather);
   useEffect(() => {
@@ -40,9 +40,7 @@ const Main = () => {
         <div className="music">
           <SideMusic />
         </div>
-        <div className="weather">
-          <SideWeather />
-        </div>
+        <div className="weather">{/* <SideWeather /> */}</div>
         <div className="time">
           <SideClock />
         </div>

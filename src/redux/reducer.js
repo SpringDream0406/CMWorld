@@ -1,20 +1,30 @@
+import { musicData } from "../pages/Jukbox/musicData";
+
 let initialState = {
   nowWeather: null,
+  musicData: musicData,
+  selectedPlaylist: "음악 전체 보기",
+  checkedMusics: [],
 };
 
 const reducer = (state = initialState, action) => {
-  // console.log("action?", action);
-  // console.log(action.payload);
-  // console.log("state", state);
+  // console.log(action);
+  switch (action.type) {
+    case "NOWWEATHER":
+      return { ...state, nowWeather: action.payload };
 
-  if (action.type === "NOWWEATHER") {
-    return { ...state, nowWeather: action.payload };
+    case "MUSICDATA":
+      return { ...state, musicData: action.payload };
+
+    case "SELECTEDPLAYLIST":
+      return { ...state, selectedPlaylist: action.payload };
+
+    case "CHECKEDMUSICS":
+      return { ...state, checkedMusics: action.payload };
+
+    default:
+      return { ...state };
   }
-  //   if (action.type === "INCREMENT") {
-  //     return { ...state, count: state.count + action.payload.num };
-  //   }
-
-  return { ...state };
 };
 
 export default reducer;
