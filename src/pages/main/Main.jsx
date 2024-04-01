@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Main.css";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
@@ -6,15 +6,20 @@ import SideMusic from "./components/SideMusic";
 import SideWeather from "./components/SideWeather";
 import NavigationBar from "./components/NavigationBar";
 import SideClock from "./components/SideClock";
+import { useSelector } from "react-redux";
 
 const Main = () => {
   const [backgroundImage, setBackgroundImage] = useState(
     "/images/backgrounds/background.jpg"
   );
-
-  // const weather = weatherData.data.weather[0].main;
-  // const imageURL = `/images/backgrounds/${weather}.gif`;
-  // setBackgroundImage(imageURL);
+  const nowWeather = useSelector((state) => state.nowWeather);
+  useEffect(() => {
+    if (nowWeather) {
+      const weather = nowWeather.weather[0].main;
+      const imageURL = `/images/backgrounds/${weather}.gif`;
+      setBackgroundImage(imageURL);
+    }
+  }, [nowWeather]);
 
   return (
     <div

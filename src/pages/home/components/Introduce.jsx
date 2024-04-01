@@ -4,7 +4,7 @@ const Introduce = () => {
   return (
     <div className="introduce">
       <div className="text">
-        <span>SP World에 오신걸 환영합니다.</span>
+        <span>CMWORLD 오신걸 환영합니다.</span>
       </div>
       <div className="email">
         <p>춘몽 World</p>
