@@ -48,7 +48,7 @@
 .wrapper__left {
   width: 20%;
   height: 100%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 .main__left {
@@ -117,14 +117,15 @@
 }
 
 .music {
-  height: 45%;
+  height: 15%;
   /* background-color: red; */
-  border: 1px solid;
+  /* border: 1px solid; */
   border-radius: 15px;
   padding: 10px;
 }
 
 .weather {
+  margin-top: 150px;
   height: 35%;
   /* background-color: darkslategrey; */
   border: 1px solid;
@@ -146,4 +147,56 @@
 
 .linkto {
   background-color: lightpink;
+}
+
+/* SideMusic */
+.sideMusic {
+  height: 100%;
+  background-color: lightblue;
+}
+
+.sideMusic-music-info {
+  background-color: pink;
+  height: 60%;
+}
+
+.sideMusic-title {
+  height: 60%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+
+  /* overflow: hidden;
+  position: relative;
+  white-space: nowrap; */
+}
+
+/* .slide-text {
+  position: absolute;
+  animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+} */
+
+.sideMusic-time {
+  height: 40%;
+  background-color: yellow;
+}
+
+.sideMusic-control-btn {
+  background-color: gray;
+  height: 40%;
+}
+
+.sideMusic-youtube {
+  background-color: green;
+  height: 10%;
 }

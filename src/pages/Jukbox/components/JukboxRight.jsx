@@ -22,7 +22,6 @@ const JukboxRight = () => {
             <div>{index + 1}</div>
             <div>{music.title}</div>
             <div>{music.artist}</div>
-            <div>{music.time}</div>
           </div>
         ))}
       </div>
@@ -44,7 +43,6 @@ const JukboxRight = () => {
             <div>번호</div>
             <div>곡명</div>
             <div>아티스트</div>
-            <div>시간</div>
           </div>
         </div>
         <div className="music-row">{renderMusicData(musicData)}</div>
