@@ -4,12 +4,12 @@ let initialState = {
   nowWeather: {},
   musicData: musicData,
   selectedPlaylist: "음악 전체 보기",
-  checkedMusics: {},
+  playMusics: {},
 };
 
 // 로컬저장 가져와서 요런식으로 넣으면 될듯?
 // if (local있냐?) {
-//   initialState.checkedMusics = [
+//   initialState.playMusics = [
 //     {
 //       videoId: "CpJo0MnQIpg",
 //       artist: "크리스포터 X 청하",
@@ -33,8 +33,8 @@ const reducer = (state = initialState, action) => {
     case "SELECTEDPLAYLIST":
       return { ...state, selectedPlaylist: action.payload };
 
-    case "CHECKEDMUSICS":
-      return { ...state, checkedMusics: action.payload };
+    case "PLAYMUSICS":
+      return { ...state, playMusics: action.payload };
 
     default:
       return { ...state };

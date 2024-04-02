@@ -1,39 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../styles/Jukbox.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
   const musicData = useSelector((state) => state.musicData);
-  const [checkedMusics, setCheckedMusics] = useState([]);
+  const selectedPlaylist = useSelector((state) => state.selectedPlaylist);
 
-  const getCheckedMusics = (event, music) => {
-    const { checked } = event.target;
-    if (checked) {
-      setCheckedMusics([...checkedMusics, music]);
-    } else {
-      setCheckedMusics(
-        checkedMusics.filter((item) => item.videoId !== music.videoId)
-      );
-    }
-  };
-
-  const sendCheckedMusics = () => {
-    dispatch({ type: "CHECKEDMUSICS", payload: checkedMusics });
+  const playOneSong = (music) => {
+    dispatch({ type: "PLAYMUSICS", payload: music });
   };
 
   const renderMusicData = (data) => {
     return (
       <div>
         {data.map((music, index) => (
-          <div key={index}>
-            <input
-              type="checkbox"
-              onChange={(event) => getCheckedMusics(event, music)}
-            />
+          <div key={index} className={"music-render"}>
             <div>
-              {index + 1} - {music.artist} - {music.title} - {music.time}
+              <button onClick={() => playOneSong([music])}>▶️</button>
             </div>
+            <div>{index + 1}</div>
+            <div>{music.title}</div>
+            <div>{music.artist}</div>
+            <div>{music.time}</div>
           </div>
         ))}
       </div>
@@ -43,19 +32,23 @@ const JukboxRight = () => {
   return (
     <div className="jukboxRight">
       <div className="music__table">
+        <div className="music-play-all">
+          <span>{selectedPlaylist}</span>
+          <span>{musicData.length} </span>
+          <span>곡 전체 플레이하기</span>
+          <button onClick={() => playOneSong(musicData)}>play</button>
+        </div>
         <div className="music-row-header">
-          <input type="checkbox" />
-          <div>번호</div>
-          <div>곡명</div>
-          <div>아티스트</div>
-          <div>시간</div>
+          <div className="music-render">
+            <div></div>
+            <div>번호</div>
+            <div>곡명</div>
+            <div>아티스트</div>
+            <div>시간</div>
+          </div>
         </div>
         <div className="music-row">{renderMusicData(musicData)}</div>
       </div>
-      <div className="control" onClick={sendCheckedMusics}>
-        플레이리스트 보내기
-      </div>
-      <div className="pageNation">페이지네이션</div>
     </div>
   );
 };

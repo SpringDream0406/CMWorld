@@ -5,28 +5,52 @@
 
 .jukboxRight {
   height: 100%;
-  background-color: pink;
+  /* background-color: pink; */
   padding: 10px;
+  overflow-y: auto;
 }
 
 .music__table {
-  /* background-color: red; */
   height: 80%;
   display: flex;
   flex-direction: column;
 }
 
 .music-row-header {
+  background-color: lightgray;
+}
+
+.music-render {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: dotted;
+  padding: 5px;
 }
 
-.control {
-  background-color: yellow;
-  height: 10%;
+.music-render div {
+  display: flex;
+  justify-content: center;
 }
 
-.pageNation {
-  background-color: green;
-  height: 10%;
+.music-render > div:nth-child(1) {
+  width: 5%;
+  /* background-color: red; */
+}
+.music-render > div:nth-child(2) {
+  width: 5%;
+  /* background-color: orange; */
+}
+.music-render > div:nth-child(3) {
+  width: 50%;
+  /* background-color: yellow; */
+}
+.music-render > div:nth-child(4) {
+  width: 25%;
+  /* background-color: green; */
+}
+.music-render > div:nth-child(5) {
+  width: 10%;
+  /* background-color: blue; */
 }

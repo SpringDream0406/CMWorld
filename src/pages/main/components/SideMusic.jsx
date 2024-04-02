@@ -1,21 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import YouTube from "react-youtube";
+import { SideMusicUtils } from "../../../utils/sideMusic";
 import { isEmptyObject } from "../../../utils/isEmptyObject";
 
 const SideMusic = () => {
+  const [totalTime, setTotalTime] = useState();
+  const [playingTime, setPlayingTime] = useState();
+  // const sideMusicUtils = new SideMusicUtils();
+
   // 플레이리스트와 현재 재생 중인 노래의 인덱스를 상태로 관리합니다.
-  const playlist = useSelector((state) => state.checkedMusics);
-  console.log(playlist);
+  const playlist = useSelector((state) => state.playMusics);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   // 이전 비디오를 재생하는 함수입니다.
-  const playPreviousVideo = () => {
-    // 플레이리스트의 이전 비디오로 이동합니다.
-    setCurrentVideoIndex((prevIndex) =>
-      prevIndex === 0 ? playlist.length - 1 : prevIndex - 1
+  const playPreviousVideo = () =>
+    SideMusicUtils.playPreviousVideo(
+      currentVideoIndex,
+      playlist.length,
+      setCurrentVideoIndex
     );
-  };
+  // const playPreviousVideo = () => {
+  //   // 플레이리스트의 이전 비디오로 이동합니다.
+  //   setCurrentVideoIndex((prevIndex) =>
+  //     prevIndex === 0 ? playlist.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   // 다음 비디오를 재생하는 함수입니다.
   const playNextVideo = () => {
@@ -26,6 +36,7 @@ const SideMusic = () => {
   const playerRef = useRef(null); // YouTube 플레이어의 ref
 
   const playPauseVideo = async () => {
+    console.log(playerRef);
     if (playerRef.current) {
       // 연결됨
       const playerControl = playerRef.current.internalPlayer;
@@ -39,9 +50,22 @@ const SideMusic = () => {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      if (playerRef.current) {
+        const playerControl = playerRef.current.internalPlayer;
+        const duration = await playerControl.getDuration();
+        const currentTime = await playerControl.getCurrentTime();
+        setTotalTime(SideMusicUtils.formatTime(duration));
+        setPlayingTime(SideMusicUtils.formatTime(currentTime));
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [playlist, currentVideoIndex]);
+
   // YouTube 동영상 플레이어의 설정입니다.
   const opts = {
-    height: "100px", // 플레이어의 높이
+    height: "00px", // 플레이어의 높이
     width: "200px", // 플레이어의 너비
     playerVars: {
       autoplay: 1, // 자동 재생 설정 (1: 자동 재생)
@@ -53,15 +77,10 @@ const SideMusic = () => {
 
   let title;
   let artist;
-  let time;
   if (!isEmptyObject(playlist)) {
     title = playlist[currentVideoIndex].title;
     artist = playlist[currentVideoIndex].artist;
-    time = playlist[currentVideoIndex].time;
   }
-  const musicInfo = !isEmptyObject(playlist)
-    ? `${title} - ${artist} - ${time}`
-    : "곡정보";
 
   return (
     <div>
@@ -74,7 +93,13 @@ const SideMusic = () => {
           ref={playerRef}
         />
       )}
-      {musicInfo}
+      <div className="musicInfo">
+        <div className="title">{title}</div>
+        <div>{artist}</div>
+        <div>
+          {playingTime} - {totalTime}
+        </div>
+      </div>
       <br />
       <button onClick={playPreviousVideo}>이전 노래</button>
       <button onClick={playPauseVideo}>

@@ -292,16 +292,16 @@ export const musicData = [
   {
     videoId: "rTLzLm1ztQY",
     artist: "테이",
-    title: "사랑은...향기를 남기고 / 가사",
+    title: "사랑은...향기를 남기고",
     time: "4:57",
     playlists: [playlists[0]],
   },
 
   {
-    videoId: "CpJo0MnQIpg",
+    videoId: "sVbpvsrtTzM",
     artist: "크리스포터 X 청하",
     title: "When I Get Old",
-    time: "4:41",
+    time: "3:04",
     playlists: [playlists[1]],
   },
 ];
