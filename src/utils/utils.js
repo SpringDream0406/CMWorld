@@ -4,8 +4,10 @@ export class Utils {
   }
   getSize(id) {
     const element = document.getElementById(id);
-    const width = element.offsetWidth;
-    const height = element.offsetHeight;
-    return { width, height };
+    if (element) {
+      const width = element.offsetWidth;
+      const height = element.offsetHeight;
+      return { width, height };
+    }
   }
 }

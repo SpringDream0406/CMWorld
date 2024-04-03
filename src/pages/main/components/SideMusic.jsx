@@ -30,7 +30,7 @@ const SideMusic = () => {
 
   const opts = {
     height: `${youTubeVideoSize}px`,
-    width: size.width,
+    width: size ? size.width : 0,
     playerVars: {
       autoplay: 1,
       controls: 1,
@@ -139,15 +139,17 @@ const SideMusic = () => {
         <Volume />
       </div>
 
-      {playlist && playlist[currentVideoIndex]?.videoId && (
-        <YouTube
-          className="sideMusic-youtube"
-          videoId={playlist[currentVideoIndex].videoId}
-          opts={opts}
-          onEnd={playNextVideo}
-          ref={playerRef}
-        />
-      )}
+      <div className="sideMusic-youtube-wrapper">
+        {playlist && playlist[currentVideoIndex]?.videoId && (
+          <YouTube
+            className="sideMusic-youtube"
+            videoId={playlist[currentVideoIndex].videoId}
+            opts={opts}
+            onEnd={playNextVideo}
+            ref={playerRef}
+          />
+        )}
+      </div>
     </div>
   );
 };

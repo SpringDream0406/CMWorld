@@ -8,7 +8,7 @@ const JukboxLeft = () => {
   const menus = playlists;
 
   const filterShowData = (playlistName) => {
-    dispatch({ type: "SELECTEDPLAYLIST", payload: playlistName }); // 선택된 메뉴를 업데이트
+    dispatch({ type: "SELECTEDPLAYLIST", payload: playlistName });
     if (playlistName === "음악 전체 보기") {
       dispatch({ type: "MUSICDATA", payload: musicData });
       return;

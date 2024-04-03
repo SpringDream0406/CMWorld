@@ -32,10 +32,12 @@ const JukboxRight = () => {
     <div className="jukboxRight">
       <div className="music__table">
         <div className="music-play-all">
-          <span>{selectedPlaylist}</span>
-          <span>{musicData.length} </span>
-          <span>곡 전체 플레이하기</span>
-          <button onClick={() => playOneSong(musicData)}>play</button>
+          <button onClick={() => playOneSong(musicData)}>
+            <span>
+              ▶️ {selectedPlaylist} {musicData.length}곡
+            </span>
+            <span></span>
+          </button>
         </div>
         <div className="music-row-header">
           <div className="music-render">

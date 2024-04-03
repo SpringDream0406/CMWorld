@@ -1,3 +1,5 @@
+/* ==================== 왼쪽 ==================== */
+
 .jukboxLeft {
   display: flex;
   flex-direction: column;
@@ -13,6 +15,8 @@
   border-radius: 1rem;
 }
 
+/* ==================== 오른쪽 ==================== */
+
 .jukboxRight {
   height: 100%;
   /* background-color: pink; */
@@ -24,6 +28,29 @@
   height: 80%;
   display: flex;
   flex-direction: column;
+}
+
+.music-play-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  margin-left: 1.7rem;
+  padding-bottom: 1rem;
+}
+
+.music-play-all button {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+
+.music-play-all button:hover {
+  cursor: pointer;
+}
+
+.music-play-all button:active {
+  color: #6e2c17;
 }
 
 .music-row-header {
@@ -42,6 +69,14 @@
 .music-render div {
   display: flex;
   justify-content: center;
+}
+
+.music-render button:hover {
+  cursor: pointer;
+}
+
+.music-render button:active {
+  color: #6e2c17;
 }
 
 .music-render > div:nth-child(1) {
