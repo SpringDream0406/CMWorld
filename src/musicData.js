@@ -3,16 +3,28 @@ export const playlists = [
   "싸이월드 감성",
   "느낌있는 POP",
   "아이돌",
+  "감성",
 ];
 
 export const musicData = [
+  {
+    videoId: "_UkrDNugpXI",
+    artist: "요아리",
+    title: "TRUE",
+    playlists: [playlists[4]],
+  },
   {
     videoId: "ZlJNkflJjA4",
     artist: "IVE",
     title: "Mine",
     playlists: [playlists[0], playlists[3]],
   },
-
+  {
+    videoId: "sVbpvsrtTzM",
+    artist: "크리스포터 X 청하",
+    title: "When I Get Old",
+    playlists: [playlists[2]],
+  },
   {
     videoId: "dYIT_jeUBKg",
     artist: "프리스타일",
@@ -266,19 +278,4 @@ export const musicData = [
     title: "사랑은...향기를 남기고",
     playlists: [playlists[0], playlists[1]],
   },
-
-  {
-    videoId: "sVbpvsrtTzM",
-    artist: "크리스포터 X 청하",
-    title: "When I Get Old",
-    playlists: [playlists[2]],
-  },
 ];
-
-const ex = {
-  videoId: "",
-  artist: "",
-  title: "",
-  time: "",
-  playlists: [playlists[0], playlists[1]],
-};

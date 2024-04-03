@@ -1,45 +1,49 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import "../../../styles/SideMusic.css";
 import { useSelector } from "react-redux";
 import YouTube from "react-youtube";
+import Volume from "./Volume";
 import { SideMusicUtils, PlayerControlBtn } from "../../../utils/sideMusic";
+import {
+  faPlay,
+  faPause,
+  faBackwardStep,
+  faForwardStep,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Utils } from "../../../utils/utils";
 
 const SideMusic = () => {
   const playlist = useSelector((state) => state.playMusics);
+  const volume = useSelector((state) => state.volume);
   const playerRef = useRef(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [totalTime, setTotalTime] = useState();
-  const [playingTime, setPlayingTime] = useState();
+  const [totalTime, setTotalTime] = useState("0:00");
+  const [playingTime, setPlayingTime] = useState("0:00");
   const [youTubeVideoSize, setYouTubeVideSize] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(true);
-  // const [playerControl, setPlayerControl] = useState();
+  const [isPlaying, setIsPlaying] = useState(false);
   const sideMusicUtils = useMemo(() => new SideMusicUtils(), []);
   const playerControlBtn = useMemo(() => new PlayerControlBtn(), []);
+  const utils = new Utils();
+  const size = utils.getSize("music");
 
-  // YouTube 동영상 플레이어의 설정
   const opts = {
     height: `${youTubeVideoSize}px`,
-    width: "200px",
+    width: size.width,
     playerVars: {
       autoplay: 1,
       controls: 1,
       mute: 0,
-      volume: 0, // 안먹힘
     },
   };
-
-  // useEffect(() => {
-  //   if (playerRef.current && playerRef.current.internalPlayer) {
-  //     setPlayerControl(playerRef.current.internalPlayer);
-  //     console.log("연결됨");
-  //   }
-  // }, [playerRef.current]);
 
   const songInfo = sideMusicUtils.makeSoingInfo(playlist, currentVideoIndex);
 
   useEffect(() => {
-    const interval = setInterval(async () => {
+    const interval = setInterval(() => {
       if (playerRef.current) {
-        const playerControl = playerRef.current.internalPlayer;
+        const playerControl = sideMusicUtils.getControl(playerRef);
         sideMusicUtils.duration(playerControl, setTotalTime, setPlayingTime);
       }
     }, 1000);
@@ -51,56 +55,99 @@ const SideMusic = () => {
 
   const playNextVideo = () => {
     playerControlBtn.playNextVideo(playlist.length, setCurrentVideoIndex);
+    if (currentVideoIndex === 0 && playerRef.current) {
+      const playerControl = sideMusicUtils.getControl(playerRef);
+      playerControl.playVideo();
+    }
   };
 
   const playVideo = () => {
     if (playerRef.current) {
-      const playerControl = playerRef.current.internalPlayer;
-      console.log("재생");
-      playerControlBtn.playVideo(playerControl);
+      const playerControl = sideMusicUtils.getControl(playerRef);
+      playerControl.playVideo();
+      setIsPlaying(true);
     }
   };
 
   const pauseVideo = () => {
     if (playerRef.current) {
-      const playerControl = playerRef.current.internalPlayer;
-      console.log("정지");
-      playerControlBtn.pauseVideo(playerControl);
+      const playerControl = sideMusicUtils.getControl(playerRef);
+      playerControl.pauseVideo();
+      setIsPlaying(false);
     }
   };
+  useEffect(() => {
+    if (playerRef.current) {
+      const playerControl = sideMusicUtils.getControl(playerRef);
+      playerControl.setVolume(volume);
+    }
+  }, [volume, sideMusicUtils]);
 
-  const openVideo = () =>
+  const openVideo = () => {
     playerControlBtn.openVideo(setYouTubeVideSize, setIsVideoOpen, isVideoOpen);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      if (playerRef.current) {
+        const playerControl = sideMusicUtils.getControl(playerRef);
+        const playerState = await playerControl.getPlayerState();
+        setIsPlaying(playerState === 1 ? true : false);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isPlaying, sideMusicUtils]);
 
   return (
     <div className="sideMusic">
-      <div className="sideMusic-music-info">
-        <div className="sideMusic-title">
-          {/* <div className="slide-text"> */}
-          {songInfo}
-          {/* </div> */}
+      <div className="flow-container">
+        <div className="flow-text" onClick={openVideo}>
+          <div className="flow-wrap">{songInfo}</div>
+          <div className="flow-wrap">{songInfo}</div>
+          <div className="flow-wrap">{songInfo}</div>
+          <div className="flow-wrap">{songInfo}</div>
         </div>
+      </div>
+      <div className="sideMusic-mid">
         <div className="sideMusic-time">
-          {playingTime} - {totalTime}
+          <div className="playingTime">{playingTime}</div>
+          <div className="">-</div>
+          <div className="totalTime">{totalTime}</div>
+        </div>
+        <div className="sideMusic-control-btn">
+          <button onClick={playPreviousVideo}>
+            <FontAwesomeIcon icon={faBackwardStep} />
+          </button>
+          <button onClick={pauseVideo}>
+            <FontAwesomeIcon
+              icon={faPause}
+              className={isPlaying ? "" : "btn-active"}
+            />
+          </button>
+          <button onClick={playVideo}>
+            <FontAwesomeIcon
+              icon={faPlay}
+              className={isPlaying ? "btn-active" : ""}
+            />
+          </button>
+          <button onClick={playNextVideo}>
+            <FontAwesomeIcon icon={faForwardStep} />
+          </button>
         </div>
       </div>
-      <div className="sideMusic-control-btn">
-        <button onClick={playPreviousVideo}>이전 노래</button>
-        <button onClick={pauseVideo}>{"정지"}</button>
-        <button onClick={playVideo}>{"재생"}</button>
-        <button onClick={playNextVideo}>다음 노래</button>
-        <button onClick={openVideo}>open</button>
+      <div className="sideMusic-volume">
+        <Volume />
       </div>
-      <div className="sideMusic-youtube">
-        {playlist && playlist[currentVideoIndex]?.videoId && (
-          <YouTube
-            videoId={playlist[currentVideoIndex].videoId}
-            opts={opts}
-            onEnd={playNextVideo}
-            ref={playerRef}
-          />
-        )}
-      </div>
+
+      {playlist && playlist[currentVideoIndex]?.videoId && (
+        <YouTube
+          className="sideMusic-youtube"
+          videoId={playlist[currentVideoIndex].videoId}
+          opts={opts}
+          onEnd={playNextVideo}
+          ref={playerRef}
+        />
+      )}
     </div>
   );
 };

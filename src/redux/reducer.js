@@ -1,10 +1,11 @@
-import { musicData } from "../pages/Jukbox/musicData";
+import { musicData } from "../musicData";
 
 let initialState = {
   nowWeather: {},
   musicData: musicData,
   selectedPlaylist: "음악 전체 보기",
   playMusics: {},
+  volume: 5,
 };
 
 // 로컬저장 가져와서 요런식으로 넣으면 될듯?
@@ -35,6 +36,9 @@ const reducer = (state = initialState, action) => {
 
     case "PLAYMUSICS":
       return { ...state, playMusics: action.payload };
+
+    case "VOLUME":
+      return { ...state, volume: action.payload };
 
     default:
       return { ...state };

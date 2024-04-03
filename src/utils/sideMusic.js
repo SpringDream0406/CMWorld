@@ -1,4 +1,5 @@
-import { isEmptyObject } from "./isEmptyObject";
+import { Utils } from "./utils";
+const utils = new Utils();
 
 export class SideMusicUtils {
   formatTime(seconds) {
@@ -8,7 +9,7 @@ export class SideMusicUtils {
   }
 
   makeSoingInfo(playlist, currentVideoIndex) {
-    if (!isEmptyObject(playlist)) {
+    if (playlist && !utils.isEmptyObject(playlist)) {
       const title = playlist[currentVideoIndex].title;
       const artist = playlist[currentVideoIndex].artist;
       return `${title} - ${artist}`;
@@ -20,6 +21,9 @@ export class SideMusicUtils {
     const currentTime = await playerControl.getCurrentTime();
     setTotalTime(this.formatTime(duration));
     setPlayingTime(this.formatTime(currentTime));
+  }
+  getControl(playerRef) {
+    return playerRef.current.internalPlayer;
   }
 }
 
@@ -41,13 +45,5 @@ export class PlayerControlBtn {
 
   playNextVideo(playlistLength, setCurrentVideoIndex) {
     this.changeVideoIndex(playlistLength, setCurrentVideoIndex, 1);
-  }
-
-  playVideo(playerControl) {
-    playerControl.playVideo();
-  }
-
-  pauseVideo(playerControl) {
-    playerControl.pauseVideo();
   }
 }

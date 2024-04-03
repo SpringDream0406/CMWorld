@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getLocation } from "../../../services/geolocation";
 import { getWeather } from "../../../services/openWeather";
-import { isEmptyObject } from "../../../utils/isEmptyObject";
+import { Utils } from "../../../utils/utils";
 
 const SideWeather = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const nowWeather = useSelector((state) => state.nowWeather);
+  const utils = new Utils();
 
   useEffect(() => {
     const moveGeoPage = (inputCode) => {
@@ -34,18 +35,12 @@ const SideWeather = () => {
     fetchDate();
   }, [dispatch, navigate]);
 
-  if (isEmptyObject(nowWeather)) {
+  if (utils.isEmptyObject(nowWeather)) {
     return <div>로딩중</div>;
   }
-  // if (nowWeather.length <= 0) {
-  //   return <div>로딩중</div>;
-  // }
 
-  // console.log(weatherData.data);
   const { name, weather, main, wind } = nowWeather;
   const iconURL = ` https://openweathermap.org/img/wn/${weather[0].icon}.png`;
-
-  // <a href="https://kr.freepik.com/free-vector/sky-background-pastel-paper-cut-design-vector_18938534.htm#query=clouds%20background&position=0&from_view=keyword&track=ais&uuid=b4209833-19bc-4cd1-ad45-111712393ea9">작가 rawpixel.com</a> 출처 Freepik
 
   return (
     <div>

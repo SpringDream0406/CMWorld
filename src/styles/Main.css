@@ -83,7 +83,7 @@
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  right: 334px;
+  right: 377px;
   top: 100px;
 }
 
@@ -120,8 +120,12 @@
   height: 15%;
   /* background-color: red; */
   /* border: 1px solid; */
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .weather {
@@ -147,56 +151,4 @@
 
 .linkto {
   background-color: lightpink;
-}
-
-/* SideMusic */
-.sideMusic {
-  height: 100%;
-  background-color: lightblue;
-}
-
-.sideMusic-music-info {
-  background-color: pink;
-  height: 60%;
-}
-
-.sideMusic-title {
-  height: 60%;
-  /* background-color: red; */
-  display: flex;
-  justify-content: center; /* 수평 가운데 정렬 */
-  align-items: center; /* 수직 가운데 정렬 */
-
-  /* overflow: hidden;
-  position: relative;
-  white-space: nowrap; */
-}
-
-/* .slide-text {
-  position: absolute;
-  animation: slideText 10s linear infinite;
-}
-
-@keyframes slideText {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-110%);
-  }
-} */
-
-.sideMusic-time {
-  height: 40%;
-  background-color: yellow;
-}
-
-.sideMusic-control-btn {
-  background-color: gray;
-  height: 40%;
-}
-
-.sideMusic-youtube {
-  background-color: green;
-  height: 10%;
 }

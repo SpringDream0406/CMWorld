@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { playlists, musicData } from "../musicData";
+import { playlists, musicData } from "../../../musicData";
 
 const JukboxLeft = () => {
   const dispatch = useDispatch();
