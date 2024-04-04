@@ -47,7 +47,7 @@ export const musicData = [
     playlists: [playlists[3]],
   },
   {
-    videoId: "K6BRna4_bmg",
+    videoId: "TBD3WRO7Iy8",
     artist: "bbno$",
     title: "Rich Brian",
     playlists: [playlists[3]],
@@ -69,12 +69,6 @@ export const musicData = [
     artist: "청하",
     title: "I'm Ready",
     playlists: [playlists[4], playlists[7]],
-  },
-  {
-    videoId: "w7adx_CuApw",
-    artist: "버즈",
-    title: "나에게로 떠나는 여행",
-    playlists: [playlists[6]],
   },
   {
     videoId: "K7J_0DDw2RU",

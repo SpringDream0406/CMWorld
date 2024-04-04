@@ -29,4 +29,16 @@ export class Utils {
       return playerRef.current.internalPlayer;
     }
   }
+
+  static shufflePlaylist = (playlist) => {
+    const shuffledPlaylist = [...playlist];
+    for (let i = shuffledPlaylist.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledPlaylist[i], shuffledPlaylist[j]] = [
+        shuffledPlaylist[j],
+        shuffledPlaylist[i],
+      ];
+    }
+    return shuffledPlaylist;
+  };
 }

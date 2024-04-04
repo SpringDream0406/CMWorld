@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import "../../styles/Main.css";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
@@ -13,7 +13,7 @@ const Main = () => {
   const [backgroundImage, setBackgroundImage] = useState(
     "/images/backgrounds/clear.gif"
   );
-  const nowWeather = useSelector((state) => state.nowWeather);
+  const nowWeather = useSelector((state) => state.music.nowWeather);
   useEffect(() => {
     if (!Utils.isEmptyObject(nowWeather)) {
       const weather = nowWeather.weather[0].main;

@@ -7,7 +7,7 @@ export class PlayerUtils {
     this.setCurrentVideoIndex = setCurrentVideoIndex;
   }
 
-  makeSoingInfo() {
+  makeSongInfo() {
     if (this.playlist.length > 0 && !Utils.isEmptyObject(this.playlist)) {
       const title = this.playlist[this.currentVideoIndex].title;
       const artist = this.playlist[this.currentVideoIndex].artist;
@@ -44,12 +44,11 @@ export class PlayerUtils {
   }
 
   changeVideoIndex(playerRef, change) {
-    console.log(playerRef);
     this.setCurrentVideoIndex(
       (prevIndex) =>
         (prevIndex + change + this.playlist.length) % this.playlist.length
     );
-    if (this.currentVideoIndex === 0) {
+    if (this.playlist.length === 1) {
       this.playVideo(playerRef);
     }
   }

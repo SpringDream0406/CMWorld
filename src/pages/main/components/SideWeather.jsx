@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { getLocation } from "../../../services/geolocation";
 import { getWeather } from "../../../services/openWeather";
 import { Utils } from "../../../utils/utils";
+import { musicActions } from "../../../redux/reducer";
 
 const SideWeather = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const nowWeather = useSelector((state) => state.nowWeather);
+  const nowWeather = useSelector((state) => state.music.nowWeather);
 
   useEffect(() => {
     const moveGeoPage = (inputCode) => {
@@ -23,7 +24,7 @@ const SideWeather = () => {
           return;
         }
         const weatherData = await getWeather(geoLocation);
-        dispatch({ type: "NOWWEATHER", payload: weatherData.data });
+        dispatch(musicActions.setNowWeather(weatherData.data));
       } catch (err) {
         if (err.code) {
           moveGeoPage(err.code);

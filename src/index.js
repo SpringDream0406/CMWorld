@@ -12,7 +12,6 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <App />
-      {/* <Test /> */}
     </Provider>
   </BrowserRouter>
 );
