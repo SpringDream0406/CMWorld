@@ -345,7 +345,7 @@ export const musicData = [
     videoId: "g7R8YphsB2Y",
     artist: "KozyPop",
     title: "파란색",
-    playlists: [playlists[2], playlists[6], playlists[7]],
+    playlists: [playlists[2], playlists[4], playlists[6], playlists[7]],
   },
   {
     videoId: "VPo5vrntXZs",
@@ -1127,7 +1127,7 @@ export const musicData = [
     videoId: "qhiZMJ_BYJI",
     artist: "SG워너비",
     title: "멋지게 이별",
-    playlists: [playlists[1]],
+    playlists: [playlists[1], playlists[4]],
   },
   {
     videoId: "EzQsoZYY470",
@@ -1175,13 +1175,13 @@ export const musicData = [
     videoId: "mnpQsM-tqQU",
     artist: "윤하",
     title: "시간의 지평선",
-    playlists: [playlists[7]],
+    playlists: [playlists[4], playlists[7]],
   },
   {
     videoId: "A67RYFTImTQ",
     artist: "IVE",
     title: "Off The Record",
-    playlists: [playlists[2], playlists[7]],
+    playlists: [playlists[2], playlists[4], playlists[7]],
   },
   {
     videoId: "_pYY8p1gpmc",
@@ -1199,13 +1199,13 @@ export const musicData = [
     videoId: "ZlJNkflJjA4",
     artist: "IVE",
     title: "Mine",
-    playlists: [playlists[2], playlists[7]],
+    playlists: [playlists[2], playlists[4], playlists[7]],
   },
   {
     videoId: "sVbpvsrtTzM",
     artist: "크리스포터 & 청하",
     title: "When I Get Old",
-    playlists: [playlists[2], playlists[7]],
+    playlists: [playlists[2], playlists[4], playlists[7]],
   },
   {
     videoId: "dYIT_jeUBKg",

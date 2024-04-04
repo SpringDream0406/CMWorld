@@ -25,7 +25,7 @@ const SideMusic = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPlayerReady, setIsPlayerReady] = useState(false);
   const [isShuffleOn, setIsShuffleOn] = useState(
-    localStorage.getItem("isShuffleOn") === true ? true : false
+    localStorage.getItem("isShuffleOn") === "true"
   );
   const [shuffledPlaylist, setShuffledPlaylist] = useState([]);
   const [realPlaylist, setRealPlaylist] = useState();
@@ -36,12 +36,15 @@ const SideMusic = () => {
     [realPlaylist, currentVideoIndex, setCurrentVideoIndex]
   );
 
-  console.log(playlist);
+  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만기
+  useEffect(() => {
+    localStorage.setItem("playlist", JSON.stringify(playlist));
+    setShuffledPlaylist(Utils.shufflePlaylist(playlist));
+  }, [playlist]);
 
-  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하기
+  // 진짜 플레이 리스트 목록 업데이트 해주기
   useEffect(() => {
     setCurrentVideoIndex(0);
-    localStorage.setItem("playlist", JSON.stringify(playlist));
     setRealPlaylist(isShuffleOn ? shuffledPlaylist : playlist);
   }, [playlist, isShuffleOn, shuffledPlaylist]);
 
@@ -92,7 +95,8 @@ const SideMusic = () => {
     {
       onClick: () => {
         setIsShuffleOn(!isShuffleOn);
-        setShuffledPlaylist(Utils.shufflePlaylist(playlist));
+        setIsPlayerReady(false);
+        localStorage.setItem("isShuffleOn", !isShuffleOn);
       },
       icon: faShuffle,
       className: isShuffleOn ? "btn-active" : "",
@@ -101,7 +105,16 @@ const SideMusic = () => {
 
   // 플레이어 컨트롤 버튼 랜더링
   const playerBtn = buttonData.map(({ onClick, icon, className }, index) => (
-    <button key={index} onClick={onClick} disabled={!isPlayerReady}>
+    <button
+      key={index}
+      onClick={onClick}
+      disabled={
+        (index === 0 && playlist.length === 1) ||
+        (index === 3 && playlist.length === 1) ||
+        (index === 4 && playlist.length === 1) ||
+        !isPlayerReady
+      }
+    >
       <FontAwesomeIcon icon={icon} className={className} />
     </button>
   ));
@@ -136,7 +149,7 @@ const SideMusic = () => {
         setIsPlayerReady(true);
         setSongInfo(playerUtils.makeSongInfo());
       }}
-      // onStateChange={(e) => console.log(e)} 상태 따라 버튼 더 다양화 할지 생각 좀 해보고
+      // onStateChange={(e) => console.log(e)} // 상태 따라 버튼 더 다양화 할지 생각 좀 해보고
       onEnd={() => playerUtils.changeVideoIndex(playerRef, 1)}
       ref={playerRef}
     />

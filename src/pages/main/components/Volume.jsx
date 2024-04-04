@@ -39,11 +39,11 @@ const theme = createTheme({
   },
 });
 
-const localStorageVolume = localStorage.getItem("sidYoutubeMusicPlayerVolume");
-
 export default function InputSlider() {
   const [value, setValue] = React.useState(
-    localStorageVolume ? localStorageVolume : 10
+    localStorage.getItem("sidYoutubeMusicPlayerVolume")
+      ? parseInt(localStorage.getItem("sidYoutubeMusicPlayerVolume"))
+      : 10
   );
   const [previousVolume, setPreviousVolume] = React.useState(0); // 이전 볼륨 상태를 저장
   const [muted, setMuted] = React.useState(false);
