@@ -19,7 +19,6 @@
 
 .jukboxRight {
   height: 100%;
-  /* background-color: pink; */
   padding: 10px;
   overflow-y: auto;
 }
@@ -64,6 +63,7 @@
   align-items: center;
   border-bottom: dotted;
   padding: 5px;
+  white-space: nowrap;
 }
 
 .music-render div {
@@ -81,17 +81,13 @@
 
 .music-render > div:nth-child(1) {
   width: 5%;
-  /* background-color: red; */
 }
 .music-render > div:nth-child(2) {
   width: 5%;
-  /* background-color: orange; */
 }
 .music-render > div:nth-child(3) {
   width: 50%;
-  /* background-color: yellow; */
 }
 .music-render > div:nth-child(4) {
   width: 25%;
-  /* background-color: green; */
 }

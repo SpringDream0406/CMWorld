@@ -43,3 +43,82 @@ setSize(width, height): 플레이어의 크기를 설정합니다.
 setVolume(volume): 볼륨을 설정합니다.
 stopVideo(): 동영상을 정지합니다.
  */
+
+
+.current
+
+container
+: 
+div
+context
+: 
+{}
+createPlayer
+: 
+() => {…}
+destroyPlayer
+: 
+() => {…}
+destroyPlayerPromise
+: 
+undefined
+getInternalPlayer
+: 
+() => { return this.internalPlayer; }
+internalPlayer
+: 
+{cueVideoById: ƒ, loadVideoById: ƒ, cueVideoByUrl: ƒ, loadVideoByUrl: ƒ, playVideo: ƒ, …}
+onPlayerError
+: 
+event => {…}
+onPlayerPlaybackQualityChange
+: 
+event => {…}
+onPlayerPlaybackRateChange
+: 
+event => {…}
+onPlayerReady
+: 
+event => {…}
+onPlayerStateChange
+: 
+event => {…}
+props
+: 
+{className: 'sideMusic-youtube', videoId: 'YjcU-0YEr54', opts: {…}, onPlay: ƒ, onEnd: ƒ, …}
+refContainer
+: 
+container => { this.container = container; }
+refs
+: 
+{}
+resetPlayer
+: 
+() => this.destroyPlayer().then(this.createPlayer)
+state
+: 
+null
+updatePlayer
+: 
+() => {…}
+updateVideo
+: 
+() => {…}
+updater
+: 
+{isMounted: ƒ, enqueueSetState: ƒ, enqueueReplaceState: ƒ, enqueueForceUpdate: ƒ}
+_reactInternalInstance
+: 
+{_processChildContext: ƒ}
+_reactInternals
+: 
+FiberNode {tag: 1, key: null, stateNode: _YouTube, elementType: ƒ, type: ƒ, …}
+isMounted
+: 
+(...)
+replaceState
+: 
+(...)
+[[Prototype]]
+: 
+Component

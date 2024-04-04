@@ -10,18 +10,17 @@ import { useSelector } from "react-redux";
 import { Utils } from "../../utils/utils";
 
 const Main = () => {
-  const utils = useMemo(() => new Utils(), []);
   const [backgroundImage, setBackgroundImage] = useState(
     "/images/backgrounds/clear.gif"
   );
   const nowWeather = useSelector((state) => state.nowWeather);
   useEffect(() => {
-    if (!utils.isEmptyObject(nowWeather)) {
+    if (!Utils.isEmptyObject(nowWeather)) {
       const weather = nowWeather.weather[0].main;
       const imageURL = `/images/backgrounds/${weather}.gif`;
       setBackgroundImage(imageURL);
     }
-  }, [nowWeather, utils]);
+  }, [nowWeather]);
 
   return (
     <div

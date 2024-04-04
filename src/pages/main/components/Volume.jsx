@@ -39,7 +39,7 @@ const theme = createTheme({
 });
 
 export default function InputSlider() {
-  const [value, setValue] = React.useState(5);
+  const [value, setValue] = React.useState(15); // 볼륨 초기 값
   const [previousVolume, setPreviousVolume] = React.useState(0); // 이전 볼륨 상태를 저장
   const [muted, setMuted] = React.useState(false);
   const dispatch = useDispatch();

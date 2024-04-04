@@ -3,7 +3,7 @@ import "../../../styles/SideMusic.css";
 import { useSelector } from "react-redux";
 import YouTube from "react-youtube";
 import Volume from "./Volume";
-import { SideMusicUtils, PlayerControlBtn } from "../../../utils/sideMusic";
+import { PlayerUtils } from "../../../utils/playerUtils";
 import {
   faPlay,
   faPause,
@@ -15,22 +15,30 @@ import { Utils } from "../../../utils/utils";
 
 const SideMusic = () => {
   const playlist = useSelector((state) => state.playMusics);
+  const [songInfo, setSongInfo] = useState();
   const volume = useSelector((state) => state.volume);
   const playerRef = useRef(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [totalTime, setTotalTime] = useState("0:00");
-  const [playingTime, setPlayingTime] = useState("0:00");
   const [youTubeVideoSize, setYouTubeVideSize] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
-  const sideMusicUtils = useMemo(() => new SideMusicUtils(), []);
-  const playerControlBtn = useMemo(() => new PlayerControlBtn(), []);
-  const utils = new Utils();
-  const size = utils.getSize("music");
+  const [isPlayerReady, setIsPlayerReady] = useState(false);
+  const playerUtils = useMemo(
+    () =>
+      new PlayerUtils(
+        playlist,
+        currentVideoIndex,
+        setCurrentVideoIndex,
+        setIsVideoOpen
+      ),
+    [playlist, currentVideoIndex, setCurrentVideoIndex, setIsVideoOpen]
+  );
+  const youtubeBoxSize = Utils.getSize("music");
 
+  // 유튜브 창 설정
   const opts = {
     height: `${youTubeVideoSize}px`,
-    width: size ? size.width : 0,
+    width: youtubeBoxSize ? youtubeBoxSize.width : 0,
     playerVars: {
       autoplay: 1,
       controls: 1,
@@ -38,101 +46,75 @@ const SideMusic = () => {
     },
   };
 
-  const songInfo = sideMusicUtils.makeSoingInfo(playlist, currentVideoIndex);
-
+  // 플레이리스트 바뀌면 0번 인덱스로 바꾸기
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (playerRef.current) {
-        const playerControl = sideMusicUtils.getControl(playerRef);
-        sideMusicUtils.duration(playerControl, setTotalTime, setPlayingTime);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [playlist, currentVideoIndex, sideMusicUtils]);
+    setCurrentVideoIndex(0);
+  }, [playlist]);
 
-  const playPreviousVideo = () =>
-    playerControlBtn.playPreviousVideo(playlist.length, setCurrentVideoIndex);
-
-  const playNextVideo = () => {
-    playerControlBtn.playNextVideo(playlist.length, setCurrentVideoIndex);
-    if (currentVideoIndex === 0 && playerRef.current) {
-      const playerControl = sideMusicUtils.getControl(playerRef);
-      playerControl.playVideo();
-    }
-  };
-
-  const playVideo = () => {
-    if (playerRef.current) {
-      const playerControl = sideMusicUtils.getControl(playerRef);
-      playerControl.playVideo();
-      setIsPlaying(true);
-    }
-  };
-
-  const pauseVideo = () => {
-    if (playerRef.current) {
-      const playerControl = sideMusicUtils.getControl(playerRef);
-      playerControl.pauseVideo();
-      setIsPlaying(false);
-    }
-  };
+  // 볼륨컨트롤 지금은 isPlayerReady로 통일설 맞추고 있는데, localStorage의 유튜브뮤직꺼 건들게 되면 내용바뀔듯
   useEffect(() => {
     if (playerRef.current) {
-      const playerControl = sideMusicUtils.getControl(playerRef);
-      playerControl.setVolume(volume);
+      playerUtils.setVolume(playerRef, volume);
     }
-  }, [volume, sideMusicUtils]);
+  }, [volume, playerUtils, isPlayerReady]);
 
-  const openVideo = () => {
-    playerControlBtn.openVideo(setYouTubeVideSize, setIsVideoOpen, isVideoOpen);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      if (playerRef.current) {
-        const playerControl = sideMusicUtils.getControl(playerRef);
-        const playerState = await playerControl.getPlayerState();
-        setIsPlaying(playerState === 1 ? true : false);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [isPlaying, sideMusicUtils]);
+  // 플레이어 컨트롤 버튼들 랜더링할 데이터
+  const buttonData = [
+    {
+      onClick: () => {
+        playerUtils.changeVideoIndex(playerRef, -1);
+        setIsPlayerReady(false);
+      },
+      icon: faBackwardStep,
+      className: "backward-button",
+    },
+    {
+      onClick: () => playerUtils.pauseVideo(playerRef),
+      icon: faPause,
+      className: isPlaying ? "" : "btn-active",
+    },
+    {
+      onClick: () => playerUtils.playVideo(playerRef),
+      icon: faPlay,
+      className: isPlaying ? "btn-active" : "",
+    },
+    {
+      onClick: () => {
+        playerUtils.changeVideoIndex(playerRef, 1);
+        setIsPlayerReady(false);
+      },
+      icon: faForwardStep,
+      className: "forward-button",
+    },
+  ];
 
   return (
     <div className="sideMusic">
       <div className="flow-container">
-        <div className="flow-text" onClick={openVideo}>
-          <div className="flow-wrap">{songInfo}</div>
-          <div className="flow-wrap">{songInfo}</div>
-          <div className="flow-wrap">{songInfo}</div>
-          <div className="flow-wrap">{songInfo}</div>
+        <div
+          className="flow-text"
+          onClick={() => {
+            playerUtils.openVideo(
+              setYouTubeVideSize,
+              setIsVideoOpen,
+              isVideoOpen
+            );
+          }}
+        >
+          {Array.from({ length: 4 }, (_, index) => (
+            <div className="flow-wrap" key={index}>
+              {songInfo}
+            </div>
+          ))}
         </div>
       </div>
       <div className="sideMusic-mid">
-        <div className="sideMusic-time">
-          <div className="playingTime">{playingTime}</div>
-          <div className="">-</div>
-          <div className="totalTime">{totalTime}</div>
-        </div>
         <div className="sideMusic-control-btn">
-          <button onClick={playPreviousVideo}>
-            <FontAwesomeIcon icon={faBackwardStep} />
-          </button>
-          <button onClick={pauseVideo}>
-            <FontAwesomeIcon
-              icon={faPause}
-              className={isPlaying ? "" : "btn-active"}
-            />
-          </button>
-          <button onClick={playVideo}>
-            <FontAwesomeIcon
-              icon={faPlay}
-              className={isPlaying ? "btn-active" : ""}
-            />
-          </button>
-          <button onClick={playNextVideo}>
-            <FontAwesomeIcon icon={faForwardStep} />
-          </button>
+          {buttonData.map(({ onClick, icon, className }, index) => (
+            <button key={index} onClick={onClick} disabled={!isPlayerReady}>
+              <FontAwesomeIcon icon={icon} className={className} />
+            </button>
+          ))}
         </div>
       </div>
       <div className="sideMusic-volume">
@@ -145,7 +127,15 @@ const SideMusic = () => {
             className="sideMusic-youtube"
             videoId={playlist[currentVideoIndex].videoId}
             opts={opts}
-            onEnd={playNextVideo}
+            onError={(err) => console.log(err)}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onReady={() => {
+              setIsPlayerReady(true);
+              setSongInfo(playerUtils.makeSoingInfo());
+            }}
+            onStateChange={(e) => console.log(e)}
+            onEnd={() => playerUtils.changeVideoIndex(playerRef, 1)}
             ref={playerRef}
           />
         )}

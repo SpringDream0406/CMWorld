@@ -1,6 +1,7 @@
 import React from "react";
 import "../../../styles/Jukbox.css";
 import { useDispatch, useSelector } from "react-redux";
+import { Utils } from "../../../utils/utils";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ const JukboxRight = () => {
               <button onClick={() => playOneSong([music])}>▶️</button>
             </div>
             <div>{index + 1}</div>
-            <div>{music.title}</div>
-            <div>{music.artist}</div>
+            <div>{Utils.ellipsisText(music.title, 48)}</div>
+            <div>{Utils.ellipsisText(music.artist, 27)}</div>
           </div>
         ))}
       </div>

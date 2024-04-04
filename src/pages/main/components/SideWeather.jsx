@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "../../../styles/SideWeather.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getLocation } from "../../../services/geolocation";
@@ -9,7 +10,6 @@ const SideWeather = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const nowWeather = useSelector((state) => state.nowWeather);
-  const utils = new Utils();
 
   useEffect(() => {
     const moveGeoPage = (inputCode) => {
@@ -35,27 +35,32 @@ const SideWeather = () => {
     fetchDate();
   }, [dispatch, navigate]);
 
-  if (utils.isEmptyObject(nowWeather)) {
+  if (Utils.isEmptyObject(nowWeather)) {
     return <div>로딩중</div>;
   }
 
   const { name, weather, main, wind } = nowWeather;
-  const iconURL = ` https://openweathermap.org/img/wn/${weather[0].icon}.png`;
+  const weatherData = {
+    날씨: weather[0].main,
+    기온: `${main.temp} °C`,
+    체감: `${main.feels_like} °C`,
+    습도: `${main.humidity} %`,
+    풍속: `${wind.speed} m/s`,
+  };
+  const renderWeather = (weatherData) => {
+    return Object.entries(weatherData).map(([key, value]) => (
+      <div className="sideWeather-info" key={key}>
+        <div>{key}</div>
+        <div>:</div>
+        <div>{value}</div>
+      </div>
+    ));
+  };
 
   return (
-    <div>
-      <div>위치: {name}</div>
-      <div>
-        날씨: {weather[0].main} <img src={`${iconURL}`} alt="weatherIcon" />
-      </div>
-      <div>현재기온: {main.temp}</div>
-      <div>체감기온: {main.feels_like}</div>
-      <div>최고기온: {main.temp_max}</div>
-      <div>최저기온: {main.temp_min}</div>
-      <div>습도: {main.humidity}</div>
-      <div>기압: {main.pressure}</div>
-      <div>풍향: {wind.deg}</div>
-      <div>풍속: {wind.speed}</div>
+    <div className="sideWeather-box">
+      <div className="sideWeather-location">{name}</div>
+      <div className="sideWeather-InfoBox">{renderWeather(weatherData)}</div>
     </div>
   );
 };
