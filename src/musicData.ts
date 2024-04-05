@@ -1,4 +1,6 @@
-export const playlists = [
+import { MusicData } from "./interface/music";
+
+export const playlists: string[] = [
   "음악 전체 보기", // playlists[0]
   "싸이월드 감성", // playlists[1]
   "감성 & 느낌", // playlists[2]
@@ -9,7 +11,7 @@ export const playlists = [
   "2024 Pick", // playlists[7]
 ];
 
-export const musicData = [
+export const musicData: MusicData[] = [
   // {
   //   videoId: "",
   //   artist: "",

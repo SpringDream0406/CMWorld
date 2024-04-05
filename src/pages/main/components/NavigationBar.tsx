@@ -1,7 +1,7 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+import { Tags } from "../../../interface/main";
 
-const tags = {
+const tags: Tags = {
   "": "홈",
   profile: "프로필",
   project: "프로젝트",

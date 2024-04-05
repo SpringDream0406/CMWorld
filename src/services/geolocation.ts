@@ -1,27 +1,34 @@
-export const getLocation = async () => {
-  return new Promise((resolve, reject) => {
+import { Position, PositionError } from "../interface/service";
+
+export const getLocation = async (): Promise<Position | PositionError> => {
+  return new Promise<Position | PositionError>((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
-      (position) => resolve(getLatLot(position)),
-      (error) => reject(error)
+      (position: GeolocationPosition) => resolve(getLatLot(position)),
+      (error: PositionError) => reject(error)
     );
   });
 };
 
-const getLatLot = (position) => {
-  const positionObj = {
+const getLatLot = (position: GeolocationPosition): Position | PositionError => {
+  const positionObj: Position = {
     latitude: position.coords.latitude,
     longitude: position.coords.longitude,
   };
 
-  const isCheckdLocation = checkLocation(positionObj);
+  const isCheckdLocation: boolean = checkLocation(positionObj);
   if (isCheckdLocation === false) {
-    // console.error("사용자 위치가 한국이 아닙니다.");
     return { code: 10 };
   }
   return positionObj;
 };
 
-const checkLocation = ({ latitude, longitude }) => {
+const checkLocation = ({
+  latitude,
+  longitude,
+}: {
+  latitude: number;
+  longitude: number;
+}): boolean => {
   if (
     // 극동: 경상북도 울릉군의 독도 동단 동경 131° 52′20" → 131.87222222
     // 극서: 평안북도 용천군 신도면 마안도 서단 동경 124° 11′45" → 124.19583333
@@ -31,5 +38,7 @@ const checkLocation = ({ latitude, longitude }) => {
     !(longitude >= 124.19583333 && longitude <= 131.87222222)
   ) {
     return false;
+  } else {
+    return true;
   }
 };
