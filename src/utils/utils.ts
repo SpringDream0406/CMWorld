@@ -1,6 +1,8 @@
 import React from "react";
 import { MusicData } from "../interface/music";
 import { NavigateFunction } from "react-router-dom";
+import { musicActions } from "../redux/reducer";
+import { WeatherData } from "../interface/main";
 
 export class Utils {
   static isEmptyObject(obj: Record<string, any>): boolean {
@@ -50,5 +52,36 @@ export class Utils {
 
   static moveGeoPage = (navigate: NavigateFunction, inputCode: number) => {
     navigate("geolocation", { state: { code: inputCode } });
+  };
+
+  static filterShowData = (
+    dispatch: any,
+    playlistName: string,
+    musicData: MusicData[]
+  ): void => {
+    dispatch(musicActions.setSelectedPlaylist(playlistName));
+    if (playlistName === "음악 전체 보기") {
+      dispatch(musicActions.setMusicData(musicData));
+      return;
+    }
+    const filteredMusic = musicData.filter((music) =>
+      music.playlists.includes(playlistName)
+    );
+    dispatch(musicActions.setMusicData(filteredMusic));
+  };
+
+  static playSong = (dispatch: any, music: MusicData[]): void => {
+    dispatch(musicActions.setPlayMusics(music));
+  };
+
+  static changeBackground = (
+    setBackgroundImage: any,
+    nowWeather: WeatherData
+  ): void => {
+    if (!Utils.isEmptyObject(nowWeather)) {
+      const weather = nowWeather.weather[0].main;
+      const imageURL = `/images/backgrounds/${weather}.gif`;
+      setBackgroundImage(imageURL);
+    }
   };
 }

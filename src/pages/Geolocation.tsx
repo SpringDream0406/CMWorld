@@ -7,6 +7,7 @@ const Geolocation = () => {
   const codeNum = location.state.code;
   let message1 = "";
   let message2 = "";
+
   switch (codeNum) {
     case 1:
       message1 = "'사용자의 위치정보 접근 거부'";

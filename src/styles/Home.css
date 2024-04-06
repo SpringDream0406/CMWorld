@@ -1,5 +1,4 @@
 .wrapper__left__header {
-  /* background-color: pink; */
   height: 30%;
   display: flex;
   flex-direction: column;
@@ -13,23 +12,83 @@
 }
 
 .wrapper__left__body {
-  /* background-color: red; */
   height: 70%;
   display: flex;
   flex-direction: column;
 }
 
+.img_profile {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.img_profile img {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
 .introduce {
   height: 85%;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeMessage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.emailAddress {
+  color: navy;
+  font-size: 0.8rem;
+  font-weight: 1000;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .sites {
   height: 15%;
-  background-color: yellow;
 }
 
-.email p {
-  color: navy;
-  font-weight: bold;
+/* HomeRight */
+.home-right {
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: pink; */
+}
+
+.home-right-notice {
+  /* background-color: lightblue; */
+  height: 25%;
+}
+
+.home-right-notice-title {
+  height: 20%;
+  font-size: 1.5rem;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.5rem;
+}
+.home-right-notice-content {
+  height: 80%;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.home-right-notice-detail {
+  /* background-color: lightgreen; */
+  height: 70%;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }

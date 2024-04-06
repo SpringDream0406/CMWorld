@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 .background {
@@ -27,6 +28,7 @@
   border: 2px dashed lightgray;
   border-radius: 15px;
   padding: 10px;
+  display: flex;
 }
 
 .outerbox {
@@ -77,14 +79,14 @@
 
 /* 네이게이션바 */
 .navigation {
-  width: 72px;
-  height: 380px;
+  /* width: 72px; */
+  height: 23rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: absolute;
-  right: 377px;
-  top: 100px;
+  position: relative;
+  right: 1.93rem;
+  top: 3rem;
 }
 
 .navigation__item {
@@ -93,7 +95,7 @@
   background-color: #298eb5;
   border: 1px solid black;
   color: white;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
   border-left: none;
   font-size: 15px;
   text-align: center;
@@ -109,7 +111,7 @@
 /* 사이드 */
 .side {
   width: 20%;
-  padding: 10px 10px 10px 50px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -128,7 +130,7 @@
 }
 
 .weather {
-  margin-top: 150px;
+  margin-top: 9rem;
   height: 24%;
   width: 70%;
   border-radius: 1rem;
@@ -163,7 +165,7 @@
 
 /* geo */
 .geolocation span {
-  font-size: 30px;
+  font-size: 15rem;
 }
 
 .linkto {

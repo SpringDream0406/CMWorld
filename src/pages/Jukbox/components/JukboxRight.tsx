@@ -1,27 +1,28 @@
-import React from "react";
 import "../../../styles/Jukbox.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Utils } from "../../../utils/utils";
-import { musicActions } from "../../../redux/reducer";
+import { RootState } from "../../../redux/store";
+import { MusicData } from "../../../interface/music";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
-  const musicData = useSelector((state) => state.music.musicData);
-  const selectedPlaylist = useSelector((state) => state.music.selectedPlaylist);
-
-  // 플레이 버튼들 동작
-  const playSong = (music) => {
-    dispatch(musicActions.setPlayMusics(music));
-  };
+  const musicData: MusicData[] = useSelector(
+    (state: RootState) => state.music.musicData
+  );
+  const selectedPlaylist: string = useSelector(
+    (state: RootState) => state.music.selectedPlaylist
+  );
 
   // JukBoxLeft에서 선택 플레이리스트의 뮤직들 랜더링
-  const renderMusicData = (data) => {
+  const renderMusicData = (data: MusicData[]) => {
     return (
       <div>
         {data.map((music, index) => (
           <div key={index} className={"music-render"}>
             <div>
-              <button onClick={() => playSong([music])}>▶️</button>
+              <button onClick={() => Utils.playSong(dispatch, [music])}>
+                ▶️
+              </button>
             </div>
             <div>{index + 1}</div>
             <div>{Utils.ellipsisText(music.title, 48)}</div>
@@ -37,7 +38,7 @@ const JukboxRight = () => {
     <div className="jukboxRight">
       <div className="music__table">
         <div className="music-play-all">
-          <button onClick={() => playSong(musicData)}>
+          <button onClick={() => Utils.playSong(dispatch, musicData)}>
             <span>
               ▶️ {selectedPlaylist} {musicData.length}곡
             </span>

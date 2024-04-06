@@ -8,18 +8,16 @@ import NavigationBar from "./components/NavigationBar";
 import SideClock from "./components/SideClock";
 import { useSelector } from "react-redux";
 import { Utils } from "../../utils/utils";
+import { RootState } from "../../redux/store";
 
 const Main = () => {
-  const [backgroundImage, setBackgroundImage] = useState(
+  const [backgroundImage, setBackgroundImage] = useState<string>(
     "/images/backgrounds/clear.gif"
   );
-  const nowWeather = useSelector((state) => state.music.nowWeather);
+  const nowWeather = useSelector((state: RootState) => state.music.nowWeather);
+
   useEffect(() => {
-    if (!Utils.isEmptyObject(nowWeather)) {
-      const weather = nowWeather.weather[0].main;
-      const imageURL = `/images/backgrounds/${weather}.gif`;
-      setBackgroundImage(imageURL);
-    }
+    Utils.changeBackground(setBackgroundImage, nowWeather);
   }, [nowWeather]);
 
   return (
@@ -32,11 +30,11 @@ const Main = () => {
           <div className="outerbox">
             <div className="wrapper">
               <Outlet />
-              <NavigationBar />
             </div>
           </div>
         </div>
       </div>
+      <NavigationBar />
       <div className="side">
         <div className="music" id="music">
           <SideMusic />

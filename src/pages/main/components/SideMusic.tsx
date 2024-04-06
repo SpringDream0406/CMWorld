@@ -13,22 +13,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Utils } from "../../../utils/utils";
+import { RootState } from "../../../redux/store";
+import { MusicData } from "../../../interface/music";
+import { YoutubeControl } from "../../../utils/youtubeControl";
 
 const SideMusic = () => {
-  const playlist = useSelector((state) => state.music.playMusics);
-  const [songInfo, setSongInfo] = useState();
-  const volume = useSelector((state) => state.music.volume);
-  const playerRef = useRef(null);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [youTubeVideoSize, setYouTubeVideSize] = useState(0);
-  const [isVideoOpen, setIsVideoOpen] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayerReady, setIsPlayerReady] = useState(false);
-  const [isShuffleOn, setIsShuffleOn] = useState(
+  const playlist: MusicData[] = useSelector(
+    (state: RootState) => state.music.playMusics
+  );
+  const [songInfo, setSongInfo] = useState<string>();
+  const volume: number = useSelector((state: RootState) => state.music.volume);
+  const playerRef = useRef<YouTube>(null);
+  const [youtubeController, setYoutubeController] = useState<YouTube | null>(
+    null
+  );
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+  const [youTubeVideoSize, setYouTubeVideSize] = useState<number>(0);
+  const [isVideoOpen, setIsVideoOpen] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
+  const [isShuffleOn, setIsShuffleOn] = useState<boolean>(
     localStorage.getItem("isShuffleOn") === "true"
   );
-  const [shuffledPlaylist, setShuffledPlaylist] = useState([]);
-  const [realPlaylist, setRealPlaylist] = useState();
+  const [shuffledPlaylist, setShuffledPlaylist] = useState<MusicData[]>([]);
+  const [realPlaylist, setRealPlaylist] = useState<MusicData[]>([]);
   const youtubeBoxSize = Utils.getSize("music");
   const playerUtils = useMemo(
     () =>
@@ -36,15 +44,26 @@ const SideMusic = () => {
     [realPlaylist, currentVideoIndex, setCurrentVideoIndex]
   );
 
-  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만기
+  const youtubeControl = useMemo(
+    () => new YoutubeControl(setCurrentVideoIndex, setYoutubeController),
+    []
+  );
+
+  // 따로 빼려고 했더니 볼륨이 고장나네..
   useEffect(() => {
+    if (playerRef.current)
+      setYoutubeController(playerRef.current.internalPlayer);
+  }, [isPlayerReady, playlist]);
+
+  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
+  useEffect(() => {
+    setCurrentVideoIndex(0);
     localStorage.setItem("playlist", JSON.stringify(playlist));
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
   }, [playlist]);
 
   // 진짜 플레이 리스트 목록 업데이트 해주기
   useEffect(() => {
-    setCurrentVideoIndex(0);
     setRealPlaylist(isShuffleOn ? shuffledPlaylist : playlist);
   }, [playlist, isShuffleOn, shuffledPlaylist]);
 
@@ -68,25 +87,25 @@ const SideMusic = () => {
   const buttonData = [
     {
       onClick: () => {
-        playerUtils.changeVideoIndex(playerRef, -1);
+        youtubeControl.changeVideoIndex(youtubeController, playlist, -1);
         setIsPlayerReady(false);
       },
       icon: faBackwardStep,
       className: "",
     },
     {
-      onClick: () => playerUtils.pauseVideo(playerRef),
+      onClick: () => youtubeControl.pause(youtubeController),
       icon: faPause,
       className: isPlaying ? "" : "btn-active",
     },
     {
-      onClick: () => playerUtils.playVideo(playerRef),
+      onClick: () => youtubeControl.play(youtubeController),
       icon: faPlay,
       className: isPlaying ? "btn-active" : "",
     },
     {
       onClick: () => {
-        playerUtils.changeVideoIndex(playerRef, 1);
+        youtubeControl.changeVideoIndex(youtubeController, playlist, 1);
         setIsPlayerReady(false);
       },
       icon: faForwardStep,
@@ -96,7 +115,7 @@ const SideMusic = () => {
       onClick: () => {
         setIsShuffleOn(!isShuffleOn);
         setIsPlayerReady(false);
-        localStorage.setItem("isShuffleOn", !isShuffleOn);
+        localStorage.setItem("isShuffleOn", String(!isShuffleOn));
       },
       icon: faShuffle,
       className: isShuffleOn ? "btn-active" : "",
@@ -121,10 +140,8 @@ const SideMusic = () => {
 
   // 볼륨컨트롤
   useEffect(() => {
-    if (playerRef.current) {
-      playerUtils.setVolume(playerRef, volume);
-    }
-  }, [volume, playerUtils, isPlayerReady]);
+    if (youtubeController) youtubeControl.setVolume(youtubeController, volume);
+  }, [volume, youtubeControl, youtubeController, isPlayerReady]);
 
   // 유튜브
   const opts = {
@@ -142,15 +159,26 @@ const SideMusic = () => {
       className="sideMusic-youtube"
       videoId={realPlaylist[currentVideoIndex].videoId}
       opts={opts}
-      onError={(err) => console.log(err)}
+      onError={(err) => console.log("err", err)}
       onPlay={() => setIsPlaying(true)}
       onPause={() => setIsPlaying(false)}
-      onReady={() => {
-        setIsPlayerReady(true);
-        setSongInfo(playerUtils.makeSongInfo());
-      }}
-      // onStateChange={(e) => console.log(e)} // 상태 따라 버튼 더 다양화 할지 생각 좀 해보고
-      onEnd={() => playerUtils.changeVideoIndex(playerRef, 1)}
+      onReady={() => {}} // 가끔 제대로 작동 안함
+      onStateChange={(state) => {
+        if (state.data === 1 || 2) {
+          setIsPlayerReady(true);
+          setSongInfo(playerUtils.makeSongInfo());
+        }
+        // console.log("stateChaged", state);
+        // 1 –시작되지 않음
+        // 0 – 종료
+        // 1 – 재생 중
+        // 2 – 일시중지
+        // 3 – 버퍼링
+        // 5 – 동영상 신호
+      }} // 상태 따라 버튼 더 다양화 할지 생각 좀 해보기
+      onEnd={() =>
+        youtubeControl.changeVideoIndex(youtubeController, playlist, 1)
+      }
       ref={playerRef}
     />
   );

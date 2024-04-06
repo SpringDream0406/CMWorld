@@ -724,12 +724,6 @@ export const musicData: MusicData[] = [
     playlists: [playlists[6]],
   },
   {
-    videoId: "4duD8KFRUC8",
-    artist: "거미",
-    title: "기억상실",
-    playlists: [playlists[6]],
-  },
-  {
     videoId: "Tgmet1-9B-A",
     artist: "거미",
     title: "미안해요 (feat. T.O.P)",

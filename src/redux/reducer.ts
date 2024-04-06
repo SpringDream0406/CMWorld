@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { WeatherData } from "../interface/main";
 import { MusicData } from "../interface/music";
-import { musicData } from "../musicData";
 
 interface MusicState {
   nowWeather: WeatherData;
@@ -20,7 +19,7 @@ const localStorageVolume = parseInt(
 
 let initialState: MusicState = {
   nowWeather: {},
-  musicData: musicData,
+  musicData: [],
   selectedPlaylist: "음악 전체 보기",
   playMusics: localStoragePlaylist ? localStoragePlaylist : [],
   volume: localStorageVolume,
