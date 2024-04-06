@@ -1,8 +1,9 @@
-import "../../styles/Home.css";
-import Profile from "./components/Profile";
-import Introduce from "./components/Introduce";
-import OpenSite from "../../components/OpenSite";
-import HomeRight from "./components/HomeRight";
+import "../styles/Home.css";
+import Profile from "../components/home//Profile";
+import Introduce from "../components/home/Introduce";
+import OpenSite from "../components/OpenSite";
+import HomeRight from "../components/home/HomeRight";
+import { homeOpenSiteData } from "../data/openSiteData";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
           </div>
           <div className="wrapper__left__body">
             <Introduce />
-            <OpenSite />
+            <OpenSite openSiteData={homeOpenSiteData} />
           </div>
         </div>
       </div>

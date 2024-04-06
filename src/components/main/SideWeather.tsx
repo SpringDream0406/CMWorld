@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import "../../../styles/SideWeather.css";
+import "../../styles/SideWeather.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getLocation } from "../../../services/geolocation";
-import { getWeather } from "../../../services/openWeather";
-import { Utils } from "../../../utils/utils";
-import { musicActions } from "../../../redux/reducer";
-import { WeatherData } from "../../../interface/main";
-import { RootState } from "../../../redux/store";
-import { Position, PositionError } from "../../../interface/service";
+import { getLocation } from "../../services/geolocation";
+import { getWeather } from "../../services/openWeather";
+import { Utils } from "../../utils/utils";
+import { musicActions } from "../../redux/reducer";
+import { WeatherData } from "../../interface/main";
+import { RootState } from "../../redux/store";
+import { Position, PositionError } from "../../interface/service";
 
 const SideWeather = () => {
   const navigate = useNavigate();

@@ -36,7 +36,7 @@
   height: 100%;
   border: 2px solid;
   border-radius: 15px;
-  background-color: white;
+  background-color: #eeeeee;
 }
 
 .wrapper {
@@ -50,31 +50,31 @@
 .wrapper__left {
   width: 20%;
   height: 100%;
-  /* background-color: lightgray; */
+  padding: 0.3rem;
 }
 
 .main__left {
   height: 100%;
   border: 1px solid;
   border-radius: 15px;
-  padding: 10px;
+  padding: 0.5rem;
   margin-right: 5px;
-  /* background-color: red; */
+  background-color: white;
 }
 
 .wrapper__right {
   width: 80%;
   height: 100%;
-  /* background-color: lightblue; */
+  padding: 0.3rem;
 }
 
 .main__right {
   height: 100%;
   border: 1px solid;
   border-radius: 15px;
-  padding: 10px;
+  padding: 1rem;
   margin-right: 10px;
-  /* background-color: blue; */
+  background-color: white;
 }
 
 /* 네이게이션바 */
@@ -85,8 +85,8 @@
   flex-direction: column;
   justify-content: space-around;
   position: relative;
-  right: 1.93rem;
-  top: 3rem;
+  right: 3.13rem;
+  top: 3.5rem;
 }
 
 .navigation__item {
@@ -120,7 +120,7 @@
 
 .music {
   height: 15%;
-  width: 100%;
+  width: 70%;
   border-radius: 1rem;
   padding: 0.5rem;
   background-color: whitesmoke;

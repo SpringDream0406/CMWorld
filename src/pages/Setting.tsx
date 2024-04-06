@@ -1,22 +1,23 @@
-import React from "react";
-import JukboxLeft from "./components/JukboxLeft";
-import JukboxRight from "./components/JukboxRight";
+import "../styles/Setting.css";
+import { Link, Outlet } from "react-router-dom";
 
-const Jukbox = () => {
+const Setting = () => {
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <JukboxLeft />
+          <Link to="#">뮤직 플레이어</Link>
+          SettingLeft
         </div>
       </div>
       <div className="wrapper__right">
         <div className="main__right">
-          <JukboxRight />
+          <Outlet />
+          {/*  */}
         </div>
       </div>
     </>
   );
 };
 
-export default Jukbox;
+export default Setting;

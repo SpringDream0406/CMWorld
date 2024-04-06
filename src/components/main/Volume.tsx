@@ -8,7 +8,7 @@ import MuiInput from "@mui/material/Input";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import { useDispatch } from "react-redux";
-import { musicActions } from "../../../redux/reducer";
+import { musicActions } from "../../redux/reducer";
 
 const Input = styled(MuiInput)`
   width: 42px;

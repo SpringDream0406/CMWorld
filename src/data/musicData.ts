@@ -1,4 +1,4 @@
-import { MusicData } from "./interface/music";
+import { MusicData } from "../interface/music";
 
 export const playlists: string[] = [
   "음악 전체 보기", // playlists[0]

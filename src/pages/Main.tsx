@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import "../../styles/Main.css";
+import "../styles/Main.css";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import SideMusic from "./components/SideMusic";
-import SideWeather from "./components/SideWeather";
-import NavigationBar from "./components/NavigationBar";
-import SideClock from "./components/SideClock";
+import SideMusic from "../components/main/SideMusic";
+import SideWeather from "../components/main/SideWeather";
+import NavigationBar from "../components/main/NavigationBar";
+import SideClock from "../components/main/SideClock";
 import { useSelector } from "react-redux";
-import { Utils } from "../../utils/utils";
-import { RootState } from "../../redux/store";
+import { Utils } from "../utils/utils";
+import { RootState } from "../redux/store";
 
 const Main = () => {
   const [backgroundImage, setBackgroundImage] = useState<string>(

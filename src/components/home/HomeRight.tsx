@@ -7,10 +7,13 @@ const HomeRight = () => {
 
   return (
     <div className="home-right">
-      <div className="home-right-notice">
-        <div className="home-right-notice-title">공지사항</div>
-        <div className="home-right-notice-content">
-          <div>내용</div>
+      <div className="home-right-top">
+        <div className="home-right-notice">공지사항</div>
+        <div className="home-right-content">
+          <div className="home-right-notice-content">
+            <div>공지 내용</div>
+          </div>
+          <div className="home-right-pageSummary">게시판 게시물 숫자 요약</div>
         </div>
       </div>
       <div className="home-right-notice-detail">
@@ -30,8 +33,11 @@ const HomeRight = () => {
         {first}
         <br />
         <span>서로를 알아가는 좋은 시간이 되셨으면 좋겠습니다.</span>
-        <span></span>
-        <span></span>
+        <br />
+        <span>
+          현재 페이지는 일반적인 모니터 사이트 기준으로 제작 되어있습니다. (완성
+          후 지원사이즈 추가 예정)
+        </span>
       </div>
     </div>
   );

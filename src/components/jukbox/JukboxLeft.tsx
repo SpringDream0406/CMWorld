@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { playlists, musicData } from "../../../musicData";
-import { RootState } from "../../../redux/store";
-import { Utils } from "../../../utils/utils";
+import { playlists, musicData } from "../../data/musicData";
+import { RootState } from "../../redux/store";
+import { Utils } from "../../utils/utils";
 
 const JukboxLeft = () => {
   const dispatch = useDispatch();

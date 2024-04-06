@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import "../styles/components.css";
 import { Components } from "../utils/components";
-import { homeOpenSiteData } from "../data/openSiteData";
+import { OpenSiteData } from "../interface/components";
 
-const OpenSite = () => {
+const OpenSite = ({ openSiteData }: { openSiteData: OpenSiteData }) => {
   const siteRef = useRef<HTMLSelectElement>(null);
 
   const openStie = () => {
@@ -15,11 +15,11 @@ const OpenSite = () => {
   return (
     <div className="sites">
       <div>
-        <span>{homeOpenSiteData.title}</span>
+        <span>{openSiteData.title}</span>
       </div>
       <div>
         <select ref={siteRef}>
-          {homeOpenSiteData.selectOptions.map((options) => (
+          {openSiteData.selectOptions.map((options) => (
             <option key={options.value} value={options.value}>
               {options.name}
             </option>

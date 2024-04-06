@@ -42,7 +42,7 @@
 
 .emailAddress {
   color: navy;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 1000;
   margin-top: auto;
   margin-bottom: 1rem;
@@ -62,12 +62,12 @@
   /* background-color: pink; */
 }
 
-.home-right-notice {
+.home-right-top {
   /* background-color: lightblue; */
   height: 25%;
 }
 
-.home-right-notice-title {
+.home-right-notice {
   height: 20%;
   font-size: 1.5rem;
   /* background-color: yellow; */
@@ -76,11 +76,27 @@
   justify-content: center;
   padding-left: 0.5rem;
 }
-.home-right-notice-content {
+
+.home-right-content {
+  /* background-color: red; */
   height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home-right-notice-content {
+  width: 50%;
   border: 0.1rem solid black;
   border-radius: 1rem;
   padding: 0.5rem;
+}
+
+.home-right-pageSummary {
+  width: 45%;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  /* background-color: pink; */
 }
 
 .home-right-notice-detail {

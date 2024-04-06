@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Tags } from "../../../interface/main";
+import { Tags } from "../../interface/main";
 
 const tags: Tags = {
   "": "홈",
