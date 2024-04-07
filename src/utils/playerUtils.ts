@@ -24,4 +24,11 @@ export class PlayerUtils {
     setYouTubeVideSize(isVideoOpen ? 120 : 0);
     setIsVideoOpen(!isVideoOpen);
   }
+
+  changeVideoIndex(change: number) {
+    this.setCurrentVideoIndex(
+      (prevIndex: number) =>
+        (prevIndex + change + this.playlist.length) % this.playlist.length
+    );
+  }
 }

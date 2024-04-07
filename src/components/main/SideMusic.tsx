@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import ReactPlayer from "react-player";
 import "../../styles/SideMusic.css";
 import { useSelector } from "react-redux";
-import YouTube from "react-youtube";
 import Volume from "./Volume";
 import { PlayerUtils } from "../../utils/playerUtils";
 import {
@@ -15,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Utils } from "../../utils/utils";
 import { RootState } from "../../redux/store";
 import { IMusicData } from "../../interface/music";
-import { YoutubeControl } from "../../utils/youtubeControl";
 import { ISwitch } from "../../interface/setting";
 
 const SideMusic = () => {
@@ -27,10 +26,6 @@ const SideMusic = () => {
   );
   const [songInfo, setSongInfo] = useState<string>();
   const volume: number = useSelector((state: RootState) => state.music.volume);
-  const playerRef = useRef<YouTube>(null);
-  const [youtubeController, setYoutubeController] = useState<YouTube | null>(
-    null
-  );
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
   const [youTubeVideoSize, setYouTubeVideSize] = useState<number>(0);
   const [isVideoOpen, setIsVideoOpen] = useState<boolean>(true);
@@ -47,17 +42,6 @@ const SideMusic = () => {
       new PlayerUtils(realPlaylist, currentVideoIndex, setCurrentVideoIndex),
     [realPlaylist, currentVideoIndex, setCurrentVideoIndex]
   );
-
-  const youtubeControl = useMemo(
-    () => new YoutubeControl(setCurrentVideoIndex, setYoutubeController),
-    []
-  );
-
-  // 따로 빼려고 했더니 볼륨이 고장나네..
-  useEffect(() => {
-    if (playerRef.current)
-      setYoutubeController(playerRef.current.internalPlayer);
-  }, [isPlayerReady, playlist]);
 
   // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
@@ -78,6 +62,7 @@ const SideMusic = () => {
     <div
       className="flow-text"
       onClick={() => {
+        // 곡 정보 눌렀을 때 유튜브 창 표시
         playerUtils.openVideo(setYouTubeVideSize, setIsVideoOpen, isVideoOpen);
       }}
     >
@@ -93,25 +78,25 @@ const SideMusic = () => {
   const buttonData = [
     {
       onClick: () => {
-        youtubeControl.changeVideoIndex(youtubeController, playlist, -1);
+        playerUtils.changeVideoIndex(-1);
         setIsPlayerReady(false);
       },
       icon: faBackwardStep,
       className: "",
     },
     {
-      onClick: () => youtubeControl.pause(youtubeController),
+      onClick: () => setIsPlaying(false),
       icon: faPause,
       className: isPlaying ? "" : "btn-active",
     },
     {
-      onClick: () => youtubeControl.play(youtubeController),
+      onClick: () => setIsPlaying(true),
       icon: faPlay,
       className: isPlaying ? "btn-active" : "",
     },
     {
       onClick: () => {
-        youtubeControl.changeVideoIndex(youtubeController, playlist, 1);
+        playerUtils.changeVideoIndex(1);
         setIsPlayerReady(false);
       },
       icon: faForwardStep,
@@ -144,54 +129,28 @@ const SideMusic = () => {
     </button>
   ));
 
-  // 볼륨컨트롤
-  useEffect(() => {
-    if (youtubeController) youtubeControl.setVolume(youtubeController, volume);
-  }, [volume, youtubeControl, youtubeController, isPlayerReady]);
-
-  // 유튜브
-  const opts = {
-    height: `${youTubeVideoSize}px`,
-    width: youtubeBoxSize ? youtubeBoxSize.width : 0,
-    playerVars: {
-      autoplay: musicPlayerSetting["자동 재생"] ? 1 : 0,
-      controls: 1,
-      mute: 0,
-    },
-  };
-
-  const youtube = realPlaylist && realPlaylist[currentVideoIndex]?.videoId && (
-    <YouTube
-      className="sideMusic-youtube"
-      videoId={realPlaylist[currentVideoIndex].videoId}
-      opts={opts}
-      onError={(err) => console.log("err", err)}
+  const reactPlayer = (
+    <ReactPlayer
+      className="react-player"
+      url={realPlaylist[currentVideoIndex]?.url}
+      playing={isPlaying}
+      loop={true}
+      controls={true}
+      volume={volume / 100}
+      width={youtubeBoxSize.width}
+      height={youTubeVideoSize}
+      style={{ borderRadius: "1rem" }}
+      playsinline={true}
       onPlay={() => setIsPlaying(true)}
       onPause={() => setIsPlaying(false)}
-      onReady={() => setIsPlaying(false)} // 가끔 제대로 작동 안함
-      onStateChange={(state) => {
-        if (state.data === 1 || 2) {
-          setIsPlayerReady(true);
-          setSongInfo(playerUtils.makeSongInfo());
-          if (youtubeController)
-            youtubeControl.setVolume(youtubeController, volume);
-        } else if (state.data === 2) {
-          setIsPlaying(false);
-        } else {
-          setIsPlayerReady(false);
-        }
-        // console.log("stateChaged", state);
-        // 1 –시작되지 않음
-        // 0 – 종료
-        // 1 – 재생 중
-        // 2 – 일시중지
-        // 3 – 버퍼링
-        // 5 – 동영상 신호
-      }} // 상태 따라 버튼 더 다양화 할지 생각 좀 해보기
-      onEnd={() =>
-        youtubeControl.changeVideoIndex(youtubeController, playlist, 1)
-      }
-      ref={playerRef}
+      onReady={() => {
+        setIsPlayerReady(true);
+        setSongInfo(playerUtils.makeSongInfo());
+      }}
+      onEnded={() => {
+        playerUtils.changeVideoIndex(1);
+        setIsPlayerReady(false);
+      }}
     />
   );
 
@@ -205,7 +164,7 @@ const SideMusic = () => {
       <div className="sideMusic-volume">
         <Volume />
       </div>
-      <div className="sideMusic-youtube-wrapper">{youtube}</div>
+      <div className="sideMusic-reactPlayer-wrapper">{reactPlayer}</div>
     </div>
   );
 };

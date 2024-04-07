@@ -1,5 +1,5 @@
 export interface IMusicData {
-  videoId: string;
+  url: string;
   artist: string;
   title: string;
   playlists: string[];
