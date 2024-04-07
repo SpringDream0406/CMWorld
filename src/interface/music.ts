@@ -1,4 +1,4 @@
-export interface MusicData {
+export interface IMusicData {
   videoId: string;
   artist: string;
   title: string;

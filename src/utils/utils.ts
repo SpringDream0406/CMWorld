@@ -1,8 +1,8 @@
 import React from "react";
-import { MusicData } from "../interface/music";
+import { IMusicData } from "../interface/music";
 import { NavigateFunction } from "react-router-dom";
 import { musicActions } from "../redux/reducer";
-import { WeatherData } from "../interface/main";
+import { IWeatherData } from "../interface/main";
 
 export class Utils {
   static isEmptyObject(obj: Record<string, any>): boolean {
@@ -38,7 +38,7 @@ export class Utils {
     }
   }
 
-  static shufflePlaylist = (playlist: MusicData[]): MusicData[] => {
+  static shufflePlaylist = (playlist: IMusicData[]): IMusicData[] => {
     const shuffledPlaylist = [...playlist];
     for (let i = shuffledPlaylist.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -57,7 +57,7 @@ export class Utils {
   static filterShowData = (
     dispatch: any,
     playlistName: string,
-    musicData: MusicData[]
+    musicData: IMusicData[]
   ): void => {
     dispatch(musicActions.setSelectedPlaylist(playlistName));
     if (playlistName === "음악 전체 보기") {
@@ -70,13 +70,13 @@ export class Utils {
     dispatch(musicActions.setMusicData(filteredMusic));
   };
 
-  static playSong = (dispatch: any, music: MusicData[]): void => {
+  static playSong = (dispatch: any, music: IMusicData[]): void => {
     dispatch(musicActions.setPlayMusics(music));
   };
 
   static changeBackground = (
     setBackgroundImage: any,
-    nowWeather: WeatherData
+    nowWeather: IWeatherData
   ): void => {
     if (!Utils.isEmptyObject(nowWeather)) {
       const weather = nowWeather.weather[0].main;
@@ -84,4 +84,13 @@ export class Utils {
       setBackgroundImage(imageURL);
     }
   };
+
+  static getObjLocalData(id: string) {
+    const localData = localStorage.getItem(id);
+    if (localData) return JSON.parse(localData);
+  }
+
+  static setObjLocalData(id: string, data: any) {
+    localStorage.setItem(id, JSON.stringify(data));
+  }
 }

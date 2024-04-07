@@ -1,5 +1,5 @@
 import axios from "axios";
-import { WeatherData } from "../interface/main";
+import { IWeatherData } from "../interface/main";
 
 export const getWeather = async ({
   latitude,
@@ -7,7 +7,7 @@ export const getWeather = async ({
 }: {
   latitude: number;
   longitude: number;
-}): Promise<WeatherData | null> => {
+}): Promise<IWeatherData | null> => {
   const weatherAPIKEY = process.env.REACT_APP_WEATHER_API_KEY;
   const weaherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherAPIKEY}&units=metric&lang=kr`;
 

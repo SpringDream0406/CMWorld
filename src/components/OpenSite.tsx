@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import "../styles/components.css";
+import "../styles/Components.css";
 import { Components } from "../utils/components";
-import { OpenSiteData } from "../interface/components";
+import { IOpenSiteData } from "../interface/components";
 
-const OpenSite = ({ openSiteData }: { openSiteData: OpenSiteData }) => {
+const OpenSite = ({ openSiteData }: { openSiteData: IOpenSiteData }) => {
   const siteRef = useRef<HTMLSelectElement>(null);
 
   const openStie = () => {

@@ -1,16 +1,18 @@
-import { Position, PositionError } from "../interface/service";
+import { IPosition, IPositionError } from "../interface/service";
 
-export const getLocation = async (): Promise<Position | PositionError> => {
-  return new Promise<Position | PositionError>((resolve, reject) => {
+export const getLocation = async (): Promise<IPosition | IPositionError> => {
+  return new Promise<IPosition | IPositionError>((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
       (position: GeolocationPosition) => resolve(getLatLot(position)),
-      (error: PositionError) => reject(error)
+      (error: IPositionError) => reject(error)
     );
   });
 };
 
-const getLatLot = (position: GeolocationPosition): Position | PositionError => {
-  const positionObj: Position = {
+const getLatLot = (
+  position: GeolocationPosition
+): IPosition | IPositionError => {
+  const positionObj: IPosition = {
     latitude: position.coords.latitude,
     longitude: position.coords.longitude,
   };

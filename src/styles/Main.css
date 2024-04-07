@@ -103,7 +103,7 @@
   text-decoration: none;
 }
 
-.active {
+.navigation__item.active {
   color: black;
   background-color: white;
 }
@@ -170,4 +170,9 @@
 
 .linkto {
   background-color: lightpink;
+}
+
+.Information-icon:hover {
+  cursor: help;
+  color: pink;
 }

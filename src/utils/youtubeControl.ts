@@ -1,4 +1,4 @@
-import { MusicData } from "../interface/music";
+import { IMusicData } from "../interface/music";
 
 export class YoutubeControl {
   constructor(
@@ -16,8 +16,7 @@ export class YoutubeControl {
     if (controller) controller.setVolume(volume);
   }
 
-  changeVideoIndex(controller: any, playlist: MusicData[], change: number) {
-    this.setYoutubeController(null); // 이전 연결 정보로 요청 넣어서 먹통될때가 있는것 같아서 추가함
+  changeVideoIndex(controller: any, playlist: IMusicData[], change: number) {
     this.setCurrentVideoIndex(
       (prevIndex: number) =>
         (prevIndex + change + playlist.length) % playlist.length

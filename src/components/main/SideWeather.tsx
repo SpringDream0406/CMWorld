@@ -6,9 +6,9 @@ import { getLocation } from "../../services/geolocation";
 import { getWeather } from "../../services/openWeather";
 import { Utils } from "../../utils/utils";
 import { musicActions } from "../../redux/reducer";
-import { WeatherData } from "../../interface/main";
+import { IWeatherData } from "../../interface/main";
 import { RootState } from "../../redux/store";
-import { Position, PositionError } from "../../interface/service";
+import { IPosition, IPositionError } from "../../interface/service";
 
 const SideWeather = () => {
   const navigate = useNavigate();
@@ -18,12 +18,12 @@ const SideWeather = () => {
   useEffect(() => {
     const fetchDate = async () => {
       try {
-        const geoLocation: Position | PositionError = await getLocation(); // 위경도 요청
+        const geoLocation: IPosition | IPositionError = await getLocation(); // 위경도 요청
         if (geoLocation.code) {
           Utils.moveGeoPage(navigate, geoLocation.code); // 한국 아닌 경우
           return;
         }
-        const weatherData = await getWeather(geoLocation as Position); // 날씨 조회
+        const weatherData = await getWeather(geoLocation as IPosition); // 날씨 조회
         if (weatherData) {
           dispatch(musicActions.setNowWeather(weatherData)); // 배경 변경을 위해 redux로 보냄
         }
@@ -43,7 +43,7 @@ const SideWeather = () => {
   }
 
   const { name, weather, main, wind } = nowWeather;
-  const weatherData: WeatherData = {
+  const weatherData: IWeatherData = {
     날씨: weather[0].main,
     기온: `${main.temp} °C`,
     체감: `${main.feels_like} °C`,
@@ -51,7 +51,7 @@ const SideWeather = () => {
     풍속: `${wind.speed} m/s`,
   };
 
-  const renderWeather = (weatherData: WeatherData) => {
+  const renderWeather = (weatherData: IWeatherData) => {
     return Object.entries(weatherData).map(([key, value]) => (
       <div className="sideWeather-info" key={key}>
         <div>{key}</div>

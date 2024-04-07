@@ -1,9 +1,9 @@
-import { MusicData } from "../interface/music";
+import { IMusicData } from "../interface/music";
 import { Utils } from "./utils";
 
 export class PlayerUtils {
   constructor(
-    private playlist: MusicData[],
+    private playlist: IMusicData[],
     private currentVideoIndex: number,
     private setCurrentVideoIndex: any
   ) {}

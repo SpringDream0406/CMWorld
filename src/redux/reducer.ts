@@ -1,14 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { WeatherData } from "../interface/main";
-import { MusicData } from "../interface/music";
-
-interface MusicState {
-  nowWeather: WeatherData;
-  musicData: MusicData[];
-  selectedPlaylist: string;
-  playMusics: MusicData[];
-  volume: number;
-}
+import { IWeatherData } from "../interface/main";
+import { IMusicData } from "../interface/music";
 
 const localStoragePlaylist = JSON.parse(
   localStorage.getItem("playlist") || "[]"
@@ -17,7 +9,15 @@ const localStorageVolume = parseInt(
   localStorage.getItem("sidYoutubeMusicPlayerVolume") || "10"
 );
 
-let initialState: MusicState = {
+interface IMusicState {
+  nowWeather: IWeatherData;
+  musicData: IMusicData[];
+  selectedPlaylist: string;
+  playMusics: IMusicData[];
+  volume: number;
+}
+
+let initialState: IMusicState = {
   nowWeather: {},
   musicData: [],
   selectedPlaylist: "음악 전체 보기",
@@ -29,16 +29,16 @@ const musicSlice = createSlice({
   name: "music",
   initialState: initialState,
   reducers: {
-    setNowWeather(state, action: PayloadAction<WeatherData>) {
+    setNowWeather(state, action: PayloadAction<IWeatherData>) {
       state.nowWeather = action.payload;
     },
-    setMusicData(state, action: PayloadAction<MusicData[]>) {
+    setMusicData(state, action: PayloadAction<IMusicData[]>) {
       state.musicData = action.payload;
     },
     setSelectedPlaylist(state, action: PayloadAction<string>) {
       state.selectedPlaylist = action.payload;
     },
-    setPlayMusics(state, action: PayloadAction<MusicData[]>) {
+    setPlayMusics(state, action: PayloadAction<IMusicData[]>) {
       state.playMusics = action.payload;
     },
     setVolume(state, action: PayloadAction<number>) {

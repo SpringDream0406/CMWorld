@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "../../styles/SideMusic.css";
 import { useSelector } from "react-redux";
 import YouTube from "react-youtube";
@@ -14,12 +14,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Utils } from "../../utils/utils";
 import { RootState } from "../../redux/store";
-import { MusicData } from "../../interface/music";
+import { IMusicData } from "../../interface/music";
 import { YoutubeControl } from "../../utils/youtubeControl";
+import { ISwitch } from "../../interface/setting";
 
 const SideMusic = () => {
-  const playlist: MusicData[] = useSelector(
+  const playlist: IMusicData[] = useSelector(
     (state: RootState) => state.music.playMusics
+  );
+  const musicPlayerSetting: ISwitch = useSelector(
+    (state: RootState) => state.setting.musicPlayerSetting
   );
   const [songInfo, setSongInfo] = useState<string>();
   const volume: number = useSelector((state: RootState) => state.music.volume);
@@ -33,10 +37,10 @@ const SideMusic = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
   const [isShuffleOn, setIsShuffleOn] = useState<boolean>(
-    localStorage.getItem("isShuffleOn") === "true"
+    localStorage.getItem("isShuffleOn") === "true" || false
   );
-  const [shuffledPlaylist, setShuffledPlaylist] = useState<MusicData[]>([]);
-  const [realPlaylist, setRealPlaylist] = useState<MusicData[]>([]);
+  const [shuffledPlaylist, setShuffledPlaylist] = useState<IMusicData[]>([]);
+  const [realPlaylist, setRealPlaylist] = useState<IMusicData[]>([]);
   const youtubeBoxSize = Utils.getSize("music");
   const playerUtils = useMemo(
     () =>
@@ -58,9 +62,11 @@ const SideMusic = () => {
   // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
     setCurrentVideoIndex(0);
-    localStorage.setItem("playlist", JSON.stringify(playlist));
+    if (musicPlayerSetting["플레이리스트 저장"]) {
+      localStorage.setItem("playlist", JSON.stringify(playlist));
+    }
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
-  }, [playlist]);
+  }, [playlist]); // 세팅 의존성 설면 세팅 바뀔때마다 노래 변경되어서 안됨.
 
   // 진짜 플레이 리스트 목록 업데이트 해주기
   useEffect(() => {
@@ -148,7 +154,7 @@ const SideMusic = () => {
     height: `${youTubeVideoSize}px`,
     width: youtubeBoxSize ? youtubeBoxSize.width : 0,
     playerVars: {
-      autoplay: 1,
+      autoplay: musicPlayerSetting["자동 재생"] ? 1 : 0,
       controls: 1,
       mute: 0,
     },
@@ -162,11 +168,17 @@ const SideMusic = () => {
       onError={(err) => console.log("err", err)}
       onPlay={() => setIsPlaying(true)}
       onPause={() => setIsPlaying(false)}
-      onReady={() => {}} // 가끔 제대로 작동 안함
+      onReady={() => setIsPlaying(false)} // 가끔 제대로 작동 안함
       onStateChange={(state) => {
         if (state.data === 1 || 2) {
           setIsPlayerReady(true);
           setSongInfo(playerUtils.makeSongInfo());
+          if (youtubeController)
+            youtubeControl.setVolume(youtubeController, volume);
+        } else if (state.data === 2) {
+          setIsPlaying(false);
+        } else {
+          setIsPlayerReady(false);
         }
         // console.log("stateChaged", state);
         // 1 –시작되지 않음

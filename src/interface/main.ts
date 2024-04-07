@@ -1,7 +1,7 @@
-export interface Tags {
+export interface ITags {
   [key: string]: string;
 }
 
-export interface WeatherData {
+export interface IWeatherData {
   [key: string]: any;
 }

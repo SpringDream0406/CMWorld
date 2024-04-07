@@ -1,6 +1,24 @@
+/* 사이트 컴포넌트 */
+
 .sites {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 1rem;
+}
+
+/* 왼쪽 네비 페이지 컴포넌트 */
+
+.LeftNavPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.LeftNavPage-NavBtn {
+  background-color: pink;
+}
+
+.LeftNavPage-NavBtn.active {
+  background-color: black;
 }

@@ -2,11 +2,11 @@ import "../../styles/Jukbox.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Utils } from "../../utils/utils";
 import { RootState } from "../../redux/store";
-import { MusicData } from "../../interface/music";
+import { IMusicData } from "../../interface/music";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
-  const musicData: MusicData[] = useSelector(
+  const musicData: IMusicData[] = useSelector(
     (state: RootState) => state.music.musicData
   );
   const selectedPlaylist: string = useSelector(
@@ -14,7 +14,7 @@ const JukboxRight = () => {
   );
 
   // JukBoxLeft에서 선택 플레이리스트의 뮤직들 랜더링
-  const renderMusicData = (data: MusicData[]) => {
+  const renderMusicData = (data: IMusicData[]) => {
     return (
       <div>
         {data.map((music, index) => (
