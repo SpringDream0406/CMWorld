@@ -1,0 +1,105 @@
+.profileRight {
+  height: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.title {
+  padding: 0.3rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.profile-skills {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.profile-items {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+.profile-icons {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.profile-icons img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.profile-icons-title {
+  font-size: 1.1rem;
+}
+
+.profile-icons-date {
+  font-size: 0.6rem;
+  color: gray;
+}
+
+.profile-certification {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+/* Education */
+
+.profile-education {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.profile-edu-icons {
+  width: 9rem;
+  height: 6.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 3rem 1rem 0rem;
+  font-weight: 500;
+}
+
+.profile-edu-title {
+  height: 60%;
+  font-size: 1.5rem;
+  color: navy;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-edu-desc {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-edu-date {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  color: gray;
+}

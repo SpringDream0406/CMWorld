@@ -11,16 +11,12 @@ const localStorageVolume = parseInt(
 
 interface IMusicState {
   nowWeather: IWeatherData;
-  musicData: IMusicData[];
-  selectedPlaylist: string;
   playMusics: IMusicData[];
   volume: number;
 }
 
 let initialState: IMusicState = {
   nowWeather: {},
-  musicData: [],
-  selectedPlaylist: "음악 전체 보기",
   playMusics: localStoragePlaylist ? localStoragePlaylist : [],
   volume: localStorageVolume,
 };
@@ -31,12 +27,6 @@ const musicSlice = createSlice({
   reducers: {
     setNowWeather(state, action: PayloadAction<IWeatherData>) {
       state.nowWeather = action.payload;
-    },
-    setMusicData(state, action: PayloadAction<IMusicData[]>) {
-      state.musicData = action.payload;
-    },
-    setSelectedPlaylist(state, action: PayloadAction<string>) {
-      state.selectedPlaylist = action.payload;
     },
     setPlayMusics(state, action: PayloadAction<IMusicData[]>) {
       state.playMusics = action.payload;

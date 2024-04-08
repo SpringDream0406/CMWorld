@@ -28,7 +28,9 @@ function App() {
             <Route path="team" element={<TeamProject />} />
             <Route path="personal" element={<PersonalProject />} />
           </Route>
-          <Route path="jukbox" element={<Jukbox />} />
+          <Route path="jukbox" element={<Jukbox />}>
+            <Route path=":playlist" element={<Jukbox />} />
+          </Route>
           <Route path="playground" element={<Playground />} />
           <Route path="photo" element={<Photo />} />
           <Route path="guestbook" element={<Guestbook />} />

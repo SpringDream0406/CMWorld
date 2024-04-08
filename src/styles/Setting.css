@@ -2,5 +2,11 @@
   height: 100%;
   border-radius: 1rem;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
   /* background-color: pink; */
+}
+
+.settingswitchs {
+  margin-bottom: 2rem;
 }

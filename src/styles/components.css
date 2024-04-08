@@ -1,6 +1,61 @@
-/* 사이트 컴포넌트 */
+/* IntroLeftPage */
+.wrapper__left__header {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_profile img {
+  max-width: 170px;
+  max-height: auto;
+}
+
+.wrapper__left__body {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.img_profile {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.img_profile img {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.introduce {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeMessage {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  height: 100%;
+  /* background-color: pink; */
+}
+.welcomeMessage span {
+  margin-bottom: 0.1rem;
+}
+
+.emailAddress {
+  color: navy;
+  font-size: 0.7rem;
+  font-weight: 1000;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
 
 .sites {
+  height: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,10 +70,17 @@
   flex-direction: column;
 }
 
-.LeftNavPage-NavBtn {
-  background-color: pink;
+.LeftNavPage-Nav {
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: navy;
+  padding: 0.4rem;
 }
 
-.LeftNavPage-NavBtn.active {
-  background-color: black;
+.LeftNavPage-Nav.active {
+  background-color: lightblue;
 }

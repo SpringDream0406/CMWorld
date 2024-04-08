@@ -31,13 +31,6 @@ export class Utils {
     return `${minutes}:${remainingSeconds}`;
   }
 
-  // 수정 필요
-  static getControl(playerRef: React.RefObject<any>): any | undefined {
-    if (playerRef && playerRef.current) {
-      return playerRef.current.internalPlayer;
-    }
-  }
-
   static shufflePlaylist = (playlist: IMusicData[]): IMusicData[] => {
     const shuffledPlaylist = [...playlist];
     for (let i = shuffledPlaylist.length - 1; i > 0; i--) {
@@ -50,24 +43,24 @@ export class Utils {
     return shuffledPlaylist;
   };
 
-  static moveGeoPage = (navigate: NavigateFunction, inputCode: number) => {
+  static moveGeoPage = (
+    navigate: NavigateFunction,
+    inputCode: number
+  ): void => {
     navigate("geolocation", { state: { code: inputCode } });
   };
 
   static filterShowData = (
-    dispatch: any,
-    playlistName: string,
+    playlist: string | undefined,
     musicData: IMusicData[]
-  ): void => {
-    dispatch(musicActions.setSelectedPlaylist(playlistName));
-    if (playlistName === "음악 전체 보기") {
-      dispatch(musicActions.setMusicData(musicData));
-      return;
+  ): IMusicData[] => {
+    if (playlist === "total" || undefined) {
+      return musicData;
     }
     const filteredMusic = musicData.filter((music) =>
-      music.playlists.includes(playlistName)
+      music.playlists.includes(playlist as string)
     );
-    dispatch(musicActions.setMusicData(filteredMusic));
+    return filteredMusic;
   };
 
   static playSong = (dispatch: any, music: IMusicData[]): void => {
@@ -85,12 +78,12 @@ export class Utils {
     }
   };
 
-  static getObjLocalData(id: string) {
+  static getObjLocalData(id: string): any | undefined {
     const localData = localStorage.getItem(id);
     if (localData) return JSON.parse(localData);
   }
 
-  static setObjLocalData(id: string, data: any) {
+  static setObjLocalData(id: string, data: any): void {
     localStorage.setItem(id, JSON.stringify(data));
   }
 }

@@ -2,14 +2,15 @@ import { NavLink } from "react-router-dom";
 import { ITags } from "../interface/main";
 import "../styles/Components.css";
 
-const LeftNavPage = ({ tags }: { tags: ITags }) => {
+const LeftNavPage = ({ tags, url }: { tags: ITags; url: string }) => {
   return (
     <div className="LeftNavPage">
       {Object.entries(tags).map(([key, value]) => (
         <NavLink
-          to={`/setting/${key}`}
+          key={key}
+          to={`${url}${key}`}
           className={({ isActive }) =>
-            "LeftNavPage-NavBtn" + (isActive ? " active" : "")
+            "LeftNavPage-Nav" + (isActive ? " active" : "")
           }
         >
           {value}

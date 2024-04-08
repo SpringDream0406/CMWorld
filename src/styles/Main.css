@@ -6,7 +6,7 @@
 .background {
   width: 100vw;
   height: 100vh;
-  padding: 3% 5% 3% 15%;
+  padding: 3% 6% 3% 15%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -110,8 +110,8 @@
 
 /* 사이드 */
 .side {
-  width: 20%;
-  padding: 1rem;
+  width: 15%;
+  /* padding: 1rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -120,9 +120,9 @@
 
 .music {
   height: 15%;
-  width: 70%;
+  width: 90%;
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
   background-color: whitesmoke;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -132,7 +132,7 @@
 .weather {
   margin-top: 9rem;
   height: 24%;
-  width: 70%;
+  width: 75%;
   border-radius: 1rem;
   padding: 0.5rem;
   background-color: whitesmoke;
@@ -143,9 +143,11 @@
 
 .time {
   height: 9.5%;
+  width: 70%;
   margin-top: 10rem;
   border-radius: 1rem;
   padding: 0.5rem;
+  overflow: hidden;
   background-color: whitesmoke;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -157,6 +159,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .nowTime {

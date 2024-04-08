@@ -13,7 +13,7 @@ import {
 const MusicPlayerSetting = () => {
   const dispatch = useDispatch();
   const initialMusicSetting = useSelector(
-    (state: RootState) => state.setting.musicPlayerSetting
+    (state: RootState) => state.setting.musicPlayerSetting // local에 있으면 그거 없으면 false들
   );
   const [musicPlayerSetting, setMusicPlayerSetting] =
     useState<ISwitch>(initialMusicSetting);
@@ -30,6 +30,7 @@ const MusicPlayerSetting = () => {
     dispatch(settingAction.setMusicPlayerSetting(updatedSetting));
   };
 
+  // 본문
   return (
     <div className="musicPlayerSetting">
       <div>
@@ -39,11 +40,6 @@ const MusicPlayerSetting = () => {
           switchInfoSpanTitle={switchInfoSpanTitle}
           onChange={handleMusicPlayerSetting}
         />
-        {/* 프리스타일 Y 플레이 목록으로 넘겨주기 */}
-        {/* 자동 재생 <button>play</button>{" "}
-        <span title="asdfa">
-          <FontAwesomeIcon icon={faCircleQuestion} />
-        </span> */}
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const first = (
   <>
     <span>설정 저장이 안 되어 있는 걸로 보아 첫 방문 사용자로 보이십니다.</span>
     <span>
-      <Link to="setting">설정 페이지</Link>
+      <Link to="/setting">설정 페이지</Link>
       <span>에 방문하여 사용 경험을 증가시키기 위한 세팅을 해보세요.</span>
     </span>
   </>

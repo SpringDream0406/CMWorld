@@ -24,7 +24,7 @@ const SettingSwitch = ({
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
-    <div>
+    <div className="settingswitchs">
       <FormControl component="fieldset" variant="standard">
         <FormLabel component="legend">{switchInfo.title}</FormLabel>
         <FormGroup>

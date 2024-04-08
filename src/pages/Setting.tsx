@@ -4,13 +4,11 @@ import LeftNavPage from "../components/LeftNavPage";
 import { settingtags } from "../data/leftNavPageData";
 
 const Setting = () => {
-  console.log(settingtags);
-
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <LeftNavPage tags={settingtags} />
+          <LeftNavPage tags={settingtags} url={"/setting/"} />
         </div>
       </div>
       <div className="wrapper__right">

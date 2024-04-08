@@ -1,17 +1,15 @@
 import "../../styles/Jukbox.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Utils } from "../../utils/utils";
-import { RootState } from "../../redux/store";
 import { IMusicData } from "../../interface/music";
+import { useParams } from "react-router-dom";
+import { musicData, playlists } from "../../data/musicData";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
-  const musicData: IMusicData[] = useSelector(
-    (state: RootState) => state.music.musicData
-  );
-  const selectedPlaylist: string = useSelector(
-    (state: RootState) => state.music.selectedPlaylist
-  );
+  const { playlist } = useParams();
+  const selectedPlaylist = playlist || "total";
+  const filteredMusicData = Utils.filterShowData(selectedPlaylist, musicData);
 
   // JukBoxLeft에서 선택 플레이리스트의 뮤직들 랜더링
   const renderMusicData = (data: IMusicData[]) => {
@@ -38,9 +36,9 @@ const JukboxRight = () => {
     <div className="jukboxRight">
       <div className="music__table">
         <div className="music-play-all">
-          <button onClick={() => Utils.playSong(dispatch, musicData)}>
+          <button onClick={() => Utils.playSong(dispatch, filteredMusicData)}>
             <span>
-              ▶️ {selectedPlaylist} {musicData.length}곡
+              ▶️ {playlists[selectedPlaylist]} {filteredMusicData.length}곡
             </span>
           </button>
         </div>
@@ -52,7 +50,7 @@ const JukboxRight = () => {
             <div>아티스트</div>
           </div>
         </div>
-        <div className="music-row">{renderMusicData(musicData)}</div>
+        <div className="music-row">{renderMusicData(filteredMusicData)}</div>
       </div>
     </div>
   );

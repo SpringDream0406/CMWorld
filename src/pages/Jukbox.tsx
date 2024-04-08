@@ -1,13 +1,13 @@
-import React from "react";
-import JukboxLeft from "../components/jukbox/JukboxLeft";
 import JukboxRight from "../components/jukbox/JukboxRight";
+import LeftNavPage from "../components/LeftNavPage";
+import { playlists } from "../data/musicData";
 
 const Jukbox = () => {
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <JukboxLeft />
+          <LeftNavPage tags={playlists} url={"/jukbox/"} />
         </div>
       </div>
       <div className="wrapper__right">
