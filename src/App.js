@@ -4,8 +4,7 @@ import Main from "./pages/Main";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Project from "./pages/Project";
-import TeamProject from "./components/project/TeamProject";
-import PersonalProject from "./components/project/PersonalProject";
+import ProjectRight from "./components/ProjectRight";
 import Jukbox from "./pages/Jukbox";
 import Playground from "./pages/Playground";
 import Photo from "./pages/Photo";
@@ -25,8 +24,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="project" element={<Project />}>
             <Route index element={<Navigate to="team" />} />
-            <Route path="team" element={<TeamProject />} />
-            <Route path="personal" element={<PersonalProject />} />
+            <Route path=":category" element={<ProjectRight />} />
           </Route>
           <Route path="jukbox" element={<Jukbox />}>
             <Route path=":playlist" element={<Jukbox />} />

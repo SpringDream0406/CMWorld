@@ -1,8 +1,8 @@
-import React from "react";
 import { IMusicData } from "../interface/music";
 import { NavigateFunction } from "react-router-dom";
 import { musicActions } from "../redux/reducer";
 import { IWeatherData } from "../interface/main";
+import { musicData } from "../data/musicData";
 
 export class Utils {
   static isEmptyObject(obj: Record<string, any>): boolean {
@@ -50,15 +50,25 @@ export class Utils {
     navigate("geolocation", { state: { code: inputCode } });
   };
 
-  static filterShowData = (
-    playlist: string | undefined,
-    musicData: IMusicData[]
-  ): IMusicData[] => {
-    if (playlist === "total" || undefined) {
+  static filterShowMusicData = (playlist: string): IMusicData[] => {
+    if (playlist === "total") {
       return musicData;
     }
     const filteredMusic = musicData.filter((music) =>
       music.playlists.includes(playlist as string)
+    );
+    return filteredMusic;
+  };
+
+  static filterShowProjectData = (
+    category: string,
+    proejctData: IMusicData[]
+  ): IMusicData[] => {
+    if (category === "team") {
+      return proejctData;
+    }
+    const filteredMusic = proejctData.filter((music) =>
+      music.playlists.includes(category as string)
     );
     return filteredMusic;
   };

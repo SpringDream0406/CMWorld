@@ -9,7 +9,6 @@ export const getWeather = async ({
   longitude: number;
 }): Promise<IWeatherData | null> => {
   const weatherAPIKEY = process.env.REACT_APP_WEATHER_API_KEY;
-  console.log(weatherAPIKEY);
 
   const weaherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherAPIKEY}&units=metric&lang=kr`;
 

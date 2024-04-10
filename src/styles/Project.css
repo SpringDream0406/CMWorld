@@ -1,0 +1,9 @@
+.projectRight {
+  height: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: pink;
+}

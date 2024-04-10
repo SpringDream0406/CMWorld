@@ -1,18 +1,18 @@
-import { Link, Outlet } from "react-router-dom";
+import LeftNavPage from "../components/LeftNavPage";
+import ProjectRight from "../components/ProjectRight";
+import { projectTags } from "../data/projectData";
 
 const Project = () => {
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <Link to="/project">team</Link>
-          <br />
-          <Link to="/project/personal">person</Link>
+          <LeftNavPage tags={projectTags} url={"/project/"} />
         </div>
       </div>
       <div className="wrapper__right">
         <div className="main__right">
-          <Outlet />
+          <ProjectRight />
         </div>
       </div>
     </>

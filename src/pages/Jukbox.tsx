@@ -1,4 +1,4 @@
-import JukboxRight from "../components/jukbox/JukboxRight";
+import JukboxRight from "../components/JukboxRight";
 import LeftNavPage from "../components/LeftNavPage";
 import { playlists } from "../data/musicData";
 

@@ -1,15 +1,15 @@
-import "../../styles/Jukbox.css";
+import "../styles/Jukbox.css";
 import { useDispatch } from "react-redux";
-import { Utils } from "../../utils/utils";
-import { IMusicData } from "../../interface/music";
+import { Utils } from "../utils/utils";
+import { IMusicData } from "../interface/music";
 import { useParams } from "react-router-dom";
-import { musicData, playlists } from "../../data/musicData";
+import { playlists } from "../data/musicData";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
   const { playlist } = useParams();
   const selectedPlaylist = playlist || "total";
-  const filteredMusicData = Utils.filterShowData(selectedPlaylist, musicData);
+  const filteredMusicData = Utils.filterShowMusicData(selectedPlaylist);
 
   // JukBoxLeft에서 선택 플레이리스트의 뮤직들 랜더링
   const renderMusicData = (data: IMusicData[]) => {
