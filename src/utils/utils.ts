@@ -3,6 +3,8 @@ import { NavigateFunction } from "react-router-dom";
 import { musicActions } from "../redux/reducer";
 import { IWeatherData } from "../interface/main";
 import { musicData } from "../data/musicData";
+import { IProjectData } from "../interface/project";
+import { projectData } from "../data/projectData";
 
 export class Utils {
   static isEmptyObject(obj: Record<string, any>): boolean {
@@ -55,22 +57,22 @@ export class Utils {
       return musicData;
     }
     const filteredMusic = musicData.filter((music) =>
-      music.playlists.includes(playlist as string)
+      music.playlists.includes(playlist)
     );
     return filteredMusic;
   };
 
   static filterShowProjectData = (
-    category: string,
-    proejctData: IMusicData[]
-  ): IMusicData[] => {
-    if (category === "team") {
-      return proejctData;
+    category: string | undefined,
+    proejctData: IProjectData[]
+  ): IProjectData[] => {
+    if (!category) {
+      return projectData;
     }
-    const filteredMusic = proejctData.filter((music) =>
-      music.playlists.includes(category as string)
+    const filteredProject = proejctData.filter((project) =>
+      project.category.includes(category as string)
     );
-    return filteredMusic;
+    return filteredProject;
   };
 
   static playSong = (dispatch: any, music: IMusicData[]): void => {

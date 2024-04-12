@@ -6,6 +6,7 @@ export const playlists: ITags = {
   cyworld: "싸이월드 감성",
   feeling: "감성 & 느낌",
   tensionup: "텐션 올려!!",
+  groove: "그루브 좀 타볼까~",
   working: "노동요~",
   rainy: "비오는 날..",
   before2024: "Before 2024 Pick",
@@ -20,10 +21,52 @@ export const musicData: IMusicData[] = [
   //   playlists: ["pick2024"],
   // },
   {
+    url: "https://www.youtube.com/watch?v=yn2Ek2zUXBs&ab_channel=SEL",
+    artist: "Laura Roy & DAUL",
+    title: "Water (DAUL Remix)",
+    playlists: ["pick2024", "groove"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=k756Z_5JurI&ab_channel=JXS_BPOfficial",
+    artist: "크러쉬",
+    title: "흠칫",
+    playlists: ["pick2024", "groove", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=ORz6cOa-Lfs&ab_channel=ChrisBrownVEVO",
+    artist: "Chris Brown",
+    title: "Fine China",
+    playlists: ["pick2024", "groove", "working", "tensionup"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=4EcNa_cOr4o&ab_channel=KISSOFLIFE-Topic",
+    artist: "KISS OF LIFE",
+    title: "Sugarcoat (NATTY Solo)",
+    playlists: ["pick2024", "groove"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=fnU81MtpcJI&ab_channel=Agenda-Topic",
+    artist: "Agenda",
+    title: "Important Things (feat.Choilb)",
+    playlists: ["pick2024", "groove"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=9FIbRKyZamY&ab_channel=MaryJBlige",
+    artist: "Mary J. Blige",
+    title: "Need Love (feat. Usher)",
+    playlists: ["pick2024", "groove"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=wLrVX2GIrNg&ab_channel=2xxx%21-Topic",
+    artist: "2xxx",
+    title: "Piss On Me (feat. DEAN & punchnello)",
+    playlists: ["pick2024", "groove", "working"],
+  },
+  {
     url: "https://www.youtube.com/watch?v=NuB-1myGido",
     artist: "The Glitch Mob & Mako & The Word Alive",
     title: "Rise",
-    playlists: ["working", "cywrold"],
+    playlists: ["working"],
   },
   {
     url: "https://www.youtube.com/watch?v=3dm_5qWWDV8",
@@ -167,7 +210,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=Na7voCrpzF0",
     artist: "프라이머리",
-    title: "씨시루 (feat. Zion.T, Gaeko)",
+    title: "씨시루 (feat. Zion.T & Gaeko)",
     playlists: ["before2024"],
   },
   {
@@ -233,7 +276,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=ixkBzA94y0M",
     artist: "박재범",
-    title: "All I Wanna Do (feat. Hoody, Loco)",
+    title: "All I Wanna Do (feat. Hoody & Loco)",
     playlists: ["before2024"],
   },
   {
@@ -275,7 +318,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=H04mbKV44so",
     artist: "우원재",
-    title: "시차 (feat. 로꼬, 그레이)",
+    title: "시차 (feat. 로꼬 & 그레이)",
     playlists: ["before2024"],
   },
   {
@@ -311,7 +354,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=9FeqfatBxF8",
     artist: "박명호",
-    title: "사진 (하늘만 바라봐) (feat. 류주환, Same Lee)",
+    title: "사진 (하늘만 바라봐) (feat. 류주환 & Same Lee)",
     playlists: ["cyworld", "feeling", "rainy", "before2024", "pick2024"],
   },
   {
@@ -353,7 +396,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=G9zL-A78oRg",
     artist: "프라이머리",
-    title: "아끼지마 (feat. 초아, 아이언)",
+    title: "아끼지마 (feat. 초아 & 아이언)",
     playlists: ["before2024"],
   },
   {
@@ -570,7 +613,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=4yKNsJWXwTI",
     artist: "그루비룸",
-    title: "행성 (feat. Blue.D, Jhnovr)",
+    title: "행성 (feat. Blue.D & Jhnovr)",
     playlists: ["feeling", "rainy", "before2024"],
   },
   {
@@ -607,7 +650,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=J_f-QJJuZ-U",
     artist: "김진표",
-    title: "샴푸의 요정 (feat. 김조한, 이준)",
+    title: "샴푸의 요정 (feat. 김조한 & 이준)",
     playlists: ["feeling", "before2024", "pick2024"],
   },
   {
@@ -739,7 +782,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=rCeM57e2BfU",
     artist: "헤이즈",
-    title: "And July (feat. DEAN, DJ Friz)",
+    title: "And July (feat. DEAN & DJ Friz)",
     playlists: ["before2024"],
   },
   {
@@ -769,7 +812,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=YjcU-0YEr54",
     artist: "윤미래",
-    title: "Get It In (feat. Tiger JK, Jung In)",
+    title: "Get It In (feat. Tiger JK & Jung In)",
     playlists: ["tensionup", "before2024"],
   },
   {

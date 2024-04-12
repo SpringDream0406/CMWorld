@@ -4,7 +4,7 @@ const Skills = () => {
   const skills = skillsData.map((name) => {
     return (
       <div className="profile-icons" key={name}>
-        <img src={`/images/profile/skillsIcons/${name}.png`} alt={name} />
+        <img src={`/images/icons/${name}.png`} alt={name} />
         <div className="profile-icons-title">{name}</div>
       </div>
     );

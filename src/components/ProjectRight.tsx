@@ -1,23 +1,41 @@
 import "../styles/Project.css";
 import { useParams } from "react-router-dom";
+import { projectData } from "../data/projectData";
+import OpenSite from "./OpenSite";
+import { Utils } from "../utils/utils";
 
 const ProjectRight = () => {
   const { category } = useParams();
-  const selectedCategory = category || "team";
-  console.log(selectedCategory);
+  const selectedCategory = category;
 
-  return (
-    <div className="projectRight">
-      <div>
-        <div>프로젝트 명</div>
-        <div>소속/기관</div>
-        <div>기간 (개월수)</div>
-        <div>프로젝트 설명</div>
-        <div>동작링크</div>
-        <div>깃링크</div>
-      </div>
+  const filteredProjectData = Utils.filterShowProjectData(
+    selectedCategory,
+    projectData
+  );
+
+  const renderProjectData = (
+    <div>
+      {filteredProjectData.map((project, index) => (
+        <div className="project-items" key={index}>
+          <div className="project-title">{project.title}</div>
+          <div className="project-where">{project.where}</div>
+          <div className="project-when">{project.when}</div>
+          <div className="project-sub">{project.sub}</div>
+          <div className="project-exp">
+            {project.exp.map((exp) => (
+              <li key={exp}>{exp}</li>
+            ))}
+          </div>
+          <div className="project-site">
+            <OpenSite openSiteData={project.site} />
+          </div>
+        </div>
+      ))}
     </div>
   );
+
+  // 본문
+  return <div className="project-right">{renderProjectData}</div>;
 };
 
 export default ProjectRight;

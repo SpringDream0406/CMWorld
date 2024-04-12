@@ -5,7 +5,7 @@ const Certification = () => {
     ([key, value]) => {
       return (
         <div className="profile-icons" key={key}>
-          <img src={`/images/profile/certification/${key}.png`} alt={key} />
+          <img src={`/images/icons/${key}.png`} alt={key} />
           <div className="profile-icons-title">{key}</div>
           <div className="profile-icons-date">{value}</div>
         </div>

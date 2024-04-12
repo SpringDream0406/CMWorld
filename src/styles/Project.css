@@ -1,9 +1,46 @@
-.projectRight {
+.project-right {
   height: 100%;
   border-radius: 1rem;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  background-color: pink;
+}
+
+.project-items {
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-items div {
+  margin-bottom: 0.1rem;
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 0.1rem dotted gray;
+}
+
+.project-where {
+  font-size: 0.9rem;
+  color: black;
+}
+
+.project-when {
+  color: gray;
+}
+
+.project-sub {
+  font-size: 1.5rem;
+}
+
+.project-exp {
+  margin-left: 0.5rem;
+}
+
+.project-site {
+  margin: 0.5rem;
 }

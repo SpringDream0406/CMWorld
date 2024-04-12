@@ -3,6 +3,11 @@
   word-wrap: break-word;
 }
 
+li {
+  list-style: inside;
+  list-style: inside;
+}
+
 .background {
   width: 100vw;
   height: 100vh;

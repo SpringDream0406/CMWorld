@@ -7,7 +7,7 @@ export class PlayerUtils {
     private setCurrentVideoIndex: any
   ) {}
 
-  makeSongInfo(): string {
+  makeSongInfo(): string | null {
     const title = this.realPlaylist[this.currentVideoIndex].title;
     const artist = this.realPlaylist[this.currentVideoIndex].artist;
     return `${title} - ${artist}`;

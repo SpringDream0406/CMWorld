@@ -15,12 +15,12 @@ const OpenSite = ({ openSiteData }: { openSiteData: IOpenSiteData }) => {
   return (
     <div className="sites">
       <div>
-        <span>{openSiteData.title}</span>
+        <span>{openSiteData?.title}</span>
       </div>
       <div>
         <select ref={siteRef}>
           {openSiteData.selectOptions.map((options) => (
-            <option key={options.value} value={options.value}>
+            <option key={options.name} value={options.url}>
               {options.name}
             </option>
           ))}
