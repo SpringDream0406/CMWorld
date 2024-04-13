@@ -1,6 +1,6 @@
-import "../styles/Home.css";
-import HomeRight from "../components/home/HomeRight";
-import IntroLeftPage from "../components/IntroLeftPage";
+import "../../styles/Home.css";
+import HomeRight from "./HomeRight";
+import IntroLeftPage from "../../components/IntroLeftPage";
 
 const Home = () => {
   const introduceData: JSX.Element = (

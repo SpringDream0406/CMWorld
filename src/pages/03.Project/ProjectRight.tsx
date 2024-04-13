@@ -1,8 +1,8 @@
-import "../styles/Project.css";
+import "../../styles/Project.css";
 import { useParams } from "react-router-dom";
-import { projectData } from "../data/projectData";
-import OpenSite from "./OpenSite";
-import { Utils } from "../utils/utils";
+import { projectData } from "../../data/projectData";
+import OpenSite from "../../components/OpenSite";
+import { Utils } from "../../utils/utils";
 
 const ProjectRight = () => {
   const { category } = useParams();

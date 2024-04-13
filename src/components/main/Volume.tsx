@@ -41,7 +41,7 @@ const theme = createTheme({
 
 export default function InputSlider() {
   const [value, setValue] = React.useState(
-    parseInt(localStorage.getItem("sidYoutubeMusicPlayerVolume") || "10")
+    parseInt(localStorage.getItem("musicPlayerVolume") || "10")
   );
   const [previousVolume, setPreviousVolume] = React.useState(0); // 이전 볼륨 상태를 저장
   const [muted, setMuted] = React.useState(false);
@@ -49,7 +49,7 @@ export default function InputSlider() {
 
   React.useEffect(() => {
     dispatch(musicActions.setVolume(value));
-    localStorage.setItem("sidYoutubeMusicPlayerVolume", String(value));
+    localStorage.setItem("musicPlayerVolume", String(value));
   }, [value, dispatch]);
 
   const handleSliderChange = (event: Event, newValue: number | number[]) => {

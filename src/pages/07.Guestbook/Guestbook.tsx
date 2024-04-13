@@ -1,6 +1,6 @@
-import GuestbookRight from "../components/GuestbookRight";
-import GuestbookLeft from "../components/guestbook/GuestbookLeft";
-import "../styles/Guestbook.css";
+import "../../styles/Guestbook.css";
+import GuestbookRight from "./GuestbookRight";
+import GuestbookLeft from "./GuestbookLeft";
 
 const Guestbook = () => {
   return (

@@ -1,5 +1,5 @@
-import IntroLeftPage from "../components/IntroLeftPage";
-import ProfileRight from "../components/profile/ProfileRight";
+import IntroLeftPage from "../../components/IntroLeftPage";
+import ProfileRight from "./ProfileRight";
 
 const Profile = () => {
   const introduceData: JSX.Element = (

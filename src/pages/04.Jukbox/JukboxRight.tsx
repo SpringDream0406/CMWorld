@@ -1,8 +1,8 @@
-import "../styles/Jukbox.css";
+import "../../styles/Jukbox.css";
 import { useDispatch } from "react-redux";
-import { Utils } from "../utils/utils";
+import { Utils } from "../../utils/utils";
 import { useParams } from "react-router-dom";
-import { playlists } from "../data/musicData";
+import { playlists } from "../../data/musicData";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();

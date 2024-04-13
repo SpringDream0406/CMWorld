@@ -6,7 +6,7 @@ const localStoragePlaylist = JSON.parse(
   localStorage.getItem("playlist") || "[]"
 );
 const localStorageVolume = parseInt(
-  localStorage.getItem("sidYoutubeMusicPlayerVolume") || "10"
+  localStorage.getItem("musicPlayerVolume") || "10"
 );
 
 interface IMusicState {

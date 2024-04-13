@@ -1,6 +1,6 @@
-import JukboxRight from "../components/JukboxRight";
-import LeftNavPage from "../components/LeftNavPage";
-import { playlists } from "../data/musicData";
+import JukboxRight from "./JukboxRight";
+import LeftNavPage from "../../components/LeftNavPage";
+import { playlists } from "../../data/musicData";
 
 const Jukbox = () => {
   return (

@@ -1,6 +1,6 @@
-import LeftNavPage from "../components/LeftNavPage";
-import ProjectRight from "../components/ProjectRight";
-import { projectTags } from "../data/projectData";
+import LeftNavPage from "../../components/LeftNavPage";
+import ProjectRight from "./ProjectRight";
+import { projectTags } from "../../data/projectData";
 
 const Project = () => {
   return (

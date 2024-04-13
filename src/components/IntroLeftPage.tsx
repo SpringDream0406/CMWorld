@@ -1,6 +1,6 @@
 import "../styles/Components.css";
-import Profile from "./home/ProfileImg";
-import Introduce from "../components/home/Introduce";
+import Profile from "./ProfileImg";
+import Introduce from "./Introduce";
 import OpenSite from "../components/OpenSite";
 import { homeOpenSiteData } from "../data/homeData";
 
