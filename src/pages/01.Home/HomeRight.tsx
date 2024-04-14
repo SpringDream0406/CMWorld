@@ -1,10 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const HomeRight = () => {
-  const me = <span></span>;
-  const [visitMessage, setVisitMessage] = useState(first);
-
   return (
     <div className="home-right">
       <div className="home-right-top">
@@ -23,14 +19,25 @@ const HomeRight = () => {
         <span>
           해당 사이트는 CYWORLD를 모티브로 하여 제작한 포트폴리오 사이트입니다.
         </span>
+        <br />
         <span>
           위치정보를 이용하여 화면 오른쪽에 보이는 날씨 탭의 정보를 위치에 맞게
-          업데이트하고, 배경움짤을 날씨에 맞게 변경하고 있으며, 한국이 아닌
-          지역에 대한 접근을 차단하고 있으므로 위치정보를 허용해주세요.
+          업데이트하고, 배경움짤을 날씨에 맞게 변경하고 있으며,
+        </span>
+        <span>
+          한국이 아닌 지역에 대한 접근을 차단하고 있으므로 위치정보를
+          허용해주세요.
         </span>
         {/* <span>추가적으로 자동추천플레이리스트 기능에도 사용되고 있습니다.</span> */}
         <br />
-        {first}
+        <span>
+          둘러보시기 전에 <Link to="/jukbox">쥬크박스</Link>에 방문하여
+          배경노래를 먼저 세팅해보시거나
+        </span>
+        <span>
+          <Link to="/setting/musicplayer">설정 페이지</Link>
+          <span>에 방문하여 음악 자동 추천 기능을 on 시켜보세요.</span>
+        </span>
         <br />
         <span>서로를 알아가는 좋은 시간이 되셨으면 좋겠습니다.</span>
         <br />
@@ -44,13 +51,3 @@ const HomeRight = () => {
 };
 
 export default HomeRight;
-
-const first = (
-  <>
-    <span>설정 저장이 안 되어 있는 걸로 보아 첫 방문 사용자로 보이십니다.</span>
-    <span>
-      <Link to="/setting">설정 페이지</Link>
-      <span>에 방문하여 사용 경험을 증가시키기 위한 세팅을 해보세요.</span>
-    </span>
-  </>
-);

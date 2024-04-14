@@ -45,11 +45,12 @@ export class Utils {
     return shuffledPlaylist;
   };
 
-  static moveGeoPage = (
+  static moveToPage = (
     navigate: NavigateFunction,
-    inputCode: number
+    URL: string,
+    inputCode?: number
   ): void => {
-    navigate("geolocation", { state: { code: inputCode } });
+    navigate(URL, { state: { code: inputCode } });
   };
 
   static filterShowMusicData = (playlist: string): IMusicData[] => {

@@ -20,7 +20,7 @@ const SideWeather = () => {
       try {
         const geoLocation: IPosition | IPositionError = await getLocation(); // 위경도 요청
         if (geoLocation.code) {
-          Utils.moveGeoPage(navigate, geoLocation.code); // 한국 아닌 경우
+          Utils.moveToPage(navigate, "geolocation", geoLocation.code); // 한국 아닌 경우
           return;
         }
         const weatherData = await getWeather(geoLocation as IPosition); // 날씨 조회
@@ -29,7 +29,7 @@ const SideWeather = () => {
         }
       } catch (err: any) {
         if (err.code) {
-          Utils.moveGeoPage(navigate, err.code); // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 alert만 띄우게 해놓음
+          Utils.moveToPage(navigate, err.code); // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 alert만 띄우게 해놓음
           return;
         }
       }
