@@ -1,6 +1,7 @@
-import { ITags } from "../interface/main";
-import { IMusicData } from "../interface/music";
+import { ITags } from "../interface/main.interface";
+import { IMusicData } from "../interface/music.interface";
 
+// 플레이리스트, leftNavPage
 export const playlists: ITags = {
   total: "음악 전체 보기",
   cyworld: "싸이월드 감성",
@@ -8,11 +9,14 @@ export const playlists: ITags = {
   tensionup: "텐션 올려!!",
   groove: "그루브 좀 타볼까~",
   working: "노동요~",
+  favorite: "최근 꽂힌 음악!!",
   rainy: "비오는 날..",
+
   before2024: "Before 2024 Pick",
   pick2024: "2024 Pick",
 };
 
+// 유튜브 음악 데이터
 export const musicData: IMusicData[] = [
   // {
   //   url: "",
@@ -21,16 +25,95 @@ export const musicData: IMusicData[] = [
   //   playlists: ["pick2024"],
   // },
   {
+    url: "https://www.youtube.com/watch?v=QkNzZUVToyM&ab_channel=Livingston-Topic",
+    artist: "Livingston",
+    title: "Architect",
+    playlists: ["pick2024", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=wUiWIBiVH4U&ab_channel=TrailerMusicWorldI",
+    artist: "Extreme Music",
+    title: "Bring Me Back To Life",
+    playlists: ["pick2024", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=M-YvkPtneYE&ab_channel=AdamLambert-Topic",
+    artist: "Adam Lambert",
+    title: "Runnin'",
+    playlists: ["pick2024", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=JmrLnNYrATw&ab_channel=VOIL%C3%80-Topic",
+    artist: "VOILÀ",
+    title: "Therapy",
+    playlists: ["pick2024", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=iBDW7yO82is&ab_channel=TheEverlove-Topic",
+    artist: "The Everlove",
+    title: "I'm Dangerous",
+    playlists: ["pick2024", "tensionup", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=_PBlykN4KIY&ab_channel=TheScoreVEVO",
+    artist: "The Score",
+    title: "Unstoppable",
+    playlists: ["pick2024", "tensionup", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=EKVZrbitbd8&ab_channel=SamTinnesz",
+    artist: "Sam Tinnesz",
+    title: "Legends Are Made",
+    playlists: ["pick2024", "tensionup", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=tSQ6CyyPatM&ab_channel=SmashIntoPieces",
+    artist: "Smash Into Pieces",
+    title: "All Eyes On You",
+    playlists: ["pick2024", "tensionup"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=nimfRXQS9P4&ab_channel=SeafretOfficial",
+    artist: "Seafret",
+    title: "Be My Queen",
+    playlists: ["pick2024", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=Du3bg-zDL1Q&ab_channel=PositionMusic",
+    artist: "Oh The Larceny",
+    title: "Real Good Feeling",
+    playlists: ["pick2024", "tensionup"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=7YAAyUFL1GQ&ab_channel=FallOutBoyVEVO",
+    artist: "Fall Out Boy",
+    title: "The Last Of The Real Ones",
+    playlists: ["pick2024", "tensionup"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=16YnOUnbE6s&ab_channel=ArizonaZervasVEVO",
+    artist: "Arizona Zervas",
+    title: "ROXANNE",
+    playlists: ["pick2024", "groove", "working"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=eZaHN_ix4Zw&ab_channel=Games",
+    artist: "The Americanos",
+    title:
+      "In My Foreign (feat. Ty Dollah $ign & Nick jam & Lil Yachty & French Montana)",
+    playlists: ["pick2024", "groove", "working", "favorite"],
+  },
+  {
     url: "https://www.youtube.com/watch?v=yn2Ek2zUXBs&ab_channel=SEL",
     artist: "Laura Roy & DAUL",
     title: "Water (DAUL Remix)",
-    playlists: ["pick2024", "groove"],
+    playlists: ["pick2024", "groove", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=k756Z_5JurI&ab_channel=JXS_BPOfficial",
     artist: "크러쉬",
     title: "흠칫",
-    playlists: ["pick2024", "groove", "working"],
+    playlists: ["groove", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=ORz6cOa-Lfs&ab_channel=ChrisBrownVEVO",
@@ -42,19 +125,19 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=4EcNa_cOr4o&ab_channel=KISSOFLIFE-Topic",
     artist: "KISS OF LIFE",
     title: "Sugarcoat (NATTY Solo)",
-    playlists: ["pick2024", "groove"],
+    playlists: ["pick2024", "groove", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=fnU81MtpcJI&ab_channel=Agenda-Topic",
     artist: "Agenda",
     title: "Important Things (feat.Choilb)",
-    playlists: ["pick2024", "groove"],
+    playlists: ["pick2024", "groove", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=9FIbRKyZamY&ab_channel=MaryJBlige",
     artist: "Mary J. Blige",
     title: "Need Love (feat. Usher)",
-    playlists: ["pick2024", "groove"],
+    playlists: ["pick2024", "groove", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=wLrVX2GIrNg&ab_channel=2xxx%21-Topic",
@@ -90,7 +173,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=TBD3WRO7Iy8",
     artist: "bbno$",
     title: "Rich Brian",
-    playlists: ["tensionup"],
+    playlists: ["pick2024", "tensionup", "working"],
   },
   {
     url: "https://www.youtube.com/watch?v=HIgvP7B3Hg8",
@@ -554,7 +637,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=kXYiU_JCYtU",
     artist: "Linkin Park",
     title: "Numb",
-    playlists: ["feeling", "working", "before2024", "pick2024"],
+    playlists: ["working", "before2024", "pick2024"],
   },
   {
     url: "https://www.youtube.com/watch?v=8Irb9NEZkRM",
@@ -1173,7 +1256,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=ZlJNkflJjA4",
     artist: "IVE",
     title: "Mine",
-    playlists: ["feeling", "working", "pick2024"],
+    playlists: ["feeling", "working", "pick2024", "favorite"],
   },
   {
     url: "https://www.youtube.com/watch?v=sVbpvsrtTzM",

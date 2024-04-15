@@ -2,8 +2,8 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { GuestbookController } from "../../utils/controller/guestbook.controller";
-import LoginBtn from "../../components/guestbook/LoginBtn";
-import AddName from "../../components/guestbook/AddName";
+import LoginBtn from "./GuestbookComponents/LoginBtn";
+import AddName from "./GuestbookComponents/AddName";
 
 const GuestbookLeft = () => {
   const dispatch = useDispatch();
@@ -27,10 +27,10 @@ const GuestbookLeft = () => {
     guestbookController.firebaseOnAuthStateChanged();
 
     // 유저 이름 설정
-    if (firebaseUID) {
+    if (firebaseUID && !firebaseUserName) {
       guestbookController.setUserName(firebaseUID);
     }
-  }, [firebaseUID, guestbookController, dispatch]);
+  }, [firebaseUID, guestbookController, firebaseUserName, dispatch]);
 
   // 최종적으로 뜨는 얘들
   const welcomeName = (

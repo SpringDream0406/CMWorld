@@ -1,5 +1,4 @@
 // SideMusic의 플레이어 버튼 Data
-
 import {
   faPlay,
   faPause,
@@ -35,7 +34,6 @@ export const buttonData = (
     icon: isPlaying === 3 ? faSpinner : faPlay,
     className: isPlaying === 1 ? "btn-active" : "",
   },
-  // <FontAwesomeIcon icon={faSpinner} spinPulse />
   {
     onClick: () => {
       playerUtils.changeVideoIndex(1);

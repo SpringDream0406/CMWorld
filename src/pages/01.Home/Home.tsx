@@ -1,19 +1,14 @@
 import "../../styles/Home.css";
 import HomeRight from "./HomeRight";
 import IntroLeftPage from "../../components/IntroLeftPage";
+import HomeIntroduceData from "./HomeComponents/HomeIntroduceData";
 
 const Home = () => {
-  const introduceData: JSX.Element = (
-    <>
-      <span>춘몽월드(CMWORLD)에 </span>
-      <span>오신걸 환영합니다.</span>
-    </>
-  );
   return (
     <>
       <div className="wrapper__left">
         <div className="main__left">
-          <IntroLeftPage introduceData={introduceData} />
+          <IntroLeftPage introduceData={<HomeIntroduceData />} />
         </div>
       </div>
       <div className="wrapper__right">

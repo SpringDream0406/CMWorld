@@ -1,7 +1,7 @@
-import { ITags } from "../interface/main";
-import { IProjectData } from "../interface/project";
+import { ITags } from "../interface/main.interface";
+import { IProjectData } from "../interface/project.interface";
 
-// 프로젝트 메뉴
+// 프로젝트 leftNavPage
 export const projectTags: ITags = {
   team: "팀 프로젝트",
   personal: "개인 프로젝트",

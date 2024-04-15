@@ -2,10 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GuestbookController } from "../../utils/controller/guestbook.controller";
 import { DocumentData } from "firebase/firestore";
-import GuestbookPosts from "../../components/guestbook/GuestbookPosts";
-import GuestbookWriteBox from "../../components/guestbook/GuestbookWriteBox";
+import GuestbookPosts from "./GuestbookComponents/GuestbookPosts";
+import GuestbookWriteBox from "./GuestbookComponents/GuestbookWriteBox";
 import { RootState } from "../../redux/store";
-import { getPostDatasAndupdateHomePageNumber } from "../../utils/Guestbook.utils";
+import { getPostDatas } from "../../utils/guestbook.utils";
 
 const GuestbookRight = () => {
   const dispatch = useDispatch();
@@ -23,13 +23,9 @@ const GuestbookRight = () => {
   );
   const [postDatas, setPostDatas] = useState<DocumentData | null>(null);
 
-  // 게시판 데이터 가져오고, homePage의 숫자 변경
+  // 게시판 데이터 가져오고
   useEffect(() => {
-    getPostDatasAndupdateHomePageNumber(
-      guestbookController,
-      setPostDatas,
-      dispatch
-    );
+    getPostDatas(guestbookController, setPostDatas);
   }, [guestbookController, dataUpdated, dispatch]);
 
   // 본문

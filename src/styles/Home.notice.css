@@ -1,0 +1,28 @@
+.update-version-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.update-version-main {
+  font-size: 1.5rem;
+  color: navy;
+}
+
+.update-sub-items {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.1rem;
+}
+
+.update-sub-version {
+  margin-left: 1rem;
+}
+
+.update-sub-change {
+  margin-left: 1rem;
+}
+
+.update-sub-date {
+  margin-left: auto;
+}

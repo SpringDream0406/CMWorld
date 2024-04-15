@@ -38,12 +38,15 @@ export class FirebaseService {
   // firebase 인증 상태 체크 실행
   firebaseOnAuthStateChanged(dispatch: any): void {
     onAuthStateChanged(auth, (user) => {
+      // 인증 있으면 redux의 firebaseUID 설정
       if (user) {
         const UID = user.uid;
         dispatch(firebaseAction.setFirebaseUID(UID));
         return;
       }
+      // 인증 없으면(=로그아웃) redux의 firebaseUID, firebaseUserName 값 삭제
       dispatch(firebaseAction.setFirebaseUID(null));
+      dispatch(firebaseAction.setUserName(null));
     });
   }
 
@@ -114,28 +117,28 @@ export class FirebaseService {
     }
   }
 
-  // firebase에서 문서 읽기
+  // firebase에서 문서 가져오기
   async readDocumentFromFirebase(
     documentName: string,
-    condition: { key: string; operator: any; value: any }
+    condition?: { key: string; operator: any; value: any }
   ): Promise<DocumentData | null> {
     try {
-      const postQuery = query(
-        collection(db, documentName),
-        where(condition.key, condition.operator, condition.value)
-      );
+      let postQuery;
+      // 조건이 있는 경우
+      if (condition) {
+        postQuery = query(
+          collection(db, documentName),
+          where(condition.key, condition.operator, condition.value)
+        );
+        // 조건이 없는 경우
+      } else {
+        postQuery = collection(db, documentName);
+      }
       const querySnapshot = await getDocs(postQuery);
-      const documnetDatas = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        data: doc.data(),
-      }));
-      return documnetDatas;
+      return querySnapshot;
     } catch (error: any) {
       console.error(error);
-      if (error.code === "resource-exhausted")
-        alert("firebase 일일 사용량을 초과했습니다.. 내일 다시 방문해주세요..");
-      console.error(error.code);
-
+      if (error.code === "resource-exhausted") return { message: "초과" };
       return null;
     }
   }

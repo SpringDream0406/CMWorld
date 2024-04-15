@@ -1,4 +1,4 @@
-import { IMusicData } from "../interface/music";
+import { IMusicData } from "../interface/music.interface";
 
 export class PlayerUtils {
   constructor(

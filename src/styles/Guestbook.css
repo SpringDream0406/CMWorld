@@ -4,7 +4,6 @@
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
 }
 
 .guestbookLeft-welcom {
@@ -23,15 +22,12 @@
 
 .guestbookLeft-welcom-message {
   margin-top: 1rem;
-
-  /* background-color: yellow; */
 }
 
 .guestbookLeft-auth {
   height: 50%;
   display: flex;
   flex-direction: column;
-  /* background-color: pink; */
 }
 
 .guestbookLeft-auth-info {
@@ -111,13 +107,10 @@
 /* guestbookRight */
 
 .guestbookRight {
-  /* background-color: pink; */
   height: 100%;
   padding: 0.5rem;
-  /* border-radius: 1rem; */
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
   overflow-y: auto;
 }
 
@@ -148,6 +141,11 @@
   width: 15%;
   border: 0.01rem solid grey;
   background-color: white;
+}
+
+.guestbook-write-img:hover {
+  cursor: pointer;
+  border: 0.1rem solid black;
 }
 
 .gusetbook-modal-img:hover {
@@ -234,7 +232,6 @@
   justify-content: center;
   align-items: center;
   width: 15%;
-  /* border: 0.01rem solid black; */
 }
 
 .posts-body-message {
@@ -242,6 +239,7 @@
   padding: 0.3rem;
   margin-left: 0.3rem;
   overflow-y: auto;
+  white-space: pre-wrap;
 }
 
 .guestbook-posts-footer {

@@ -1,3 +1,4 @@
+// firebase 세팅
 export const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_apiKey,
   authDomain: process.env.REACT_APP_FIREBASE_authDomain,

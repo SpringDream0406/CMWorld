@@ -5,18 +5,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: pink; */
 }
 
 .home-right-top {
-  /* background-color: lightblue; */
   height: 25%;
 }
 
 .home-right-notice {
   height: 20%;
   font-size: 1.5rem;
-  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +21,6 @@
 }
 
 .home-right-content {
-  /* background-color: red; */
   height: 80%;
   display: flex;
   flex-direction: row;
@@ -35,22 +31,60 @@
   border: 0.1rem solid black;
   border-radius: 1rem;
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
+
+.notice-itme {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.2rem;
+}
+
+.notice-item-title {
+  width: 75%;
+}
+
+.notice-item-date {
+  width: 25%;
+  color: grey;
+}
+
+/* 게시판 게시물 숫자 요약 */
 
 .home-right-pageSummary {
   width: 45%;
-  border: 0.1rem solid black;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  /* background-color: pink; */
+  /* background-color: rgb(219, 216, 216); */
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px dotted gray;
 }
 
+.home-right-pageSummary > div {
+  border: 1px dotted gray;
+  padding: 0.7rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.home-pageSummary-link {
+  text-decoration: none;
+  color: rgb(43, 43, 43);
+}
+
+.home-pageSummary-link span {
+  color: navy;
+}
+
+/* 공지사항 내용 칸 */
 .home-right-notice-detail {
-  /* background-color: lightgreen; */
   height: 70%;
   border: 0.1rem solid black;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }

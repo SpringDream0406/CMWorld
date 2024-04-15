@@ -1,9 +1,9 @@
-import { IMusicData } from "../interface/music";
+import { IMusicData } from "../interface/music.interface";
 import { NavigateFunction } from "react-router-dom";
 import { musicActions } from "../redux/reducer";
-import { IWeatherData } from "../interface/main";
+import { IWeatherData } from "../interface/main.interface";
 import { musicData } from "../data/musicData";
-import { IProjectData } from "../interface/project";
+import { IProjectData } from "../interface/project.interface";
 import { projectData } from "../data/projectData";
 
 export class Utils {

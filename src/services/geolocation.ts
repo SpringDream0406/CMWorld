@@ -1,4 +1,4 @@
-import { IPosition, IPositionError } from "../interface/service";
+import { IPosition, IPositionError } from "../interface/service.interface";
 
 export const getLocation = async (): Promise<IPosition | IPositionError> => {
   return new Promise<IPosition | IPositionError>((resolve, reject) => {

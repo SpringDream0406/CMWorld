@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IWeatherData } from "../interface/main";
+import { IWeatherData } from "../interface/main.interface";
 
 export const getWeather = async ({
   latitude,

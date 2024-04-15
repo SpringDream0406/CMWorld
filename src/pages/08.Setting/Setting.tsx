@@ -1,7 +1,7 @@
 import "../../styles/Setting.css";
 import { Outlet } from "react-router-dom";
 import LeftNavPage from "../../components/LeftNavPage";
-import { settingtags } from "../../data/leftNavPageData";
+import { settingtags } from "../../data/settingData";
 
 const Setting = () => {
   return (

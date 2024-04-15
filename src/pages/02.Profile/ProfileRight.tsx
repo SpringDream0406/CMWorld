@@ -1,7 +1,7 @@
 import "../../styles/Profile.css";
-import Certification from "../../components/profile/Certification";
-import Education from "../../components/profile/Education";
-import Skills from "../../components/profile/Skills";
+import Certification from "./ProfileComponents/Certification";
+import Education from "./ProfileComponents/Education";
+import Skills from "./ProfileComponents/Skills";
 const ProfileRight = () => {
   return (
     <div className="profileRight">

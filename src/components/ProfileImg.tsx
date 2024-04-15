@@ -1,7 +1,11 @@
+import { guestbookFrofileImages } from "../data/guestbookData";
+
 const ProfileImg = () => {
-  const params = window.location.pathname;
-  let imgURL = "";
-  if (params === "/home") imgURL = "/images/exImg.jpeg";
+  const imgURL = `/images/guestbook/${
+    guestbookFrofileImages[
+      Math.floor(Math.random() * guestbookFrofileImages.length)
+    ]
+  }`;
 
   return (
     <div className="img_profile">

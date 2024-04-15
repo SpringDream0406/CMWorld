@@ -1,7 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Main from "./pages/Main";
-import Home from "./pages//01.Home/Home";
+import Main from "./pages/00.Main/Main";
+import Home from "./pages/01.Home/Home";
+import HomeRight from "./pages/01.Home/HomeRight";
 import Profile from "./pages/02.Profile/Profile";
 import Project from "./pages/03.Project/Project";
 import ProjectRight from "./pages/03.Project/ProjectRight";
@@ -10,7 +11,7 @@ import Playground from "./pages/05.Playground/Playground";
 import Photo from "./pages/06.Photo/Photo";
 import Guestbook from "./pages/07.Guestbook/Guestbook";
 import Setting from "./pages/08.Setting/Setting";
-import MusicPlayerSetting from "./components/setting/MusicPlayerSetting";
+import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
 import Geolocation from "./pages/Geolocation";
 import NotFound from "./pages/NotFound";
 
@@ -20,7 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route index element={<Navigate to="home" />} />
-          <Route path="home" element={<Home />} />
+          <Route path="home" element={<Home />}>
+            <Route path=":notice" element={<HomeRight />} />
+          </Route>
           <Route path="profile" element={<Profile />} />
           <Route path="project" element={<Project />}>
             <Route index element={<Navigate to="team" />} />

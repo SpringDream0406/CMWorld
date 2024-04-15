@@ -6,7 +6,7 @@ const firebaseService = new FirebaseService();
 
 export class GuestbookController {
   // 필요한 녀석들
-  constructor(private dispatch: any, private setDataUpdated?: any) {}
+  constructor(private dispatch?: any, private setDataUpdated?: any) {}
 
   // firebase 인증 상태 체크 실행
   firebaseOnAuthStateChanged(): void {
@@ -46,6 +46,27 @@ export class GuestbookController {
     this.setUserName(firebaseUID);
   }
 
+  // 방명록 글 갯수 읽기
+  async countPosts(): Promise<number | string | null> {
+    const documentName = "posts";
+    const condition = {
+      key: "isDeleted",
+      operator: "==",
+      value: false,
+    };
+    const querySnapshot = await firebaseService.readDocumentFromFirebase(
+      documentName,
+      condition
+    );
+    if (querySnapshot?.message) return "사용량 초과..";
+    if (querySnapshot) {
+      const numOfPosts = querySnapshot.size;
+      return numOfPosts;
+    } else {
+      return null;
+    }
+  }
+
   // 방명록 글 읽기
   async readPosts(): Promise<DocumentData | null> {
     const documentName = "posts";
@@ -54,12 +75,23 @@ export class GuestbookController {
       operator: "==",
       value: false,
     };
-    const postDatas = await firebaseService.readDocumentFromFirebase(
+    const querySnapshot = await firebaseService.readDocumentFromFirebase(
       documentName,
       condition
     );
-    console.log(postDatas);
-    return postDatas;
+    if (querySnapshot?.message) {
+      alert("firebase 일일 사용량을 초과했습니다.. 내일 다시 방문해주세요..");
+      return null;
+    }
+    if (querySnapshot) {
+      const documnetDatas = querySnapshot.docs.map((doc: any) => ({
+        id: doc.id,
+        data: doc.data(),
+      }));
+      return documnetDatas;
+    } else {
+      return null;
+    }
   }
 
   // 방명록 글 삭제
@@ -93,10 +125,12 @@ export class GuestbookController {
     textAreaRef,
     setSelectedImg,
   }: IWritePostData) {
+    // 제한 사항들
     if (!textAreaRef || !textAreaRef.current) return;
-    // if (!firebaseUID || !firebaseUserName) return alert("로그인이 필요합니다.");
+    if (!firebaseUID || !firebaseUserName) return alert("로그인이 필요합니다.");
     if (!textAreaRef.current.value) return alert("내용을 입력해주세요.");
 
+    // 들어갈 데이터 가공
     const now = new Date();
     const path = `posts/${firebaseUID}_${now.getTime()}`;
     const inputData = {
@@ -105,15 +139,13 @@ export class GuestbookController {
       postedAt: now,
       img: selectedImg,
       message: textAreaRef.current.value,
+      Re: "",
       isDeleted: false,
     };
-    console.log(path);
-    console.log(inputData);
-
     await firebaseService.writeDataToFirebase(path, inputData);
-    this.setDataUpdated((e: number) => e + 1);
-    textAreaRef.current.value = "";
-    setSelectedImg("basic.jpeg");
+    this.setDataUpdated((e: number) => e + 1); // 데이터 업로드 했어 새로운 데이터 받어와
+    textAreaRef.current.value = ""; // 방명록 적어놨던 글 제거
+    setSelectedImg("basic.jpeg"); // 이미지 기본으로 변경
     alert("작성 완료");
   }
 }

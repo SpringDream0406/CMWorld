@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialMusicSetting } from "../data/settingData";
-import { ISwitch } from "../interface/setting";
+import { ISwitch } from "../interface/setting.interface";
 import { Utils } from "../utils/utils";
 
 interface ISettingState {

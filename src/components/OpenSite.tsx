@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "../styles/Components.css";
 import { Components } from "../utils/components";
-import { IOpenSiteData } from "../interface/components";
+import { IOpenSiteData } from "../interface/components.interface";
 
 const OpenSite = ({ openSiteData }: { openSiteData: IOpenSiteData }) => {
   const siteRef = useRef<HTMLSelectElement>(null);

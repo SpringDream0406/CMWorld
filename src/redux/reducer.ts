@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IWeatherData } from "../interface/main";
-import { IMusicData } from "../interface/music";
+import { IWeatherData } from "../interface/main.interface";
+import { IMusicData } from "../interface/music.interface";
 
 const localStoragePlaylist = JSON.parse(
   localStorage.getItem("playlist") || "[]"

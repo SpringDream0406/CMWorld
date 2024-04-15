@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { ITags } from "../interface/main";
+import { ITags } from "../interface/main.interface";
 import "../styles/Components.css";
 
 const LeftNavPage = ({ tags, url }: { tags: ITags; url: string }) => {

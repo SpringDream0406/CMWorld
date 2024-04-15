@@ -2,7 +2,7 @@ import "../styles/Components.css";
 import Profile from "./ProfileImg";
 import Introduce from "./Introduce";
 import OpenSite from "../components/OpenSite";
-import { homeOpenSiteData } from "../data/homeData";
+import { homeOpenSiteData } from "../data/opensiteData";
 
 const IntroLeftPage = ({ introduceData }: { introduceData: JSX.Element }) => {
   return (

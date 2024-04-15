@@ -20,15 +20,12 @@ export const certificationData: { [key: string]: string } = {
   SQLD: "2023-10",
 };
 
-interface IEducationData {
-  [key: string]: {
-    기간: string;
-    설명: string;
-  };
-}
-
 // education
-export const educationData: IEducationData = {
+export const educationData: {
+  [key: string]: {
+    [key: string]: string;
+  };
+} = {
   "광주 인공지능사관학교": { 기간: "2023.03 ~ 2023.12", 설명: "4기 / App반" },
   조선대학교: { 기간: "2007.03 ~ 2013.02", 설명: "전자공학과 4.09/4.5" },
 };
