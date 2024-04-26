@@ -8,7 +8,7 @@ export const settingtags = {
 
 // 뮤직 플레이어 세팅 기본값
 const musicPlayerDefaultSetting = {
-  "플레이리스트 저장": false,
+  "플레이리스트 저장": true,
   "음악 자동 추천": false,
 };
 

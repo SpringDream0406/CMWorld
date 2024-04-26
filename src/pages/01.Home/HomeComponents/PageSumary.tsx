@@ -16,13 +16,13 @@ const PageSumary = () => {
   }, [guestbookController]);
 
   const pageSumaryData = [...pageSummary];
-  pageSumaryData[4].num = numOfPosts || "로딩중..";
+  pageSumaryData[5].num = numOfPosts || "로딩중..";
 
   return (
     <>
       {pageSumaryData.map((data) => (
-        <div>
-          <Link to={data.url} className="home-pageSummary-link" key={data.name}>
+        <div key={data.name}>
+          <Link to={data.url} className="home-pageSummary-link">
             {data.name} <span>{data.num}</span>
           </Link>
         </div>

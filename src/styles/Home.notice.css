@@ -26,3 +26,17 @@
 .update-sub-date {
   margin-left: auto;
 }
+
+.notice-musicplayer-div1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.notice-musicplayer-div2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.notice-musicplayer-imgdiv {
+  margin-left: 1.5rem;
+}

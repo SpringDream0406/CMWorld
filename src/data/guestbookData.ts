@@ -19,9 +19,6 @@ export const guestbookFrofileImages = [
   "basic.jpeg",
   "C1.gif",
   "C2.gif",
-  "C3.jpeg",
-  "C4.png",
-  "C5.jpeg",
   // 카카오톡
   "K1.png",
   "K2.gif",

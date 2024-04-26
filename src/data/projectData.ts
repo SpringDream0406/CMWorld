@@ -14,12 +14,17 @@ export const projectData: IProjectData[] = [
   {
     title: "팜팜 서버 교체2",
     where: "개인 프로젝트",
-    when: "2024.04 ~ 2024.04 (진행 중)",
+    when: "2024.04 ~ 2024.04 (1주)",
     sub: "Express.js로 만들어진 서버를 Nest.js로 교체",
     exp: [
-      "Nest.js를 공부하면서, Router로 구성되어있던 Express.js를 Nest.js로 변경했습니다.",
-      "TypeORM을 사용하여 DB를 구현하고, 쿼리를 처리했습니다.",
-      "인증용 Auth 테이블을 만드는 등 DB를 조금 더 세분화 했습니다.",
+      "Nest.js를 공부하면서 Express.js로 구성된 Router를 Nest.js로 변경했습니다.",
+      "TypeScript를 사용하여 안전성을 높였습니다.",
+      "TypeORM을 사용하여 DB를 구현하고 쿼리를 처리했습니다.",
+      "인증용 Auth 테이블을 만들고 실제 데이터에 맞게 DB를 조금 더 구체화했습니다.",
+      "바뀐 DB 테이블과 데이터에 맞게 ERD를 새로 작성했습니다,",
+      "Validation을 사용하여 제약 조건을 설정했습니다.",
+      "Swagger를 작성하여 API에 대한 설명과 테스트를 해볼 수 있도록 하였습니다.",
+      "배포를 통해 팜팜의 데모사이트를 체험해 볼 수 있도록 하였습니다.",
     ],
     site: {
       selectOptions: [
@@ -35,6 +40,10 @@ export const projectData: IProjectData[] = [
           name: "팜팜 ERD (Nest.js)",
           url: "https://www.erdcloud.com/d/qezCTMmk7pf4SE4TQ",
         },
+        {
+          name: "팜팜 Swagger",
+          url: "#",
+        },
       ],
     },
     category: ["personal", "p2024"],
@@ -46,6 +55,10 @@ export const projectData: IProjectData[] = [
     sub: "싸이월드를 모티브로 포트폴리오 사이트 제작",
     exp: [
       "Portfolio.v1의 결과가 만족스럽지 않아 저의 취향을 반영한 포트폴리오를 다시 만들게 되었습니다.",
+      "React-Player를 사용하여 BGM을 구현했습니다.",
+      "Firebase를 사용하여 방명록 페이지의 데이터를 처리했습니다.",
+      "Redux를 사용하여 Component간의 데이터 전달을 처리했습니다.",
+      "고정 페이지는 정적 Router로, 늘어나는 Component는 동적 Router로 처리했습니다.",
     ],
     site: {
       selectOptions: [
@@ -129,6 +142,10 @@ export const projectData: IProjectData[] = [
           name: "케케케 Github",
           url: "https://github.com/SpringDream0406/-GAI-kekeke",
         },
+        {
+          name: "케케케 시연 연상 (Youtube)",
+          url: "https://youtu.be/A5MbFHJaqCA?si=2Qr1wjDJL3knaBpe",
+        },
       ],
     },
     category: ["team", "p2023"],
@@ -145,6 +162,10 @@ export const projectData: IProjectData[] = [
           name: "Seb's Music Github",
           url: "https://github.com/SpringDream0406/-GAI-Appsolute",
         },
+        {
+          name: "Seb's Music 시연 영상 (Youtube)",
+          url: "https://youtu.be/A3frdYgd-ho?si=EyyWxYKxZKZpHRYj",
+        },
       ],
     },
     category: ["team", "p2023"],
@@ -157,6 +178,7 @@ export const projectData: IProjectData[] = [
     exp: [
       "py파일 한개로만 짰던 Flask 서버를 Node 수업에서 배운 Router를 활용하여 기능별로 분리했습니다.",
       "Express.js로 다시 짜면서 ChatGPT와 인터넷을 따라 만들었던 코드를 다시 이해해볼 수 있었습니다.",
+      "ERD를 작성하여 테이블 구조에 대하여 쉽게 알아볼 수 있도록 했습니다.",
     ],
     site: {
       selectOptions: [
@@ -194,6 +216,18 @@ export const projectData: IProjectData[] = [
         {
           name: "팜팜 데모 사이트",
           url: "#",
+        },
+        {
+          name: "팜팜 프로젝트 설명 (Notion)",
+          url: "https://hellosori.notion.site/4dd1ce5f2f684bf9adf2cb49d631c81b",
+        },
+        {
+          name: "팜팜 핵심기능 시연 영상 (Youtube)",
+          url: "https://youtu.be/2ZGiNXSUUps?si=R4VWkc9IfYvczpei",
+        },
+        {
+          name: "팜팜 전체페이지 시연 영상 (Youtube)",
+          url: "https://youtu.be/HNtmMcy6rKk?si=erTCpHPdIUcxasrC",
         },
       ],
     },

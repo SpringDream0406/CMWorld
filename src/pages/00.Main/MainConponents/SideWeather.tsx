@@ -31,8 +31,10 @@ const SideWeather = () => {
           dispatch(musicActions.setNowWeather(weatherData)); // 배경 변경을 위해 redux로 보냄
         }
       } catch (err: any) {
+        console.log(err);
+
         if (err.code) {
-          Utils.moveToPage(navigate, err.code); // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 alert만 띄우게 해놓음
+          Utils.moveToPage(navigate, "geolocation", err.code); // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 alert만 띄우게 해놓음
           return;
         }
       }

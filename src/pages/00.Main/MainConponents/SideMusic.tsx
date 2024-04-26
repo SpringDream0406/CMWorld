@@ -19,7 +19,8 @@ const SideMusic = () => {
   const musicPlayerSetting: ISwitch = useSelector(
     (state: RootState) => state.setting.musicPlayerSetting // 플레이리스트 저장할지 여부
   );
-  const [songInfo, setSongInfo] = useState<string>("로딩 중.."); // 플레이어 준비되었을때 세팅됨
+  const [songInfo, setSongInfo] =
+    useState<string>("쥬크박스에서 노래를 선택해주세요"); // 플레이어 준비되었을때 세팅됨
   const volume: number = useSelector((state: RootState) => state.music.volume); // Volmue에서 보낸 volum 값 (0~100)
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0); // 뒤로/앞으로 가기, 곡정보, 재생url 설정 등에 사용
   const [youTubeVideoSize, setYouTubeVideSize] = useState<number>(0); // 유튜브창 열고 닫기용 높이 조절 (0 or 120)

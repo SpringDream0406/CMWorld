@@ -39,12 +39,6 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.pick2024],
   // },
   {
-    url: "",
-    artist: "",
-    title: "",
-    playlists: [pl.pick2024],
-  },
-  {
     url: "https://www.youtube.com/watch?v=NcMCLh935mA",
     artist: "LOL",
     title: "Get Jinxed (ft. Djerv)",
@@ -66,13 +60,13 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=MhHxVaJ9sT4",
     artist: "테일즈위버 OST",
     title: "Second Run",
-    playlists: [pl.before2024, pl.working, pl.feeling],
+    playlists: [pl.before2024, pl.feeling],
   },
   {
     url: "https://www.youtube.com/watch?v=mlFDY5TMgeg",
     artist: "테일즈위버 OST",
     title: "Reminiscence",
-    playlists: [pl.before2024, pl.working, pl.feeling],
+    playlists: [pl.before2024, pl.feeling],
   },
   {
     url: "https://www.youtube.com/watch?v=L2LB12IxLDU",
@@ -207,7 +201,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.pick2024, pl.working, pl.groove],
   },
   {
-    url: "OkOohmpromQ",
+    url: "https://www.youtube.com/watch?v=OkOohmpromQ",
     artist: "NIKI",
     title: "Selene",
     playlists: [pl.pick2024, pl.working, pl.groove],
@@ -663,6 +657,12 @@ export const musicData: IMusicData[] = [
     artist: "개리 & 정인",
     title: "사람냄새",
     playlists: ["before2024"],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=dYIT_jeUBKg",
+    artist: "프리스타일",
+    title: "Y",
+    playlists: ["cyworld"],
   },
   {
     url: "https://www.youtube.com/watch?v=IH728Tc9AX4",
@@ -1506,12 +1506,6 @@ export const musicData: IMusicData[] = [
     artist: "크리스포터 & 청하",
     title: "When I Get Old",
     playlists: ["feeling", "working", "pick2024"],
-  },
-  {
-    url: "https://www.youtube.com/watch?v=dYIT_jeUBKg",
-    artist: "프리스타일",
-    title: "Y",
-    playlists: ["cyworld"],
   },
   {
     url: "https://www.youtube.com/watch?v=NIPtyAKxlRs",
