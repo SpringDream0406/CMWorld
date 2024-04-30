@@ -26,7 +26,6 @@ function App() {
           </Route>
           <Route path="profile" element={<Profile />} />
           <Route path="project" element={<Project />}>
-            <Route index element={<Navigate to="team" />} />
             <Route path=":category" element={<ProjectRight />} />
           </Route>
           <Route path="jukbox" element={<Jukbox />}>

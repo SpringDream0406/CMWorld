@@ -39,10 +39,10 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.pick2024],
   // },
   {
-    url: "https://www.youtube.com/watch?v=NcMCLh935mA",
-    artist: "LOL",
-    title: "Get Jinxed (ft. Djerv)",
-    playlists: [pl.pick2024, pl.working, pl.tensionup],
+    url: "https://www.youtube.com/watch?v=vMGyTUGH9jg&ab_channel=Gummy-Topic",
+    artist: "Gummy & Ailee",
+    title: "질투나",
+    playlists: [pl.before2024, pl.feeling],
   },
   {
     url: "https://www.youtube.com/watch?v=l5t9IXtTr6g",
