@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.pick2024],
   // },
   {
+    url: "https://www.youtube.com/watch?v=GWNODbG9AIM",
+    artist: "Justin Bieber",
+    title: "Peaches feat. Daniel Caesar & Giveon",
+    playlists: [pl.pick2024, pl.groove, pl.working],
+  },
+  {
     url: "https://www.youtube.com/watch?v=vMGyTUGH9jg&ab_channel=Gummy-Topic",
     artist: "Gummy & Ailee",
     title: "질투나",
