@@ -39,9 +39,33 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.pick2024],
   // },
   {
+    url: "https://www.youtube.com/watch?v=hgaZhV5KtHg",
+    artist: "American Authors",
+    title: "I'm Born To Run",
+    playlists: [pl.pick2024, pl.tensionup, pl.working],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=v-F-bB6c5aU",
+    artist: "박완규",
+    title: "Alone (카우보이 비밥 ost)",
+    playlists: [pl.pick2024, pl.feeling, pl.rainy],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=4y-wlb3F_Zg",
+    artist: "Tom Frane",
+    title: "Don't Leave (feat. RJ Pasin)",
+    playlists: [pl.pick2024, pl.working, pl.feeling],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=BWW-ZOaf040",
+    artist: "Merk & Kremont",
+    title: "Sad Story (Out Of Luck)",
+    playlists: [pl.pick2024, pl.working],
+  },
+  {
     url: "https://www.youtube.com/watch?v=GWNODbG9AIM",
     artist: "Justin Bieber",
-    title: "Peaches feat. Daniel Caesar & Giveon",
+    title: "Peaches (feat. Daniel Caesar & Giveon)",
     playlists: [pl.pick2024, pl.groove, pl.working],
   },
   {
@@ -77,7 +101,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=L2LB12IxLDU",
     artist: "DJ OKAWARI",
-    title: "Speed of Light feat. 二宮愛",
+    title: "Speed of Light (feat. 二宮愛)",
     playlists: [pl.pick2024, pl.working],
   },
   {
@@ -89,7 +113,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=zQ2LfW-DWDc",
     artist: "DJ OKAWARI",
-    title: "Everything's Alright feat. Kaori Sawada",
+    title: "Everything's Alright (feat. Kaori Sawada)",
     playlists: [pl.pick2024, pl.working],
   },
   {
