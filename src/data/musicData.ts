@@ -126,7 +126,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=z8zHpZOZodQ",
     artist: "Joe Hisaishi",
     title: "Summer",
-    playlists: [pl.pick2024, pl.nolyrics, pl.working],
+    playlists: [pl.pick2024, pl.nolyrics],
   },
   {
     url: "https://www.youtube.com/watch?v=AULG4MoYxQk",
