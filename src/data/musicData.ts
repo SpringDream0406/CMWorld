@@ -38,7 +38,7 @@ export const musicData: IMusicData[] = [
   //   artist: "",
   //   title: "",
   //   playlists: [pl.pick2024],
-  // },
+  // }, //
   {
     url: "https://www.youtube.com/watch?v=hgaZhV5KtHg",
     artist: "American Authors",
