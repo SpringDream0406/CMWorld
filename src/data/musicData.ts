@@ -40,6 +40,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.pick2024],
   // },
   {
+    url: "https://youtu.be/5Rrdt9KcZgk?si=qlw6dZXmOLluzn8I",
+    artist: "Linkin Park",
+    title: "New divide",
+    playlists: [pl.pick2024, pl.tensionup],
+  },
+  {
     url: "https://www.youtube.com/watch?v=hgaZhV5KtHg",
     artist: "American Authors",
     title: "I'm Born To Run",

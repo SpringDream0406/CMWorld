@@ -20,8 +20,8 @@ export const pageSummary = [
   { name: "공지사항", url: "/#", num: noticeTitles.length },
   { name: "프로젝트:", url: "/project", num: projectData.length },
   { name: "쥬크박스:", url: "/jukbox", num: musicData.length },
-  { name: "놀이터:", url: "/playground", num: "공사중.." },
-  { name: "사진첩:", url: "/photo", num: "공사중.." },
+  { name: "놀이터:", url: "/playground", num: "준비중.." },
+  { name: "사진첩:", url: "/photo", num: "고민중.." },
   { name: "방명록:", url: "/guestbook", num: "로딩중.." }, // 해당 페이지에서 업데이트됨
 ];
 
