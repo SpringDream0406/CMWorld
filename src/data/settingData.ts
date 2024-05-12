@@ -3,13 +3,13 @@ import { Utils } from "../utils/utils";
 // 설정 leftNavePage
 export const settingtags = {
   musicplayer: "뮤직 플레이어",
-  visit: "방명록",
+  // visit: "방명록",
 };
 
 // 뮤직 플레이어 세팅 기본값
 const musicPlayerDefaultSetting = {
   "플레이리스트 저장": true,
-  "음악 자동 추천": false,
+  // "음악 자동 추천": false,
 };
 
 // 로컬스토리지에 저장된 뮤직 플레이어 세팅값
@@ -30,6 +30,6 @@ export const musicPlayerSwitchInfo = {
 export const switchInfoSpanTitle = {
   "플레이리스트 저장":
     "마지막으로 재생한 플레이리스트가 저장됩니다. (한 곡일 경우 한 곡만 저장됩니다.)",
-  "음악 자동 추천":
-    "플레이리스트를 자동으로 설정합니다. (시간과 날씨에 따라 다른 플레이리스트로 자동 설정됩니다.)",
+  // "음악 자동 추천":
+  //   "플레이리스트를 자동으로 설정합니다. (시간과 날씨에 따라 다른 플레이리스트로 자동 설정됩니다.)",
 };

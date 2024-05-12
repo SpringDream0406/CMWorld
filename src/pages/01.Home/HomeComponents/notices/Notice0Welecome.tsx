@@ -18,16 +18,16 @@ const Notice0Welecome = () => {
         한국이 아닌 지역에 대한 접근을 차단하고 있으므로 위치정보를
         허용해주세요.
       </span>
-      <span>추가적으로 자동추천플레이리스트 기능에도 사용되고 있습니다.</span>
+      {/* <span>추가적으로 자동추천플레이리스트 기능에도 사용되고 있습니다.</span> */}
       <br />
       <span>
         둘러보시기 전에 <Link to="/jukbox">쥬크박스</Link>에 방문하여 배경노래를
-        먼저 세팅해보시거나
+        먼저 세팅해보세요.
       </span>
-      <span>
+      {/* <span>
         <Link to="/setting/musicplayer">설정 페이지</Link>
         <span>에 방문하여 음악 자동 추천 기능을 on 시켜보세요.</span>
-      </span>
+      </span> */}
       <br />
       <span>서로를 알아가는 좋은 시간이 되셨으면 좋겠습니다.</span>
       <br />

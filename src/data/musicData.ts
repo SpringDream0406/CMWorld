@@ -39,6 +39,24 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.pick2024],
+  // },
+  {
+    url: "https://youtu.be/KprKbo4tLjo?si=7uR4o0Yib0g0ilrH",
+    artist: "G-Eazy & Halsey",
+    title: "Him & I",
+    playlists: [pl.pick2024, pl.working],
+  },
+  {
+    url: "https://www.youtube.com/watch?v=EALA9YBeGNI&ab_channel=AdelynPaik-Topic",
+    artist: "Adelyn Paik",
+    title: "Apricity",
+    playlists: [pl.pick2024, pl.feeling, pl.rainy],
+  },
   {
     url: "https://youtu.be/5Rrdt9KcZgk?si=qlw6dZXmOLluzn8I",
     artist: "Linkin Park",
@@ -830,7 +848,7 @@ export const musicData: IMusicData[] = [
   },
   {
     url: "https://www.youtube.com/watch?v=_G1cVDy0fTg",
-    artist: "Duke & Jones, Louis Theroux",
+    artist: "Duke & Jones & Louis Theroux",
     title: "Jiggle Jiggle",
     playlists: ["feeling", "working", "before2024", "pick2024"],
   },
