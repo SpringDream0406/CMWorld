@@ -39,12 +39,6 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.pick2024],
   // },
-  // {
-  //   url: "",
-  //   artist: "",
-  //   title: "",
-  //   playlists: [pl.pick2024],
-  // },
   {
     url: "https://youtu.be/KprKbo4tLjo?si=7uR4o0Yib0g0ilrH",
     artist: "G-Eazy & Halsey",
@@ -718,6 +712,18 @@ export const musicData: IMusicData[] = [
     artist: "프리스타일",
     title: "Y",
     playlists: ["cyworld"],
+  },
+  {
+    url: "https://youtu.be/wecpRs9p00E?si=xI6_8kTXvnwsOcZi",
+    artist: "델리 스파이스",
+    title: "챠우챠우",
+    playlists: [pl.pick2024, pl.cyworld, pl.feeling, pl.rainy],
+  },
+  {
+    url: "https://youtu.be/BYyVDi8BpZw?si=N1zEeRP_EbmeEkCr",
+    artist: "델리 스파이스",
+    title: "고백",
+    playlists: [pl.pick2024, pl.cyworld, pl.feeling, pl.rainy],
   },
   {
     url: "https://www.youtube.com/watch?v=IH728Tc9AX4",
