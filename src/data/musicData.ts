@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.pick2024],
+  // },
   {
     url: "https://youtu.be/KprKbo4tLjo?si=7uR4o0Yib0g0ilrH",
     artist: "G-Eazy & Halsey",
