@@ -30,7 +30,6 @@ enum pl {
   pick2024 = "pick2024",
 }
 
-//
 // 유튜브 음악 데이터
 export const musicData: IMusicData[] = [
   // {
