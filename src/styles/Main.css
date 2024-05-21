@@ -184,3 +184,47 @@ li {
   cursor: help;
   color: pink;
 }
+
+/* Page Not Found */
+.notfound {
+  border-radius: 1rem;
+  border: 0.1rem solid black;
+  width: 100%;
+  margin: 0.3rem 0rem 0.3rem 0.3rem;
+  margin-right: 0.95rem;
+}
+
+.notfound-img {
+  border-radius: 1rem;
+}
+
+/* 맥북 14인치 */
+@media screen and (min-width: 1366px) and (max-width: 1512px) {
+  .nowTime {
+    font-size: 1.8rem;
+  }
+  .toDay {
+    font-size: 0.8rem;
+  }
+
+  .geolocation span {
+    font-size: 1.5rem;
+  }
+}
+
+/* 아이패드 11인치 */
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .nowTime {
+    font-size: 1.4rem;
+  }
+  .toDay {
+    font-size: 0.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+  .geolocation span {
+    font-size: 1rem;
+  }
+}

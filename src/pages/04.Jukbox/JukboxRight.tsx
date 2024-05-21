@@ -16,7 +16,10 @@ const JukboxRight = () => {
       {filteredMusicData.map((music, index) => (
         <div key={index} className={"music-render"}>
           <div>
-            <button onClick={() => Utils.playSong(dispatch, [music])}>
+            <button
+              className="music-render-btn"
+              onClick={() => Utils.playSong(dispatch, [music])}
+            >
               ▶️
             </button>
           </div>

@@ -41,6 +41,7 @@
   display: flex;
   flex-direction: row;
   padding: 0.2rem;
+  font-size: 0.9rem;
 }
 
 .notice-item-title {
@@ -87,5 +88,38 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: overlay;
+}
+
+/* 맥북 14인치 */
+@media screen and (min-width: 1366px) and (max-width: 1512px) {
+  .home-right-notice-content {
+    padding: 0.4rem;
+  }
+  .notice-itme {
+    font-size: 0.8rem;
+  }
+  .home-right-pageSummary > div {
+    padding: 0.3rem;
+  }
+  .home-right-notice-detail {
+    font-size: 0.78rem;
+  }
+}
+
+/* 아이패드 11인치 */
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .home-right-notice-content {
+    padding: 0.3rem;
+  }
+  .notice-itme {
+    font-size: 0.57rem;
+  }
+  .home-right-pageSummary > div {
+    padding: 0.1rem;
+    font-size: 0.8rem;
+  }
+  .home-right-notice-detail {
+    font-size: 0.65rem;
+  }
 }

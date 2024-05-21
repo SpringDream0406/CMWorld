@@ -37,7 +37,7 @@
 .welcomeMessage {
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   padding-left: 0.5rem;
   height: 100%;
 }
@@ -90,4 +90,52 @@
 
 .LeftNavPage-Nav.active {
   background-color: lightblue;
+}
+
+/* 맥북 14인치 */
+@media screen and (min-width: 1366px) and (max-width: 1512px) {
+  .wrapper__left__footer {
+    margin-left: 0.3rem;
+  }
+
+  .emailAddress {
+    font-size: 0.5rem;
+  }
+  .welcomeMessage {
+    font-size: 0.8rem;
+  }
+  .sites {
+    font-size: 0.8rem;
+  }
+  .sites-select {
+    font-size: 0.6rem;
+  }
+
+  .LeftNavPage-Nav {
+    font-size: 1rem;
+  }
+}
+
+/* 아이패드 11인치 */
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .wrapper__left__footer {
+    margin-left: 0.05rem;
+  }
+
+  .emailAddress {
+    font-size: 0.35rem;
+  }
+  .welcomeMessage {
+    font-size: 0.77rem;
+  }
+  .sites {
+    font-size: 0.5rem;
+  }
+  .sites-select {
+    font-size: 0.37rem;
+  }
+
+  .LeftNavPage-Nav {
+    font-size: 0.7rem;
+  }
 }

@@ -14,7 +14,7 @@ const IntroLeftPage = ({ introduceData }: { introduceData: JSX.Element }) => {
         <Introduce introduceData={introduceData} />
       </div>
       <div className="wrapper__left__footer">
-        <span className="emailAddress">springdream0406@gamil.com</span>
+        <span className="emailAddress">springdream0406@gmail.com</span>
         <OpenSite openSiteData={homeOpenSiteData} />
       </div>
     </>

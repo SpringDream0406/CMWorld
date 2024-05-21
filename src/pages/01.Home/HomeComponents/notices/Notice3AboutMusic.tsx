@@ -48,22 +48,18 @@ const Notice3AboutMusic = () => {
         하겠습니다.
       </span>
       <br />
-      <span>음량과 랜덤재생 설정은 자동으로 localStorage에 저장되며,</span>
       <span>
-        플레이리스트 저장과 음악 자동 추천은{" "}
-        <Link to="/setting/musicplayer">설정 페이지</Link>에서 체크를 하셔야
-        localStorage에 저장됩니다.
-      </span>
-      <span>
-        현재 구현되어있는 자동 노래 추천 기능은 시간과 날씨를 기반으로 작동되니
-        이점 참고해주시기 바랍니다.
+        음량과 랜덤재생 설정 그리고 플레이리스트는 자동으로 localStorage에
+        저장되며, 플레이리스트의 경우{" "}
+        <Link to="/setting/musicplayer">설정 페이지</Link>에서 이를 해제하실 수
+        있습니다.
       </span>
       <br />
       <span>
         노래는 취향에 맞는 노래를 발견할 때마다 지속해서 추가할 예정입니다.
       </span>
       <span>
-        저의 취향에 맞는 노래들을 같이 즐기시면서 춘몽월드를 즐기셨으면
+        저의 취향에 맞는 노래들을 같이 들으면서 춘몽월드를 즐기셨으면
         좋겠습니다.
       </span>
     </>

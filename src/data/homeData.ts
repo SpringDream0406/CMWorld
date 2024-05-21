@@ -9,10 +9,10 @@ import Notice3AboutMusic from "../pages/01.Home/HomeComponents/notices/Notice3Ab
 
 // 공지사항 제목
 export const noticeTitles = [
-  { title: "뮤직플레이어에 관하여", path: 3, date: "2024-04-26" },
-  { title: "방명록과 데이터 보안에 관하여", path: 2, date: "2024-04-15" },
-  { title: "업데이트 정보", path: 1, date: "2024-04-15" },
-  { title: "환영합니다", path: 0, date: "2024-04-15" },
+  { title: "뮤직플레이어에 관하여", path: 3, date: "2024-05-22" },
+  { title: "데이터에 관하여", path: 2, date: "2024-05-22" },
+  { title: "업데이트 정보", path: 1, date: "2024-05-22" },
+  { title: "환영합니다", path: 0, date: "2024-05-22" },
 ];
 
 // 페이지 요약 데이터
@@ -47,7 +47,7 @@ export const updateVersionData = [
       {
         version: "- 2.0.0 Beta",
         change: "Beta 버전 배포",
-        date: "2024-04-00",
+        date: "2024-05-22",
       },
     ],
   },

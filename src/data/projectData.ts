@@ -14,7 +14,7 @@ export const projectData: IProjectData[] = [
   {
     title: "팜팜 서버 교체2",
     where: "개인 프로젝트",
-    when: "2024.04 ~ 2024.04 (1주)",
+    when: "2024.04 ~ 2024.04 (약 2주)",
     sub: "Express.js로 만들어진 서버를 Nest.js로 교체",
     exp: [
       "Nest.js를 공부하면서 Express.js로 구성된 Router를 Nest.js로 변경했습니다.",
@@ -24,7 +24,7 @@ export const projectData: IProjectData[] = [
       "바뀐 DB 테이블과 데이터에 맞게 ERD를 새로 작성했습니다,",
       "Validation을 사용하여 제약 조건을 설정했습니다.",
       "Swagger를 작성하여 API에 대한 설명과 테스트를 해볼 수 있도록 하였습니다.",
-      "배포를 통해 팜팜의 데모사이트를 체험해 볼 수 있도록 하였습니다.",
+      "AWS에 데모사이트를 배포하여 팜팜을 체험해 볼 수 있도록 하였습니다.",
     ],
     site: {
       selectOptions: [
@@ -34,7 +34,7 @@ export const projectData: IProjectData[] = [
         },
         {
           name: "팜팜 데모 사이트",
-          url: "#",
+          url: "http://farmfarm-front.s3-website.ap-northeast-2.amazonaws.com/",
         },
         {
           name: "팜팜 ERD (Nest.js)",
@@ -42,7 +42,7 @@ export const projectData: IProjectData[] = [
         },
         {
           name: "팜팜 Swagger",
-          url: "#",
+          url: "http://43.201.93.123/api",
         },
       ],
     },
@@ -187,10 +187,6 @@ export const projectData: IProjectData[] = [
           url: "https://github.com/SpringDream0406/-GAI-project_Appian",
         },
         {
-          name: "팜팜 데모 사이트",
-          url: "#",
-        },
-        {
           name: "팜팜 ERD (Express.js)",
           url: "https://www.erdcloud.com/d/4FpqQg6NLnfDBboQv",
         },
@@ -212,10 +208,6 @@ export const projectData: IProjectData[] = [
         {
           name: "팜팜 Github",
           url: "https://github.com/SpringDream0406/-GAI-project_Appian",
-        },
-        {
-          name: "팜팜 데모 사이트",
-          url: "#",
         },
         {
           name: "팜팜 프로젝트 설명 (Notion)",

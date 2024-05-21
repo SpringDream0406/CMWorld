@@ -33,7 +33,9 @@ const SideClock = () => {
       <span className="nowTime">
         {currentTime.toLocaleTimeString(undefined, timeOptions)}
       </span>
-      <span>{currentTime.toLocaleDateString(undefined, dateOptions)}</span>
+      <span className="toDay">
+        {currentTime.toLocaleDateString(undefined, dateOptions)}
+      </span>
     </div>
   );
 };

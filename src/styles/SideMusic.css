@@ -106,3 +106,27 @@
   color: #6e2c17;
   fill: #7a4c3e;
 }
+
+/* 맥북 14인치 */
+@media screen and (min-width: 1366px) and (max-width: 1512px) {
+  .sideMusic-control-btn button {
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 1.3rem;
+  }
+  .sideMusic-control-btn button:hover {
+    font-size: 1.7rem;
+  }
+}
+
+/* 아이패드 11인치 */
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .sideMusic-control-btn button {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1.2rem;
+  }
+  .sideMusic-control-btn button:hover {
+    font-size: 1.6rem;
+  }
+}

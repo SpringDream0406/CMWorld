@@ -18,14 +18,20 @@ const OpenSite = ({ openSiteData }: { openSiteData: IOpenSiteData }) => {
         <span>{openSiteData?.title}</span>
       </div>
       <div>
-        <select ref={siteRef}>
+        <select ref={siteRef} className="sites-select">
           {openSiteData.selectOptions.map((options) => (
-            <option key={options.name} value={options.url}>
+            <option
+              className="sites-select"
+              key={options.name}
+              value={options.url}
+            >
               {options.name}
             </option>
           ))}
         </select>
-        <button onClick={openStie}>열기</button>
+        <button className="sites-select" onClick={openStie}>
+          열기
+        </button>
       </div>
     </div>
   );
