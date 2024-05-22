@@ -114,13 +114,13 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=MhHxVaJ9sT4",
     artist: "테일즈위버 OST",
     title: "Second Run",
-    playlists: [pl.before2024, pl.feeling],
+    playlists: [pl.before2024, pl.feeling, pl.nolyrics],
   },
   {
     url: "https://www.youtube.com/watch?v=mlFDY5TMgeg",
     artist: "테일즈위버 OST",
     title: "Reminiscence",
-    playlists: [pl.before2024, pl.feeling],
+    playlists: [pl.before2024, pl.feeling, pl.nolyrics],
   },
   {
     url: "https://www.youtube.com/watch?v=L2LB12IxLDU",

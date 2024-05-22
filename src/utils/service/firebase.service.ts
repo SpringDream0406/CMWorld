@@ -19,6 +19,7 @@ import {
   where,
   DocumentData,
   updateDoc,
+  orderBy,
 } from "firebase/firestore";
 import { firebaseAction } from "../../redux/firebaseReducer";
 
@@ -128,11 +129,15 @@ export class FirebaseService {
       if (condition) {
         postQuery = query(
           collection(db, documentName),
-          where(condition.key, condition.operator, condition.value)
+          where(condition.key, condition.operator, condition.value),
+          orderBy("postedAt", "desc")
         );
         // 조건이 없는 경우
       } else {
-        postQuery = collection(db, documentName);
+        postQuery = query(
+          collection(db, documentName),
+          orderBy("postedAt", "desc")
+        );
       }
       const querySnapshot = await getDocs(postQuery);
       return querySnapshot;
