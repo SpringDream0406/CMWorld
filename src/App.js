@@ -14,8 +14,18 @@ import Setting from "./pages/08.Setting/Setting";
 import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
 import Geolocation from "./pages/Geolocation";
 import NotFound from "./pages/NotFound";
+import MobileMusic from "./mobile/MobileMusic";
 
 function App() {
+  //
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile)
+    return (
+      <div>
+        <MobileMusic />
+      </div>
+    );
+
   return (
     <div>
       <Routes>
@@ -39,6 +49,7 @@ function App() {
             <Route path="musicplayer" element={<MusicPlayerSetting />} />
           </Route>
           <Route path="geolocation" element={<Geolocation />} />
+          <Route path="music" element={<MobileMusic />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
