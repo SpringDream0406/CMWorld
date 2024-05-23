@@ -187,7 +187,7 @@ const MobileMusic = () => {
         setIsPlayerReady(true); // 버튼 잠금 해제
         setSongInfo(
           playerUtils.makeSongInfo() ||
-            "CM Music을 눌러 플레이리스트를 선택해주세요 - 이 곳을 누르면 플레이 중인 노래 리스트 목록이 나옵니다."
+            "CM Music을 눌러 플레이리스트를 선택해주세요."
         );
       }}
       onEnded={() => {
@@ -213,7 +213,7 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 4 }, (_, index) => (
+      {Array.from({ length: 10 }, (_, index) => (
         <div className="mfw" key={index}>
           {songInfo}
         </div>
