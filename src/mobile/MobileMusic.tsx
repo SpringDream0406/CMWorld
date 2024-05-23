@@ -170,7 +170,7 @@ const MobileMusic = () => {
       controls={false} // 유튜브 컨트롤 기능 on/off
       // volume={volume}
       width={"100%"}
-      height={"100%"}
+      height={"60%"}
       onPlay={() => setIsPlaying(1)}
       onPause={() => setIsPlaying(0)}
       onReady={() => {
