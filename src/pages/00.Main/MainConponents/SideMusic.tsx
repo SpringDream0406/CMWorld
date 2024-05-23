@@ -34,11 +34,10 @@ const SideMusic = () => {
   const [realPlaylist, setRealPlaylist] = useState<IMusicData[]>([]); // 일반 or 셔플 된 playlist 담김
   const youtubeBoxSize = Utils.getSize("music"); // 유튜브 띄우는 창이 속한 div 크기 담김(with, height) => width 가져다 쓸 용도
   const playerUtils = useMemo(
-    // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
     () =>
       new PlayerUtils(realPlaylist, currentVideoIndex, setCurrentVideoIndex),
     [realPlaylist, currentVideoIndex]
-  );
+  ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
 
   // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {

@@ -1,10 +1,31 @@
-.mobile-music {
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.m-background {
   width: 100vw;
   height: 100vh;
+  /* background: linear-gradient(to bottom, #ffcccc, #ff99cc); */
+  background: linear-gradient(-45deg, #fff6b7, #f092bc, #8795e6, #c2ffd8);
+  background-size: 400% 400%;
+  animation: AnimationName 15s ease infinite;
+}
+
+.mobile-music {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #ffcccc, #ff99cc);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* top */
@@ -23,13 +44,24 @@
   align-items: center;
 }
 
+.playing-list-icon {
+  width: 4rem;
+}
+
 .cm-music {
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 5rem;
-  font-weight: 800;
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(180deg, #d9a7c7 0%, #fffcdc 100%);
+  background-clip: text;
+}
+
+.cm-music-span {
+  background-color: red;
 }
 
 .volume {
@@ -44,33 +76,89 @@
   width: 90%;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
 }
 
-.song-info {
+.m-show-box {
   height: 70%;
-  border: 1px solid black;
 }
 
-.img {
+.m-player {
   height: 80%;
-  border: 1px solid black;
 }
 
-.title {
+/* playlist */
+.m-show-playlist {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(0, 0, 0, 0.65);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-showing-playlist {
+  display: flex;
+  justify-content: center;
+  font-size: 5.5rem;
+  color: white;
+  padding: 1rem;
+}
+
+/* playingList */
+.m-show-playingList {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(0, 0, 0, 0.65);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-showing-playingList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.m-playingList-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.m-playingList-artist {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgb(206, 203, 203);
+}
+
+/*  */
+.m-song-info-space {
+  height: 3%;
+}
+
+.m-title {
   height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  font-weight: 700;
+  color: white;
 }
 
-.artist {
-  height: 10%;
+.m-artist {
+  height: 7%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  color: rgb(206, 203, 203);
 }
 
 .controls {
@@ -91,6 +179,7 @@
   display: flex;
   justify-content: center;
   width: 10%;
+  color: white;
 }
 
 .play-bar-range {
@@ -101,10 +190,27 @@
   display: flex;
   justify-content: center;
   width: 10%;
+  color: white;
 }
 
 .btns {
   height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  background: none;
+  color: rgb(206, 203, 203);
 }
 
 /* footer */
@@ -114,4 +220,5 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  color: white;
 }
