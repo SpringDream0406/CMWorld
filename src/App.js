@@ -1,19 +1,19 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Main from "./pages/00.Main/Main";
-import Home from "./pages/01.Home/Home";
-import HomeRight from "./pages/01.Home/HomeRight";
-import Profile from "./pages/02.Profile/Profile";
-import Project from "./pages/03.Project/Project";
-import ProjectRight from "./pages/03.Project/ProjectRight";
-import Jukbox from "./pages/04.Jukbox/Jukbox";
-import Playground from "./pages/05.Playground/Playground";
-import Photo from "./pages/06.Photo/Photo";
-import Guestbook from "./pages/07.Guestbook/Guestbook";
-import Setting from "./pages/08.Setting/Setting";
-import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
-import Geolocation from "./pages/Geolocation";
-import NotFound from "./pages/NotFound";
+// import { Navigate, Route, Routes } from "react-router-dom";
+// import "./App.css";
+// import Main from "./pages/00.Main/Main";
+// import Home from "./pages/01.Home/Home";
+// import HomeRight from "./pages/01.Home/HomeRight";
+// import Profile from "./pages/02.Profile/Profile";
+// import Project from "./pages/03.Project/Project";
+// import ProjectRight from "./pages/03.Project/ProjectRight";
+// import Jukbox from "./pages/04.Jukbox/Jukbox";
+// import Playground from "./pages/05.Playground/Playground";
+// import Photo from "./pages/06.Photo/Photo";
+// import Guestbook from "./pages/07.Guestbook/Guestbook";
+// import Setting from "./pages/08.Setting/Setting";
+// import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
+// import Geolocation from "./pages/Geolocation";
+// import NotFound from "./pages/NotFound";
 import MobileMusic from "./mobile/MobileMusic";
 
 function App() {
