@@ -163,7 +163,7 @@
 }
 
 .m-flow-wrap {
-  animation: textLoop 15s linear infinite;
+  animation: textLoop 30s linear infinite;
   padding-right: 7rem;
 }
 
