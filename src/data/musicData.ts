@@ -3,7 +3,7 @@ import { IMusicData } from "../interface/music.interface";
 
 // 플레이리스트, leftNavPage
 export const playlists: ITags = {
-  Total: "음악 전체 보기",
+  Total: "음악 전체",
   Cyworld: "싸이월드 감성",
   Feeling: "감성 & 느낌",
   Tensionup: "텐션 올려!!",

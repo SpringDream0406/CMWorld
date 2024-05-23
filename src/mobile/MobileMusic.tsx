@@ -28,6 +28,8 @@ const MobileMusic = () => {
   const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
   const [duration, setDuration] = useState("00:00"); // 곡 총 시간
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
+  const playlistRef = useRef<HTMLDivElement>(null); // 플레이 리스트 Ref
+  const playingListRef = useRef<HTMLDivElement>(null); // 플레잉 리스트 Ref
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0); // 현재 노래 인덱스
   const [isPlaying, setIsPlaying] = useState<number>(0); // 0: 정지, 1: 재생, 2:로딩
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false); // 버튼 잠금용
@@ -51,7 +53,6 @@ const MobileMusic = () => {
   // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
     setCurrentVideoIndex(0);
-    // localStorage.setItem("playlist", JSON.stringify(playlist));
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
   }, [playlist]);
 
@@ -87,10 +88,11 @@ const MobileMusic = () => {
 
   // 중앙 상단 클릭 했을 때 나오는 playlist
   const playlistHTML = (
-    <div className="m-show-playlist">
+    <div className="m-show-playlist" ref={playlistRef}>
       {Object.entries(playlists).map(([key, value]) => (
         <div
           className="m-showing-playlist"
+          id={`m-playlist-${key}`}
           key={key}
           style={key === seletedPlaylist ? { color: "pink" } : {}}
           onClick={() => {
@@ -105,6 +107,22 @@ const MobileMusic = () => {
       ))}
     </div>
   );
+
+  useEffect(() => {
+    // playlistRef.current가 null이 아닌 경우에만 실행
+    if (playlistRef.current) {
+      // seletedPlaylist에 해당하는 요소를 찾아서 스크롤
+      const selectedElement = playlistRef.current.querySelector(
+        `#m-playlist-${seletedPlaylist}`
+      );
+      if (selectedElement) {
+        selectedElement.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      }
+    }
+  }, [seletedPlaylist, showPlaylist]);
 
   // 오른쪽 상단의 플레이리스트 아이콘
   const playingListIcon = (
@@ -123,7 +141,7 @@ const MobileMusic = () => {
 
   // 오른쪽 상단 아이콘 클릭 했을 때 나오는 playingList
   const playingListHTML = (
-    <div className="m-show-playingList">
+    <div className="m-show-playingList" ref={playingListRef}>
       {realPlaylist.map((music, index) => (
         <div
           key={index}
@@ -149,6 +167,15 @@ const MobileMusic = () => {
       ))}
     </div>
   );
+
+  // playingList 열렸을 때 현재 노래로 화면 이동
+  useEffect(() => {
+    if (playingListRef.current)
+      playingListRef.current.children[currentVideoIndex]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+  }, [currentVideoIndex, showPlayingList]);
 
   // 처음 들어왔을 때 안내 문구
   const noticeHTML = (
