@@ -19,9 +19,12 @@ const MobileMusic = () => {
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
   const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
   const [seletedPlaylist, setSeletedPlaylist] = useState(""); // 선택된 플레이 리스트
-  const [songInfo, setSongInfo] = useState<string>(
+  const [songTitle, setSongTitle] = useState<string>(
+    "여기를 누르시면 플레이중인 노래 리스트를 볼 수 있습니다."
+  ); // 제목
+  const [songArtist, setSongArtist] = useState<string>(
     "CM Music을 눌러 플레이리스트를 선택해주세요."
-  ); // 곡 정보
+  ); // 가수
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
@@ -185,10 +188,8 @@ const MobileMusic = () => {
       onPause={() => setIsPlaying(0)}
       onReady={() => {
         setIsPlayerReady(true); // 버튼 잠금 해제
-        setSongInfo(
-          playerUtils.makeSongInfo() ||
-            "CM Music을 눌러 플레이리스트를 선택해주세요."
-        );
+        setSongTitle(realPlaylist[currentVideoIndex]?.title); // 제목 업뎃
+        setSongArtist(realPlaylist[currentVideoIndex]?.artist); // 가수 업뎃
       }}
       onEnded={() => {
         playerUtils.changeVideoIndex(1); // 다음곡 재생
@@ -206,27 +207,25 @@ const MobileMusic = () => {
   // 곡 정보 HTML
   const songInfoHTML = (
     <div
-      className="mft"
+      className="song-info2"
       onClick={() => {
         // 곡 정보 눌렀을 playingList 표시
         setShowPlayingList(!showPlayingList);
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 7 }, (_, index) => (
-        <div className="mfw" key={index}>
-          {songInfo}
-        </div>
-      ))}
-      {Array.from({ length: 7 }, (_, index) => (
-        <div className="mfw" key={index}>
-          {songInfo}
-        </div>
-      ))}
-      {/* <div className="mfw">
-        {songInfo}
-        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60
-      </div> */}
+      <div
+        className="song-title"
+        style={showPlayingList ? { color: "pink" } : {}}
+      >
+        {Utils.ellipsisText(songTitle, 30)}
+      </div>
+      <div
+        className="song-artist"
+        style={showPlayingList ? { color: "pink" } : {}}
+      >
+        {Utils.ellipsisText(songArtist, 30)}
+      </div>
     </div>
   );
 
@@ -272,12 +271,7 @@ const MobileMusic = () => {
               {reactPlayer}
             </div>
           </div>
-          <div
-            className="msi"
-            style={showPlayingList ? { color: "white" } : {}}
-          >
-            {songInfoHTML}
-          </div>
+          <div className="song-info">{songInfoHTML}</div>
           <div className="controls">
             <div className="play-bar">
               <div className="time-start">
