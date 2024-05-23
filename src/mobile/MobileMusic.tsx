@@ -23,8 +23,11 @@ const MobileMusic = () => {
   const [songArtist, setSongArtist] = useState<string>(""); // 가수
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [duration, setDuration] = useState("00:00"); // 곡 총 시간
+  const [showVolume, setShowVolume] = useState<boolean>(false); // 볼륨 컨트롤 보이기
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
-  // const [volume, setVolume] = useState<number>(30); // 볼륨
+  const [volume, setVolume] = useState<number>(
+    Number(localStorage.getItem("musicPlayerVolume")) || 30
+  ); // 볼륨
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0); // 현재 노래 인덱스
   const [isPlaying, setIsPlaying] = useState<number>(0); // 0: 정지, 1: 재생, 2:로딩
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false); // 버튼 잠금용
@@ -51,46 +54,49 @@ const MobileMusic = () => {
     setRealPlaylist(isShuffleOn ? shuffledPlaylist : playlist);
   }, [playlist, isShuffleOn, shuffledPlaylist]);
 
-  // 왼쪽 상단의 플레이리스트 아이콘
-  const playingListIcon = (
-    <img
-      onClick={() => {
-        setShowPlayingList(!showPlayingList);
-        setShowPlaylist(false);
-      }}
-      className="playing-list-icon"
-      src={
-        showPlayingList ? "images/playinglist.png" : "images/playinglist2.png"
-      }
-      alt="playinglist"
-    />
-  );
-
-  // 왼쪽 상단 아이콘 클릭 했을 때 나오는 playingList
-  const playingListHTML = (
-    <div className="m-show-playingList">
-      {realPlaylist.map((music, index) => (
-        <div key={index} className="m-showing-playingList" onClick={() => {}}>
-          <div
-            className="m-playingList-title"
-            onClick={() => {
-              setCurrentVideoIndex(index);
-              setShowPlayingList(false);
+  // 왼쪽 상단의 볼륨
+  const volumeBar = (
+    <div className="volume-box">
+      <img
+        onClick={() => {
+          setShowVolume(!showVolume);
+        }}
+        className="volume-icon"
+        src={
+          volume === 0
+            ? showVolume
+              ? "images/mute2.png"
+              : "images/mute.png"
+            : showVolume
+            ? "images/volume2.png"
+            : "images/volume.png"
+        }
+        alt="playinglist"
+      />
+      {showVolume && (
+        <div className="volume-var">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            defaultValue={volume}
+            step="1"
+            className="volume-var-range"
+            onChange={(e) => {
+              const changedVolume = e.target.value;
+              setVolume(Number(changedVolume));
+              localStorage.setItem("musicPlayerVolume", String(changedVolume));
             }}
-          >
-            {Utils.ellipsisText(music.title, 30)}
-          </div>
-          <div className="m-playingList-artist">
-            {Utils.ellipsisText(music.artist, 30)}
-          </div>
+          />
         </div>
-      ))}
+      )}
     </div>
   );
 
   // 중앙 상단의 CM Music
   const cmMusic = (
     <div
+      className="cm-music-txt"
       onClick={() => {
         setShowPlaylist(!showPlaylist);
         setShowPlayingList(false);
@@ -119,16 +125,41 @@ const MobileMusic = () => {
     </div>
   );
 
-  // 오른쪽 상단의 볼륨
-  const volumeBar = (
-    <input
-      type="range"
-      min="0"
-      max="100"
-      defaultValue="30"
-      step="1"
-      className="volumerange"
+  // 오른쪽 상단의 플레이리스트 아이콘
+  const playingListIcon = (
+    <img
+      onClick={() => {
+        setShowPlayingList(!showPlayingList);
+        setShowPlaylist(false);
+      }}
+      className="playing-list-icon"
+      src={
+        showPlayingList ? "images/playinglist.png" : "images/playinglist2.png"
+      }
+      alt="playinglist"
     />
+  );
+
+  // 오른쪽 상단 아이콘 클릭 했을 때 나오는 playingList
+  const playingListHTML = (
+    <div className="m-show-playingList">
+      {realPlaylist.map((music, index) => (
+        <div key={index} className="m-showing-playingList" onClick={() => {}}>
+          <div
+            className="m-playingList-title"
+            onClick={() => {
+              setCurrentVideoIndex(index);
+              setShowPlayingList(false);
+            }}
+          >
+            {Utils.ellipsisText(music.title, 30)}
+          </div>
+          <div className="m-playingList-artist">
+            {Utils.ellipsisText(music.artist, 30)}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 
   // 플레이어 컨트롤 버튼
@@ -167,10 +198,10 @@ const MobileMusic = () => {
       ref={playerRef}
       playing={!(isPlaying === 0)}
       loop={realPlaylist.length === 1} // 한곡이면 반복
-      controls={false} // 유튜브 컨트롤 기능 on/off
-      // volume={volume}
+      controls={true} // 유튜브 컨트롤 기능 on/off
+      volume={volume / 100} // 0~1 사이라 /100
       width={"100%"}
-      height={"60%"}
+      height={"100%"}
       onPlay={() => setIsPlaying(1)}
       onPause={() => setIsPlaying(0)}
       onReady={() => {
@@ -197,25 +228,23 @@ const MobileMusic = () => {
       step="any"
       value={played}
       onChange={(e) => {
-        setPlayed(parseFloat(e.target.value));
+        const changedRange = e.target.value;
+        setPlayed(parseFloat(changedRange));
         if (playerRef.current)
-          playerRef.current.seekTo(parseFloat(e.target.value));
+          playerRef.current.seekTo(parseFloat(changedRange));
       }}
       className="play-bar-range"
     />
   );
-
-  console.log("selectedPlaylist", seletedPlaylist);
-  console.log("songs", playlist);
 
   // 본문
   return (
     <div className="m-background">
       <div className="mobile-music">
         <div className="top">
-          <div className="playing-list">{playingListIcon}</div>
-          <div className="cm-music">{cmMusic}</div>
           <div className="volume">{volumeBar}</div>
+          <div className="cm-music">{cmMusic}</div>
+          <div className="playing-list">{playingListIcon}</div>
         </div>
         <div className="body">
           <div className="m-show-box">

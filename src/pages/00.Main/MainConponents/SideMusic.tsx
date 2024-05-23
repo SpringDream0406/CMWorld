@@ -107,7 +107,7 @@ const SideMusic = () => {
       playing={!(isPlaying === 0)} // 0: 정지, 1: 재생, 2:로딩
       loop={realPlaylist.length === 1} // 한곡이면 반복
       controls={true} // 유튜브 컨트롤 기능 on/off
-      volume={volume / 100} // 0 ~ 1
+      volume={volume / 100} // 0 ~ 1 사이라 /100
       width={youtubeBoxSize.width}
       height={youTubeVideoSize}
       // playsinline={true}
