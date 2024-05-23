@@ -19,8 +19,6 @@ const MobileMusic = () => {
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
   const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
   const [seletedPlaylist, setSeletedPlaylist] = useState(""); // 선택된 플레이 리스트
-  const [songTitle, setSongTitle] = useState<string>(""); // 제목
-  const [songArtist, setSongArtist] = useState<string>(""); // 가수
   const [songInfo, setSongInfo] = useState<string>(
     "CM Music을 눌러 플레이리스트를 선택해주세요 - 이 곳을 누르면 플레이 중인 노래 리스트 목록이 나옵니다."
   ); // 곡 정보
