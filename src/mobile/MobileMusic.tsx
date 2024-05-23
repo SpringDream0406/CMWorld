@@ -20,7 +20,7 @@ const MobileMusic = () => {
   const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
   const [seletedPlaylist, setSeletedPlaylist] = useState(""); // 선택된 플레이 리스트
   const [songInfo, setSongInfo] = useState<string>(
-    "CM Music을 눌러 플레이리스트를 선택해주세요 - 이 곳을 누르면 플레이 중인 노래 리스트 목록이 나옵니다."
+    "CM Music을 눌러 플레이리스트를 선택해주세요."
   ); // 곡 정보
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
