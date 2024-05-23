@@ -22,7 +22,7 @@ export class Utils {
 
   static ellipsisText = (text: string, maxLength: number): string => {
     if (text.length > maxLength) {
-      return text.slice(0, maxLength) + "...";
+      return text.slice(0, maxLength) + "..";
     }
     return text;
   };

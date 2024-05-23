@@ -239,7 +239,7 @@ const MobileMusic = () => {
         className="song-title"
         style={showPlayingList ? { color: "pink" } : {}}
       >
-        {Utils.ellipsisText(songTitle, 15)}
+        {Utils.ellipsisText(songTitle, 16)}
       </div>
       <div
         className="song-artist"
