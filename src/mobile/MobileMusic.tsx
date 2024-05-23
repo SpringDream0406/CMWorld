@@ -205,7 +205,7 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 4 }, (_, index) => (
+      {Array.from({ length: 6 }, (_, index) => (
         <div className="m-flow-wrap" key={index}>
           {songInfo}
         </div>
