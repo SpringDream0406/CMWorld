@@ -140,13 +140,13 @@
 }
 
 /* body2 */
-.m-song-info {
+.msi {
   height: 15%;
   width: 100%;
   color: #9d9993;
 }
 
-.m-flow-text {
+.mft {
   height: 100%;
   width: 100%;
   display: flex;
@@ -159,7 +159,12 @@
   font-weight: 800;
 }
 
-@keyframes textLoop {
+.mfw {
+  animation: tL 10s linear infinite;
+  padding-right: 3rem;
+}
+
+@keyframes tL {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -168,11 +173,6 @@
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
-}
-
-.m-flow-wrap {
-  animation: textLoop 10s linear infinite;
-  padding-right: 3rem;
 }
 
 /* body3 */

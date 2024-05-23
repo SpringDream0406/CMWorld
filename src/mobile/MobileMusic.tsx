@@ -206,7 +206,7 @@ const MobileMusic = () => {
   // 곡 정보 HTML
   const songInfoHTML = (
     <div
-      className="m-flow-text"
+      className="mft"
       onClick={() => {
         // 곡 정보 눌렀을 playingList 표시
         setShowPlayingList(!showPlayingList);
@@ -214,7 +214,7 @@ const MobileMusic = () => {
       }}
     >
       {Array.from({ length: 4 }, (_, index) => (
-        <div className="m-flow-wrap" key={index}>
+        <div className="mfw" key={index}>
           {songInfo}
         </div>
       ))}
@@ -264,7 +264,7 @@ const MobileMusic = () => {
             </div>
           </div>
           <div
-            className="m-song-info"
+            className="msi"
             style={showPlayingList ? { color: "white" } : {}}
           >
             {songInfoHTML}
