@@ -153,9 +153,8 @@
   height: 100%;
   width: 100%;
   display: flex;
-  grid-auto-flow: column;
   align-items: center;
-  /* flex: 0 0 auto; */
+  flex: 0 0 auto;
   white-space: nowrap;
   overflow: hidden;
   /* transition: 0.3s; */
