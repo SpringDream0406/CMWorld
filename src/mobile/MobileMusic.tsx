@@ -85,6 +85,7 @@ const MobileMusic = () => {
         <div
           className="m-showing-playlist"
           key={key}
+          style={key === seletedPlaylist ? { color: "pink" } : {}}
           onClick={() => {
             setSeletedPlaylist(key);
             setShowPlaylist(!showPlaylist);
@@ -116,17 +117,24 @@ const MobileMusic = () => {
   const playingListHTML = (
     <div className="m-show-playingList">
       {realPlaylist.map((music, index) => (
-        <div key={index} className="m-showing-playingList" onClick={() => {}}>
+        <div
+          key={index}
+          className="m-showing-playingList"
+          onClick={() => {
+            setCurrentVideoIndex(index);
+            setShowPlayingList(false);
+          }}
+        >
           <div
             className="m-playingList-title"
-            onClick={() => {
-              setCurrentVideoIndex(index);
-              setShowPlayingList(false);
-            }}
+            style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
             {Utils.ellipsisText(music.title, 30)}
           </div>
-          <div className="m-playingList-artist">
+          <div
+            className="m-playingList-artist"
+            style={index === currentVideoIndex ? { color: "pink" } : {}}
+          >
             {Utils.ellipsisText(music.artist, 30)}
           </div>
         </div>
@@ -205,7 +213,7 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 6 }, (_, index) => (
+      {Array.from({ length: 10 }, (_, index) => (
         <div className="m-flow-wrap" key={index}>
           {songInfo}
         </div>

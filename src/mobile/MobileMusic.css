@@ -163,8 +163,8 @@
 }
 
 .m-flow-wrap {
-  animation: textLoop 20s linear infinite;
-  padding-right: 10rem;
+  animation: textLoop 15s linear infinite;
+  padding-right: 7rem;
 }
 
 @keyframes textLoop {
@@ -253,7 +253,7 @@
 }
 
 .mobile-music .btn-active {
-  color: black;
+  color: pink;
   font-size: 6rem;
 }
 
