@@ -1,7 +1,7 @@
 const Playground = () => {
   return (
     <div>
-      Playground
+      준비중..
       {/*  */}
     </div>
   );

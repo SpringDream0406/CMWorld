@@ -1,7 +1,7 @@
 const Photo = () => {
   return (
     <div>
-      Photo
+      고민중..
       {/*  */}
     </div>
   );
