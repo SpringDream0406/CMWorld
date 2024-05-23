@@ -18,13 +18,11 @@ const MobileMusic = () => {
   );
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
   const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
-  const [seletedPlaylist, setSeletedPlaylist] = useState(""); // 선택된 플레이 리스트
-  const [songTitle, setSongTitle] = useState<string>(
-    "여기를 누르시면 플레이중인 노래 리스트를 볼 수 있습니다."
-  ); // 제목
-  const [songArtist, setSongArtist] = useState<string>(
-    "CM Music을 눌러 플레이리스트를 선택해주세요."
-  ); // 가수
+  const [seletedPlaylist, setSeletedPlaylist] = useState(
+    localStorage.getItem("m-playlist")
+  ); // 선택된 플레이 리스트
+  const [songTitle, setSongTitle] = useState<string>(""); // 제목
+  const [songArtist, setSongArtist] = useState<string>(""); // 가수
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
@@ -44,10 +42,16 @@ const MobileMusic = () => {
     [realPlaylist, currentVideoIndex]
   ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
 
+  // 로컬 플레이리스트 있으면 해당 재생 목록으로 변환
+  useEffect(() => {
+    if (seletedPlaylist)
+      Utils.playSong(dispatch, Utils.filterShowMusicData(seletedPlaylist));
+  }, [dispatch, seletedPlaylist]);
+
   // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
     setCurrentVideoIndex(0);
-    localStorage.setItem("playlist", JSON.stringify(playlist));
+    // localStorage.setItem("playlist", JSON.stringify(playlist));
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
   }, [playlist]);
 
@@ -92,7 +96,8 @@ const MobileMusic = () => {
           onClick={() => {
             setSeletedPlaylist(key);
             setShowPlaylist(!showPlaylist);
-            Utils.playSong(dispatch, Utils.filterShowMusicData(key));
+            // Utils.playSong(dispatch, Utils.filterShowMusicData(key));
+            localStorage.setItem("m-playlist", key);
           }}
         >
           {value}
@@ -132,16 +137,32 @@ const MobileMusic = () => {
             className="m-playingList-title"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.title, 30)}
+            {Utils.ellipsisText(music.title, 24)}
           </div>
           <div
             className="m-playingList-artist"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.artist, 30)}
+            {Utils.ellipsisText(music.artist, 24)}
           </div>
         </div>
       ))}
+    </div>
+  );
+
+  // 처음 들어왔을 때 안내 문구
+  const noticeHTML = (
+    <div className="m-notice">
+      <span>안녕하세요. 춘몽입니다.</span>
+      <br />
+      <span>모바일은 뮤직플레이어만 지원하고 있습니다.</span>
+      <br />
+      <br />
+      <span>
+        위에 있는 CM Music을 누르시면 플레이리스트를 보실 수 있으며, 오른쪽 위
+        혹은 노래 제목과 가수 부분을 누르시면 플레이 중인 플레이리스트의 곡
+        목록을 보실 수 있습니다.
+      </span>
     </div>
   );
 
@@ -218,13 +239,13 @@ const MobileMusic = () => {
         className="song-title"
         style={showPlayingList ? { color: "pink" } : {}}
       >
-        {Utils.ellipsisText(songTitle, 30)}
+        {Utils.ellipsisText(songTitle, 15)}
       </div>
       <div
         className="song-artist"
         style={showPlayingList ? { color: "pink" } : {}}
       >
-        {Utils.ellipsisText(songArtist, 30)}
+        {Utils.ellipsisText(songArtist, 24)}
       </div>
     </div>
   );
@@ -258,6 +279,10 @@ const MobileMusic = () => {
         </div>
         <div className="body">
           <div className="m-show-box">
+            {!seletedPlaylist &&
+              !showPlaylist &&
+              !showPlayingList &&
+              noticeHTML}
             {showPlaylist && playlistHTML}
             {showPlayingList && playingListHTML}
             <div
@@ -282,9 +307,6 @@ const MobileMusic = () => {
             </div>
             <div className="btns">{playerControlBtn}</div>
           </div>
-        </div>
-        <div className="footer">
-          <div className="info">모바일의 경우 뮤직플레이어만 지원합니다.</div>
         </div>
       </div>
     </div>

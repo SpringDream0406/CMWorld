@@ -26,35 +26,35 @@ function App() {
       </div>
     );
 
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Main />}>
-          <Route index element={<Navigate to="home" />} />
-          <Route path="home" element={<Home />}>
-            <Route path=":notice" element={<HomeRight />} />
-          </Route>
-          <Route path="profile" element={<Profile />} />
-          <Route path="project" element={<Project />}>
-            <Route path=":category" element={<ProjectRight />} />
-          </Route>
-          <Route path="jukbox" element={<Jukbox />}>
-            <Route path=":playlist" element={<Jukbox />} />
-          </Route>
-          <Route path="playground" element={<Playground />} />
-          <Route path="photo" element={<Photo />} />
-          <Route path="guestbook" element={<Guestbook />} />
-          <Route path="setting" element={<Setting />}>
-            <Route index element={<Navigate to="musicplayer" />} />
-            <Route path="musicplayer" element={<MusicPlayerSetting />} />
-          </Route>
-          <Route path="geolocation" element={<Geolocation />} />
-          <Route path="music" element={<MobileMusic />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <Routes>
+  //       <Route path="/" element={<Main />}>
+  //         <Route index element={<Navigate to="home" />} />
+  //         <Route path="home" element={<Home />}>
+  //           <Route path=":notice" element={<HomeRight />} />
+  //         </Route>
+  //         <Route path="profile" element={<Profile />} />
+  //         <Route path="project" element={<Project />}>
+  //           <Route path=":category" element={<ProjectRight />} />
+  //         </Route>
+  //         <Route path="jukbox" element={<Jukbox />}>
+  //           <Route path=":playlist" element={<Jukbox />} />
+  //         </Route>
+  //         <Route path="playground" element={<Playground />} />
+  //         <Route path="photo" element={<Photo />} />
+  //         <Route path="guestbook" element={<Guestbook />} />
+  //         <Route path="setting" element={<Setting />}>
+  //           <Route index element={<Navigate to="musicplayer" />} />
+  //           <Route path="musicplayer" element={<MusicPlayerSetting />} />
+  //         </Route>
+  //         <Route path="geolocation" element={<Geolocation />} />
+  //         <Route path="music" element={<MobileMusic />} />
+  //         <Route path="*" element={<NotFound />} />
+  //       </Route>
+  //     </Routes>
+  //   </div>
+  // );
 }
 
 export default App;

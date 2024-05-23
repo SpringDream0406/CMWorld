@@ -54,7 +54,7 @@ export class Utils {
   };
 
   static filterShowMusicData = (playlist: string): IMusicData[] => {
-    if (playlist === "total") {
+    if (playlist === "Total") {
       return musicData;
     }
     const filteredMusic = musicData.filter((music) =>
