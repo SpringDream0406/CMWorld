@@ -213,7 +213,7 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 4 }, (_, index) => (
+      {Array.from({ length: 7 }, (_, index) => (
         <div className="mfw" key={index}>
           {songInfo}
         </div>
