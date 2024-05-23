@@ -15,7 +15,7 @@
   height: 100vh;
   /* background: linear-gradient(to bottom, #ffcccc, #ff99cc); */
   background: linear-gradient(-45deg, #fff6b7, #f092bc, #8795e6, #c2ffd8);
-  background-size: 400% 400%;
+  /* background-size: 400% 400%; */
   animation: AnimationName 15s ease infinite;
 }
 

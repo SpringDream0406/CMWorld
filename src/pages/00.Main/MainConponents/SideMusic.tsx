@@ -62,7 +62,7 @@ const SideMusic = () => {
         playerUtils.openVideo(setYouTubeVideSize, setIsVideoOpen, isVideoOpen);
       }}
     >
-      {Array.from({ length: 10 }, (_, index) => (
+      {Array.from({ length: 7 }, (_, index) => (
         <div className="flow-wrap" key={index}>
           {songInfo}
         </div>
