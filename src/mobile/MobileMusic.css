@@ -148,7 +148,7 @@
 
 .mft {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   flex: 0 0 auto;
@@ -160,14 +160,14 @@
 }
 
 .mfw {
-  animation: tL 2s linear infinite;
+  animation: tL 10s linear infinite;
   padding-right: 3rem;
 }
 
 @keyframes tL {
   0% {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);

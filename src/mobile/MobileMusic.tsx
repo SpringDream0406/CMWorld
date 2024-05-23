@@ -203,6 +203,8 @@ const MobileMusic = () => {
     />
   );
 
+  console.log(songInfo);
+
   // 곡 정보 HTML
   const songInfoHTML = (
     <div
@@ -213,11 +215,21 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 7 }, (_, index) => (
+      {/* {Array.from({ length: 7 }, (_, index) => (
         <div className="mfw" key={index}>
           {songInfo}
         </div>
-      ))}
+      ))} */}
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
+      <div className="mfw">{songInfo}</div>
     </div>
   );
 
