@@ -215,21 +215,14 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {/* {Array.from({ length: 7 }, (_, index) => (
+      {Array.from({ length: 7 }, (_, index) => (
         <div className="mfw" key={index}>
           {songInfo}
         </div>
-      ))} */}
-      <div className="mfw">{songInfo}1</div>
-      <div className="mfw">{songInfo}2</div>
-      <div className="mfw">{songInfo}3</div>
-      <div className="mfw">{songInfo}4</div>
-      <div className="mfw">{songInfo}5</div>
-      <div className="mfw">{songInfo}6</div>
-      <div className="mfw">{songInfo}7</div>
-      <div className="mfw">{songInfo}8</div>
-      <div className="mfw">{songInfo}9</div>
-      <div className="mfw">{songInfo}10</div>
+      ))}
+      {/* <div className="mfw">
+        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60
+      </div> */}
     </div>
   );
 
