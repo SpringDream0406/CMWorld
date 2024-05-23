@@ -157,22 +157,20 @@
   transition: 0.3s;
   font-size: 4rem;
   font-weight: 800;
-  background-size: 400%;
+  background-size: 1000% 1000%;
 }
 
 .mfw {
-  animation: tL 3s linear infinite;
+  animation: tL 5s linear infinite;
   padding-right: 3rem;
 }
 
 @keyframes tL {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0%);
   }
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 
