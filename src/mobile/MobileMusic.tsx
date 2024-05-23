@@ -24,7 +24,7 @@ const MobileMusic = () => {
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [duration, setDuration] = useState("00:00"); // 곡 총 시간
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
-  const [volume, setVolume] = useState<number>(30); // 볼륨
+  // const [volume, setVolume] = useState<number>(30); // 볼륨
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0); // 현재 노래 인덱스
   const [isPlaying, setIsPlaying] = useState<number>(0); // 0: 정지, 1: 재생, 2:로딩
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false); // 버튼 잠금용
@@ -168,7 +168,7 @@ const MobileMusic = () => {
       playing={!(isPlaying === 0)}
       loop={realPlaylist.length === 1} // 한곡이면 반복
       controls={false} // 유튜브 컨트롤 기능 on/off
-      volume={volume}
+      // volume={volume}
       width={"100%"}
       height={"100%"}
       onPlay={() => setIsPlaying(1)}
