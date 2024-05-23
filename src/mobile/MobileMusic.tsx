@@ -213,11 +213,21 @@ const MobileMusic = () => {
         setShowPlaylist(false);
       }}
     >
-      {Array.from({ length: 10 }, (_, index) => (
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      <div className="m-flow-wrap">{songInfo}</div>
+      {/* {Array.from({ length: 10 }, (_, index) => (
         <div className="m-flow-wrap" key={index}>
           {songInfo}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 
