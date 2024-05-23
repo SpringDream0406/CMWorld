@@ -142,10 +142,7 @@
 /* body2 */
 .m-song-info {
   height: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
+  width: 100%;
   color: #9d9993;
 }
 
@@ -157,14 +154,14 @@
   flex: 0 0 auto;
   white-space: nowrap;
   overflow: hidden;
-  /* transition: 0.3s; */
-  font-size: 5rem;
+  transition: 0.3s;
+  font-size: 4rem;
   font-weight: bold;
 }
 
 .m-flow-wrap {
-  animation: textLoop 30s linear infinite;
-  padding-right: 7rem;
+  animation: textLoop 10s linear infinite;
+  padding-right: 3rem;
 }
 
 @keyframes textLoop {

@@ -6,8 +6,8 @@
 }
 
 .sideMusic-songinfo {
-  width: 100%;
   height: 35%;
+  width: 100%;
 }
 .flow-text {
   height: 100%;
@@ -30,7 +30,7 @@
 }
 .flow-wrap {
   animation: textLoop 10s linear infinite;
-  padding-right: 3vw;
+  padding-right: 1.5rem;
 }
 
 @keyframes textLoop {
