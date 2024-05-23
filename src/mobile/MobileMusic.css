@@ -1,4 +1,4 @@
-/* @keyframes AnimationName {
+@keyframes AnimationName {
   0% {
     background-position: 0% 50%;
   }
@@ -8,15 +8,15 @@
   100% {
     background-position: 0% 50%;
   }
-} */
+}
 
 .m-background {
   width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(to bottom, #ffcccc, #ff99cc); */
+  background: linear-gradient(to bottom, #ffcccc, #ff99cc);
   background: linear-gradient(-45deg, #fff6b7, #f092bc, #8795e6, #c2ffd8);
-  /* background-size: 400% 400%; */
-  /* animation: AnimationName 15s ease infinite; */
+  background-size: 400% 400%;
+  animation: AnimationName 15s ease infinite;
 }
 
 .mobile-music {
@@ -148,7 +148,7 @@
 
 .mft {
   height: 100%;
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: center;
   flex: 0 0 auto;
@@ -160,7 +160,7 @@
 }
 
 .mfw {
-  animation: tL 10s linear infinite;
+  animation: tL 2s linear infinite;
   padding-right: 3rem;
 }
 
