@@ -220,16 +220,16 @@ const MobileMusic = () => {
           {songInfo}
         </div>
       ))} */}
-      <div className="mfw">1</div>
-      <div className="mfw">2</div>
-      <div className="mfw">3</div>
-      <div className="mfw">4</div>
-      <div className="mfw">5</div>
-      <div className="mfw">6</div>
-      <div className="mfw">7</div>
-      <div className="mfw">8</div>
-      <div className="mfw">9</div>
-      <div className="mfw">10</div>
+      <div className="mfw">{songInfo}1</div>
+      <div className="mfw">{songInfo}2</div>
+      <div className="mfw">{songInfo}3</div>
+      <div className="mfw">{songInfo}4</div>
+      <div className="mfw">{songInfo}5</div>
+      <div className="mfw">{songInfo}6</div>
+      <div className="mfw">{songInfo}7</div>
+      <div className="mfw">{songInfo}8</div>
+      <div className="mfw">{songInfo}9</div>
+      <div className="mfw">{songInfo}10</div>
     </div>
   );
 
