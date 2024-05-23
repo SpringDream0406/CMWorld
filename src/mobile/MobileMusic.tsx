@@ -21,8 +21,12 @@ const MobileMusic = () => {
   const [seletedPlaylist, setSeletedPlaylist] = useState(""); // 선택된 플레이 리스트
   const [songTitle, setSongTitle] = useState<string>(""); // 제목
   const [songArtist, setSongArtist] = useState<string>(""); // 가수
-  const [repeat, setRepeat] = useState<boolean>(false);
+  const [songInfo, setSongInfo] = useState<string>(
+    "CM Music을 눌러 플레이리스트를 선택해주세요 - 이 곳을 누르면 플레이 중인 노래 리스트 목록이 나옵니다."
+  ); // 곡 정보
+  const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
+  const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
   const [duration, setDuration] = useState("00:00"); // 곡 총 시간
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0); // 현재 노래 인덱스
@@ -75,6 +79,7 @@ const MobileMusic = () => {
       {seletedPlaylist ? seletedPlaylist : "CM Music"}
     </div>
   );
+
   // 중앙 상단 클릭 했을 때 나오는 playlist
   const playlistHTML = (
     <div className="m-show-playlist">
@@ -174,17 +179,40 @@ const MobileMusic = () => {
       onPause={() => setIsPlaying(0)}
       onReady={() => {
         setIsPlayerReady(true); // 버튼 잠금 해제
-        setSongTitle(realPlaylist[currentVideoIndex]?.title); // 제목 변경
-        setSongArtist(realPlaylist[currentVideoIndex]?.artist); // 아티스트 변경
+        setSongInfo(
+          playerUtils.makeSongInfo() ||
+            "CM Music을 눌러 플레이리스트를 선택해주세요 - 이 곳을 누르면 플레이 중인 노래 리스트 목록이 나옵니다."
+        );
       }}
       onEnded={() => {
         playerUtils.changeVideoIndex(1); // 다음곡 재생
         setIsPlayerReady(false); // 버튼 잠금
       }}
       onBuffer={() => setIsPlaying(3)} // 로딩 중일 때 플레이 버튼 변경
-      onProgress={({ played }) => setPlayed(played)} // 곡 재생 시간
+      onProgress={({ played, playedSeconds }) => {
+        setPlayed(played);
+        setPlayedSeconds(playedSeconds);
+      }} // 곡 재생 시간
       onDuration={(e) => setDuration(Utils.formatTime(e))} // 곡 총 시간
     />
+  );
+
+  // 곡 정보 HTML
+  const songInfoHTML = (
+    <div
+      className="m-flow-text"
+      onClick={() => {
+        // 곡 정보 눌렀을 playingList 표시
+        setShowPlayingList(!showPlayingList);
+        setShowPlaylist(false);
+      }}
+    >
+      {Array.from({ length: 4 }, (_, index) => (
+        <div className="m-flow-wrap" key={index}>
+          {songInfo}
+        </div>
+      ))}
+    </div>
   );
 
   // player bar
@@ -219,36 +247,27 @@ const MobileMusic = () => {
             {showPlaylist && playlistHTML}
             {showPlayingList && playingListHTML}
             <div
-              className="m-song-info"
+              className="m-player"
               style={
                 showPlaylist || showPlayingList
                   ? { height: "0%" }
                   : { height: "100%" }
               }
             >
-              <div className="m-player">{reactPlayer}</div>
-              <div className="m-song-info-space"></div>
-              <div
-                className="m-title"
-                style={
-                  showPlaylist || showPlayingList ? { display: "none" } : {}
-                }
-              >
-                {songTitle || "CM Music을 눌러 플레이리스트를 선택해주세요"}
-              </div>
-              <div
-                className="m-artist"
-                style={
-                  showPlaylist || showPlayingList ? { display: "none" } : {}
-                }
-              >
-                {songArtist}
-              </div>
+              {reactPlayer}
             </div>
+          </div>
+          <div
+            className="m-song-info"
+            style={showPlayingList ? { color: "white" } : {}}
+          >
+            {songInfoHTML}
           </div>
           <div className="controls">
             <div className="play-bar">
-              <div className="time-start">{Utils.formatTime(played * 100)}</div>
+              <div className="time-start">
+                {Utils.formatTime(playedSeconds)}
+              </div>
               {playerBar}
               <div className="time-end">{duration}</div>
             </div>
