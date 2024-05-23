@@ -156,12 +156,7 @@
   overflow: hidden;
   transition: 0.3s;
   font-size: 4rem;
-  font-weight: bold;
-}
-
-.m-flow-wrap {
-  animation: textLoop 10s linear infinite;
-  padding-right: 3rem;
+  font-weight: 800;
 }
 
 @keyframes textLoop {
@@ -173,6 +168,11 @@
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
+}
+
+.m-flow-wrap {
+  animation: textLoop 10s linear infinite;
+  padding-right: 3rem;
 }
 
 /* body3 */
