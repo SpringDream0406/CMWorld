@@ -16,9 +16,9 @@
   align-items: center;
   flex: 0 0 auto;
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: 0.3s;
-  font-size: 1.5rem;
+  font-size: 5.5rem;
   font-weight: bold;
 }
 .flow-text:hover {

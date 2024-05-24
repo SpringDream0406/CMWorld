@@ -1024,13 +1024,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=X8mRqGRJeDw",
     artist: "동방신기",
     title: "주문",
-    playlists: [
-      pl.Feeling,
-      pl.Tensionup,
-      pl.Working,
-      pl.Before2024,
-      pl.Pick2024,
-    ],
+    playlists: [pl.Tensionup, pl.Working, pl.Before2024, pl.Pick2024],
   },
 
   {

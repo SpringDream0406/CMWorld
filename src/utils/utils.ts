@@ -67,7 +67,7 @@ export class Utils {
     category: string | undefined,
     proejctData: IProjectData[]
   ): IProjectData[] => {
-    if (!category) {
+    if (category === "total") {
       return projectData;
     }
     const filteredProject = proejctData.filter((project) =>

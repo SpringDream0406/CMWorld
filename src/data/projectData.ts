@@ -3,6 +3,7 @@ import { IProjectData } from "../interface/project.interface";
 
 // 프로젝트 leftNavPage
 export const projectTags: ITags = {
+  total: "전체",
   team: "팀 프로젝트",
   personal: "개인 프로젝트",
   p2024: "2024",

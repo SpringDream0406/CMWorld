@@ -6,7 +6,7 @@ import { Utils } from "../../utils/utils";
 import NotFound from "../NotFound";
 
 const ProjectRight = () => {
-  const { category = "team" } = useParams();
+  const { category = "total" } = useParams();
   const checkUrl = Utils.urlCheck(category, projectTags);
 
   const selectedCategory = category;

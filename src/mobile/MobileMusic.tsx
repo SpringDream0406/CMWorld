@@ -148,8 +148,20 @@ const MobileMusic = () => {
         className="song-title"
         style={showPlayingList ? { color: "pink" } : {}}
       >
-        {Utils.ellipsisText(songTitle, 20)}
+        <div className="flow-text">
+          {Array.from({ length: 10 }, (_, index) => (
+            <div className="flow-wrap" key={index}>
+              {songTitle}
+            </div>
+          ))}
+        </div>
       </div>
+      {/* <div
+        className="song-title"
+        style={showPlayingList ? { color: "pink" } : {}}
+      >
+        {Utils.ellipsisText(songTitle, 20)}
+      </div> */}
       <div
         className="song-artist"
         style={showPlayingList ? { color: "pink" } : {}}
