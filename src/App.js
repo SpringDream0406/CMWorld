@@ -13,7 +13,7 @@ import Guestbook from "./pages/07.Guestbook/Guestbook";
 import Setting from "./pages/08.Setting/Setting";
 import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
 import Geolocation from "./pages/Geolocation";
-import NotFound from "./pages/NotFound";
+import PageNotFound from "./pages/PageNotFound";
 import MobileMusic from "./mobile/MobileMusic";
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
           </Route>
           <Route path="geolocation" element={<Geolocation />} />
           <Route path="music" element={<MobileMusic />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </div>

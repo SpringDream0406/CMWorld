@@ -4,7 +4,7 @@ import HomeRightTop from "./HomeComponents/HomeRightTop";
 import { selectNotice } from "../../data/homeData";
 
 const HomeRight = () => {
-  const { notice } = useParams(); // 주소에서 공지 번호 가져옴
+  const { notice = "0" } = useParams(); // 주소에서 공지 번호 가져옴
   const NoticeComponent = selectNotice(notice); // 공지 번호에 맞는 component 반환
 
   return (

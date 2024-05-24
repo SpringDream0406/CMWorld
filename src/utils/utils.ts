@@ -1,7 +1,7 @@
 import { IMusicData } from "../interface/music.interface";
 import { NavigateFunction } from "react-router-dom";
 import { musicActions } from "../redux/reducer";
-import { IWeatherData } from "../interface/main.interface";
+import { ITags, IWeatherData } from "../interface/main.interface";
 import { musicData } from "../data/musicData";
 import { IProjectData } from "../interface/project.interface";
 import { projectData } from "../data/projectData";
@@ -98,5 +98,9 @@ export class Utils {
 
   static setObjLocalData(id: string, data: any): void {
     localStorage.setItem(id, JSON.stringify(data));
+  }
+
+  static urlCheck(params: string, tags: ITags) {
+    return Object.keys(tags).some((key) => params === key);
   }
 }

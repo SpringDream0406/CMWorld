@@ -1,11 +1,14 @@
 import "../../styles/Project.css";
 import { useParams } from "react-router-dom";
-import { projectData } from "../../data/projectData";
+import { projectData, projectTags } from "../../data/projectData";
 import OpenSite from "../../components/OpenSite";
 import { Utils } from "../../utils/utils";
+import NotFound from "../NotFound";
 
 const ProjectRight = () => {
-  const { category } = useParams();
+  const { category = "team" } = useParams();
+  const checkUrl = Utils.urlCheck(category, projectTags);
+
   const selectedCategory = category;
 
   const filteredProjectData = Utils.filterShowProjectData(
@@ -35,7 +38,11 @@ const ProjectRight = () => {
   );
 
   // 본문
-  return <div className="project-right">{renderProjectData}</div>;
+  return (
+    <div className="project-right">
+      {checkUrl ? renderProjectData : <NotFound />}
+    </div>
+  );
 };
 
 export default ProjectRight;

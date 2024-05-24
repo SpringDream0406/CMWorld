@@ -20,6 +20,8 @@ const Main = () => {
     Utils.changeBackground(setBackgroundImage, nowWeather);
   }, [nowWeather]);
 
+  console.log("count");
+
   return (
     <div
       className="background"

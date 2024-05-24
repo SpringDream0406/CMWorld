@@ -7,7 +7,7 @@ import { playlists } from "../../data/musicData";
 const JukboxRight = () => {
   const dispatch = useDispatch();
   const { playlist } = useParams();
-  const selectedPlaylist = playlist || "total";
+  const selectedPlaylist = playlist || "Total";
   const filteredMusicData = Utils.filterShowMusicData(selectedPlaylist);
 
   // 선택된 플레이리스트에 해당되는 데이터 랜더링
