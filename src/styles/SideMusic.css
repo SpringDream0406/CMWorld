@@ -20,6 +20,7 @@
   transition: 0.3s;
   font-size: 5.5rem;
   font-weight: bold;
+  color: black;
 }
 .flow-text:hover {
   color: #9d9993;

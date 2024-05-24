@@ -149,7 +149,7 @@ const MobileMusic = () => {
         style={showPlayingList ? { color: "pink" } : {}}
       >
         <div className="flow-text">
-          {Array.from({ length: 10 }, (_, index) => (
+          {Array.from({ length: 20 }, (_, index) => (
             <div className="flow-wrap" key={index}>
               {songTitle}
             </div>
