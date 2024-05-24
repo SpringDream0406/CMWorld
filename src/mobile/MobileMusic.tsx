@@ -3,13 +3,16 @@ import "./MobileMusic.css";
 import { buttonData } from "../data/playerBtnData";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PlayerUtils } from "../utils/playerUtils";
-import { playlists } from "../data/musicData";
 import { Utils } from "../utils/utils";
 import { IMusicData } from "../interface/music.interface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import MNotice from "./components/MNotice";
+import MPlaylist from "./components/MPlaylist";
+import MPlayingList from "./components/MPlayingList";
+import MPlayerBar from "./components/MPlayerBar";
 
 const MobileMusic = () => {
   const dispatch = useDispatch();
@@ -26,7 +29,7 @@ const MobileMusic = () => {
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
-  const [duration, setDuration] = useState("00:00"); // 곡 총 시간
+  const [duration, setDuration] = useState<string>("00:00"); // 곡 총 시간
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
   const playlistRef = useRef<HTMLDivElement>(null); // 플레이 리스트 Ref
   const playingListRef = useRef<HTMLDivElement>(null); // 플레잉 리스트 Ref
@@ -44,13 +47,13 @@ const MobileMusic = () => {
     [realPlaylist, currentVideoIndex]
   ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
 
-  // 로컬 플레이리스트 있으면 해당 재생 목록으로 변환
+  // 로컬 플레이리스트 있으면 해당 재생 목록 가져오기
   useEffect(() => {
     if (seletedPlaylist)
       Utils.playSong(dispatch, Utils.filterShowMusicData(seletedPlaylist));
   }, [dispatch, seletedPlaylist]);
 
-  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
+  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
     setCurrentVideoIndex(0);
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
@@ -86,45 +89,7 @@ const MobileMusic = () => {
     </div>
   );
 
-  // 중앙 상단 클릭 했을 때 나오는 playlist
-  const playlistHTML = (
-    <div className="m-show-playlist" ref={playlistRef}>
-      {Object.entries(playlists).map(([key, value]) => (
-        <div
-          className="m-showing-playlist"
-          id={`m-playlist-${key}`}
-          key={key}
-          style={key === seletedPlaylist ? { color: "pink" } : {}}
-          onClick={() => {
-            setSeletedPlaylist(key);
-            setShowPlaylist(!showPlaylist);
-            // Utils.playSong(dispatch, Utils.filterShowMusicData(key));
-            localStorage.setItem("m-playlist", key);
-          }}
-        >
-          {value}
-        </div>
-      ))}
-    </div>
-  );
-
-  useEffect(() => {
-    // playlistRef.current가 null이 아닌 경우에만 실행
-    if (playlistRef.current) {
-      // seletedPlaylist에 해당하는 요소를 찾아서 스크롤
-      const selectedElement = playlistRef.current.querySelector(
-        `#m-playlist-${seletedPlaylist}`
-      );
-      if (selectedElement) {
-        selectedElement.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-        });
-      }
-    }
-  }, [seletedPlaylist, showPlaylist]);
-
-  // 오른쪽 상단의 플레이리스트 아이콘
+  // 오른쪽 상단의 플레잉 리스트 아이콘
   const playingListIcon = (
     <img
       onClick={() => {
@@ -139,57 +104,58 @@ const MobileMusic = () => {
     />
   );
 
-  // 오른쪽 상단 아이콘 클릭 했을 때 나오는 playingList
-  const playingListHTML = (
-    <div className="m-show-playingList" ref={playingListRef}>
-      {realPlaylist.map((music, index) => (
-        <div
-          key={index}
-          className="m-showing-playingList"
-          onClick={() => {
-            setCurrentVideoIndex(index);
-            setShowPlayingList(false);
-          }}
-        >
-          <div
-            className="m-playingList-title"
-            style={index === currentVideoIndex ? { color: "pink" } : {}}
-          >
-            {Utils.ellipsisText(music.title, 24)}
-          </div>
-          <div
-            className="m-playingList-artist"
-            style={index === currentVideoIndex ? { color: "pink" } : {}}
-          >
-            {Utils.ellipsisText(music.artist, 24)}
-          </div>
-        </div>
-      ))}
-    </div>
+  // reactPlayer
+  const reactPlayer = (
+    <ReactPlayer
+      url={realPlaylist[currentVideoIndex]?.url}
+      ref={playerRef}
+      playing={!(isPlaying === 0)}
+      loop={repeat} // 한곡 반복
+      controls={false} // 유튜브 컨트롤 기능 on/off
+      width={"100%"}
+      height={showPlaylist || showPlayingList ? "0%" : "100%"}
+      onPlay={() => setIsPlaying(1)}
+      onPause={() => setIsPlaying(0)}
+      onReady={() => {
+        setIsPlayerReady(true); // 버튼 잠금 해제
+        setSongTitle(realPlaylist[currentVideoIndex]?.title); // 제목 업뎃
+        setSongArtist(realPlaylist[currentVideoIndex]?.artist); // 가수 업뎃
+      }}
+      onEnded={() => {
+        playerUtils.changeVideoIndex(1); // 다음곡 재생
+        setIsPlayerReady(false); // 버튼 잠금
+      }}
+      onBuffer={() => setIsPlaying(3)} // 로딩 중일 때 플레이 버튼 변경
+      onProgress={({ played, playedSeconds }) => {
+        setPlayed(played);
+        setPlayedSeconds(playedSeconds);
+      }} // 곡 재생 시간
+      onDuration={(e) => setDuration(Utils.formatTime(e))} // 곡 총 시간
+    />
   );
 
-  // playingList 열렸을 때 현재 노래로 화면 이동
-  useEffect(() => {
-    if (playingListRef.current)
-      playingListRef.current.children[currentVideoIndex]?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-  }, [currentVideoIndex, showPlayingList]);
-
-  // 처음 들어왔을 때 안내 문구
-  const noticeHTML = (
-    <div className="m-notice">
-      <span>안녕하세요. 춘몽입니다.</span>
-      <br />
-      <span>모바일은 뮤직플레이어만 지원하고 있습니다.</span>
-      <br />
-      <br />
-      <span>
-        위에 있는 CM Music을 누르시면 플레이리스트를 보실 수 있으며, 오른쪽 위
-        혹은 노래 제목과 가수 부분을 누르시면 플레이 중인 플레이리스트의 곡
-        목록을 보실 수 있습니다.
-      </span>
+  // 곡 정보
+  const songInfoHTML = (
+    <div
+      className="song-info2"
+      onClick={() => {
+        // 곡 정보 눌렀을 playingList 표시
+        setShowPlayingList(!showPlayingList);
+        setShowPlaylist(false);
+      }}
+    >
+      <div
+        className="song-title"
+        style={showPlayingList ? { color: "pink" } : {}}
+      >
+        {Utils.ellipsisText(songTitle, 20)}
+      </div>
+      <div
+        className="song-artist"
+        style={showPlayingList ? { color: "pink" } : {}}
+      >
+        {Utils.ellipsisText(songArtist, 24)}
+      </div>
     </div>
   );
 
@@ -222,79 +188,6 @@ const MobileMusic = () => {
     </button>
   ));
 
-  // reactPlayer
-  const reactPlayer = (
-    <ReactPlayer
-      url={realPlaylist[currentVideoIndex]?.url}
-      ref={playerRef}
-      playing={!(isPlaying === 0)}
-      loop={repeat} // 한곡 반복
-      controls={false} // 유튜브 컨트롤 기능 on/off
-      width={"100%"}
-      height={"100%"}
-      onPlay={() => setIsPlaying(1)}
-      onPause={() => setIsPlaying(0)}
-      onReady={() => {
-        setIsPlayerReady(true); // 버튼 잠금 해제
-        setSongTitle(realPlaylist[currentVideoIndex]?.title); // 제목 업뎃
-        setSongArtist(realPlaylist[currentVideoIndex]?.artist); // 가수 업뎃
-      }}
-      onEnded={() => {
-        playerUtils.changeVideoIndex(1); // 다음곡 재생
-        setIsPlayerReady(false); // 버튼 잠금
-      }}
-      onBuffer={() => setIsPlaying(3)} // 로딩 중일 때 플레이 버튼 변경
-      onProgress={({ played, playedSeconds }) => {
-        setPlayed(played);
-        setPlayedSeconds(playedSeconds);
-      }} // 곡 재생 시간
-      onDuration={(e) => setDuration(Utils.formatTime(e))} // 곡 총 시간
-    />
-  );
-
-  // 곡 정보 HTML
-  const songInfoHTML = (
-    <div
-      className="song-info2"
-      onClick={() => {
-        // 곡 정보 눌렀을 playingList 표시
-        setShowPlayingList(!showPlayingList);
-        setShowPlaylist(false);
-      }}
-    >
-      <div
-        className="song-title"
-        style={showPlayingList ? { color: "pink" } : {}}
-      >
-        {Utils.ellipsisText(songTitle, 16)}
-      </div>
-      <div
-        className="song-artist"
-        style={showPlayingList ? { color: "pink" } : {}}
-      >
-        {Utils.ellipsisText(songArtist, 24)}
-      </div>
-    </div>
-  );
-
-  // player bar
-  const playerBar = (
-    <input
-      type="range"
-      min="0"
-      max="0.999999"
-      step="any"
-      value={played}
-      onChange={(e) => {
-        const changedRange = e.target.value;
-        setPlayed(parseFloat(changedRange));
-        if (playerRef.current)
-          playerRef.current.seekTo(parseFloat(changedRange));
-      }}
-      className="play-bar-range"
-    />
-  );
-
   // 본문
   return (
     <div className="m-background">
@@ -306,22 +199,27 @@ const MobileMusic = () => {
         </div>
         <div className="body">
           <div className="m-show-box">
-            {!seletedPlaylist &&
-              !showPlaylist &&
-              !showPlayingList &&
-              noticeHTML}
-            {showPlaylist && playlistHTML}
-            {showPlayingList && playingListHTML}
-            <div
-              className="m-player"
-              style={
-                showPlaylist || showPlayingList
-                  ? { height: "0%" }
-                  : { height: "100%" }
-              }
-            >
-              {reactPlayer}
-            </div>
+            {!seletedPlaylist && !showPlaylist && !showPlayingList && (
+              <MNotice /> // 첫 방문 안내
+            )}
+            {showPlaylist && (
+              <MPlaylist // 중앙 상단 눌렀을 때 보여주는 플레이 리스트
+                playlistRef={playlistRef}
+                seletedPlaylist={seletedPlaylist}
+                setSeletedPlaylist={setSeletedPlaylist}
+                setShowPlaylist={setShowPlaylist}
+              />
+            )}
+            {showPlayingList && (
+              <MPlayingList // 오른쪽 상단 or 곡정보 눌렀을 때 보여주는 플레잉 리스트
+                playingListRef={playingListRef}
+                realPlaylist={realPlaylist}
+                setCurrentVideoIndex={setCurrentVideoIndex}
+                setShowPlayingList={setShowPlayingList}
+                currentVideoIndex={currentVideoIndex}
+              />
+            )}
+            {reactPlayer}
           </div>
           <div className="song-info">{songInfoHTML}</div>
           <div className="controls">
@@ -329,7 +227,11 @@ const MobileMusic = () => {
               <div className="time-start">
                 {Utils.formatTime(playedSeconds)}
               </div>
-              {playerBar}
+              <MPlayerBar
+                played={played}
+                setPlayed={setPlayed}
+                playerRef={playerRef}
+              />
               <div className="time-end">{duration}</div>
             </div>
             <div className="btns">{playerControlBtn}</div>

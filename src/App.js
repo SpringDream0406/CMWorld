@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound";
 import MobileMusic from "./mobile/MobileMusic";
 
 function App() {
-  //
+  // 모바일
   const isMobile =
     /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
     window.innerWidth <= 480;

@@ -160,8 +160,8 @@
 .song-title {
   height: 60%;
   display: flex;
-  align-items: center;
-  font-size: 4.5rem;
+  align-items: end;
+  font-size: 3.5rem;
   font-weight: 600;
   color: white;
 }
@@ -169,7 +169,7 @@
 .song-artist {
   height: 40%;
   display: flex;
-  align-items: center;
+  align-items: top;
   font-size: 2.5rem;
   color: rgb(200, 200, 200);
 }
@@ -240,9 +240,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4.5rem;
-  width: 4.5rem;
-  height: 4.5rem;
+  font-size: 5rem;
+  width: 6rem;
+  height: 5rem;
   border: none;
   background: none;
   color: rgb(206, 203, 203);
@@ -250,5 +250,4 @@
 
 .mobile-music .btn-active {
   color: pink;
-  font-size: 6rem;
 }
