@@ -9,9 +9,9 @@ import Notice3AboutMusic from "../pages/01.Home/HomeComponents/notices/Notice3Ab
 
 // 공지사항 제목
 export const noticeTitles = [
-  { title: "뮤직플레이어에 관하여", path: 3, date: "2024-05-24" },
+  { title: "뮤직플레이어에 관하여", path: 3, date: "2024-05-25" },
   { title: "데이터에 관하여", path: 2, date: "2024-05-24" },
-  { title: "업데이트 정보", path: 1, date: "2024-05-24" },
+  { title: "업데이트 정보", path: 1, date: "2024-05-25" },
   { title: "환영합니다", path: 0, date: "2024-05-24" },
 ];
 
@@ -45,6 +45,11 @@ export const updateVersionData = [
   {
     title: "- 2.0.0",
     sub: [
+      {
+        version: "- 2.1.1 Beta",
+        change: "뮤직 플레이어 작동 방식 변경",
+        date: "2024-05-25",
+      },
       {
         version: "- 2.1.0 Beta",
         change: "모바일 지원 (뮤직 플레이어만 사용하도록 함)",

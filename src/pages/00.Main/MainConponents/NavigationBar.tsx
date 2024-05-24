@@ -9,7 +9,7 @@ const tags: ITags = {
   playground: "놀이터",
   photo: "사진첩",
   guestbook: "방명록",
-  setting: "설정",
+  // setting: "설정",
 };
 
 const NavigationBar = () => {

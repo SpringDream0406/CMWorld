@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { playlists } from "../../data/musicData";
 import { IMPlaylist } from "../mInterface";
+import { LsUtils } from "../../utils/lsUtils";
 
 const MPlaylist = ({
   playlistRef,
@@ -24,6 +25,7 @@ const MPlaylist = ({
     }
   }, [seletedPlaylist, playlistRef]);
 
+  // 본문
   return (
     <div className="m-show-playlist" ref={playlistRef}>
       {Object.entries(playlists).map(([key, value]) => (
@@ -33,9 +35,10 @@ const MPlaylist = ({
           key={key}
           style={key === seletedPlaylist ? { color: "pink" } : {}}
           onClick={() => {
-            setSeletedPlaylist(key);
-            setShowPlaylist(false);
-            localStorage.setItem("m-playlist", key);
+            setSeletedPlaylist(key); // 선택된 플레이리스트 넣기
+            setShowPlaylist(false); // 플레이리스트 닫기
+            LsUtils.setPlaylistCategory(key); // 로컬에 playlist 저장하기
+            LsUtils.resetLastMusicIndex(); // index값 초기화
           }}
         >
           {value}

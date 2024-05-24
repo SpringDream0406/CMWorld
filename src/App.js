@@ -10,8 +10,8 @@ import Jukbox from "./pages/04.Jukbox/Jukbox";
 import Playground from "./pages/05.Playground/Playground";
 import Photo from "./pages/06.Photo/Photo";
 import Guestbook from "./pages/07.Guestbook/Guestbook";
-import Setting from "./pages/08.Setting/Setting";
-import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
+// import Setting from "./pages/08.Setting/Setting";
+// import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
 import Geolocation from "./pages/Geolocation";
 import PageNotFound from "./pages/PageNotFound";
 import MobileMusic from "./mobile/MobileMusic";
@@ -46,12 +46,11 @@ function App() {
           <Route path="playground" element={<Playground />} />
           <Route path="photo" element={<Photo />} />
           <Route path="guestbook" element={<Guestbook />} />
-          <Route path="setting" element={<Setting />}>
-            <Route index element={<Navigate to="musicplayer" />} />
-            <Route path="musicplayer" element={<MusicPlayerSetting />} />
-          </Route>
+          {/* <Route path="setting" element={<Setting />}> */}
+          {/* <Route index element={<Navigate to="musicplayer" />} /> */}
+          {/* <Route path="musicplayer" element={<MusicPlayerSetting />} /> */}
+          {/* </Route> */}
           <Route path="geolocation" element={<Geolocation />} />
-          <Route path="music" element={<MobileMusic />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

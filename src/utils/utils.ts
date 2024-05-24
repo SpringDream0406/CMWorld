@@ -91,15 +91,6 @@ export class Utils {
     }
   };
 
-  static getObjLocalData(id: string): any | undefined {
-    const localData = localStorage.getItem(id);
-    if (localData) return JSON.parse(localData);
-  }
-
-  static setObjLocalData(id: string, data: any): void {
-    localStorage.setItem(id, JSON.stringify(data));
-  }
-
   static urlCheck(params: string, tags: ITags) {
     return Object.keys(tags).some((key) => params === key);
   }

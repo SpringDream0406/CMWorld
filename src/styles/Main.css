@@ -88,7 +88,6 @@ li {
   height: 23rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   position: relative;
   right: 3.13rem;
   top: 3.5rem;
@@ -106,6 +105,7 @@ li {
   text-align: center;
   line-height: 40px;
   text-decoration: none;
+  margin-bottom: 0.05rem;
 }
 
 .navigation__item.active {

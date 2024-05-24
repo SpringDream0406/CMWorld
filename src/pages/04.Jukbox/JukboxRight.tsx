@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Utils } from "../../utils/utils";
 import { useParams } from "react-router-dom";
 import { playlists } from "../../data/musicData";
+import { LsUtils } from "../../utils/lsUtils";
 
 const JukboxRight = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,10 @@ const JukboxRight = () => {
           <div>
             <button
               className="music-render-btn"
-              onClick={() => Utils.playSong(dispatch, [music])}
+              onClick={() => {
+                Utils.playSong(dispatch, [music]);
+                LsUtils.resetLastMusicIndex();
+              }}
             >
               ▶️
             </button>
@@ -35,7 +39,13 @@ const JukboxRight = () => {
     <div className="jukboxRight">
       <div className="music__table">
         <div className="music-play-all">
-          <button onClick={() => Utils.playSong(dispatch, filteredMusicData)}>
+          <button
+            onClick={() => {
+              LsUtils.resetLastMusicIndex();
+              Utils.playSong(dispatch, filteredMusicData);
+              LsUtils.setPlaylistCategory(selectedPlaylist);
+            }}
+          >
             <span>
               ▶️ {playlists[selectedPlaylist]} {filteredMusicData.length}곡
             </span>

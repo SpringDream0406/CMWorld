@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ReactPlayer from "react-player";
 import "../../../styles/SideMusic.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Volume from "./Volume";
 import { PlayerUtils } from "../../../utils/playerUtils";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -9,15 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Utils } from "../../../utils/utils";
 import { RootState } from "../../../redux/store";
 import { IMusicData } from "../../../interface/music.interface";
-import { ISwitch } from "../../../interface/setting.interface";
 import { buttonData } from "../../../data/playerBtnData";
+import { LsUtils } from "../../../utils/lsUtils";
 
 const SideMusic = () => {
+  const dispatch = useDispatch();
   const playlist: IMusicData[] = useSelector(
     (state: RootState) => state.music.playMusics // 쥬크박스에서 선택한 노래 담겨있음
-  );
-  const musicPlayerSetting: ISwitch = useSelector(
-    (state: RootState) => state.setting.musicPlayerSetting // 플레이리스트 저장할지 여부
   );
   const [songInfo, setSongInfo] =
     useState<string>("쥬크박스에서 노래를 선택해주세요"); // 플레이어 준비되었을때 세팅됨
@@ -39,14 +37,19 @@ const SideMusic = () => {
     [realPlaylist, currentVideoIndex]
   ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
 
-  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, localStorage에 저장하고, 랜덤플레이리스트 한 개 만들기
+  // 로컬 플레이리스트 카테고리 체크해서 있으면 해당 플레이리스트랑 마지막 인덱스로 뮤직 띄움
+  const seletedPlaylist = LsUtils.getPlaylistCategory();
   useEffect(() => {
-    setCurrentVideoIndex(0);
-    if (musicPlayerSetting["플레이리스트 저장"]) {
-      localStorage.setItem("playlist", JSON.stringify(playlist));
+    if (seletedPlaylist) {
+      Utils.playSong(dispatch, Utils.filterShowMusicData(seletedPlaylist));
+      setCurrentVideoIndex(LsUtils.getLastMusicIndex());
     }
+  }, [seletedPlaylist, dispatch]);
+
+  // 플레이리스트 바뀌면 랜덤플레이리스트 한 개 만들기
+  useEffect(() => {
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
-  }, [playlist, musicPlayerSetting]);
+  }, [playlist]);
 
   // 진짜 플레이 리스트 목록 업데이트 해주기
   useEffect(() => {
@@ -118,6 +121,7 @@ const SideMusic = () => {
         setSongInfo(
           playerUtils.makeSongInfo() || "쥬크박스에서 노래를 선택해주세요"
         ); // 노래 정보 만들어 띄우기
+        LsUtils.setLastMuisicIndex(currentVideoIndex); // 마지막 인덱스값 로컬에 저장
       }}
       onEnded={() => {
         playerUtils.changeVideoIndex(1); // 다음곡 재생

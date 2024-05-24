@@ -13,6 +13,7 @@ import MNotice from "./components/MNotice";
 import MPlaylist from "./components/MPlaylist";
 import MPlayingList from "./components/MPlayingList";
 import MPlayerBar from "./components/MPlayerBar";
+import { LsUtils } from "../utils/lsUtils";
 
 const MobileMusic = () => {
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ const MobileMusic = () => {
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
   const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
   const [seletedPlaylist, setSeletedPlaylist] = useState(
-    localStorage.getItem("m-playlist")
-  ); // 선택된 플레이 리스트
+    LsUtils.getPlaylistCategory()
+  ); // 선택된 플레이 리스트, 초기값은 로컬 값
   const [songTitle, setSongTitle] = useState<string>(""); // 제목
   const [songArtist, setSongArtist] = useState<string>(""); // 가수
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
@@ -47,15 +48,16 @@ const MobileMusic = () => {
     [realPlaylist, currentVideoIndex]
   ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
 
-  // 로컬 플레이리스트 있으면 해당 재생 목록 가져오기
+  // 플레이리스트에 맞는 노래 가져오기, 로컬 인덱스값 넣어주기
   useEffect(() => {
-    if (seletedPlaylist)
+    if (seletedPlaylist) {
       Utils.playSong(dispatch, Utils.filterShowMusicData(seletedPlaylist));
+      setCurrentVideoIndex(LsUtils.getLastMusicIndex());
+    }
   }, [dispatch, seletedPlaylist]);
 
-  // 플레이리스트 바뀌면 0번 인덱스로 바꾸고, 랜덤플레이리스트 한 개 만들기
+  // 플레이리스트 바뀌면 랜덤플레이리스트 한 개 만들기
   useEffect(() => {
-    setCurrentVideoIndex(0);
     setShuffledPlaylist(Utils.shufflePlaylist(playlist));
   }, [playlist]);
 
@@ -120,6 +122,7 @@ const MobileMusic = () => {
         setIsPlayerReady(true); // 버튼 잠금 해제
         setSongTitle(realPlaylist[currentVideoIndex]?.title); // 제목 업뎃
         setSongArtist(realPlaylist[currentVideoIndex]?.artist); // 가수 업뎃
+        LsUtils.setLastMuisicIndex(currentVideoIndex); // 마지막 인덱스값 로컬에 저장
       }}
       onEnded={() => {
         playerUtils.changeVideoIndex(1); // 다음곡 재생
@@ -148,20 +151,8 @@ const MobileMusic = () => {
         className="song-title"
         style={showPlayingList ? { color: "pink" } : {}}
       >
-        <div className="flow-text">
-          {Array.from({ length: 20 }, (_, index) => (
-            <div className="flow-wrap" key={index}>
-              {songTitle}
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* <div
-        className="song-title"
-        style={showPlayingList ? { color: "pink" } : {}}
-      >
         {Utils.ellipsisText(songTitle, 20)}
-      </div> */}
+      </div>
       <div
         className="song-artist"
         style={showPlayingList ? { color: "pink" } : {}}

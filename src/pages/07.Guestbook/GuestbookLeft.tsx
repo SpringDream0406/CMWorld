@@ -23,9 +23,6 @@ const GuestbookLeft = () => {
   // 2. users에 name없으면 input창 보이기 => name입력하면 redux의 firebaseUserName 업데이트
 
   useEffect(() => {
-    // 인증 상태 체크 시작
-    guestbookController.firebaseOnAuthStateChanged();
-
     // 유저 이름 설정
     if (firebaseUID && !firebaseUserName) {
       guestbookController.setUserName(firebaseUID);

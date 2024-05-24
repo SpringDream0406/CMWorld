@@ -1,4 +1,4 @@
-import { Utils } from "../utils/utils";
+import { LsUtils } from "../utils/lsUtils";
 
 // 설정 leftNavePage
 export const settingtags = {
@@ -8,13 +8,13 @@ export const settingtags = {
 
 // 뮤직 플레이어 세팅 기본값
 const musicPlayerDefaultSetting = {
-  "플레이리스트 저장": true,
+  "플레이리스트 저장": false,
   // "음악 자동 추천": false,
 };
 
 // 로컬스토리지에 저장된 뮤직 플레이어 세팅값
 const localStorageMusicPlayerSetting =
-  Utils.getObjLocalData("musicPlayerSetting");
+  LsUtils.getObjLocalData("musicPlayerSetting");
 
 // 로컬값 있나 체크하고 뮤직세팅값 정함
 export const initialMusicSetting =

@@ -1262,7 +1262,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Working],
   },
   {
-    url: "https://www.youtube.com/watch?v=sVo6NWwK_o",
+    url: "https://youtu.be/U89YuK4SD9E?si=4EIvMsAgcAILdU2r",
     artist: "Brown Eyes",
     title: "벌써 일년",
     playlists: [pl.Cyworld, pl.Feeling, pl.Before2024],
