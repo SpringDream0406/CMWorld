@@ -20,7 +20,7 @@ const JukboxRight = () => {
             <button
               className="music-render-btn"
               onClick={() => {
-                Utils.playSong(dispatch, [music]);
+                Utils.setPlayMusics(dispatch, [music]);
                 LsUtils.resetLastMusicIndex();
               }}
             >
@@ -42,8 +42,7 @@ const JukboxRight = () => {
           <button
             onClick={() => {
               LsUtils.resetLastMusicIndex();
-              Utils.playSong(dispatch, filteredMusicData);
-              LsUtils.setPlaylistCategory(selectedPlaylist);
+              Utils.setSelectPlaylist(dispatch, selectedPlaylist);
             }}
           >
             <span>

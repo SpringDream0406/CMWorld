@@ -76,9 +76,12 @@ export class Utils {
     return filteredProject;
   };
 
-  static playSong = (dispatch: any, music: IMusicData[]): void => {
+  static setPlayMusics(dispatch: any, music: IMusicData[]): void {
     dispatch(musicActions.setPlayMusics(music));
-  };
+  }
+  static setSelectPlaylist(dispatch: any, category: string): void {
+    dispatch(musicActions.setPlaylistCategory(category));
+  }
 
   static changeBackground = (
     setBackgroundImage: any,

@@ -25,8 +25,8 @@ export class LsUtils {
   static setPlaylistCategory(playlistCategory: string): void {
     localStorage.setItem("playlistCategory", playlistCategory);
   }
-  static getPlaylistCategory(): string | null {
-    return localStorage.getItem("playlistCategory");
+  static getPlaylistCategory(): string {
+    return localStorage.getItem("playlistCategory") || "";
   }
 
   static getIsShuffleOn(): boolean {

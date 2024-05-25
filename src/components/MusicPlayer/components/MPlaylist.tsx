@@ -2,13 +2,16 @@ import { useEffect } from "react";
 import { playlists } from "../../../data/musicData";
 import { IMPlaylist } from "../../../interface/musicPlayer.Interface";
 import { LsUtils } from "../../../utils/lsUtils";
+import { useDispatch } from "react-redux";
+import { Utils } from "../../../utils/utils";
 
 const MPlaylist = ({
   playlistRef,
   seletedPlaylist,
-  setSeletedPlaylist,
+  // setSeletedPlaylist,
   setShowPlaylist,
 }: IMPlaylist) => {
+  const dispatch = useDispatch();
   //
   // playlist 열렸을 때 현재 playist로 자동 스크롤
   useEffect(() => {
@@ -35,10 +38,9 @@ const MPlaylist = ({
           key={key}
           style={key === seletedPlaylist ? { color: "pink" } : {}}
           onClick={() => {
-            setSeletedPlaylist(key); // 선택된 플레이리스트 넣기
-            setShowPlaylist(false); // 플레이리스트 닫기
-            LsUtils.setPlaylistCategory(key); // 로컬에 playlist 저장하기
             LsUtils.resetLastMusicIndex(); // index값 초기화
+            Utils.setSelectPlaylist(dispatch, key);
+            setShowPlaylist(false); // 플레이리스트 닫기
           }}
         >
           {value}

@@ -11,10 +11,10 @@ import { Utils } from "../../utils/utils";
 import { RootState } from "../../redux/store";
 
 const Main = () => {
+  const nowWeather = useSelector((state: RootState) => state.music.nowWeather);
   const [backgroundImage, setBackgroundImage] = useState<string>(
     "/images/backgrounds/clear.gif"
   );
-  const nowWeather = useSelector((state: RootState) => state.music.nowWeather);
 
   useEffect(() => {
     Utils.changeBackground(setBackgroundImage, nowWeather);

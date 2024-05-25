@@ -18,18 +18,19 @@ import MPlayerBar from "./components/MPlayerBar";
 import { useLocation } from "react-router-dom";
 
 const SideMusic = () => {
+  // 플레이어 용인데 songInfo 띄우는것 때문에 위에 배치함
   const location = useLocation();
-  const currentPath = location.pathname;
-  const isMusicPlayer = currentPath === "/musicplayer";
-  const isMobile = Utils.isMobile();
-  const isPlayer = isMobile || isMusicPlayer;
+  const currentPath = location.pathname; // 현재 경로
+  const isMusicPlayer = currentPath === "/musicplayer"; // 경로 비교
+  const isMobile = Utils.isMobile(); // 모바일인지 확인
+  const isPlayer = isMobile || isMusicPlayer; // 플레이어 전용인지 체크
 
   const dispatch = useDispatch();
   const playlist: IMusicData[] = useSelector(
-    (state: RootState) => state.music.playMusics // 쥬크박스에서 선택한 노래 담겨있음
-  );
-  const [seletedPlaylist, setSeletedPlaylist] = useState(
-    LsUtils.getPlaylistCategory()
+    (state: RootState) => state.music.playMusics
+  ); // 쥬크박스에서 선택한 노래 담겨있음
+  const seletedPlaylist: string = useSelector(
+    (state: RootState) => state.music.playlistCategory
   ); // 선택된 플레이 리스트, 초기값은 로컬 값
   const [songInfo, setSongInfo] = useState<string>(
     isPlayer
@@ -162,7 +163,7 @@ const SideMusic = () => {
   // 플레이리스트에 맞는 노래 가져오기, 로컬 인덱스값 넣어주기
   useEffect(() => {
     if (seletedPlaylist) {
-      Utils.playSong(dispatch, Utils.filterShowMusicData(seletedPlaylist));
+      Utils.setPlayMusics(dispatch, Utils.filterShowMusicData(seletedPlaylist));
       setCurrentVideoIndex(LsUtils.getLastMusicIndex());
     }
   }, [seletedPlaylist, dispatch]);
@@ -288,7 +289,6 @@ const SideMusic = () => {
                 <MPlaylist // 중앙 상단 눌렀을 때 보여주는 플레이 리스트
                   playlistRef={playlistRef}
                   seletedPlaylist={seletedPlaylist}
-                  setSeletedPlaylist={setSeletedPlaylist}
                   setShowPlaylist={setShowPlaylist}
                 />
               )}
@@ -321,7 +321,7 @@ const SideMusic = () => {
                 />
                 <div className="time-end">{duration}</div>
               </div>
-              <div className="btns">{playerControlBtn}</div>
+              <div className="play-btns">{playerControlBtn}</div>
             </div>
           </div>
           {!isMobile && <div className="volumeBar">{volumeBar}</div>}

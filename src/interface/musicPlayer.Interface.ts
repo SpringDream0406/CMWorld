@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 export interface IMPlaylist {
   playlistRef: RefObject<HTMLDivElement>;
   seletedPlaylist: string | null;
-  setSeletedPlaylist: Dispatch<SetStateAction<string | null>>;
+  // setSeletedPlaylist: Dispatch<SetStateAction<string>>;
   setShowPlaylist: Dispatch<SetStateAction<boolean>>;
 }
 

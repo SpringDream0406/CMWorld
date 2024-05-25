@@ -7,12 +7,14 @@ interface IMusicState {
   nowWeather: IWeatherData;
   playMusics: IMusicData[];
   volume: number;
+  playlistCategory: string;
 }
 
 let initialState: IMusicState = {
   nowWeather: {},
   playMusics: [],
   volume: LsUtils.getMusicPlayerVolume(),
+  playlistCategory: LsUtils.getPlaylistCategory(),
 };
 
 const musicSlice = createSlice({
@@ -27,6 +29,10 @@ const musicSlice = createSlice({
     },
     setVolume(state, action: PayloadAction<number>) {
       state.volume = action.payload;
+    },
+    setPlaylistCategory(state, action: PayloadAction<string>) {
+      state.playlistCategory = action.payload;
+      LsUtils.setPlaylistCategory(action.payload);
     },
   },
 });
