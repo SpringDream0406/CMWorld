@@ -19,6 +19,17 @@ const Notice1UpdateInfo = () => {
         </a>{" "}
         페이지를 방문해보세요.
       </span>
+      <span>
+        배포 버전의 자세한 변경사항이 궁금하신 분은{" "}
+        <a
+          href="https://springdream0406.tistory.com/114"
+          target="_black"
+          rel="noreferrer"
+        >
+          Version Info
+        </a>
+        를 방문해보세요.
+      </span>
       <br />
       {updateVersionData.map((item, index) => (
         <div className="update-version-item" key={index}>

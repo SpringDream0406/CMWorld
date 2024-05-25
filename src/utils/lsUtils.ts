@@ -8,6 +8,10 @@ export class LsUtils {
   //     localStorage.setItem(id, JSON.stringify(data));
   //   }
 
+  static getMusicPlayerVolume(): number {
+    return Number(localStorage.getItem("musicPlayerVolume") || "10");
+  }
+
   static resetLastMusicIndex(): void {
     localStorage.setItem("lastMusicIndex", "0");
   }
@@ -23,5 +27,9 @@ export class LsUtils {
   }
   static getPlaylistCategory(): string | null {
     return localStorage.getItem("playlistCategory");
+  }
+
+  static getIsShuffleOn(): boolean {
+    return localStorage.getItem("isShuffleOn") === "true" || false;
   }
 }

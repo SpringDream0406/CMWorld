@@ -1,5 +1,5 @@
 import { Dispatch, RefObject, SetStateAction } from "react";
-import { IMusicData } from "../interface/music.interface";
+import { IMusicData } from "./music.interface";
 import ReactPlayer from "react-player";
 
 export interface IMPlaylist {
@@ -15,6 +15,7 @@ export interface IMPlayingList {
   setCurrentVideoIndex: Dispatch<SetStateAction<number>>;
   setShowPlayingList: Dispatch<SetStateAction<boolean>>;
   currentVideoIndex: number;
+  isMobile: boolean;
 }
 
 export interface IMPlayerBar {

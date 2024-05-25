@@ -94,4 +94,11 @@ export class Utils {
   static urlCheck(params: string, tags: ITags) {
     return Object.keys(tags).some((key) => params === key);
   }
+
+  static isMobile(): boolean {
+    return (
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+      window.innerWidth <= 480
+    );
+  }
 }

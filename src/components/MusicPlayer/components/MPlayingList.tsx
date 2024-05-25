@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Utils } from "../../utils/utils";
-import { IMPlayingList } from "../mInterface";
+import { Utils } from "../../../utils/utils";
+import { IMPlayingList } from "../../../interface/musicPlayer.Interface";
 
 const MPlayingList = ({
   playingListRef,
@@ -8,6 +8,7 @@ const MPlayingList = ({
   setCurrentVideoIndex,
   setShowPlayingList,
   currentVideoIndex,
+  isMobile,
 }: IMPlayingList) => {
   //
   // playingList 열렸을 때 현재 노래로 자동 스크롤
@@ -33,13 +34,13 @@ const MPlayingList = ({
             className="m-playingList-title"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.title, 24)}
+            {Utils.ellipsisText(music.title, isMobile ? 24 : 45)}
           </div>
           <div
             className="m-playingList-artist"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.artist, 24)}
+            {Utils.ellipsisText(music.artist, isMobile ? 24 : 45)}
           </div>
         </div>
       ))}

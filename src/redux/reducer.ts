@@ -1,10 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IWeatherData } from "../interface/main.interface";
 import { IMusicData } from "../interface/music.interface";
-
-const localStorageVolume = parseInt(
-  localStorage.getItem("musicPlayerVolume") || "10"
-);
+import { LsUtils } from "../utils/lsUtils";
 
 interface IMusicState {
   nowWeather: IWeatherData;
@@ -15,7 +12,7 @@ interface IMusicState {
 let initialState: IMusicState = {
   nowWeather: {},
   playMusics: [],
-  volume: localStorageVolume,
+  volume: LsUtils.getMusicPlayerVolume(),
 };
 
 const musicSlice = createSlice({

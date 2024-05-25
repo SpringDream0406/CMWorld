@@ -1,4 +1,4 @@
-import { IMPlayerBar } from "../mInterface";
+import { IMPlayerBar } from "../../../interface/musicPlayer.Interface";
 
 const MPlayerBar = ({ played, setPlayed, playerRef }: IMPlayerBar) => {
   return (

@@ -6,8 +6,8 @@ const tags: ITags = {
   profile: "프로필",
   project: "프로젝트",
   jukbox: "쥬크박스",
-  playground: "놀이터",
-  photo: "사진첩",
+  // playground: "놀이터",
+  // photo: "사진첩",
   guestbook: "방명록",
   // setting: "설정",
 };

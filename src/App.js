@@ -14,17 +14,15 @@ import Guestbook from "./pages/07.Guestbook/Guestbook";
 // import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
 import Geolocation from "./pages/Geolocation";
 import PageNotFound from "./pages/PageNotFound";
-import MobileMusic from "./mobile/MobileMusic";
+import { Utils } from "./utils/utils";
+import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 
 function App() {
   // 모바일
-  const isMobile =
-    /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
-    window.innerWidth <= 480;
-  if (isMobile)
+  if (Utils.isMobile())
     return (
       <div>
-        <MobileMusic />
+        <MusicPlayer />
       </div>
     );
 
@@ -53,6 +51,7 @@ function App() {
           <Route path="geolocation" element={<Geolocation />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
+        <Route path="/musicplayer" element={<MusicPlayer />} />
       </Routes>
     </div>
   );

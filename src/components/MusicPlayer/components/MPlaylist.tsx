@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { playlists } from "../../data/musicData";
-import { IMPlaylist } from "../mInterface";
-import { LsUtils } from "../../utils/lsUtils";
+import { playlists } from "../../../data/musicData";
+import { IMPlaylist } from "../../../interface/musicPlayer.Interface";
+import { LsUtils } from "../../../utils/lsUtils";
 
 const MPlaylist = ({
   playlistRef,

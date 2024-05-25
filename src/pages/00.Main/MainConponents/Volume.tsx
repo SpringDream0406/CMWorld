@@ -39,7 +39,7 @@ const theme = createTheme({
   },
 });
 
-export default function InputSlider() {
+export default function InputSlider({ isPlayer }: { isPlayer: boolean }) {
   const [value, setValue] = React.useState(
     parseInt(localStorage.getItem("musicPlayerVolume") || "10")
   );
@@ -102,7 +102,7 @@ export default function InputSlider() {
               onChange={handleSliderChange}
               aria-labelledby="input-slider"
               sx={{
-                color: muted ? "grey" : "purple", // 뮤트일 때 슬라이더의 색상 변경
+                color: muted ? "grey" : isPlayer ? "white" : " purple", // 뮤트일 때 슬라이더의 색상 변경
               }}
             />
           </Grid>

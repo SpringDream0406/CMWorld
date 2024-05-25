@@ -1,4 +1,134 @@
-@keyframes AnimationName {
+.sideMusic {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+}
+
+.sideMusic-songinfo {
+  width: 100%;
+  height: 35%;
+}
+.flow-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.3s;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.flow-text:hover {
+  color: #9d9993;
+}
+.flow-text:hover .flow-wrap {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.flow-wrap {
+  animation: textLoop 10s linear infinite;
+  padding-right: 1.5rem;
+}
+
+@keyframes textLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.sideMusic-mid {
+  height: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sideMusic-control-btn {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  overflow: hidden;
+}
+
+.sideMusic-control-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  color: black;
+}
+.sideMusic-control-btn button:hover {
+  cursor: pointer;
+  font-size: 2rem;
+  color: black;
+}
+
+.sideMusic-control-btn button:active {
+  color: #6e2c17;
+}
+
+.sideMusic-control-btn button:disabled {
+  color: gray;
+  pointer-events: none;
+}
+
+.sideMusic-volume {
+  height: 30%;
+  overflow: hidden;
+}
+
+.sideMusic-reactPlayer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btn-active {
+  color: #6e2c17;
+  fill: #7a4c3e;
+}
+
+/* 맥북 14인치 */
+@media screen and (min-width: 1366px) and (max-width: 1512px) {
+  .sideMusic-control-btn button {
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 1.3rem;
+  }
+  .sideMusic-control-btn button:hover {
+    font-size: 1.7rem;
+  }
+}
+
+/* 아이패드 11인치 */
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .sideMusic-control-btn button {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1.2rem;
+  }
+  .sideMusic-control-btn button:hover {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==================== 플레이어 용 ==================== */
+@keyframes PlayerBackgroundAni {
   0% {
     background-position: 0% 50%;
   }
@@ -16,7 +146,7 @@
   background: linear-gradient(to bottom, #ffcccc, #ff99cc);
   background: linear-gradient(-45deg, #fff6b7, #f092bc, #8795e6, #c2ffd8);
   background-size: 400% 400%;
-  animation: AnimationName 15s ease infinite;
+  animation: PlayerBackgroundAni 15s ease infinite;
 }
 
 .mobile-music {
@@ -150,7 +280,7 @@
   height: 15%;
 }
 
-.song-info2 {
+.song-info-mobile {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -172,6 +302,31 @@
   align-items: top;
   font-size: 2.5rem;
   color: rgb(200, 200, 200);
+}
+
+.song-info-player {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.3s;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #9d9993;
+}
+.song-info-player:hover {
+  color: white;
+}
+.song-info-player-wrap {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.song-info-player-wrap {
+  animation: textLoop 10s linear infinite;
+  padding-right: 7rem;
 }
 
 /* body3 */
@@ -250,4 +405,10 @@
 
 .mobile-music .btn-active {
   color: pink;
+}
+
+/* 볼륨 bar (모바일은 안보임) */
+.volumeBar {
+  margin-top: 2rem;
+  width: 80%;
 }

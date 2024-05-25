@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/1w7OgIMMRc4?si=-9n50xjaBH2U1_Nx",
+    artist: "Guns N' Roses",
+    title: "Sweet Child O' Mine",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/p3KQH3px0Mg?si=G-l_l_VACOrpaeKf",
+    artist: "타샤니",
+    title: "경고",
+    playlists: [pl.Pick2024, pl.Before2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/QgD4alRSRSM?si=VLdPAfk_R3V1P4xO",
     artist: "The Score",
     title: "Enemies",
