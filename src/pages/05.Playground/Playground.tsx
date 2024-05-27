@@ -25,7 +25,10 @@ const Playground = () => {
           >
             <div className="playground-items-title">{playground.title}</div>
             <div className="playground-items-img">
-              <img src={`${playground.img}`} alt={playground.img} />
+              <img
+                src={`images/playground/${playground.img}.png`}
+                alt={playground.img}
+              />
             </div>
           </div>
         ))}
