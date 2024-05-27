@@ -84,6 +84,7 @@ const SideMusic = () => {
   const cmMusic = (
     <div
       className="cm-music-txt"
+      style={isPlayer ? { fontSize: "3.5rem" } : {}}
       onClick={() => {
         setShowPlaylist(!showPlaylist);
         setShowPlayingList(false);

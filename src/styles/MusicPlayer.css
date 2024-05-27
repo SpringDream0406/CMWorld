@@ -192,6 +192,7 @@
   color: transparent;
   background: linear-gradient(180deg, #d9a7c7 0%, #fffcdc 100%);
   background-clip: text;
+  padding: 1rem;
 }
 
 .playing-list {
