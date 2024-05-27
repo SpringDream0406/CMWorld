@@ -15,14 +15,15 @@ export const playgroundModalStyle = {
 };
 
 const currentURL = window.location.href;
-const musicplayerURL = currentURL.replace("playground", "musicplayer");
+const musicplayerURL = currentURL.replace("playground", "");
+const realMusicPlayerURL = `${musicplayerURL}musicplayer`;
 const imgPath = (path: string) => `images/playground/${path}.png`;
 export const playgroundData: IPlaygroundData[] = [
   {
     title: "뮤직 플레이어",
     img: imgPath("musicplayer"),
     ex: "CM월드의 BGM 기능만 편하게 사용하고 싶다면? CM월드 모바일 버전을 PC에서 즐기고 싶다면? CM월드의 뮤직플레이어를 이용해보세요.",
-    url: `${musicplayerURL}`,
+    url: `${realMusicPlayerURL}`,
   },
   {
     title: "가짜 결제",
