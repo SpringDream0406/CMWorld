@@ -316,12 +316,27 @@
   transition: 0.3s;
   font-size: 4rem;
   font-weight: bold;
-  /* color: #9d9993; */
   color: white;
 }
-.song-info-player:hover {
+.song-info-player2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.3s;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #9d9993;
+}
+
+.song-info-player:hover,
+.song-info-player2:hover {
   color: pink;
 }
+
 .song-info-player-wrap {
   animation-play-state: paused;
   cursor: pointer;

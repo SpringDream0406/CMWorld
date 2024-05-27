@@ -136,7 +136,7 @@ const SideMusic = () => {
 
   const playerSongInfoHTMLForPlayer = (
     <div
-      className="song-info-player"
+      className={isPlaying ? "song-info-player" : "song-info-player2"}
       onClick={() => {
         // 곡 정보 눌렀을 playingList 표시
         setShowPlayingList(!showPlayingList);
@@ -150,9 +150,7 @@ const SideMusic = () => {
           style={
             showPlayingList
               ? { color: "pink", animationPlayState: "paused" }
-              : isPlaying
-              ? {}
-              : { color: "#9d9993" }
+              : {}
           }
         >
           {songInfo}
