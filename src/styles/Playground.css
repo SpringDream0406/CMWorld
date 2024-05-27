@@ -1,0 +1,52 @@
+.playground-wrap {
+  height: 100%;
+  width: 100%;
+  padding: 0.3rem;
+  padding-right: 15px;
+}
+
+.playground {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.playground-items {
+  height: 10rem;
+  width: 8rem;
+  margin: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.playground-items:hover {
+  cursor: pointer;
+}
+
+.playground-items-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.playground-items-img {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playground-items-img img {
+  height: 100%;
+  width: 100%;
+}

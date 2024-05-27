@@ -15,9 +15,9 @@ const GuestbookWriteBox = ({
   firebaseUID: string;
   firebaseUserName: string;
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedImg, setSelectedImg] = useState<string>("basic.jpeg");
-  const textAreaRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // 모달 열고 닫기
+  const [selectedImg, setSelectedImg] = useState<string>("basic.jpeg"); // 선택된 이미지
+  const textAreaRef = useRef(null); // 글 다 쓰고 초기화 위해서
 
   return (
     <>

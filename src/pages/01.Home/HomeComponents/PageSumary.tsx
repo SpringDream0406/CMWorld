@@ -5,19 +5,22 @@ import { GuestbookController } from "../../../utils/controller/guestbook.control
 
 const PageSumary = () => {
   const guestbookController = useMemo(() => new GuestbookController(), []);
-  const [numOfPosts, setNumOfPosts] = useState<string | number>(0);
+  const [numOfPosts, setNumOfPosts] = useState<number>(0); // 방명록 게시물 수
 
+  // firebase에서 방명록 게시물 수 가져오기
   useEffect(() => {
     const countPosts = async () => {
       const countPosts = await guestbookController.countPosts();
-      if (countPosts) setNumOfPosts(countPosts);
+      if (countPosts) setNumOfPosts(Number(countPosts));
     };
     countPosts();
   }, [guestbookController]);
 
+  // 페이지 요약 데이터 원본 손상없도록 새로 하나 만들고, 방명록 요약 데이터 업데이트
   const pageSumaryData = [...pageSummary];
-  pageSumaryData[5].num = numOfPosts || "로딩중..";
+  pageSumaryData[pageSumaryData.length - 1].num = numOfPosts || "로딩중..";
 
+  // 본문
   return (
     <>
       {pageSumaryData.map((data) => (

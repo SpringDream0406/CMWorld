@@ -52,7 +52,7 @@ export const projectData: IProjectData[] = [
   {
     title: "Portfolio.v2",
     where: "개인 프로젝트",
-    when: "2024.03 ~ 2024.04 (2주, Beta 완성)",
+    when: "2024.03 ~ 진행 중 (Beta 완성 - 약 2주)",
     sub: "싸이월드를 모티브로 포트폴리오 사이트 제작",
     exp: [
       "Portfolio.v1의 결과가 만족스럽지 않아 저의 취향을 반영한 포트폴리오를 다시 만들게 되었습니다.",

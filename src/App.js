@@ -8,7 +8,7 @@ import Project from "./pages/03.Project/Project";
 import ProjectRight from "./pages/03.Project/ProjectRight";
 import Jukbox from "./pages/04.Jukbox/Jukbox";
 import Playground from "./pages/05.Playground/Playground";
-import Photo from "./pages/06.Photo/Photo";
+// import Photo from "./pages/06.Photo/Photo";
 import Guestbook from "./pages/07.Guestbook/Guestbook";
 // import Setting from "./pages/08.Setting/Setting";
 // import MusicPlayerSetting from "./pages/08.Setting/SettingConponents/MusicPlayerSetting";
@@ -42,7 +42,7 @@ function App() {
             <Route path=":playlist" element={<Jukbox />} />
           </Route>
           <Route path="playground" element={<Playground />} />
-          <Route path="photo" element={<Photo />} />
+          {/* <Route path="photo" element={<Photo />} /> */}
           <Route path="guestbook" element={<Guestbook />} />
           {/* <Route path="setting" element={<Setting />}> */}
           {/* <Route index element={<Navigate to="musicplayer" />} /> */}
