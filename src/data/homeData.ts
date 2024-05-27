@@ -6,6 +6,7 @@ import Notice0Welecome from "../pages/01.Home/HomeComponents/notices/Notice0Wele
 import Notice1UpdateInfo from "../pages/01.Home/HomeComponents/notices/Notice1UpdateInfo";
 import Notice2Guestbook from "../pages/01.Home/HomeComponents/notices/Notice2Guestbook";
 import Notice3AboutMusic from "../pages/01.Home/HomeComponents/notices/Notice3AboutMusic";
+import { playgroundData } from "./playgroundData";
 
 // 공지사항 제목
 export const noticeTitles = [
@@ -20,7 +21,7 @@ export const pageSummary = [
   { name: "공지사항", url: "#", num: noticeTitles.length },
   { name: "프로젝트:", url: "/project", num: projectData.length },
   { name: "쥬크박스:", url: "/jukbox", num: musicData.length },
-  { name: "놀이터:", url: "/playground", num: "준비중.." },
+  { name: "놀이터:", url: "/playground", num: playgroundData.length },
   // { name: "사진첩:", url: "#", num: "고민중.." },
   { name: "방명록:", url: "/guestbook", num: "로딩중.." }, // 해당 페이지에서 업데이트됨
 ];
@@ -42,9 +43,24 @@ export const selectNotice = (notice: string) => {
 
 // 업데이트 버전 정보
 export const updateVersionData = [
+  // {
+  //   title: "- 2.0.0",
+  //   sub: [
+  //     {
+  //       version: "- 2.2.0",
+  //       change: "정식 배포",
+  //       date: "2024-05-29",
+  //     },
+  //   ],
+  // },
   {
-    title: "- 2.0.0",
+    title: "- Beta",
     sub: [
+      {
+        version: "- 2.2.0 Beta",
+        change: "놀이터 추가",
+        date: "2024-05-28",
+      },
       {
         version: "- 2.1.1 Beta",
         change: "뮤직 플레이어 작동 방식 변경",

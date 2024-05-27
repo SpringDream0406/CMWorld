@@ -33,7 +33,7 @@ export const playgroundData: IPlaygroundData[] = [
   {
     title: "팜팜",
     img: imgPath("farmfarm"),
-    ex: "광주 인공지능사관학교 4기 App반의 1차 프로젝트, 에비앙(App이앙) 조의 도심 농부를 위한 텃밭 분양 플랫폼의 데모 사이트를 경험해보세요. (해당 사이트는 2025년 5월 13일까지만 이용 가능합니다.)",
+    ex: `광주 인공지능사관학교 4기 App반의 1차 프로젝트, 에비앙(App이앙)조의 "도심 농부를 위한 텃밭 분양 플랫폼" 데모 사이트를 경험해보세요. (해당 사이트는 2025년 5월 16일까지만 이용 가능합니다.)`,
     url: "http://farmfarm-front.s3-website.ap-northeast-2.amazonaws.com/",
   },
 ];

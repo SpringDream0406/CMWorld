@@ -11,6 +11,7 @@ export const skillsData: string[] = [
   "MySQL",
   "ORACLE",
   "Firebase",
+  "Aws",
   "Github",
 ];
 

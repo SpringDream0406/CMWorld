@@ -15,7 +15,7 @@ export const projectData: IProjectData[] = [
   {
     title: "팜팜 서버 교체2",
     where: "개인 프로젝트",
-    when: "2024.04 ~ 2024.04 (약 2주)",
+    when: "2024.04 ~ 2024.05 (약 2주)",
     sub: "Express.js로 만들어진 서버를 Nest.js로 교체",
     exp: [
       "Nest.js를 공부하면서 Express.js로 구성된 Router를 Nest.js로 변경했습니다.",
@@ -60,6 +60,7 @@ export const projectData: IProjectData[] = [
       "Firebase를 사용하여 방명록 페이지의 데이터를 처리했습니다.",
       "Redux를 사용하여 Component간의 데이터 전달을 처리했습니다.",
       "고정 페이지는 정적 Router로, 늘어나는 Component는 동적 Router로 처리했습니다.",
+      "AWS의 S3와 CloudFront를 이용하여 배포하고, Route53를 사용하여 도메인을 호스팅했습니다.",
     ],
     site: {
       selectOptions: [
