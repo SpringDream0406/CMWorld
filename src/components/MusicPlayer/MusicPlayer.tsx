@@ -149,7 +149,9 @@ const SideMusic = () => {
           style={
             showPlayingList
               ? { color: "pink", animationPlayState: "paused" }
-              : {}
+              : isPlaying
+              ? {}
+              : { color: "#9d9993" }
           }
         >
           {songInfo}

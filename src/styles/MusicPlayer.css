@@ -315,10 +315,11 @@
   transition: 0.3s;
   font-size: 4rem;
   font-weight: bold;
-  color: #9d9993;
+  /* color: #9d9993; */
+  color: white;
 }
 .song-info-player:hover {
-  color: white;
+  color: pink;
 }
 .song-info-player-wrap {
   animation-play-state: paused;
