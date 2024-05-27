@@ -15,7 +15,6 @@ export const playgroundModalStyle = {
 };
 
 const currentURL = window.location.origin;
-console.log(currentURL);
 const musicplayerURL = `${currentURL}/musicplayer`;
 const imgPath = (path: string) => `images/playground/${path}.png`;
 export const playgroundData: IPlaygroundData[] = [
