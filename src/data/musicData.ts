@@ -502,7 +502,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=NkEGzMyAqo",
+    url: "https://youtu.be/-NkEGzMyAqo?si=wYWCHztwfhSB0E1m",
     artist: "먼데이 키즈",
     title: "Bye Bye Bye",
     playlists: [pl.Before2024],
