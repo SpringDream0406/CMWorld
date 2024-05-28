@@ -15,9 +15,10 @@ export const playgroundModalStyle = {
   overflow: "auto",
 };
 
-// 뮤직 플레이어 위해서 현재 오리진 주소 뽑고 뒤에 musicplayer 추가
-const currentURL = window.location.origin;
-const musicplayerURL = `${currentURL}/musicplayer`;
+// 뮤직 플레이어 위해서 현재 오리진 주소 뽑고 뒤에 musicplayer 추가, aws에서 제대로 작동안함..
+// const currentURL = window.location.origin;
+// const musicplayerURL = `${currentURL}/musicplayer`;
+const musicplayerURL = "https://cmworld.netlify.app/musicplayer";
 
 export const playgroundData: IPlaygroundData[] = [
   {
