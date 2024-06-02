@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/HpAqkHvu_FE?si=Q2IhgJPJPsa6pCib",
+    artist: "폴킴",
+    title: "좋아해요",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
+    url: "https://youtu.be/ucpb4BYNJ6s?si=3t87DwhxZ2aOwqz2",
+    artist: "부석순",
+    title: "자꾸만 웃게 돼",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/1w7OgIMMRc4?si=-9n50xjaBH2U1_Nx",
     artist: "Guns N' Roses",
     title: "Sweet Child O' Mine",
