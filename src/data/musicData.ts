@@ -38,6 +38,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.Pick2024],
+  // },
   {
     url: "https://youtu.be/HpAqkHvu_FE?si=Q2IhgJPJPsa6pCib",
     artist: "폴킴",
