@@ -54,7 +54,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/ucpb4BYNJ6s?si=3t87DwhxZ2aOwqz2",
     artist: "부석순",
     title: "자꾸만 웃게 돼",
-    playlists: [pl.Pick2024, pl.Feeling, pl.Favorite],
+    playlists: [pl.Pick2024, pl.Feeling, pl.Favorite, pl.Working],
   },
   {
     url: "https://youtu.be/1w7OgIMMRc4?si=-9n50xjaBH2U1_Nx",
