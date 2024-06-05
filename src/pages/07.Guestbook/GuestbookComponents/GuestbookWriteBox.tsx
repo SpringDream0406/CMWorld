@@ -37,7 +37,7 @@ const GuestbookWriteBox = ({
             ref={textAreaRef}
             placeholder={`로그인을 하셔야 방명록 글 작성이 가능합니다.
             
-왼쪽 이미지를 눌러서 원하시는 방명록 프로필을 선택해보세요.`}
+왼쪽 이미지를 눌러서 원하시는 방명록 프로필 이미지를 선택해보세요.`}
           />
         </div>
       </div>

@@ -54,7 +54,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/ucpb4BYNJ6s?si=3t87DwhxZ2aOwqz2",
     artist: "부석순",
     title: "자꾸만 웃게 돼",
-    playlists: [pl.Pick2024, pl.Feeling],
+    playlists: [pl.Pick2024, pl.Feeling, pl.Favorite],
   },
   {
     url: "https://youtu.be/1w7OgIMMRc4?si=-9n50xjaBH2U1_Nx",
@@ -144,13 +144,13 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=MhHxVaJ9sT4",
     artist: "테일즈위버 OST",
     title: "Second Run",
-    playlists: [pl.Before2024, pl.Feeling, pl.Nolyrics],
+    playlists: [pl.Before2024, pl.Nolyrics],
   },
   {
     url: "https://www.youtube.com/watch?v=mlFDY5TMgeg",
     artist: "테일즈위버 OST",
     title: "Reminiscence",
-    playlists: [pl.Before2024, pl.Feeling, pl.Nolyrics],
+    playlists: [pl.Before2024, pl.Nolyrics],
   },
   {
     url: "https://www.youtube.com/watch?v=L2LB12IxLDU",
