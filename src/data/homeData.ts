@@ -12,7 +12,7 @@ import { playgroundData } from "./playgroundData";
 export const noticeTitles = [
   { title: "뮤직플레이어에 관하여", path: 3, date: "2024-05-25" },
   { title: "데이터에 관하여", path: 2, date: "2024-05-24" },
-  { title: "업데이트 정보", path: 1, date: "2024-05-25" },
+  { title: "업데이트 정보", path: 1, date: "2024-06-07" },
   { title: "환영합니다", path: 0, date: "2024-05-24" },
 ];
 
