@@ -43,16 +43,16 @@ export const selectNotice = (notice: string) => {
 
 // 업데이트 버전 정보
 export const updateVersionData = [
-  // {
-  //   title: "- 2.0.0",
-  //   sub: [
-  //     {
-  //       version: "- 2.2.0",
-  //       change: "정식 배포",
-  //       date: "2024-05-29",
-  //     },
-  //   ],
-  // },
+  {
+    title: "- 2.0.0",
+    sub: [
+      {
+        version: "- 2.2.0",
+        change: "정식 배포",
+        date: "2024-06-07",
+      },
+    ],
+  },
   {
     title: "- Beta",
     sub: [
