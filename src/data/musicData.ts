@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/bkoEIpHApzA?si=NJgq7aN84pKYj99D",
+    artist: "이선희",
+    title: "인연",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/CTQd71zkItA?si=lyw3H2ZPhjUVMbNv",
     artist: "Mad Soul Child",
     title: "Dear",
