@@ -11,17 +11,19 @@ import { Utils } from "../../utils/utils";
 import { RootState } from "../../redux/store";
 
 const Main = () => {
-  const nowWeather = useSelector((state: RootState) => state.music.nowWeather);
-  const [backgroundImage, setBackgroundImage] = useState<string>(
-    "/images/backgrounds/clear.gif"
+  const nowWeather = useSelector((state: RootState) => state.music.nowWeather); // 현재 날씨 가져오기
+  const [backgroundImage, setBackgroundImage] = useState<string>( // 배경 이미지
+    "/images/backgrounds/Clear.gif"
   );
 
+  // 날씨 가져오면 배경화면 변경
   useEffect(() => {
     Utils.changeBackground(setBackgroundImage, nowWeather);
   }, [nowWeather]);
 
   // console.log("load count");
 
+  // 본문
   return (
     <div
       className="background"

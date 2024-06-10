@@ -25,6 +25,7 @@ const NavigationBar = () => {
     </NavLink>
   ));
 
+  // 본문
   return <div className="navigation">{navigationBars}</div>;
 };
 

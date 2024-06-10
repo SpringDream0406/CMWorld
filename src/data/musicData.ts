@@ -42,7 +42,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/bkoEIpHApzA?si=NJgq7aN84pKYj99D",
     artist: "이선희",
     title: "인연",
-    playlists: [pl.Pick2024, pl.Feeling],
+    playlists: [pl.Pick2024, pl.Feeling, pl.Rainy],
   },
   {
     url: "https://youtu.be/CTQd71zkItA?si=lyw3H2ZPhjUVMbNv",

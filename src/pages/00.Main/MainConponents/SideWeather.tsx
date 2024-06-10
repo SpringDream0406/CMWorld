@@ -21,20 +21,26 @@ const SideWeather = () => {
   useEffect(() => {
     const fetchDate = async () => {
       try {
-        const geoLocation: IPosition | IPositionError = await getLocation(); // 위경도 요청
+        // 위경도 요청
+        const geoLocation: IPosition | IPositionError = await getLocation();
+
+        // 한국 아닌 경우
         if (geoLocation.code) {
-          Utils.moveToPage(navigate, "geolocation", geoLocation.code); // 한국 아닌 경우
+          Utils.moveToPage(navigate, "geolocation", geoLocation.code);
           return;
         }
-        const weatherData = await getWeather(geoLocation as IPosition); // 날씨 조회
+
+        // 날씨 조회
+        const weatherData = await getWeather(geoLocation as IPosition);
         if (weatherData) {
           dispatch(musicActions.setNowWeather(weatherData)); // 배경 변경을 위해 redux로 보냄
         }
       } catch (err: any) {
         console.log(err);
 
+        // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 getWearher에서 alert만 띄우게 해놓음
         if (err.code) {
-          Utils.moveToPage(navigate, "geolocation", err.code); // geolocation 에러의 경우 메시지와 함께 geo로 가고, 날씨는 alert만 띄우게 해놓음
+          Utils.moveToPage(navigate, "geolocation", err.code);
           return;
         }
       }
