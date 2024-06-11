@@ -39,6 +39,24 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/hryQUXYfkX0?si=HKBiFQtRGiRFNgsX",
+    artist: "The Vamps",
+    title: "Just My Type",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/RQ9BWndKEgs?si=PnzCSfYWVRsAybn_",
+    artist: "Beyoncé",
+    title: "Deja Vu (ft. Jay-Z)",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/Wzkxs7v0uuk?si=wBxLiSFpDLIhUN-w",
+    artist: "Jean Tonique",
+    title: "Lit Up (feat. DiRTY RADiO)",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/bkoEIpHApzA?si=NJgq7aN84pKYj99D",
     artist: "이선희",
     title: "인연",

@@ -46,7 +46,6 @@ function App() {
           <Route path="guestbook" element={<Guestbook />} />
           {/* <Route path="setting" element={<Setting />}> */}
           {/* <Route index element={<Navigate to="musicplayer" />} /> */}
-          {/* <Route path="musicplayer" element={<MusicPlayerSetting />} /> */}
           {/* </Route> */}
           <Route path="geolocation" element={<Geolocation />} />
           <Route path="*" element={<PageNotFound />} />
