@@ -39,6 +39,24 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/dm0ndgjk9V4?si=h7-eHVdOXlH9B1Jt",
+    artist: "Britney Spears",
+    title: "Toxic",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/jthP1K1T9Ys?si=kAS6lim4TvWbF25z",
+    artist: "Britney Spears",
+    title: "Baby One More Time",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/kMed62V_2M8?si=NlmJM1o6gGF6c9fs",
+    artist: "Britney Spears",
+    title: "Oops!... I did it again",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/hryQUXYfkX0?si=HKBiFQtRGiRFNgsX",
     artist: "The Vamps",
     title: "Just My Type",
