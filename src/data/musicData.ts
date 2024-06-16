@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/6OMfjwK3X44?si=H3OlKesbaipWu_ie",
+    artist: "NewJeans",
+    title: "NewJeans",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/Myz6pdW07O0?si=bHmYyuiFjTTx6yZi",
+    artist: "태연",
+    title: "To. X",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/dm0ndgjk9V4?si=h7-eHVdOXlH9B1Jt",
     artist: "Britney Spears",
     title: "Toxic",
