@@ -221,7 +221,7 @@
 
 .m-notice {
   padding: 1rem;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -239,7 +239,7 @@
 .m-showing-playlist {
   display: flex;
   justify-content: center;
-  font-size: 5.5rem;
+  font-size: 2rem;
   color: white;
   padding: 1rem;
 }
@@ -265,14 +265,14 @@
 .m-playingList-title {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 1.3rem;
   color: white;
 }
 
 .m-playingList-artist {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1rem;
   color: rgb(206, 203, 203);
 }
 
@@ -292,7 +292,7 @@
   height: 60%;
   display: flex;
   align-items: end;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
 }
@@ -301,7 +301,7 @@
   height: 40%;
   display: flex;
   align-items: top;
-  font-size: 2.5rem;
+  font-size: 0.8rem;
   color: rgb(200, 200, 200);
 }
 
@@ -366,7 +366,7 @@
   justify-content: center;
   width: 15%;
   color: white;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 .play-bar-range {
@@ -374,20 +374,20 @@
 }
 
 .play-bar-range::-webkit-slider-thumb {
-  width: 4rem;
-  height: 4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: all;
 }
 
 .play-bar-range::-moz-range-thumb {
-  width: 4rem;
-  height: 4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: all;
 }
 
 .play-bar-range::-ms-thumb {
-  width: 4rem;
-  height: 4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: all;
 }
 
@@ -396,10 +396,11 @@
   justify-content: center;
   width: 15%;
   color: white;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 /* 버튼 */
+/* == 모바일 == */
 .play-btns {
   height: 50%;
   display: flex;
@@ -412,7 +413,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background: none;
+  color: rgb(206, 203, 203);
+}
+
+/* == 플레이어 == */
+
+.play-btns-p {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-btns-p button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
   width: 6rem;
   height: 5rem;
   border: none;
@@ -420,15 +443,17 @@
   color: rgb(206, 203, 203);
 }
 
-.play-btns button:hover {
-  font-size: 5.5rem;
+.play-btns-p button:hover {
+  font-size: 5rem;
 }
 
-.play-btns button:active {
+.play-btns,
+.play-btns-p button:active {
   color: white;
 }
 
-.play-btns button:disabled {
+.play-btns,
+.play-btns-p button:disabled {
   color: gray;
 }
 

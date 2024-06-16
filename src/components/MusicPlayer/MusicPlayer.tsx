@@ -84,7 +84,7 @@ const SideMusic = () => {
   const cmMusic = (
     <div
       className="cm-music-txt"
-      style={isPlayer ? { fontSize: "3.5rem" } : {}}
+      style={isMobile ? { fontSize: "2rem" } : {}}
       onClick={() => {
         setShowPlaylist(!showPlaylist);
         setShowPlayingList(false);
@@ -322,7 +322,9 @@ const SideMusic = () => {
                 />
                 <div className="time-end">{duration}</div>
               </div>
-              <div className="play-btns">{playerControlBtn}</div>
+              <div className={isMobile ? "play-btns" : "play-btns-p"}>
+                {playerControlBtn}
+              </div>
             </div>
           </div>
           {!isMobile && <div className="volumeBar">{volumeBar}</div>}

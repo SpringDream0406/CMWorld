@@ -19,6 +19,8 @@ const MPlayingList = ({
         block: "nearest",
       });
   }, [currentVideoIndex, playingListRef]);
+
+  // 본문
   return (
     <div className="m-show-playingList" ref={playingListRef}>
       {realPlaylist.map((music, index) => (
@@ -34,13 +36,13 @@ const MPlayingList = ({
             className="m-playingList-title"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.title, isMobile ? 24 : 45)}
+            {Utils.ellipsisText(music.title, isMobile ? 20 : 45)}
           </div>
           <div
             className="m-playingList-artist"
             style={index === currentVideoIndex ? { color: "pink" } : {}}
           >
-            {Utils.ellipsisText(music.artist, isMobile ? 24 : 45)}
+            {Utils.ellipsisText(music.artist, isMobile ? 20 : 45)}
           </div>
         </div>
       ))}
