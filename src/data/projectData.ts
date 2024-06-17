@@ -13,6 +13,26 @@ export const projectTags: ITags = {
 // 프로젝트 데이터
 export const projectData: IProjectData[] = [
   {
+    title: "CMSPP (CM Solar Power Plant)",
+    where: "개인 프로젝트",
+    when: "2024.06 ~ 진행 중",
+    sub: "태양광 발전 정보 저장/관리 사이트",
+    exp: [
+      "코딩에 관심을 두게 했던, 태양광 데이터 저장/관리를 위한 사이트를 제작 중입니다.",
+      "회원가입/로그인의 간편화와 보안을 위해 소셜로그인 기능을 사용했습니다.",
+      "보안을 위해 refeshToken과 accessToken 기능을 사용했습니다.",
+    ],
+    site: {
+      selectOptions: [
+        {
+          name: "CMSPP 개발일지",
+          url: "https://springdream0406.tistory.com/category/Projects/CMSPP%28CM%20Solar%20Power%20Plant%29",
+        },
+      ],
+    },
+    category: ["personal", "p2024"],
+  },
+  {
     title: "팜팜 서버 교체2",
     where: "개인 프로젝트",
     when: "2024.04 ~ 2024.05 (약 2주)",
