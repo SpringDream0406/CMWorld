@@ -5,7 +5,6 @@ import { DocumentData } from "firebase/firestore";
 import GuestbookPosts from "./GuestbookComponents/GuestbookPosts";
 import GuestbookWriteBox from "./GuestbookComponents/GuestbookWriteBox";
 import { RootState } from "../../redux/store";
-import { getPostDatas } from "../../utils/guestbook.utils";
 
 const GuestbookRight = () => {
   const dispatch = useDispatch();
@@ -23,10 +22,10 @@ const GuestbookRight = () => {
   );
   const [postDatas, setPostDatas] = useState<DocumentData | null>(null);
 
-  // 게시판 데이터 가져오고
+  // 게시판 데이터 가져오고, dataUpdated 되면 다시 가져오고
   useEffect(() => {
-    getPostDatas(guestbookController, setPostDatas);
-  }, [guestbookController, dataUpdated, dispatch]);
+    guestbookController.readPosts(setPostDatas);
+  }, [guestbookController, dataUpdated]);
 
   // 본문
   return (

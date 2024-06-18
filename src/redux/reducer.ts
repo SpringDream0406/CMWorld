@@ -10,7 +10,7 @@ interface IMusicState {
   playlistCategory: string;
 }
 
-let initialState: IMusicState = {
+const initialState: IMusicState = {
   nowWeather: {},
   playMusics: [],
   volume: LsUtils.getMusicPlayerVolume(),

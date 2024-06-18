@@ -68,7 +68,7 @@ export class GuestbookController {
   }
 
   // 방명록 글 읽기
-  async readPosts(): Promise<DocumentData | null> {
+  async readPosts(setPostDatas: any): Promise<null | void> {
     const documentName = "posts";
     const condition = {
       key: "isDeleted",
@@ -88,7 +88,7 @@ export class GuestbookController {
         id: doc.id,
         data: doc.data(),
       }));
-      return documnetDatas;
+      setPostDatas(documnetDatas);
     } else {
       return null;
     }
