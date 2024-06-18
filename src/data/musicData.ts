@@ -39,9 +39,81 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
-    url: "https://youtu.be/6OMfjwK3X44?si=H3OlKesbaipWu_ie",
+    url: "",
+    artist: "",
+    title: "",
+    playlists: [pl.Pick2024],
+  },
+  {
+    url: "https://youtu.be/SXM1q0CTfew?si=WPYNOm_RAo2tfY0d",
+    artist: "NewJeans",
+    title: "Get Up",
+    playlists: [pl.Pick2024, pl.Feeling, pl.Rainy],
+  },
+  {
+    url: "https://youtu.be/-jEmhjZr8RE?si=JSpgf8QY_VunuCjK",
+    artist: "NewJeans",
+    title: "Cool With You",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/XCkpalH6Ppk?si=Hn_PAXWv4H7Bgvht",
+    artist: "NewJeans",
+    title: "ETA",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/n7ePZLn9_lQ?si=wXC5wSDSCgJct3BO",
+    artist: "NewJeans",
+    title: "Super Shy",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/Krr2u8BUtLw?si=VGPaxdfpF-cS6aHO",
     artist: "NewJeans",
     title: "NewJeans",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/2Kff0U8w-aU?si=OwW9gdj1zkDr-9zL",
+    artist: "NewJeans",
+    title: "OMG",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/V6TEcoNUmc8?si=8aJnzU3McA8rZO0d",
+    artist: "NewJeans",
+    title: "Ditto",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/8QWtOgBJZNc?si=1SzmJc4nDDolViDu",
+    artist: "NewJeans",
+    title: "Hurt",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/0M4QMVQJRsw?si=DueRfFDq1FiltHZZ",
+    artist: "NewJeans",
+    title: "Cookie",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/ghrlZIMDzbM?si=guZJbGg288HqK3bS",
+    artist: "NewJeans",
+    title: "Hype Boy",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/kdOS94IjzzE?si=0XFOy4qWm1-Jl3EZ",
+    artist: "NewJeans",
+    title: "Attention",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/lxbQKemBaRE?si=LNvLURivE3q0PPCV",
+    artist: "Doja Cat",
+    title: "Like That (feat. Gucci Mane)",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
@@ -77,7 +149,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://youtu.be/RQ9BWndKEgs?si=PnzCSfYWVRsAybn_",
     artist: "Beyoncé",
-    title: "Deja Vu (ft. Jay-Z)",
+    title: "Deja Vu (feat. Jay-Z)",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
