@@ -483,7 +483,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://www.youtube.com/watch?v=QkNzZUVToyM&ab_channel=Livingston-Topic",
+    url: "https://youtu.be/zHb5ls32Rvc?si=boNJksOcBqIHtCb3",
     artist: "Livingston",
     title: "Architect",
     playlists: [pl.Pick2024, pl.Working],
