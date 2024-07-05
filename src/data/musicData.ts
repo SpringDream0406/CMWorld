@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/ZbZSe6N_BXs?si=tuhNI_7CIIPs1hQA",
+    artist: "Pharrell Williams",
+    title: "Happy",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/h--P8HzYZ74?si=tt-rMjsaoZoGHc7S",
+    artist: "Zedd & Alessia Cara",
+    title: "Stay",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/yUbutxfMgJo?si=K_9FRFADv9IbU-Zm",
     artist: "NewJeans",
     title: "Right Now'",
