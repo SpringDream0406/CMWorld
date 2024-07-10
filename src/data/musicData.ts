@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/2MEQ0UGoh6I?si=Lkh2ROFYm7w-frxc",
+    artist: "민지",
+    title: "무희(Odoriko)",
+    playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy],
+  },
+  {
     url: "https://youtu.be/ZbZSe6N_BXs?si=tuhNI_7CIIPs1hQA",
     artist: "Pharrell Williams",
     title: "Happy",
@@ -1691,7 +1697,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=tg6DGMhsj7Y",
     artist: "Taio Cruz",
     title: "She's Like A Star",
-    playlists: [pl.Feeling, pl.Before2024],
+    playlists: [pl.Feeling, pl.Before2024, pl.Working, pl.Pick2024],
   },
   {
     url: "https://www.youtube.com/watch?v=crB9uNfyEMc",
