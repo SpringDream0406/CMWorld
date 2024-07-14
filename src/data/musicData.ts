@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/3ERtNZqh1XA?si=C1N1ThRpup9sxzWO",
+    artist: "Charlie Puth",
+    title: "Dangerously",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/2MEQ0UGoh6I?si=Lkh2ROFYm7w-frxc",
     artist: "민지",
     title: "무희(Odoriko)",
