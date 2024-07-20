@@ -38,6 +38,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.Pick2024],
+  // },
   {
     url: "https://youtu.be/3ERtNZqh1XA?si=C1N1ThRpup9sxzWO",
     artist: "Charlie Puth",
