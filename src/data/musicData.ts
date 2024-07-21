@@ -38,12 +38,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
-  // {
-  //   url: "",
-  //   artist: "",
-  //   title: "",
-  //   playlists: [pl.Pick2024],
-  // },
+  {
+    url: "https://youtu.be/B-AqBu0D0q8?si=kVlj1LWxc5gvABSk",
+    artist: "비스트",
+    title: "비가 오는 날엔",
+    playlists: [pl.Pick2024, pl.Rainy],
+  },
   {
     url: "https://youtu.be/3ERtNZqh1XA?si=C1N1ThRpup9sxzWO",
     artist: "Charlie Puth",
