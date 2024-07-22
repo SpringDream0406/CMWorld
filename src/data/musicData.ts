@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/_82e2JwdQJU?si=m1c0VIw5RVStoQzC",
+    artist: "황린(슈퍼팬드2)",
+    title: "It's Rainning",
+    playlists: [pl.Pick2024, pl.Working, pl.Tensionup],
+  },
+  {
     url: "https://youtu.be/B-AqBu0D0q8?si=kVlj1LWxc5gvABSk",
     artist: "비스트",
     title: "비가 오는 날엔",
