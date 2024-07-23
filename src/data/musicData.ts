@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/zsPEUVNUl3E?si=WQLchbJjRK8VbqTi",
+    artist: "김예지 팀(슈퍼밴드2)",
+    title: "Closer",
+    playlists: [pl.Pick2024, pl.Tensionup],
+  },
+  {
     url: "https://youtu.be/_82e2JwdQJU?si=m1c0VIw5RVStoQzC",
     artist: "황린(슈퍼팬드2)",
     title: "It's Rainning",
