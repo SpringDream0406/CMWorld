@@ -38,6 +38,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.Pick2024],
+  // },
   {
     url: "https://youtu.be/zsPEUVNUl3E?si=WQLchbJjRK8VbqTi",
     artist: "김예지 팀(슈퍼밴드2)",
