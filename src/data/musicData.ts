@@ -63,7 +63,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Rainy],
   },
   {
-    url: "https://youtu.be/3ERtNZqh1XA?si=C1N1ThRpup9sxzWO",
+    url: "https://youtu.be/TBXQu8ORnBQ?si=4_xqwQy_iJIS220V",
     artist: "Charlie Puth",
     title: "Dangerously",
     playlists: [pl.Pick2024, pl.Feeling],
