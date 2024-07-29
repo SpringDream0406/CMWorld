@@ -38,12 +38,18 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
-  // {
-  //   url: "",
-  //   artist: "",
-  //   title: "",
-  //   playlists: [pl.Pick2024],
-  // },
+  {
+    url: "https://youtu.be/8yXGI3kcLsw?si=t9ieL4DCYiaj-Zfn",
+    artist: "NewJeans",
+    title: "Supernatural",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/cO--M-DaMP0?si=Ll8uHqSERxXNvGyG",
+    artist: "BABYMONSTER",
+    title: "LIKE THAT",
+    playlists: [pl.Pick2024, pl.Working],
+  },
   {
     url: "https://youtu.be/zsPEUVNUl3E?si=WQLchbJjRK8VbqTi",
     artist: "김예지 팀(슈퍼밴드2)",
