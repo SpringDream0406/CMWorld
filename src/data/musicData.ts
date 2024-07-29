@@ -93,19 +93,19 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://youtu.be/yUbutxfMgJo?si=K_9FRFADv9IbU-Zm",
+    url: "https://youtu.be/B1Vv1zQyR04?si=0fQMRz8pyUHTp-Hw",
     artist: "NewJeans",
     title: "Right Now'",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://youtu.be/kavLNr-PyoY?si=JsNhVIW3W_Et_P6P",
+    url: "https://youtu.be/GV_HP7yoIyc?si=zeVODq4hAthJVlr_",
     artist: "NewJeans",
     title: "Bubble Gum",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://youtu.be/fTt3dbNBH20?si=UijprHulrKWm2Zr6",
+    url: "https://youtu.be/vrM2mrI83uk?si=NskG3o-Vnh8RJYq7",
     artist: "NewJeans",
     title: "How Sweet",
     playlists: [pl.Pick2024, pl.Working],
