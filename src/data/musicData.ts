@@ -72,7 +72,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/2MEQ0UGoh6I?si=Lkh2ROFYm7w-frxc",
     artist: "민지",
     title: "무희(Odoriko)",
-    playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy],
+    playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy, pl.Favorite],
   },
   {
     url: "https://youtu.be/ZbZSe6N_BXs?si=tuhNI_7CIIPs1hQA",
