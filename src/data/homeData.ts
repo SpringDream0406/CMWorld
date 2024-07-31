@@ -12,7 +12,7 @@ import { playgroundData } from "./playgroundData";
 export const noticeTitles = [
   { title: "뮤직플레이어에 관하여", path: 3, date: "2024-05-25" },
   { title: "데이터에 관하여", path: 2, date: "2024-05-24" },
-  { title: "업데이트 정보", path: 1, date: "2024-06-16" },
+  { title: "업데이트 정보", path: 1, date: "2024-07-31" },
   { title: "환영합니다", path: 0, date: "2024-05-24" },
 ];
 
@@ -46,6 +46,11 @@ export const updateVersionData = [
   {
     title: "- 2.0.0",
     sub: [
+      {
+        version: "- 2.2.2",
+        change: "AWS에서 Netlify로 변경",
+        date: "2024-07-31",
+      },
       {
         version: "- 2.2.1",
         change: "아이콘추가, 프로젝트 업데이트",

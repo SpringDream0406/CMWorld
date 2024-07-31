@@ -80,7 +80,8 @@ export const projectData: IProjectData[] = [
       "Firebase를 사용하여 방명록 페이지의 데이터를 처리했습니다.",
       "Redux를 사용하여 Component간의 데이터 전달을 처리했습니다.",
       "고정 페이지는 정적 Router로, 늘어나는 Component는 동적 Router로 처리했습니다.",
-      "AWS의 S3와 CloudFront를 이용하여 배포하고, Route53를 사용하여 도메인을 호스팅했습니다.",
+      "(변경됨) AWS의 S3와 CloudFront를 이용하여 배포하고, Route53를 사용하여 도메인을 호스팅했습니다.",
+      "고정 지출을 줄이고 간편한 CI/CD를 사용하고자, 배포와 호스팅을 AWS에서 Netlify로 변경했습니다.",
     ],
     site: {
       selectOptions: [
