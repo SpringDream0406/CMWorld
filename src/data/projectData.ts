@@ -105,7 +105,8 @@ export const projectData: IProjectData[] = [
     exp: [
       "협업 경험과 JS의 기초를 다지기 위해 스터디 그룹에 참여하여 팀프로젝트를 진행했습니다.",
       "당시 공부중이던 모듈화를 활용해서 코드의 중복을 줄이기 위해 노력했습니다.",
-      "프로젝트 후, API KEY를 숨기기 위해 Express.js를 사용하여 간단한 중간 서버를 만들었습니다.",
+      "(변경됨) 프로젝트 후, API KEY를 숨기기 위해 Express.js를 사용하여 간단한 중간 서버를 만들었습니다.",
+      "프로젝트 후, API KEY를 숨기기 위해 netlify-functions를 사용했습니다.",
     ],
     site: {
       selectOptions: [
