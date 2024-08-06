@@ -39,7 +39,13 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
-    url: "https://youtu.be/Mvaosumc4hU?si=DCS-SLhXZSe9R2iq",
+    url: "https://youtu.be/LSaQJFaYnBA?si=lj-t7zInUY5Lo2jH",
+    artist: "BoyWithUke",
+    title: "Ghost",
+    playlists: [pl.Pick2024, pl.Rainy, pl.Feeling],
+  },
+  {
+    url: "https://youtu.be/MNTarTRNA4o?si=f6VkR1TO3aQsjOdY",
     artist: "BoyWithUke",
     title: "Toxic",
     playlists: [pl.Pick2024, pl.Working, pl.Rainy],
