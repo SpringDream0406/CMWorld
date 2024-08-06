@@ -39,6 +39,24 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/Mvaosumc4hU?si=DCS-SLhXZSe9R2iq",
+    artist: "BoyWithUke",
+    title: "Toxic",
+    playlists: [pl.Pick2024, pl.Working, pl.Rainy],
+  },
+  {
+    url: "https://youtu.be/3pb0tXvhBhs?si=PCew0xdaTzE0dRFQ",
+    artist: "위아더나잇",
+    title: "티라미수케익",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/SZvhmoQlSJc?si=IV-AKHzCa_es0gpf",
+    artist: "엔플라잉",
+    title: "Blue Moon",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/8yXGI3kcLsw?si=t9ieL4DCYiaj-Zfn",
     artist: "NewJeans",
     title: "Supernatural",
