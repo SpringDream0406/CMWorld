@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/8KeFJIx64eQ?si=1JwcGQlz8koCDlJK",
+    artist: "Otis Kane",
+    title: "Free",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/LSaQJFaYnBA?si=lj-t7zInUY5Lo2jH",
     artist: "BoyWithUke",
     title: "Ghost",
