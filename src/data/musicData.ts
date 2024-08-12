@@ -237,12 +237,6 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://youtu.be/kMed62V_2M8?si=NlmJM1o6gGF6c9fs",
-    artist: "Britney Spears",
-    title: "Oops!... I did it again",
-    playlists: [pl.Pick2024, pl.Working],
-  },
-  {
     url: "https://youtu.be/hryQUXYfkX0?si=HKBiFQtRGiRFNgsX",
     artist: "The Vamps",
     title: "Just My Type",
