@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/n6J4_VvAbI0?si=WO0NGtTNdIbkb6ua",
+    artist: "Will Jay",
+    title: "Off The Record",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/8KeFJIx64eQ?si=1JwcGQlz8koCDlJK",
     artist: "Otis Kane",
     title: "Free",
