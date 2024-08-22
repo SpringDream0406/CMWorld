@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/dR7dda5gHl0?si=k1_mtG1UPpMmYTVa",
+    artist: "Mattias Tell",
+    title: "Trippin' All over You",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/n6J4_VvAbI0?si=WO0NGtTNdIbkb6ua",
     artist: "Will Jay",
     title: "Off The Record",
