@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/Zo9h51YIFsM?si=ve9e4_L23Zj1pjzh",
+    artist: "Loving Caliber",
+    title: "18",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/dR7dda5gHl0?si=k1_mtG1UPpMmYTVa",
     artist: "Mattias Tell",
     title: "Trippin' All over You",
