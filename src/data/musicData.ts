@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/4YKi6-vhAcw?si=cQBy0c72IqwQDNJT",
+    artist: "에릭남 & 웬디",
+    title: "봄인가봐",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/Zo9h51YIFsM?si=ve9e4_L23Zj1pjzh",
     artist: "Loving Caliber",
     title: "18",
