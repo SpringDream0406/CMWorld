@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/cv1naUa3_3g?si=Do_buiCWeQQf6oF3",
+    artist: "Kanye West",
+    title: "Runaway",
+    playlists: [pl.Pick2024, pl.Working, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/4YKi6-vhAcw?si=cQBy0c72IqwQDNJT",
     artist: "에릭남 & 웬디",
     title: "봄인가봐",
