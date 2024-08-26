@@ -28,6 +28,12 @@ export const playgroundData: IPlaygroundData[] = [
     url: `${musicplayerURL}`,
   },
   {
+    title: "누나 뮤직",
+    img: "noonaPlayer",
+    ex: "코딩 알려주는 누나의 자바스크립트 팀 프로젝트 결과물로, 스포티파이 API를 활용해 만든 음악 검색 사이트입니다. (검색만 가능)",
+    url: "https://noona-music.netlify.app/",
+  },
+  {
     title: "가짜 결제",
     img: "fake-pay",
     ex: "가짜로 카카오페이를 원하는 금액과 상품명으로 결제해보고, 결제 내용을 카카오톡 메시지로 받아보세요.",

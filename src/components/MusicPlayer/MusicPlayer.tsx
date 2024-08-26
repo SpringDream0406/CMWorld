@@ -67,6 +67,7 @@ const SideMusic = () => {
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
   const playlistRef = useRef<HTMLDivElement>(null); // 플레이 리스트 Ref
   const playingListRef = useRef<HTMLDivElement>(null); // 플레잉 리스트 Ref
+  const musicPlayerIconsRoot = "images/musicPlayerIcons/";
 
   // 플레이어 왼쪽 상단의 한곡 반복 아이콘
   const repeatIcon = (
@@ -75,7 +76,7 @@ const SideMusic = () => {
         setRepeat(!repeat);
       }}
       className="repeat-icon"
-      src={repeat ? "images/repeat-one.png" : "images/repeat2.png"}
+      src={`${musicPlayerIconsRoot}${repeat ? "repeat-one" : "repeat2"}.png`}
       alt="playinglist"
     />
   );
@@ -102,9 +103,9 @@ const SideMusic = () => {
         setShowPlaylist(false);
       }}
       className="playing-list-icon"
-      src={
-        showPlayingList ? "images/playinglist.png" : "images/playinglist2.png"
-      }
+      src={`${musicPlayerIconsRoot}${
+        showPlayingList ? "playinglist" : "playinglist2"
+      }.png`}
       alt="playinglist"
     />
   );

@@ -63,12 +63,6 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Working],
   },
   {
-    url: "https://youtu.be/n6J4_VvAbI0?si=WO0NGtTNdIbkb6ua",
-    artist: "Will Jay",
-    title: "Off The Record",
-    playlists: [pl.Pick2024, pl.Working],
-  },
-  {
     url: "https://youtu.be/8KeFJIx64eQ?si=1JwcGQlz8koCDlJK",
     artist: "Otis Kane",
     title: "Free",
@@ -252,6 +246,12 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/Myz6pdW07O0?si=bHmYyuiFjTTx6yZi",
     artist: "태연",
     title: "To. X",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/n6J4_VvAbI0?si=WO0NGtTNdIbkb6ua",
+    artist: "Will Jay",
+    title: "Off The Record",
     playlists: [pl.Pick2024, pl.Working],
   },
   {

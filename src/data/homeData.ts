@@ -47,6 +47,11 @@ export const updateVersionData = [
     title: "- 2.0.0",
     sub: [
       {
+        version: "- 2.2.3",
+        change: "놀이터에 누나 뮤직 추가, 플레이어 관련 이미지 경로 정리",
+        date: "2024-08-26",
+      },
+      {
         version: "- 2.2.2",
         change: "AWS에서 Netlify로 변경",
         date: "2024-07-31",
