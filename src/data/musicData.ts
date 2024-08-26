@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/B1tFWy8-mpg?si=s3lTUqNrBpbpLLyv",
+    artist: "cut ver",
+    title: "AUTOMATIC REMIX",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/cv1naUa3_3g?si=Do_buiCWeQQf6oF3",
     artist: "Kanye West",
     title: "Runaway",
