@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/A8V0-gLxeB0?si=1NBS-iFZm42kZdob",
+    artist: "Dr. Dre",
+    title: "The Next Episode (feat. Snoop Dogg, Nate Dogg & Kurupt)",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/cLMLxnTvy3M?si=qxz0OGdkAJg1wcWm",
+    artist: "BoyWithUke",
+    title: "Migraine",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/B1tFWy8-mpg?si=s3lTUqNrBpbpLLyv",
     artist: "cut ver",
     title: "AUTOMATIC REMIX",
