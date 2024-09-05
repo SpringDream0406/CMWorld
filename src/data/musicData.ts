@@ -39,6 +39,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/oeLHy3dIiXs?si=RIHDOguUkYFJGRWb",
+    artist: "이병우",
+    title: "돌이킬 수 없는 걸음(장화홍련 OST)",
+    playlists: [pl.Pick2024, pl.Feeling, pl.Nolyrics],
+  },
+  {
+    url: "https://youtu.be/nP-GQGNvfbw?si=X3zk2NwHJAa7-yOL",
+    artist: "존박",
+    title: "Falling",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/A8V0-gLxeB0?si=1NBS-iFZm42kZdob",
     artist: "Dr. Dre",
     title: "The Next Episode (feat. Snoop Dogg, Nate Dogg & Kurupt)",
