@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/k_nLGVxmrIE?si=mRMUhGjiJ6RY1317",
+    artist: "Miss $",
+    title: "니가 아니었기를",
+    playlists: [pl.Pick2024, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/oeLHy3dIiXs?si=RIHDOguUkYFJGRWb",
     artist: "이병우",
     title: "돌이킬 수 없는 걸음(장화홍련 OST)",
@@ -138,7 +144,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/zsPEUVNUl3E?si=WQLchbJjRK8VbqTi",
     artist: "김예지 팀(슈퍼밴드2)",
     title: "Closer",
-    playlists: [pl.Pick2024, pl.Tensionup],
+    playlists: [pl.Pick2024, pl.Working],
   },
   {
     url: "https://youtu.be/_82e2JwdQJU?si=m1c0VIw5RVStoQzC",
