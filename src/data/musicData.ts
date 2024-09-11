@@ -2115,12 +2115,6 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Cyworld],
   },
   {
-    url: "https://www.youtube.com/watch?v=q5mPn6__Brk",
-    artist: "이기찬",
-    title: "미인",
-    playlists: [pl.Cyworld],
-  },
-  {
     url: "https://www.youtube.com/watch?v=nD1p_H3qo_A",
     artist: "성시경",
     title: "희재",
