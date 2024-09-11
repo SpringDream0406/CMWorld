@@ -1230,7 +1230,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=MBSpoTozBdg",
+    url: "https://youtu.be/_FHFv4HL4TY?si=Q3XXg0a_haREMbad",
     artist: "우디",
     title: "이 노래가 클럽에서 나온다면",
     playlists: [pl.Feeling, pl.Before2024],
