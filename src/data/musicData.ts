@@ -96,7 +96,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/dR7dda5gHl0?si=k1_mtG1UPpMmYTVa",
     artist: "Mattias Tell",
     title: "Trippin' All over You",
-    playlists: [pl.Pick2024, pl.Working],
+    playlists: [pl.Pick2024, pl.Working, pl.Favorite],
   },
   {
     url: "https://youtu.be/8KeFJIx64eQ?si=1JwcGQlz8koCDlJK",
