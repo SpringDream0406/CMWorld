@@ -39,6 +39,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/rb0pYTAAEqM?si=rTMyqLJE4kXfvJmR",
+    artist: "태연",
+    title: "Fine",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/k_nLGVxmrIE?si=mRMUhGjiJ6RY1317",
     artist: "Miss $",
     title: "니가 아니었기를",
