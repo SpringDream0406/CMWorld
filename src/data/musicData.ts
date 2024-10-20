@@ -38,6 +38,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
+  // {
+  //   url: "",
+  //   artist: "",
+  //   title: "",
+  //   playlists: [pl.Pick2024],
+  // },
   {
     url: "https://youtu.be/rb0pYTAAEqM?si=rTMyqLJE4kXfvJmR",
     artist: "태연",
