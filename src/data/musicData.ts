@@ -45,6 +45,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/LV3vxkZpUjk?si=Zm33Rv7EkCa5t8kQ",
+    artist: "샤이니",
+    title: "투명 우산",
+    playlists: [pl.Pick2024, pl.Rainy, pl.Working],
+  },
+  {
     url: "https://youtu.be/rb0pYTAAEqM?si=rTMyqLJE4kXfvJmR",
     artist: "태연",
     title: "Fine",
