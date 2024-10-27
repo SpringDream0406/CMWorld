@@ -70,7 +70,7 @@ export const projectData: IProjectData[] = [
     category: ["personal", "p2024"],
   },
   {
-    title: "Portfolio.v2",
+    title: "CMWorld",
     where: "개인 프로젝트",
     when: "2024.03 ~ 진행 중 (Beta 완성 - 약 2주)",
     sub: "싸이월드를 모티브로 포트폴리오 사이트 제작",
