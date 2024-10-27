@@ -32,6 +32,12 @@ enum pl {
 
 // 유튜브 음악 데이터
 export const musicData: IMusicData[] = [
+  {
+    url: "https://www.youtube.com/watch?v=dYIT_jeUBKg",
+    artist: "프리스타일",
+    title: "Y",
+    playlists: [pl.Cyworld],
+  },
   // {
   //   url: "",
   //   artist: "",
@@ -1035,12 +1041,6 @@ export const musicData: IMusicData[] = [
     artist: "개리 & 정인",
     title: "사람냄새",
     playlists: [pl.Before2024],
-  },
-  {
-    url: "https://www.youtube.com/watch?v=dYIT_jeUBKg",
-    artist: "프리스타일",
-    title: "Y",
-    playlists: [pl.Cyworld],
   },
   {
     url: "https://youtu.be/wecpRs9p00E?si=xI6_8kTXvnwsOcZi",
