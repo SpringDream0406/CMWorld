@@ -38,12 +38,6 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2024],
   // },
-  // {
-  //   url: "",
-  //   artist: "",
-  //   title: "",
-  //   playlists: [pl.Pick2024],
-  // },
   {
     url: "https://youtu.be/LV3vxkZpUjk?si=Zm33Rv7EkCa5t8kQ",
     artist: "샤이니",
