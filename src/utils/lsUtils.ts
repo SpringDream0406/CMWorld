@@ -1,7 +1,9 @@
 export class LsUtils {
   static getObjLocalData(id: string): any | undefined {
     const localData = localStorage.getItem(id);
-    if (localData) return JSON.parse(localData);
+    if (localData) {
+      return JSON.parse(localData);
+    }
   }
 
   //   static setObjLocalData(id: string, data: any): void {

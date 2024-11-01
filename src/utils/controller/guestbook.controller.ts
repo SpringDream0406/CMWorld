@@ -27,8 +27,9 @@ export class GuestbookController {
   async setUserName(uid: string): Promise<DocumentData | null> {
     const path = `users/${uid}`;
     const userData = await firebaseService.readDataFromFirebase(path);
-    if (userData && userData.name)
+    if (userData && userData.name) {
       this.dispatch(firebaseAction.setUserName(userData.name));
+    }
     return userData;
   }
 
@@ -37,7 +38,9 @@ export class GuestbookController {
     inputRef: React.RefObject<HTMLInputElement>,
     firebaseUID: string
   ): Promise<void> {
-    if (!inputRef.current || !inputRef.current.value) return;
+    if (!inputRef.current || !inputRef.current.value) {
+      return;
+    }
     const path = `users/${firebaseUID}`;
     const inputData = {
       name: inputRef.current.value,
@@ -58,7 +61,9 @@ export class GuestbookController {
       documentName,
       condition
     );
-    if (querySnapshot?.message) return "사용량 초과..";
+    if (querySnapshot?.message) {
+      return "사용량 초과..";
+    }
     if (querySnapshot) {
       const numOfPosts = querySnapshot.size;
       return numOfPosts;
@@ -98,10 +103,13 @@ export class GuestbookController {
   async deletedPosts(postDatas: DocumentData, firebaseUID: string) {
     const path = `posts/${postDatas.id}`;
     const firebaseData = await firebaseService.readDataFromFirebase(path);
-    if (firebaseData && firebaseUID !== firebaseData.UID)
+    if (firebaseData && firebaseUID !== firebaseData.UID) {
       return alert("본인의 글만 삭제 가능합니다.");
+    }
     const isConfirmed = window.confirm("정말로 삭제하시겠습니까?");
-    if (!isConfirmed) return;
+    if (!isConfirmed) {
+      return;
+    }
     const collectionName = "posts";
     const documentId = postDatas.id;
     const updateData = {
@@ -126,9 +134,15 @@ export class GuestbookController {
     setSelectedImg,
   }: IWritePostData) {
     // 제한 사항들
-    if (!textAreaRef || !textAreaRef.current) return;
-    if (!firebaseUID || !firebaseUserName) return alert("로그인이 필요합니다.");
-    if (!textAreaRef.current.value) return alert("내용을 입력해주세요.");
+    if (!textAreaRef || !textAreaRef.current) {
+      return;
+    }
+    if (!firebaseUID || !firebaseUserName) {
+      return alert("로그인이 필요합니다.");
+    }
+    if (!textAreaRef.current.value) {
+      return alert("내용을 입력해주세요.");
+    }
 
     // 들어갈 데이터 가공
     const now = new Date();

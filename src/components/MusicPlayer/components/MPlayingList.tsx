@@ -13,11 +13,12 @@ const MPlayingList = ({
   //
   // playingList 열렸을 때 현재 노래로 자동 스크롤
   useEffect(() => {
-    if (playingListRef.current)
+    if (playingListRef.current) {
       playingListRef.current.children[currentVideoIndex]?.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
       });
+    }
   }, [currentVideoIndex, playingListRef]);
 
   // 본문

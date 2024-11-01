@@ -30,7 +30,9 @@ export const pageSummary = [
 export const selectNotice = (notice: string) => {
   const noticeIndex = Number(notice);
 
-  if (noticeIndex >= noticeTitles.length || isNaN(noticeIndex)) return NotFound; // 공지 데이터가 아닌 home/주소일 경우
+  if (noticeIndex >= noticeTitles.length || isNaN(noticeIndex)) {
+    return NotFound; // 공지 데이터가 아닌 home/주소일 경우
+  }
   const noticeComponents = [
     Notice0Welecome,
     Notice1UpdateInfo,

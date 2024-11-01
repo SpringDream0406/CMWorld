@@ -57,11 +57,12 @@ export class FirebaseService {
       await signInWithPopup(auth, providers[providerName]);
     } catch (error: any) {
       console.error(error);
-      if (error.code === "auth/account-exists-with-different-credential")
+      if (error.code === "auth/account-exists-with-different-credential") {
         return alert(
           `같은 이메일로 다른 인증 수단이 등록되어 있습니다. 
 다른 로그인 방법을 사용해보세요.`
         );
+      }
     }
   }
 
@@ -143,7 +144,9 @@ export class FirebaseService {
       return querySnapshot;
     } catch (error: any) {
       console.error(error);
-      if (error.code === "resource-exhausted") return { message: "초과" };
+      if (error.code === "resource-exhausted") {
+        return { message: "초과" };
+      }
       return null;
     }
   }

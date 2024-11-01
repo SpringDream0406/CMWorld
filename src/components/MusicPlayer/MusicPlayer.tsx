@@ -270,7 +270,7 @@ const SideMusic = () => {
   const volumeBar = <Volume isPlayer={isPlayer} />;
 
   // 플레이어
-  if (isPlayer)
+  if (isPlayer) {
     return (
       <div className="m-background">
         <div className="mobile-music">
@@ -332,6 +332,7 @@ const SideMusic = () => {
         </div>
       </div>
     );
+  }
 
   // CMWORLD 사이드
   return (

@@ -11,7 +11,9 @@ const PageSumary = () => {
   useEffect(() => {
     const countPosts = async () => {
       const countPosts = await guestbookController.countPosts();
-      if (countPosts) setNumOfPosts(Number(countPosts));
+      if (countPosts) {
+        setNumOfPosts(Number(countPosts));
+      }
     };
     countPosts();
   }, [guestbookController]);

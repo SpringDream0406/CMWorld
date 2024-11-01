@@ -11,8 +11,9 @@ const MPlayerBar = ({ played, setPlayed, playerRef }: IMPlayerBar) => {
       onChange={(e) => {
         const changedRange = e.target.value;
         setPlayed(parseFloat(changedRange));
-        if (playerRef.current)
+        if (playerRef.current) {
           playerRef.current.seekTo(parseFloat(changedRange));
+        }
       }}
       className="play-bar-range"
     />
