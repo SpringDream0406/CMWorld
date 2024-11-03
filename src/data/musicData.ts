@@ -9,7 +9,7 @@ export const playlists: ITags = {
   Tensionup: "텐션 올려!!",
   Groove: "그루브 좀 타볼까~",
   Working: "노동요~",
-  Favorite: "최근 꽂힌 음악!!",
+  Favorite: "춘몽's Pick!",
   Rainy: "비오는 날..",
   Nolyrics: "가사가 없는?!",
   Before2024: "Before 2024 Pick",
