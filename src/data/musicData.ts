@@ -45,6 +45,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/ZwKA-9t3T8E?si=D8nhJFI4STbIpTUh",
+    artist: "빅뱅",
+    title: "거짓말",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/ZqJ7bfgacSA?si=02xPP6D7TYFdhgz6",
+    artist: "아이유",
+    title: "Love wins all",
+    playlists: [pl.Pick2024, pl.Working, pl.Rainy],
+  },
+  {
     url: "https://youtu.be/LV3vxkZpUjk?si=Zm33Rv7EkCa5t8kQ",
     artist: "샤이니",
     title: "투명 우산",
