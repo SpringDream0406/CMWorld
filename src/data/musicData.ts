@@ -45,6 +45,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/jWQx2f-CErU?si=pAw2klDgOJsyoS8H",
+    artist: "에스파",
+    title: "Whiplash",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/ZwKA-9t3T8E?si=D8nhJFI4STbIpTUh",
     artist: "빅뱅",
     title: "거짓말",
