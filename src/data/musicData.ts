@@ -45,6 +45,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/whqWSWGQbis?si=sVkO_t4-yUkwJhaS",
+    artist: "Zion.T",
+    title: "V",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/D9ByTwzj1JY?si=HQAbm_r3jzTsnZFs",
+    artist: "아이유",
+    title: "내 손을 잡아",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/jWQx2f-CErU?si=pAw2klDgOJsyoS8H",
     artist: "에스파",
     title: "Whiplash",
@@ -1059,6 +1071,12 @@ export const musicData: IMusicData[] = [
     artist: "개리 & 정인",
     title: "사람냄새",
     playlists: [pl.Before2024],
+  },
+  {
+    url: "https://youtu.be/a_X5frNuRyU?si=cxlhL_40LLKT_JHl",
+    artist: "MC 스나이퍼",
+    title: "김치한조각",
+    playlists: [pl.Before2024, pl.Working],
   },
   {
     url: "https://youtu.be/wecpRs9p00E?si=xI6_8kTXvnwsOcZi",
