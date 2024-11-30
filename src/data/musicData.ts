@@ -60,7 +60,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/jWQx2f-CErU?si=pAw2klDgOJsyoS8H",
     artist: "에스파",
     title: "Whiplash",
-    playlists: [pl.Pick2024, pl.Working],
+    playlists: [pl.Pick2024, pl.Favorite, pl.Working],
   },
   {
     url: "https://youtu.be/ZwKA-9t3T8E?si=D8nhJFI4STbIpTUh",
@@ -78,7 +78,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/LV3vxkZpUjk?si=Zm33Rv7EkCa5t8kQ",
     artist: "샤이니",
     title: "투명 우산",
-    playlists: [pl.Pick2024, pl.Rainy, pl.Working],
+    playlists: [pl.Pick2024, pl.Favorite, pl.Rainy, pl.Working],
   },
   {
     url: "https://youtu.be/rb0pYTAAEqM?si=rTMyqLJE4kXfvJmR",
