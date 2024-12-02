@@ -1136,7 +1136,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=A4dbtFe6FsM",
     artist: "언터쳐블",
     title: "베인 (feat. Koonta of Rude Paper)",
-    playlists: [pl.Feeling, pl.Before2024],
+    playlists: [pl.Feeling, pl.Favorite, pl.Before2024],
   },
   {
     url: "https://www.youtube.com/watch?v=G9zL-A78oRg",
