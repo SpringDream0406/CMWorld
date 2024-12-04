@@ -180,6 +180,26 @@ const SideMusic = () => {
     setRealPlaylist(isShuffleOn ? shuffledPlaylist : playlist);
   }, [playlist, isShuffleOn, shuffledPlaylist]);
 
+  // 키보드로 플레이어 컨트롤 하기 (volume은 volume 컴포넌트에)
+  useEffect(() => {
+    const handlePlayerWithKeyDown = (e: KeyboardEvent) => {
+      if (e.key === ",") {
+        playerUtils.changeVideoIndex(-1); // < : 이전곡
+      } else if (e.key === ".") {
+        playerUtils.changeVideoIndex(1); // > : 다음곡
+      } else if (e.key === " ") {
+        setIsPlaying((pre) => (pre === 0 ? 1 : 0)); // space : 재생/정지
+      } else if (e.key === "/") {
+        setIsShuffleOn((p) => !p); // ? : 셔플
+      }
+    };
+    window.addEventListener("keydown", handlePlayerWithKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handlePlayerWithKeyDown);
+    };
+  }, [playerUtils, isPlaying]);
+
   // 곡 정보 HTML
   const songInfoHTML = (
     <div

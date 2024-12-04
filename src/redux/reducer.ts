@@ -29,6 +29,7 @@ const musicSlice = createSlice({
     },
     setVolume(state, action: PayloadAction<number>) {
       state.volume = action.payload;
+      localStorage.setItem("musicPlayerVolume", String(action.payload));
     },
     setPlaylistCategory(state, action: PayloadAction<string>) {
       state.playlistCategory = action.payload;
