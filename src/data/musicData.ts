@@ -45,6 +45,24 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/crecrLp0iCE?si=u7lrN45XKx1A4u0F",
+    artist: "Day6",
+    title: "Not Mine",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/nxkqtyzesBU?si=C6LPJM27vtql9753",
+    artist: "Day6",
+    title: "Not Fine",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/BS7tz2rAOSA?si=Ccc50dFBH1C4anCh",
+    artist: "Day6",
+    title: "예뻤어",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/whqWSWGQbis?si=sVkO_t4-yUkwJhaS",
     artist: "Zion.T",
     title: "V",

@@ -57,7 +57,7 @@ const SideMusic = () => {
 
   // =============== 플레이어 용 =============== //
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
-  const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레링 리스트 보여주기
+  const [showPlayingList, setShowPlayingList] = useState<boolean>(false); // 플레잉 리스트 보여주기
   const [songTitle, setSongTitle] = useState<string>(""); // 제목
   const [songArtist, setSongArtist] = useState<string>(""); // 가수
   const [repeat, setRepeat] = useState<boolean>(false); // 한곡 반복
@@ -184,13 +184,19 @@ const SideMusic = () => {
   useEffect(() => {
     const handlePlayerWithKeyDown = (e: KeyboardEvent) => {
       if (e.key === ",") {
-        playerUtils.changeVideoIndex(-1); // < : 이전곡
+        playerUtils.changeVideoIndex(-1); // 이전곡
       } else if (e.key === ".") {
-        playerUtils.changeVideoIndex(1); // > : 다음곡
+        playerUtils.changeVideoIndex(1); // 다음곡
       } else if (e.key === " ") {
-        setIsPlaying((pre) => (pre === 0 ? 1 : 0)); // space : 재생/정지
+        setIsPlaying((pre) => (pre === 0 ? 1 : 0)); // 재생/정지
       } else if (e.key === "/") {
-        setIsShuffleOn((p) => !p); // ? : 셔플
+        setIsShuffleOn((pre) => !pre); // 셔플
+      } else if (e.key === ";") {
+        setShowPlaylist((pre) => !pre); // 플레이 리스트
+      } else if (e.key === "'") {
+        setShowPlayingList((pre) => !pre); // 플레잉 리스트
+      } else if (e.key === "o" || e.key === "ㅐ") {
+        setRepeat((pre) => !pre); // 한 곡 반복
       }
     };
     window.addEventListener("keydown", handlePlayerWithKeyDown);
