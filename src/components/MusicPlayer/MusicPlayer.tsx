@@ -53,7 +53,7 @@ const SideMusic = () => {
     () =>
       new PlayerUtils(realPlaylist, currentVideoIndex, setCurrentVideoIndex),
     [realPlaylist, currentVideoIndex]
-  ); // 유튜브 컨트롤 하는데 필요한 것들 만들어둠
+  ); // 플레이어 컨트롤 하는데 필요한 것들 만들어둠
 
   // =============== 플레이어 용 =============== //
   const [showPlaylist, setShowPlaylist] = useState<boolean>(false); // 플레이 리스트 보여주기
@@ -192,8 +192,10 @@ const SideMusic = () => {
       } else if (e.key === "/") {
         setIsShuffleOn((pre) => !pre); // 셔플
       } else if (e.key === ";") {
+        setShowPlayingList(false);
         setShowPlaylist((pre) => !pre); // 플레이 리스트
       } else if (e.key === "'") {
+        setShowPlaylist(false);
         setShowPlayingList((pre) => !pre); // 플레잉 리스트
       } else if (e.key === "o" || e.key === "ㅐ") {
         setRepeat((pre) => !pre); // 한 곡 반복
