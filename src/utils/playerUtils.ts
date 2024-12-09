@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { IMusicData } from "../interface/music.interface";
 
 export class PlayerUtils {
@@ -29,28 +28,5 @@ export class PlayerUtils {
         (prevIndex + change + this.realPlaylist.length) %
         this.realPlaylist.length
     );
-  }
-
-  handlePlayerWithKeyDown(
-    e: KeyboardEvent,
-    setIsPlaying: Dispatch<SetStateAction<number>>,
-    setIsShuffleOn: Dispatch<SetStateAction<boolean>>
-  ) {
-    switch (e.key) {
-      case ",": // 이전곡
-        this.changeVideoIndex(-1);
-        break;
-      case ".": // 다음곡
-        this.changeVideoIndex(1);
-        break;
-      case " ": // 재생/정지
-        setIsPlaying((pre) => (pre === 0 ? 1 : 0));
-        break;
-      case "s":
-        setIsShuffleOn((p) => !p);
-        break;
-      default:
-        break;
-    }
   }
 }

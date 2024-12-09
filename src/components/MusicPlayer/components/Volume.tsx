@@ -84,9 +84,9 @@ export default function InputSlider({ isPlayer }: { isPlayer: boolean }) {
   useEffect(() => {
     const handleVolumeWithKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowUp") {
-        setValue((pre) => Math.min(pre + 1, 100)); // 볼륨 Up
+        setValue((pre) => Math.min(pre + 5, 100)); // 볼륨 Up
       } else if (e.key === "ArrowDown") {
-        setValue((pre) => Math.max(pre - 1, 0)); // 볼륨 Down
+        setValue((pre) => Math.max(pre - 5, 0)); // 볼륨 Down
       } else if (e.key === "m" || e.key === "ㅡ") {
         handleMuteToggle(); // 음소거
       }

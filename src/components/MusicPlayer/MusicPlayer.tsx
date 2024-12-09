@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import "../../styles/MusicPlayer.css";
 import { useDispatch, useSelector } from "react-redux";
-import Volume from "../../pages/00.Main/MainConponents/Volume";
+import Volume from "./components/Volume";
 import { PlayerUtils } from "../../utils/playerUtils";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,6 +64,7 @@ const SideMusic = () => {
   const [played, setPlayed] = useState<number>(0); // 곡 재생된 비율
   const [playedSeconds, setPlayedSeconds] = useState<number>(0); // 곡 재생된 초
   const [duration, setDuration] = useState<string>("00:00"); // 곡 총 시간
+
   const playerRef = useRef<ReactPlayer | null>(null); // 플레이어 컨트롤 Ref
   const playlistRef = useRef<HTMLDivElement>(null); // 플레이 리스트 Ref
   const playingListRef = useRef<HTMLDivElement>(null); // 플레잉 리스트 Ref
