@@ -2085,7 +2085,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Cyworld],
   },
   {
-    url: "https://www.youtube.com/watch?v=98Q2p-3kMDI",
+    url: "https://youtu.be/xyjxIhpm8Qo?si=zQg__6QYkc2C2s0r",
     artist: "izi",
     title: "응급실",
     playlists: [pl.Cyworld],
