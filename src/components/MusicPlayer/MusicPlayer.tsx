@@ -198,8 +198,11 @@ const SideMusic = () => {
       } else if (e.key === "'") {
         setShowPlaylist(false);
         setShowPlayingList((pre) => !pre); // 플레잉 리스트
-      } else if (e.key === "o" || e.key === "ㅐ") {
-        setRepeat((pre) => !pre); // 한 곡 반복
+      } else if (isMusicPlayer) {
+        // 뮤직 플레이어에서만
+        if (e.key === "o" || e.key === "ㅐ") {
+          setRepeat((pre) => !pre); // 한 곡 반복
+        }
       }
     };
     window.addEventListener("keydown", handlePlayerWithKeyDown);
@@ -207,7 +210,7 @@ const SideMusic = () => {
     return () => {
       window.removeEventListener("keydown", handlePlayerWithKeyDown);
     };
-  }, [playerUtils, isPlaying]);
+  }, [playerUtils, isPlaying, isMusicPlayer]);
 
   // 곡 정보 HTML
   const songInfoHTML = (
