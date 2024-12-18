@@ -45,28 +45,16 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
-    url: "https://youtu.be/60ItHLz5WEA?si=SIb-RzPwPsRyOEOT",
-    artist: "Alan Walker",
-    title: "Faded",
-    playlists: [pl.Pick2024, pl.Working],
-  },
-  {
-    url: "https://youtu.be/1-xGerv5FOk?si=HwMGqf_A9pkghNQM",
-    artist: "Alan Walker",
-    title: "Alone",
-    playlists: [pl.Pick2024, pl.Working],
-  },
-  {
     url: "https://youtu.be/crecrLp0iCE?si=u7lrN45XKx1A4u0F",
     artist: "Day6",
     title: "Not Mine",
-    playlists: [pl.Pick2024, pl.Working],
+    playlists: [pl.Pick2024, pl.Working, pl.Favorite],
   },
   {
     url: "https://youtu.be/nxkqtyzesBU?si=C6LPJM27vtql9753",
     artist: "Day6",
     title: "Not Fine",
-    playlists: [pl.Pick2024, pl.Working],
+    playlists: [pl.Pick2024, pl.Working, pl.Favorite],
   },
   {
     url: "https://youtu.be/BS7tz2rAOSA?si=Ccc50dFBH1C4anCh",
@@ -91,12 +79,6 @@ export const musicData: IMusicData[] = [
     artist: "에스파",
     title: "Whiplash",
     playlists: [pl.Pick2024, pl.Favorite, pl.Working],
-  },
-  {
-    url: "https://youtu.be/ZwKA-9t3T8E?si=D8nhJFI4STbIpTUh",
-    artist: "빅뱅",
-    title: "거짓말",
-    playlists: [pl.Pick2024, pl.Working],
   },
   {
     url: "https://youtu.be/ZqJ7bfgacSA?si=02xPP6D7TYFdhgz6",
@@ -390,6 +372,18 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/Wzkxs7v0uuk?si=wBxLiSFpDLIhUN-w",
     artist: "Jean Tonique",
     title: "Lit Up (feat. DiRTY RADiO)",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/60ItHLz5WEA?si=SIb-RzPwPsRyOEOT",
+    artist: "Alan Walker",
+    title: "Faded",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
+    url: "https://youtu.be/1-xGerv5FOk?si=HwMGqf_A9pkghNQM",
+    artist: "Alan Walker",
+    title: "Alone",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
