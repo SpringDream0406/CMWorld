@@ -45,6 +45,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/51zjlMhdSTE?si=AwUWPU9lH-V_1RQd",
+    artist: "Sabrina Carpenter",
+    title: "Espresso",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/crecrLp0iCE?si=u7lrN45XKx1A4u0F",
     artist: "Day6",
     title: "Not Mine",
@@ -270,7 +276,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/-jEmhjZr8RE?si=JSpgf8QY_VunuCjK",
     artist: "NewJeans",
     title: "Cool With You",
-    playlists: [pl.Pick2024, pl.Working],
+    playlists: [pl.Pick2024, pl.Working, pl.Favorite],
   },
   {
     url: "https://youtu.be/XCkpalH6Ppk?si=Hn_PAXWv4H7Bgvht",
