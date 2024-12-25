@@ -45,6 +45,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2024],
   // },
   {
+    url: "https://youtu.be/PCtnzfjXgio?si=AhYRk-nHVRXEBuOx",
+    artist: "무채색",
+    title: "Streets Without You",
+    playlists: [pl.Pick2024, pl.Working],
+  },
+  {
     url: "https://youtu.be/51zjlMhdSTE?si=AwUWPU9lH-V_1RQd",
     artist: "Sabrina Carpenter",
     title: "Espresso",
