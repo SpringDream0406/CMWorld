@@ -251,7 +251,7 @@ export const musicData: IMusicData[] = [
   {
     url: "https://youtu.be/B1Vv1zQyR04?si=0fQMRz8pyUHTp-Hw",
     artist: "NewJeans",
-    title: "Right Now'",
+    title: "Right Now",
     playlists: [pl.Pick2024, pl.Working],
   },
   {
