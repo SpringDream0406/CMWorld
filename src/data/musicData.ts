@@ -12,9 +12,9 @@ export const playlists: ITags = {
   Favorite: "춘몽's Pick!",
   Rainy: "비오는 날..",
   Nolyrics: "가사가 없는?!",
-  Before2024: "Before 2024 Pick",
-  Pick2024: "2024 Pick",
   Pick2025: "2025 Pick",
+  Pick2024: "2024 Pick",
+  Before2024: "Before 2024 Pick",
 };
 
 // playlist에 내용 넣는 용
@@ -27,9 +27,9 @@ enum pl {
   Favorite = "Favorite",
   Rainy = "Rainy",
   Nolyrics = "Nolyrics",
-  Before2024 = "Before2024",
-  Pick2024 = "Pick2024",
   Pick2025 = "Pick2025",
+  Pick2024 = "Pick2024",
+  Before2024 = "Before2024",
 }
 
 // 유튜브 음악 데이터
@@ -46,6 +46,12 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2025],
   // },
+  {
+    url: "https://youtu.be/QPsJrZGB_gc?si=V1FvzRFm4Mcrd2jY",
+    artist: "Day6",
+    title: "괴물",
+    playlists: [pl.Pick2025, pl.Working],
+  },
   {
     url: "https://youtu.be/AQOnIUFm4CM?si=ZdkqTPMt_dhAg8SR",
     artist: "Nessa Barrett",
