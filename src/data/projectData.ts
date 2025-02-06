@@ -114,15 +114,6 @@ export const projectData: IProjectData[] = [
           name: "Noona-Music Github",
           url: "https://github.com/SpringDream0406/Noona-Music",
         },
-
-        {
-          name: "Noona-Music 데모 사이트",
-          url: "https://noona-music.netlify.app/",
-        },
-        {
-          name: "Noona-Music-Server Github",
-          url: "https://github.com/SpringDream0406/Noona-Music-Server",
-        },
       ],
     },
     category: ["team", "p2024"],
