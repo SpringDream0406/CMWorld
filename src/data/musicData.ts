@@ -47,6 +47,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/tsqEMrI5ZMo?si=75PUnXgMFRwK7kYm",
+    artist: "Day6",
+    title: "녹아내려요",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/QPsJrZGB_gc?si=V1FvzRFm4Mcrd2jY",
     artist: "Day6",
     title: "괴물",
