@@ -47,6 +47,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/uJKvgiuYkBQ?si=v_tjIhbxh4hobQFs",
+    artist: "Xdinary Heroes",
+    title: "Strawberry Cake",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/tsqEMrI5ZMo?si=75PUnXgMFRwK7kYm",
     artist: "Day6",
     title: "녹아내려요",
