@@ -47,6 +47,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/DC4YrpTc_0M?si=hQAjQFWmwI3k4GF9",
+    artist: "ONEWE",
+    title: "비를 몰고 오는 소년",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/uJKvgiuYkBQ?si=v_tjIhbxh4hobQFs",
     artist: "Xdinary Heroes",
     title: "Strawberry Cake",
