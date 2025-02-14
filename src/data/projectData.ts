@@ -6,12 +6,31 @@ export const projectTags: ITags = {
   total: "전체",
   team: "팀 프로젝트",
   personal: "개인 프로젝트",
+  p2025: "2025",
   p2024: "2024",
   p2023: "2023",
 };
 
 // 프로젝트 데이터
 export const projectData: IProjectData[] = [
+  {
+    title: "GoingTogether",
+    where: "팀 프로젝트",
+    when: "2025.01 ~ 진행 중",
+    sub: "체험학습 연계 앱",
+    exp: [
+      "체험학습 연계 앱의 백앤드를 맡아, 서버, DB, 배포를 담당해서 개발 중입니다.",
+    ],
+    site: {
+      selectOptions: [
+        {
+          name: "GoingTogether 개발일지",
+          url: "https://springdream0406.tistory.com/category/Projects/GoingTogether",
+        },
+      ],
+    },
+    category: ["team", "p2025"],
+  },
   {
     title: "CMSPP (CM Solar Power Plant)",
     where: "개인 프로젝트",
