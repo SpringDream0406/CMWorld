@@ -24,7 +24,7 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "GoingTogether 개발일지",
+          name: "개발일지 (tistory)",
           url: "https://springdream0406.tistory.com/category/Projects/GoingTogether",
         },
       ],
@@ -40,11 +40,25 @@ export const projectData: IProjectData[] = [
       "코딩에 관심을 두게 했던, 태양광 데이터 저장/관리를 위한 사이트를 제작 중입니다.",
       "회원가입/로그인의 간편화와 보안을 위해 소셜로그인 기능을 사용했습니다.",
       "보안을 위해 refeshToken과 accessToken 기능을 사용했습니다.",
+      "Netlify와 AWS를 활용해 배포를 진행했습니다.",
+      "CI/CD 자동화를 위해 Github Action를 사용했습니다.",
     ],
     site: {
       selectOptions: [
         {
-          name: "CMSPP 개발일지",
+          name: "사이트",
+          url: "https://front.cmspp.kr/",
+        },
+        {
+          name: "Github [Back]",
+          url: "https://github.com/SpringDream0406/CMSPP.Back",
+        },
+        {
+          name: "Github [Front]",
+          url: "https://github.com/SpringDream0406/CMSPP.Front",
+        },
+        {
+          name: "개발일지 (tistory)",
           url: "https://springdream0406.tistory.com/category/Projects/CMSPP%28CM%20Solar%20Power%20Plant%29",
         },
       ],
@@ -69,19 +83,19 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "팜팜 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/-GAI-project_Appian",
         },
         {
-          name: "팜팜 데모 사이트",
+          name: "데모 사이트",
           url: "http://farmfarm-front.s3-website.ap-northeast-2.amazonaws.com/",
         },
         {
-          name: "팜팜 ERD (Nest.js)",
+          name: "ERD (Nest.js)",
           url: "https://www.erdcloud.com/d/qezCTMmk7pf4SE4TQ",
         },
         {
-          name: "팜팜 Swagger",
+          name: "Swagger",
           url: "http://43.201.93.123/api",
         },
       ],
@@ -105,7 +119,7 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "Portfolio.v2 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/portfolio.v2",
         },
         {
@@ -130,7 +144,7 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "Noona-Music Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/Noona-Music",
         },
       ],
@@ -148,13 +162,13 @@ export const projectData: IProjectData[] = [
     ],
     site: {
       selectOptions: [
+        // {
+        //   name: "사이트",
+        //   url: "https://springdream0406.github.io/portfolio/",
+        // },
         {
-          name: "Portfolio.v1 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/portfolio",
-        },
-        {
-          name: "Portfolio.v1 사이트",
-          url: "https://springdream0406.github.io/portfolio/",
         },
       ],
     },
@@ -173,11 +187,11 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "케케케 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/-GAI-kekeke",
         },
         {
-          name: "케케케 시연 연상 (Youtube)",
+          name: "시연 연상 (Youtube)",
           url: "https://youtu.be/A5MbFHJaqCA?si=2Qr1wjDJL3knaBpe",
         },
       ],
@@ -193,11 +207,11 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "Seb's Music Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/-GAI-Appsolute",
         },
         {
-          name: "Seb's Music 시연 영상 (Youtube)",
+          name: "시연 영상 (Youtube)",
           url: "https://youtu.be/A3frdYgd-ho?si=EyyWxYKxZKZpHRYj",
         },
       ],
@@ -217,11 +231,11 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "팜팜 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/-GAI-project_Appian",
         },
         {
-          name: "팜팜 ERD (Express.js)",
+          name: "ERD (Express.js)",
           url: "https://www.erdcloud.com/d/4FpqQg6NLnfDBboQv",
         },
       ],
@@ -240,19 +254,19 @@ export const projectData: IProjectData[] = [
     site: {
       selectOptions: [
         {
-          name: "팜팜 Github",
+          name: "Github",
           url: "https://github.com/SpringDream0406/-GAI-project_Appian",
         },
         {
-          name: "팜팜 프로젝트 설명 (Notion)",
+          name: "프로젝트 설명 (Notion)",
           url: "https://hellosori.notion.site/4dd1ce5f2f684bf9adf2cb49d631c81b",
         },
         {
-          name: "팜팜 핵심기능 시연 영상 (Youtube)",
+          name: "핵심기능 시연 영상 (Youtube)",
           url: "https://youtu.be/2ZGiNXSUUps?si=R4VWkc9IfYvczpei",
         },
         {
-          name: "팜팜 전체페이지 시연 영상 (Youtube)",
+          name: "전체페이지 시연 영상 (Youtube)",
           url: "https://youtu.be/HNtmMcy6rKk?si=erTCpHPdIUcxasrC",
         },
       ],
