@@ -11,12 +11,12 @@ export const homeOpenSiteData = {
       url: "https://springdream0406.tistory.com",
     },
     {
-      name: "Portfolio.v2 개발일지",
+      name: "CMWorld 개발일지",
       url: "https://springdream0406.tistory.com/category/Projects/Portfolio.v2",
     },
-    {
-      name: "포트폴리오.v1",
-      url: "https://springdream0406.github.io/portfolio",
-    },
+    // {
+    //   name: "포트폴리오.v1",
+    //   url: "https://springdream0406.github.io/portfolio",
+    // },
   ],
 };
