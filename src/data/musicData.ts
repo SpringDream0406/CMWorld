@@ -33,6 +33,7 @@ enum pl {
 }
 
 // 유튜브 음악 데이터
+// 피처링은 title에  (feat. Daniel Caesar & Giveon)  이런 식으로
 export const musicData: IMusicData[] = [
   {
     url: "https://www.youtube.com/watch?v=dYIT_jeUBKg",
@@ -46,6 +47,36 @@ export const musicData: IMusicData[] = [
   //   title: "",
   //   playlists: [pl.Pick2025],
   // },
+  {
+    url: "https://youtu.be/FZmR1Lji8G8?si=j86swjfEpesGXM86",
+    artist: "Just kevin",
+    title: "Drive",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/c3emq9YiMxU?si=2gfgX8wMU6jbL289",
+    artist: "Just kevin",
+    title: "WHO? ME! (feat. EunBii)",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/nYTCj1VB86A?si=oEOm_IjsrQARBf0S",
+    artist: "Just kevin",
+    title: "기억 속 추억을 믿어보기로 했다.",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/ssHQLv8Ckb4?si=WsBWllPlEbCrQesn",
+    artist: "데프콘",
+    title: "래퍼들이 헤어지는 방법 PART.2 (feat. 민아)",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/pcrlwDElMJE?si=Dtb8HwxWxoelRfTg",
+    artist: "데프콘",
+    title: "래퍼들이 헤어지는 방법 (feat. 구지성)",
+    playlists: [pl.Pick2025, pl.Working],
+  },
   {
     url: "https://youtu.be/DC4YrpTc_0M?si=hQAjQFWmwI3k4GF9",
     artist: "ONEWE",
