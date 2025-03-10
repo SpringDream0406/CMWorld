@@ -48,7 +48,7 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
-    url: "https://youtu.be/FZmR1Lj",
+    url: "https://youtu.be/FZmR1Lji8G8?si=j86",
     artist: "Just kevin",
     title: "Drive",
     playlists: [pl.Pick2025, pl.Working],
