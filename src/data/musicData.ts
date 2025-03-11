@@ -48,9 +48,9 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
-    url: "https://youtu.be/FZmR1Lj",
+    url: "https://youtu.be/nYTCj1VB86A?si=oEOm_IjsrQARBf0S",
     artist: "Just kevin",
-    title: "Drive",
+    title: "기억 속 추억을 믿어보기로 했다.",
     playlists: [pl.Pick2025, pl.Working],
   },
   {
@@ -60,9 +60,39 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2025, pl.Working],
   },
   {
-    url: "https://youtu.be/nYTCj1VB86A?si=oEOm_IjsrQARBf0S",
+    url: "https://youtu.be/PQwbYmiu-Qc?si=975GOHMnZzUmEbDa",
     artist: "Just kevin",
-    title: "기억 속 추억을 믿어보기로 했다.",
+    title: "지나갈게요 (feat. 차우주)",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/kGwAp2ga-t8?si=GFcHUPHf9t3p31jS",
+    artist: "Just kevin",
+    title: "아무 일 없었던 것처럼",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/bsFFlh167zw?si=KVDpVlUx9-ryGUis",
+    artist: "Just kevin",
+    title: "뒤로가기",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/FZmR1Lji8G8?si=UdSBC8taKbt2Wda2",
+    artist: "Just kevin",
+    title: "Drive",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/Eq4hARNWDyI?si=ysBmE2DHteNFbvi2",
+    artist: "Just kevin",
+    title: "2",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/7Iuj-75-0Y0?si=XNVudi_swRzhcaQQ",
+    artist: "Just kevin",
+    title: "피노키오",
     playlists: [pl.Pick2025, pl.Working],
   },
   {
