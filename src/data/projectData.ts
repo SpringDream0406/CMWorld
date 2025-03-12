@@ -108,7 +108,7 @@ export const projectData: IProjectData[] = [
     when: "2024.03 ~ 진행 중 (Beta 완성 - 약 2주)",
     sub: "싸이월드를 모티브로 포트폴리오 사이트 제작",
     exp: [
-      "Portfolio.v1의 결과가 만족스럽지 않아 저의 취향을 반영한 포트폴리오를 다시 만들게 되었습니다.",
+      "이전에 만들어본 포트폴리오의 결과가 만족스럽지 않아 저의 취향을 반영한 포트폴리오를 다시 만들게 되었습니다.",
       "React-Player를 사용하여 BGM을 구현했습니다.",
       "Firebase를 사용하여 방명록 페이지의 데이터를 처리했습니다.",
       "Redux를 사용하여 Component간의 데이터 전달을 처리했습니다.",
@@ -120,11 +120,11 @@ export const projectData: IProjectData[] = [
       selectOptions: [
         {
           name: "Github",
-          url: "https://github.com/SpringDream0406/portfolio.v2",
+          url: "https://github.com/SpringDream0406/CMWorld",
         },
         {
           name: "개발일지 (tistory)",
-          url: "https://springdream0406.tistory.com/category/Projects/Portfolio.v2",
+          url: "https://springdream0406.tistory.com/category/Projects/%08CMWorld",
         },
       ],
     },
@@ -150,29 +150,6 @@ export const projectData: IProjectData[] = [
       ],
     },
     category: ["team", "p2024"],
-  },
-  {
-    title: "Portfolio.v1",
-    where: "개인 프로젝트",
-    when: "2023.12 ~ 2024.01 (1개월)",
-    sub: "기본적인 포트폴리오 사이트 제작",
-    exp: [
-      "광주 인공지능사관학교를 수료한 후, 이를 기반으로 포트폴리오 사이트를 제작했습니다.",
-      "프론트를 담당했던 적이 없었기 때문에, 교육 당시 동료 중 프론트 지망생에게 기본 양식을 받아 제작했습니다.",
-    ],
-    site: {
-      selectOptions: [
-        // {
-        //   name: "사이트",
-        //   url: "https://springdream0406.github.io/portfolio/",
-        // },
-        {
-          name: "Github",
-          url: "https://github.com/SpringDream0406/portfolio",
-        },
-      ],
-    },
-    category: ["personal", "p2023", "p2024"],
   },
   {
     title: "KEKEKE",

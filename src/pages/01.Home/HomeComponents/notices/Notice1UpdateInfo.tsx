@@ -9,7 +9,7 @@ const Notice1UpdateInfo = () => {
       </span>
       <br />
       <span>
-        춘몽월드(Portfolio.v2)의 개발과정이 궁금하신 분은{" "}
+        춘몽월드의 개발과정이 궁금하신 분은{" "}
         <a
           href="https://springdream0406.tistory.com/category/Projects/%08CMWorld"
           target="_blank"
