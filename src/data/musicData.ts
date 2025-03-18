@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/W_uX3zZjy4A?si=uAdyB-xBuE-Jl9oj",
+    artist: "최진영",
+    title: "영원",
+    playlists: [pl.Pick2025, pl.Working, pl.Cyworld, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/nYTCj1VB86A?si=oEOm_IjsrQARBf0S",
     artist: "Just kevin",
     title: "기억 속 추억을 믿어보기로 했다.",
