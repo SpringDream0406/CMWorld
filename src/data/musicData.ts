@@ -48,6 +48,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/X_HnER9B6Js?si=W4lxuldEFODiA1S7",
+    artist: "세이마이네임",
+    title: "ShaLala",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/wod2GSZyrqY?si=9SXu5kFM8HBzM6AG",
+    artist: "르세라핌",
+    title: "HOT",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/W_uX3zZjy4A?si=uAdyB-xBuE-Jl9oj",
     artist: "최진영",
     title: "영원",
