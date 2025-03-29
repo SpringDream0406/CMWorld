@@ -191,8 +191,11 @@ const SideMusic = () => {
       } else if (e.key === " ") {
         setIsPlaying((pre) => (pre === 0 ? 1 : 0)); // 재생/정지
       } else if (e.key === "/") {
-        setIsShuffleOn((pre) => !pre); // 셔플
-        localStorage.setItem("isShuffleOn", String(!isShuffleOn)); // 로컬에 저장
+        setIsShuffleOn((pre) => {
+          const newShuffleState = !pre;
+          localStorage.setItem("isShuffleOn", String(newShuffleState));
+          return newShuffleState;
+        }); // 셔플
       } else if (e.key === ";") {
         setShowPlayingList(false);
         setShowPlaylist((pre) => !pre); // 플레이 리스트
