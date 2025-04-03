@@ -1431,7 +1431,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=F01sUq_Rtds",
+    url: "https://youtu.be/-85-sjG_BiQ?si=RwzwvGyxK_ARE9ju",
     artist: "YB",
     title: "박하사탕",
     playlists: [pl.Feeling, pl.Rainy, pl.Before2024, pl.Pick2024],
@@ -1793,7 +1793,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Cyworld, pl.Feeling, pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=HwNxxRBobFE",
+    url: "https://youtu.be/00L72tZPIz4?si=mQyXoWs3R-s_HC4m",
     artist: "YB",
     title: "잊을께",
     playlists: [pl.Before2024],
@@ -1853,7 +1853,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Cyworld, pl.Feeling, pl.Rainy, pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=KeMbLY7ztDw",
+    url: "https://youtu.be/kCFDaE8DdyE?si=H8qknQ93m5QlsiJq",
     artist: "윤도현",
     title: "사랑했나봐",
     playlists: [pl.Cyworld, pl.Before2024],
@@ -1871,7 +1871,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Feeling, pl.Rainy, pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=aevPTbhFrT8",
+    url: "https://youtu.be/VCkZLv9u7EI?si=WJe76zCfrBo-rKKu",
     artist: "언터쳐블",
     title: "Tell My Why (feat. Hwayoung)",
     playlists: [pl.Cyworld, pl.Before2024],
