@@ -997,7 +997,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Before2024],
   },
   {
-    url: "https://youtu.be/-NkEGzMyAqo?si=wYWCHztwfhSB0E1m",
+    url: "https://youtu.be/YJhOjcL2b9Q?si=IE4uoqZBMbfymjRC",
     artist: "먼데이 키즈",
     title: "Bye Bye Bye",
     playlists: [pl.Before2024],
@@ -1311,7 +1311,7 @@ export const musicData: IMusicData[] = [
   },
 
   {
-    url: "https://www.youtube.com/watch?v=mhnuvWRKLSo",
+    url: "https://youtu.be/PBgrqsmZgfU?si=P3rcisX8gxK5xbRd",
     artist: "먼데이 키즈",
     title: "흩어져",
     playlists: [pl.Before2024],
@@ -1631,7 +1631,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Before2024],
   },
   {
-    url: "https://www.youtube.com/watch?v=9SsKw53K8Gg",
+    url: "https://youtu.be/cyTMyMUf-EY?si=6k3PSDxpF7xVPLGn",
     artist: "거미",
     title: "내 생각날 거야",
     playlists: [pl.Feeling, pl.Rainy, pl.Before2024],
