@@ -2100,12 +2100,6 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Cyworld],
   },
   {
-    url: "https://www.youtube.com/watch?v=POApmDGm8r8",
-    artist: "MC 스나이퍼",
-    title: "마법의 성",
-    playlists: [pl.Cyworld],
-  },
-  {
     url: "https://www.youtube.com/watch?v=ppjRIEgcXIY",
     artist: "다이나믹 듀오",
     title: "죽일놈",
