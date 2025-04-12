@@ -342,7 +342,7 @@ export const musicData: IMusicData[] = [
     playlists: [pl.Pick2024, pl.Feeling],
   },
   {
-    url: "https://youtu.be/9ninWlkEthY?si=EcVBu96AGvSSk7Yl",
+    url: "https://youtu.be/n0ko2Ns9ozo?si=QzMfGIAC7TZoJO3K",
     artist: "민지",
     title: "무희(Odoriko)",
     playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy, pl.Favorite],
