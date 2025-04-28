@@ -57,7 +57,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/wod2GSZyrqY?si=9SXu5kFM8HBzM6AG",
     artist: "르세라핌",
     title: "HOT",
-    playlists: [pl.Pick2025, pl.Working],
+    playlists: [pl.Pick2025, pl.Working, pl.Favorite],
   },
   {
     url: "https://youtu.be/W_uX3zZjy4A?si=uAdyB-xBuE-Jl9oj",
@@ -1332,7 +1332,14 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=s1e3O1Cm5Gs",
     artist: "먼데이 키즈",
     title: "차가운 커피",
-    playlists: [pl.Cyworld, pl.Feeling, pl.Rainy, pl.Before2024, pl.Pick2024],
+    playlists: [
+      pl.Cyworld,
+      pl.Feeling,
+      pl.Rainy,
+      pl.Before2024,
+      pl.Pick2024,
+      pl.Favorite,
+    ],
   },
   {
     url: "https://www.youtube.com/watch?v=j1twcJsU7Ww",
