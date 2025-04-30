@@ -201,7 +201,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/jWQx2f-CErU?si=pAw2klDgOJsyoS8H",
     artist: "에스파",
     title: "Whiplash",
-    playlists: [pl.Pick2024, pl.Favorite, pl.Working],
+    playlists: [pl.Pick2024, pl.Working],
   },
   {
     url: "https://youtu.be/ZqJ7bfgacSA?si=02xPP6D7TYFdhgz6",
@@ -345,7 +345,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/n0ko2Ns9ozo?si=QzMfGIAC7TZoJO3K",
     artist: "민지",
     title: "무희(Odoriko)",
-    playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy, pl.Favorite],
+    playlists: [pl.Pick2024, pl.Working, pl.Feeling, pl.Rainy],
   },
   {
     url: "https://youtu.be/ZbZSe6N_BXs?si=tuhNI_7CIIPs1hQA",
@@ -531,7 +531,7 @@ export const musicData: IMusicData[] = [
     url: "https://youtu.be/ucpb4BYNJ6s?si=3t87DwhxZ2aOwqz2",
     artist: "부석순",
     title: "자꾸만 웃게 돼",
-    playlists: [pl.Pick2024, pl.Feeling, pl.Favorite, pl.Working],
+    playlists: [pl.Pick2024, pl.Feeling, pl.Working],
   },
   {
     url: "https://youtu.be/1w7OgIMMRc4?si=-9n50xjaBH2U1_Nx",
@@ -615,7 +615,7 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=6sUIP6gSats",
     artist: "메이플스토리 샤레니안의 기사 BGM",
     title: "My Prince My Kingdom",
-    playlists: [pl.Pick2024, pl.Feeling, pl.Rainy, pl.Favorite],
+    playlists: [pl.Pick2024, pl.Feeling, pl.Rainy],
   },
   {
     url: "https://www.youtube.com/watch?v=MhHxVaJ9sT4",
@@ -892,7 +892,7 @@ export const musicData: IMusicData[] = [
     artist: "The Americanos",
     title:
       "In My Foreign (feat. Ty Dollah $ign & Nick jam & Lil Yachty & French Montana)",
-    playlists: [pl.Pick2024, pl.Groove, pl.Working, pl.Favorite],
+    playlists: [pl.Pick2024, pl.Groove, pl.Working],
   },
   {
     url: "https://www.youtube.com/watch?v=yn2Ek2zUXBs&ab_channel=SEL",
