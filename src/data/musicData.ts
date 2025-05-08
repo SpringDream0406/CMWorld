@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/QqZFpoc59kc?si=GH1_hjSvSyJmgqe4",
+    artist: "Dr. Dre",
+    title: "Still D.R.E.",
+    playlists: [pl.Pick2025, pl.Groove, pl.Working],
+  },
+  {
     url: "https://youtu.be/X_HnER9B6Js?si=W4lxuldEFODiA1S7",
     artist: "세이마이네임",
     title: "ShaLala",
