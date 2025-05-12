@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/XeyDv3Z41Xc?si=cFzV0Xah6xra-qLt",
+    artist: "Tomioka Ai",
+    title: "Good bye bye（Korean Ver）",
+    playlists: [pl.Pick2025, pl.Working, pl.Rainy, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/QqZFpoc59kc?si=GH1_hjSvSyJmgqe4",
     artist: "Dr. Dre",
     title: "Still D.R.E.",
