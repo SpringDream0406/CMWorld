@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/nvuMf2HmWSg?si=NdDPmjaIwZUdwXTd",
+    artist: "정재욱",
+    title: "처음 그때로",
+    playlists: [pl.Pick2025, pl.Cyworld, pl.Working],
+  },
+  {
     url: "https://youtu.be/XeyDv3Z41Xc?si=cFzV0Xah6xra-qLt",
     artist: "Tomioka Ai",
     title: "Good bye bye（Korean Ver）",
