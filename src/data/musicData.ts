@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/s7rsXU1xCTQ?si=0P-Or4ebPEDmLhe_",
+    artist: "오마이걸",
+    title: "한 발짝 두 발짝",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/nvuMf2HmWSg?si=NdDPmjaIwZUdwXTd",
     artist: "정재욱",
     title: "처음 그때로",

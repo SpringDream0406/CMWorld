@@ -28,6 +28,17 @@ const Notice0Welecome = () => {
         제작되어있으며, 맥북 14인치 기준(1512px)과 아이패드 11인치
         기준(1366px)을 지원하며, 모바일은 뮤직플레이어만 지원하고 있습니다.
       </span>
+      <span>
+        현재 춘몽월드는 Next로 리펙토링을 진행중이며,{" "}
+        <a
+          href="http://cmworld.springdream.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          춘몽월드 Next
+        </a>{" "}
+        에서 확인 하실 수 있습니다.
+      </span>
     </>
   );
 };
