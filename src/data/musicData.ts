@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/bA_4thDLkoA?si=-XbgSSKibUCaNYqN",
+    artist: "LILKA cover",
+    title: "Lumière",
+    playlists: [pl.Pick2025, pl.Working, pl.Rainy, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/s7rsXU1xCTQ?si=0P-Or4ebPEDmLhe_",
     artist: "오마이걸",
     title: "한 발짝 두 발짝",
@@ -2242,12 +2248,6 @@ export const musicData: IMusicData[] = [
     url: "https://www.youtube.com/watch?v=2lODuVyCcgU",
     artist: "에이트",
     title: "잘가요 내사랑",
-    playlists: [pl.Cyworld],
-  },
-  {
-    url: "https://www.youtube.com/watch?v=zgvI5Jqph08",
-    artist: "양정승",
-    title: "밤하늘의 별을 (with KCM, No Noo)",
     playlists: [pl.Cyworld],
   },
   {
