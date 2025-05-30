@@ -48,6 +48,18 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/YezXUTX7Y_8?si=oEXzW2kQ3KsFoa2q",
+    artist: "DAY6",
+    title: "Congratulations",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
+    url: "https://youtu.be/k195e-nMFS4?si=-jBq-6Xw0t1TrCKy",
+    artist: "DAY6",
+    title: "Sweet Chaos",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/bA_4thDLkoA?si=-XbgSSKibUCaNYqN",
     artist: "LILKA cover",
     title: "Lumière",
