@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/JbpdRXARLtI?si=Z6CPQaeiIOSAK93V",
+    artist: "엔플라잉",
+    title: "네가 내 마음에 자리 잡았다",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/YezXUTX7Y_8?si=oEXzW2kQ3KsFoa2q",
     artist: "DAY6",
     title: "Congratulations",
