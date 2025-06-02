@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/NbKH4iZqq1Y?si=NoALQArOgj2Hh2mv",
+    artist: "WOODZ",
+    title: "Drowning",
+    playlists: [pl.Pick2025, pl.Working],
+  },
+  {
     url: "https://youtu.be/JbpdRXARLtI?si=Z6CPQaeiIOSAK93V",
     artist: "엔플라잉",
     title: "네가 내 마음에 자리 잡았다",
