@@ -48,6 +48,12 @@ export const musicData: IMusicData[] = [
   //   playlists: [pl.Pick2025],
   // },
   {
+    url: "https://youtu.be/SkUAbfutd5c?si=SRCv3U__YMwrzR5d",
+    artist: "The Pursuit of Happyness (feat. Jo Hyun Ah)",
+    title: "리쌍",
+    playlists: [pl.Pick2025, pl.Feeling],
+  },
+  {
     url: "https://youtu.be/NbKH4iZqq1Y?si=NoALQArOgj2Hh2mv",
     artist: "WOODZ",
     title: "Drowning",
