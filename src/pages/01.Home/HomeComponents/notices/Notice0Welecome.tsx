@@ -30,7 +30,7 @@ const Notice0Welecome = () => {
       </span>
       <br />
       <span>
-        현재 춘몽월드는 Next로 리펙토링을 진행중이며,{" "}
+        현재 춘몽월드는 Next로 리펙토링 되었으며,{" "}
         <a
           href="http://cmworld.springdream.kr"
           target="_blank"
